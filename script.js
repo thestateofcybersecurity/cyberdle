@@ -16,20 +16,29 @@ function initializeGame() {
         })
         .then(data => {
             acronyms = data;
-            const acronymKeys = Object.keys(acronyms);
-            if (acronymKeys.length === 0) {
-                throw new Error('Acronym list is empty.');
-            }
-            const randomIndex = Math.floor(Math.random() * acronymKeys.length);
-            targetAcronym = acronymKeys[randomIndex].toUpperCase();
-            targetDefinition = acronyms[targetAcronym].definition;
-            createGameBoard();
-            createKeyboard();
+            startNewGame();
         })
         .catch(error => {
             showMessage(`Error: ${error.message}`);
             gameOver = true; // Prevent the game from running if initialization fails
         });
+}
+
+function startNewGame() {
+    const acronymKeys = Object.keys(acronyms);
+    if (acronymKeys.length === 0) {
+        throw new Error('Acronym list is empty.');
+    }
+    const randomIndex = Math.floor(Math.random() * acronymKeys.length);
+    targetAcronym = acronymKeys[randomIndex].toUpperCase();
+    targetDefinition = acronyms[targetAcronym].definition;
+    guessesRemaining = 6;
+    currentGuess = [];
+    nextLetter = 0;
+    gameOver = false;
+    
+    createGameBoard();
+    createKeyboard();
 }
 
 function createGameBoard() {
@@ -50,19 +59,58 @@ function createGameBoard() {
 }
 
 function createKeyboard() {
-    // ... (keyboard creation code remains the same)
+    const keyboard = document.getElementById("keyboard");
+    keyboard.innerHTML = ''; // Clear existing keyboard
+    const keys = [
+        'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
+        'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
+        'ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '⌫'
+    ];
+    
+    keys.forEach(key => {
+        const buttonElement = document.createElement("button");
+        buttonElement.textContent = key;
+        buttonElement.classList.add("key");
+        if (key === 'ENTER' || key === '⌫') {
+            buttonElement.classList.add("wide");
+        }
+        buttonElement.addEventListener("click", () => handleKeyPress(key));
+        keyboard.appendChild(buttonElement);
+    });
 }
 
 function handleKeyPress(key) {
-    // ... (handleKeyPress function remains the same)
+    if (gameOver) return;
+    
+    if (key === '⌫') {
+        deleteLetter();
+    } else if (key === 'ENTER') {
+        submitGuess();
+    } else if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
+        addLetter(key);
+    }
 }
 
 function addLetter(letter) {
-    // ... (addLetter function remains the same)
+    if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
+        let row = document.getElementById("game-board").children[6 - guessesRemaining];
+        let tile = row.children[nextLetter];
+        tile.textContent = letter;
+        tile.classList.add("filled");
+        currentGuess.push(letter);
+        nextLetter++;
+    }
 }
 
 function deleteLetter() {
-    // ... (deleteLetter function remains the same)
+    if (nextLetter > 0) {
+        nextLetter--;
+        let row = document.getElementById("game-board").children[6 - guessesRemaining];
+        let tile = row.children[nextLetter];
+        tile.textContent = "";
+        tile.classList.remove("filled");
+        currentGuess.pop();
+    }
 }
 
 function submitGuess() {
@@ -101,6 +149,7 @@ function updateGameBoard(guess) {
 
         let letter = guess[i];
         
+        // Remove setTimeout to update immediately
         if (letter === targetAcronym[i]) {
             tile.classList.add("correct");
         } else if (targetAcronym.includes(letter)) {
