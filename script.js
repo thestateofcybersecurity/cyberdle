@@ -2,10 +2,12 @@ let acronyms;
 let targetAcronym;
 let targetDefinition;
 let targetSources;
-let guessesRemaining;
-let currentGuess;
-let nextLetter;
-let gameOver;
+let guessesRemaining = 6;
+let currentGuess = [];
+let nextLetter = 0;
+let gameOver = false;
+let currentRow = 0;
+let canGuess = true;
 
 function initializeGame() {
     fetch('acronyms.json')
@@ -84,46 +86,8 @@ function createKeyboard() {
     });
 }
 
-function handleKeyPress(key) {
-    if (gameOver) return;
-    
-    console.log('Key pressed:', key, 'Current target:', targetAcronym);
-    
-    if (key === '⌫') {
-        deleteLetter();
-    } else if (key === 'ENTER') {
-        submitGuess();
-    } else if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
-        addLetter(key);
-    }
-}
-
-function addLetter(letter) {
-    if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
-        let row = document.getElementById("game-board").children[6 - guessesRemaining];
-        let tile = row.children[nextLetter];
-        tile.textContent = letter;
-        tile.classList.add("filled");
-        currentGuess.push(letter);
-        nextLetter++;
-    }
-}
-
-function deleteLetter() {
-    if (nextLetter > 0) {
-        nextLetter--;
-        let row = document.getElementById("game-board").children[6 - guessesRemaining];
-        let tile = row.children[nextLetter];
-        tile.textContent = "";
-        tile.classList.remove("filled");
-        currentGuess.pop();
-    }
-}
-
-let canGuess = true;
-
 function submitGuess() {
-    if (!canGuess) return;
+    if (!canGuess || gameOver) return;
     
     if (nextLetter !== targetAcronym.length) {
         showMessage(`Not enough letters. The acronym has ${targetAcronym.length} letters.`);
@@ -136,6 +100,7 @@ function submitGuess() {
     
     updateGameBoard(guess);
     guessesRemaining--;
+    currentRow++;
     
     if (guess === targetAcronym) {
         showEndGameMessage(true);
@@ -155,11 +120,9 @@ function submitGuess() {
 }
 
 function updateGameBoard(guess) {
-    console.log('Updating game board for guess:', guess, 'Target:', targetAcronym);
+    console.log('Updating game board for guess:', guess, 'Target:', targetAcronym, 'Current Row:', currentRow);
     
-    if (guessesRemaining < 0 || guessesRemaining > 6) return;
-
-    let row = document.getElementById("game-board").children[6 - guessesRemaining - 1];
+    let row = document.getElementById("game-board").children[currentRow];
     if (!row) return;
 
     // Create a copy of the target acronym to track available letters
@@ -203,17 +166,25 @@ function updateGameBoard(guess) {
     updateKeyboard(guess);
 }
 
-function handleKeyPress(key) {
-    if (gameOver || !canGuess) return;
-    
-    console.log('Key pressed:', key, 'Current target:', targetAcronym);
-    
-    if (key === '⌫') {
-        deleteLetter();
-    } else if (key === 'ENTER') {
-        submitGuess();
-    } else if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
-        addLetter(key);
+function addLetter(letter) {
+    if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
+        let row = document.getElementById("game-board").children[currentRow];
+        let tile = row.children[nextLetter];
+        tile.textContent = letter;
+        tile.classList.add("filled");
+        currentGuess.push(letter);
+        nextLetter++;
+    }
+}
+
+function deleteLetter() {
+    if (nextLetter > 0) {
+        nextLetter--;
+        let row = document.getElementById("game-board").children[currentRow];
+        let tile = row.children[nextLetter];
+        tile.textContent = "";
+        tile.classList.remove("filled");
+        currentGuess.pop();
     }
 }
 
