@@ -28,10 +28,27 @@ function initializeGame() {
         });
 }
 
+function resetKeyboard() {
+    const keys = document.querySelectorAll(".key");
+    keys.forEach(key => {
+        key.classList.remove("correct", "present", "absent");
+    });
+}
+
+function clearMessage() {
+    const messageElement = document.getElementById("message");
+    messageElement.textContent = '';
+    messageElement.style.display = "none";
+}
+
 function startNewGame() {
+    clearMessage();
+    resetKeyboard();
     const acronymKeys = Object.keys(acronyms);
     if (acronymKeys.length === 0) {
-        throw new Error('Acronym list is empty.');
+        showMessage('Acronym list is empty.', true);
+        gameOver = true;
+        return;
     }
     const randomIndex = Math.floor(Math.random() * acronymKeys.length);
     targetAcronym = acronymKeys[randomIndex].toUpperCase();
@@ -208,6 +225,9 @@ document.addEventListener("keydown", (e) => {
     
     let pressedKey = String(e.key).toUpperCase();
     handleKeyPress(pressedKey);
+    
+    if (pressedKey.length === 1 && pressedKey.match(/^[A-Z]$/)) {
+    handleKeyPress(pressedKey);
 });
 
 function updateKeyboard(guess) {
@@ -221,9 +241,9 @@ function updateKeyboard(guess) {
         if (keyElement) {
             if (targetAcronym[i] === letter) {
                 keyElement.classList.add("correct");
-            } else if (targetAcronym.includes(letter)) {
+            } else if (!keyElement.classList.contains("correct") && targetAcronym.includes(letter)) {
                 keyElement.classList.add("present");
-            } else {
+            } else if (!keyElement.classList.contains("correct") && !keyElement.classList.contains("present")) {
                 keyElement.classList.add("absent");
             }
         }
