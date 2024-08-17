@@ -16,7 +16,7 @@ const definitionSection = document.getElementById('definition'); // Element to s
 // Fetch acronyms from JSON file
 async function fetchAcronyms() {
     try {
-        const response = await fetch('path/to/acronyms.json');
+        const response = await fetch('acronyms.json');
         const data = await response.json();
         return data;
     } catch (error) {
@@ -98,9 +98,13 @@ function evaluateGuess() {
         if (wordOfTheDay[i] === letter) {
             letterBox.classList.remove('absent');
             letterBox.classList.add('correct');
+            updateKeyColor(letter, 'correct');
         } else if (wordOfTheDay.includes(letter)) {
             letterBox.classList.remove('absent');
             letterBox.classList.add('present');
+            updateKeyColor(letter, 'present');
+        } else {
+            updateKeyColor(letter, 'absent');
         }
     }
 
@@ -120,6 +124,14 @@ function evaluateGuess() {
         currentGuess = '';
         input.value = '';
         message.textContent = '';
+    }
+}
+
+function updateKeyColor(letter, status) {
+    const key = document.querySelector(`.key[data-key="${letter}"]`);
+    if (key) {
+        key.classList.remove('absent', 'present', 'correct');
+        key.classList.add(status);
     }
 }
 
