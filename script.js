@@ -65,7 +65,7 @@ function handleKeyPress(key) {
     if (key === '⌫') {
         deleteLetter();
     } else if (key === 'ENTER') {
-        checkGuess();
+        submitGuess();
     } else if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
         addLetter(key);
     }
@@ -93,7 +93,7 @@ function deleteLetter() {
     }
 }
 
-function checkGuess() {
+function submitGuess() {
     if (nextLetter === targetAcronym.length) {
         let guess = currentGuess.join("");
         updateGameBoard(guess);
@@ -153,7 +153,7 @@ document.addEventListener("keydown", (e) => {
     if (pressedKey === "BACKSPACE") {
         deleteLetter();
     } else if (pressedKey === "ENTER") {
-        checkGuess();
+        submitGuess();
     } else if (pressedKey.match(/^[A-Z]$/)) {
         handleKeyPress(pressedKey);
     }
