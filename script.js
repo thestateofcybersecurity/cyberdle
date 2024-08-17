@@ -166,6 +166,20 @@ function updateGameBoard(guess) {
     updateKeyboard(guess);
 }
 
+function handleKeyPress(key) {
+    if (gameOver || !canGuess) return;
+    
+    console.log('Key pressed:', key, 'Current target:', targetAcronym);
+    
+    if (key === '⌫') {
+        deleteLetter();
+    } else if (key === 'ENTER') {
+        submitGuess();
+    } else if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
+        addLetter(key);
+    }
+}
+
 function addLetter(letter) {
     if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
         let row = document.getElementById("game-board").children[currentRow];
