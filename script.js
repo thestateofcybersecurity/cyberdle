@@ -18,10 +18,17 @@ function initializeGame() {
 
 function createGameBoard() {
     const gameBoard = document.getElementById("game-board");
-    for (let i = 0; i < 30; i++) {
-        let tile = document.createElement("div");
-        tile.classList.add("tile");
-        gameBoard.appendChild(tile);
+    for (let i = 0; i < 6; i++) {
+        let row = document.createElement("div");
+        row.className = "row";
+        
+        for (let j = 0; j < 5; j++) {
+            let tile = document.createElement("div");
+            tile.className = "tile";
+            row.appendChild(tile);
+        }
+        
+        gameBoard.appendChild(row);
     }
 }
 
@@ -56,11 +63,13 @@ function handleKeyPress(key) {
 }
 
 function addLetter(letter) {
-    let tile = document.getElementById("game-board").children[6 - guessesRemaining].children[nextLetter];
-    tile.textContent = letter;
-    tile.classList.add("filled");
-    currentGuess.push(letter);
-    nextLetter++;
+    if (nextLetter < 5 && guessesRemaining > 0) {
+        let tile = document.getElementById("game-board").children[6 - guessesRemaining].children[nextLetter];
+        tile.textContent = letter;
+        tile.classList.add("filled");
+        currentGuess.push(letter);
+        nextLetter++;
+    }
 }
 
 function deleteLetter() {
@@ -81,8 +90,6 @@ function checkGuess() {
             return;
         }
         updateGameBoard(guess);
-        currentGuess = [];
-        nextLetter = 0;
         guessesRemaining--;
         if (guess === targetAcronym) {
             showMessage("You win!");
@@ -90,6 +97,8 @@ function checkGuess() {
         } else if (guessesRemaining === 0) {
             showMessage(`You lose! The word was ${targetAcronym}`);
         }
+        currentGuess = [];
+        nextLetter = 0;
     }
 }
 
@@ -98,13 +107,16 @@ function updateGameBoard(guess) {
     for (let i = 0; i < 5; i++) {
         let tile = row.children[i];
         let letter = guess[i];
-        if (letter === targetAcronym[i]) {
-            tile.classList.add("correct");
-        } else if (targetAcronym.includes(letter)) {
-            tile.classList.add("present");
-        } else {
-            tile.classList.add("absent");
-        }
+        
+        setTimeout(() => {
+            if (letter === targetAcronym[i]) {
+                tile.classList.add("correct");
+            } else if (targetAcronym.includes(letter)) {
+                tile.classList.add("present");
+            } else {
+                tile.classList.add("absent");
+            }
+        }, 250 * i);
     }
 }
 
