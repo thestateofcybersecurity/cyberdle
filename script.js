@@ -8,15 +8,27 @@ let gameOver = false;
 
 function initializeGame() {
     fetch('acronyms.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to load acronyms.');
+            }
+            return response.json();
+        })
         .then(data => {
             acronyms = data;
             const acronymKeys = Object.keys(acronyms);
+            if (acronymKeys.length === 0) {
+                throw new Error('Acronym list is empty.');
+            }
             const randomIndex = Math.floor(Math.random() * acronymKeys.length);
-            targetAcronym = acronymKeys[randomIndex];
+            targetAcronym = acronymKeys[randomIndex].toUpperCase();
             targetDefinition = acronyms[targetAcronym].definition;
             createGameBoard();
             createKeyboard();
+        })
+        .catch(error => {
+            showMessage(`Error: ${error.message}`);
+            gameOver = true; // Prevent the game from running if initialization fails
         });
 }
 
