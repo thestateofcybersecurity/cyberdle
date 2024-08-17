@@ -89,3 +89,17 @@ h1 {
     margin-top: 20px;
     font-weight: bold;
 }
+
+.sources {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.sources a {
+    color: #0000EE;
+    text-decoration: none;
+}
+
+.sources a:hover {
+    text-decoration: underline;
+}
