@@ -154,18 +154,63 @@ function updateGameBoard(guess) {
     let row = document.getElementById("game-board").children[6 - guessesRemaining - 1];
     if (!row) return;
 
+    // Create a copy of the target acronym to track available letters
+    let remainingLetters = targetAcronym.split('');
+
+    // First pass: Mark correct letters
+    for (let i = 0; i < targetAcronym.length; i++) {
+        let tile = row.children[i];
+        if (!tile) continue;
+
+        let letter = guess[i];
+        tile.textContent = letter;
+        
+        if (letter === targetAcronym[i]) {
+            tile.classList.add("correct");
+            // Remove the letter from remaining letters
+            remainingLetters[i] = null;
+        }
+    }
+
+    // Second pass: Mark present and absent letters
     for (let i = 0; i < targetAcronym.length; i++) {
         let tile = row.children[i];
         if (!tile) continue;
 
         let letter = guess[i];
         
-        if (letter === targetAcronym[i]) {
-            tile.classList.add("correct");
-        } else if (targetAcronym.includes(letter)) {
-            tile.classList.add("present");
-        } else {
-            tile.classList.add("absent");
+        if (letter !== targetAcronym[i]) {
+            let index = remainingLetters.indexOf(letter);
+            if (index !== -1) {
+                tile.classList.add("present");
+                // Remove the letter from remaining letters
+                remainingLetters[index] = null;
+            } else {
+                tile.classList.add("absent");
+            }
+        }
+    }
+
+    // Update keyboard
+    updateKeyboard(guess);
+}
+
+function updateKeyboard(guess) {
+    const keyboard = document.getElementById("keyboard");
+    const keys = keyboard.getElementsByClassName("key");
+
+    for (let i = 0; i < guess.length; i++) {
+        const letter = guess[i];
+        const keyElement = Array.from(keys).find(key => key.textContent === letter);
+        
+        if (keyElement) {
+            if (targetAcronym[i] === letter) {
+                keyElement.classList.add("correct");
+            } else if (targetAcronym.includes(letter)) {
+                keyElement.classList.add("present");
+            } else {
+                keyElement.classList.add("absent");
+            }
         }
     }
 }
