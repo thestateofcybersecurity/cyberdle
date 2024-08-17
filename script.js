@@ -87,6 +87,8 @@ function createKeyboard() {
 function handleKeyPress(key) {
     if (gameOver) return;
     
+    console.log('Key pressed:', key, 'Current target:', targetAcronym);
+    
     if (key === '⌫') {
         deleteLetter();
     } else if (key === 'ENTER') {
@@ -145,7 +147,7 @@ function submitGuess() {
 }
 
 function updateGameBoard(guess) {
-    console.log('Updating game board for guess:', guess);
+    console.log('Updating game board for guess:', guess, 'Target:', targetAcronym);
     
     if (guessesRemaining < 0 || guessesRemaining > 6) return;
 
@@ -214,6 +216,8 @@ document.addEventListener("keydown", (e) => {
     if (gameOver) return;
     
     let pressedKey = String(e.key).toUpperCase();
+    console.log('Key pressed:', pressedKey, 'Current target:', targetAcronym);
+    
     if (pressedKey === "BACKSPACE") {
         deleteLetter();
     } else if (pressedKey === "ENTER") {
