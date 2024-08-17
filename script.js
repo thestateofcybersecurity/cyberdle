@@ -5,6 +5,7 @@ const maxGuesses = 6;
 let wordLength;
 let wordOfTheDay;
 let definitionOfTheDay;
+let sourcesOfTheDay; // Store sources here
 
 // Select DOM elements
 const board = document.querySelector('.board');
@@ -16,7 +17,7 @@ const definitionSection = document.getElementById('definition'); // Element to s
 // Fetch acronyms from JSON file
 async function fetchAcronyms() {
     try {
-        const response = await fetch('acronyms.json');
+        const response = await fetch('./acronyms.json');
         const data = await response.json();
         return data;
     } catch (error) {
@@ -31,6 +32,7 @@ function selectRandomWord(acronyms) {
     const randomKey = keys[Math.floor(Math.random() * keys.length)];
     wordOfTheDay = randomKey;
     definitionOfTheDay = acronyms[randomKey].definition;
+    sourcesOfTheDay = acronyms[randomKey].sources; // Get sources
     wordLength = wordOfTheDay.length;
 }
 
@@ -142,7 +144,7 @@ function showDefinition() {
         <p>${definitionOfTheDay}</p>
         <h4>Sources:</h4>
         <ul>
-            ${wordOfTheDay.sources.map(source => `<li><a href="${source.url}" target="_blank">${source.name}</a></li>`).join('')}
+            ${sourcesOfTheDay.map(source => `<li><a href="${source.url}" target="_blank">${source.name}</a></li>`).join('')}
         </ul>
     `;
     definitionSection.innerHTML = definitionContent;
