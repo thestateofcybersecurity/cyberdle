@@ -207,15 +207,7 @@ document.addEventListener("keydown", (e) => {
     if (gameOver || !canGuess) return;
     
     let pressedKey = String(e.key).toUpperCase();
-    console.log('Key pressed:', pressedKey, 'Current target:', targetAcronym);
-    
-    if (pressedKey === "BACKSPACE") {
-        deleteLetter();
-    } else if (pressedKey === "ENTER") {
-        submitGuess();
-    } else if (pressedKey.match(/^[A-Z]$/)) {
-        handleKeyPress(pressedKey);
-    }
+    handleKeyPress(pressedKey);
 });
 
 function updateKeyboard(guess) {
@@ -279,18 +271,3 @@ function showMessage(msg, persistent = false) {
 }
 
 document.addEventListener("DOMContentLoaded", initializeGame);
-
-document.addEventListener("keydown", (e) => {
-    if (gameOver) return;
-    
-    let pressedKey = String(e.key).toUpperCase();
-    console.log('Key pressed:', pressedKey, 'Current target:', targetAcronym);
-    
-    if (pressedKey === "BACKSPACE") {
-        deleteLetter();
-    } else if (pressedKey === "ENTER") {
-        submitGuess();
-    } else if (pressedKey.match(/^[A-Z]$/)) {
-        handleKeyPress(pressedKey);
-    }
-});
