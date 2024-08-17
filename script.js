@@ -1,10 +1,11 @@
 let acronyms;
 let targetAcronym;
 let targetDefinition;
-let guessesRemaining = 6;
-let currentGuess = [];
-let nextLetter = 0;
-let gameOver = false;
+let targetSources;
+let guessesRemaining;
+let currentGuess;
+let nextLetter;
+let gameOver;
 
 function initializeGame() {
     fetch('acronyms.json')
@@ -32,6 +33,7 @@ function startNewGame() {
     const randomIndex = Math.floor(Math.random() * acronymKeys.length);
     targetAcronym = acronymKeys[randomIndex].toUpperCase();
     targetDefinition = acronyms[targetAcronym].definition;
+    targetSources = acronyms[targetAcronym].sources;
     guessesRemaining = 6;
     currentGuess = [];
     nextLetter = 0;
@@ -124,10 +126,10 @@ function submitGuess() {
     guessesRemaining--;
     
     if (guess === targetAcronym) {
-        showMessage(`You win! ${targetAcronym} stands for: ${targetDefinition}`);
+        showEndGameMessage(true);
         gameOver = true;
     } else if (guessesRemaining === 0) {
-        showMessage(`You lose! The acronym was ${targetAcronym}: ${targetDefinition}`);
+        showEndGameMessage(false);
         gameOver = true;
     } else {
         showMessage(`Incorrect. ${guessesRemaining} guesses remaining.`);
@@ -160,13 +162,44 @@ function updateGameBoard(guess) {
     }
 }
 
-function showMessage(msg) {
+function showEndGameMessage(isWin) {
+    let message = isWin ? 
+        `You win! ${targetAcronym} stands for: ${targetDefinition}` :
+        `You lose! The acronym was ${targetAcronym}: ${targetDefinition}`;
+    
+    showMessage(message, true);
+    displaySourceLinks();
+}
+
+function displaySourceLinks() {
+    const messageElement = document.getElementById("message");
+    const sourcesDiv = document.createElement("div");
+    sourcesDiv.className = "sources";
+    sourcesDiv.innerHTML = "<p>Sources:</p>";
+    
+    targetSources.forEach(source => {
+        const link = document.createElement("a");
+        link.href = source.url;
+        link.textContent = source.name;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        sourcesDiv.appendChild(link);
+        sourcesDiv.appendChild(document.createElement("br"));
+    });
+    
+    messageElement.appendChild(sourcesDiv);
+}
+
+function showMessage(msg, persistent = false) {
     const messageElement = document.getElementById("message");
     messageElement.textContent = msg;
     messageElement.style.display = "block";
-    setTimeout(() => {
-        messageElement.style.display = "none";
-    }, 3000);
+    
+    if (!persistent) {
+        setTimeout(() => {
+            messageElement.style.display = "none";
+        }, 3000);
+    }
 }
 
 document.addEventListener("DOMContentLoaded", initializeGame);
