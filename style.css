@@ -1,67 +1,104 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #121213;
     margin: 0;
+    color: #d7dadc;
 }
 
 .game-container {
     text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    color: #d7dadc;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .board {
     display: grid;
-    grid-template-columns: repeat(5, 50px);
-    grid-template-rows: repeat(6, 50px);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     gap: 10px;
     margin-bottom: 20px;
 }
 
 .board div {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    border: 2px solid #3a3a3c;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #ccc;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: #fff;
+    background-color: #121213;
+    color: #d7dadc;
 }
 
-.green {
-    background-color: green;
+.board div.correct {
+    background-color: #538d4e;
     color: white;
+    border-color: #538d4e;
 }
 
-.yellow {
-    background-color: yellow;
-    color: black;
-}
-
-.gray {
-    background-color: gray;
+.board div.present {
+    background-color: #b59f3b;
     color: white;
+    border-color: #b59f3b;
+}
+
+.board div.absent {
+    background-color: #3a3a3c;
+    color: white;
+    border-color: #3a3a3c;
+}
+
+.input-section {
+    margin-bottom: 20px;
 }
 
 #input {
-    font-size: 24px;
-    width: 120px;
-    padding: 5px;
+    font-size: 1.5rem;
+    width: 100px;
+    padding: 10px;
     text-align: center;
+    margin-right: 10px;
+    background-color: #121213;
+    color: #d7dadc;
+    border: 2px solid #3a3a3c;
+    border-radius: 5px;
+}
+
+#input:focus {
+    outline: none;
+    border-color: #d7dadc;
 }
 
 #guess-button {
-    font-size: 18px;
-    padding: 5px 10px;
-    margin-top: 10px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #538d4e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#guess-button:hover {
+    background-color: #6aaa64;
 }
 
 #message {
+    font-size: 1.2rem;
     margin-top: 20px;
-    font-size: 18px;
+    color: #d7dadc;
 }
