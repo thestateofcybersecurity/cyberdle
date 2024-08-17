@@ -15,7 +15,6 @@ function initializeGame() {
             const randomIndex = Math.floor(Math.random() * acronymKeys.length);
             targetAcronym = acronymKeys[randomIndex];
             targetDefinition = acronyms[targetAcronym].definition;
-            console.log(targetAcronym); // For testing purposes
             createGameBoard();
             createKeyboard();
         });
@@ -94,32 +93,39 @@ function deleteLetter() {
 }
 
 function submitGuess() {
-    if (nextLetter === targetAcronym.length) {
-        let guess = currentGuess.join("");
-        updateGameBoard(guess);
-        guessesRemaining--;
-        
-        if (guess === targetAcronym) {
-            showMessage(`You win! ${targetAcronym} stands for: ${targetDefinition}`);
-            gameOver = true;
-        } else if (guessesRemaining === 0) {
-            showMessage(`You lose! The acronym was ${targetAcronym}: ${targetDefinition}`);
-            gameOver = true;
-        } else {
-            showMessage(`Incorrect. ${guessesRemaining} guesses remaining.`);
-        }
-        
-        currentGuess = [];
-        nextLetter = 0;
-    } else {
+    if (nextLetter !== targetAcronym.length) {
         showMessage(`Not enough letters. The acronym has ${targetAcronym.length} letters.`);
+        return;
     }
+
+    let guess = currentGuess.join("");
+    updateGameBoard(guess);
+    guessesRemaining--;
+    
+    if (guess === targetAcronym) {
+        showMessage(`You win! ${targetAcronym} stands for: ${targetDefinition}`);
+        gameOver = true;
+    } else if (guessesRemaining === 0) {
+        showMessage(`You lose! The acronym was ${targetAcronym}: ${targetDefinition}`);
+        gameOver = true;
+    } else {
+        showMessage(`Incorrect. ${guessesRemaining} guesses remaining.`);
+    }
+    
+    currentGuess = [];
+    nextLetter = 0;
 }
 
 function updateGameBoard(guess) {
+    if (guessesRemaining < 0 || guessesRemaining > 6) return; // Prevent out-of-bounds access
+
     let row = document.getElementById("game-board").children[6 - guessesRemaining - 1];
+    if (!row) return; // Check if row exists
+
     for (let i = 0; i < targetAcronym.length; i++) {
         let tile = row.children[i];
+        if (!tile) continue; // Skip if tile doesn't exist
+
         let letter = guess[i];
         
         setTimeout(() => {
