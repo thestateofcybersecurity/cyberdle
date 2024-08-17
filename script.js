@@ -1,5 +1,6 @@
 let acronyms;
 let targetAcronym;
+let targetDefinition;
 let guessesRemaining = 6;
 let currentGuess = [];
 let nextLetter = 0;
@@ -10,7 +11,10 @@ function initializeGame() {
         .then(response => response.json())
         .then(data => {
             acronyms = data;
-            targetAcronym = Object.keys(acronyms)[Math.floor(Math.random() * Object.keys(acronyms).length)];
+            const acronymKeys = Object.keys(acronyms);
+            const randomIndex = Math.floor(Math.random() * acronymKeys.length);
+            targetAcronym = acronymKeys[randomIndex];
+            targetDefinition = acronyms[targetAcronym].definition;
             console.log(targetAcronym); // For testing purposes
             createGameBoard();
             createKeyboard();
@@ -19,6 +23,7 @@ function initializeGame() {
 
 function createGameBoard() {
     const gameBoard = document.getElementById("game-board");
+    gameBoard.innerHTML = ''; // Clear existing board
     for (let i = 0; i < 6; i++) {
         let row = document.createElement("div");
         row.className = "row";
@@ -35,6 +40,7 @@ function createGameBoard() {
 
 function createKeyboard() {
     const keyboard = document.getElementById("keyboard");
+    keyboard.innerHTML = ''; // Clear existing keyboard
     const keys = [
         'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
         'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
@@ -67,7 +73,8 @@ function handleKeyPress(key) {
 
 function addLetter(letter) {
     if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
-        let tile = document.getElementById("game-board").children[6 - guessesRemaining].children[nextLetter];
+        let row = document.getElementById("game-board").children[6 - guessesRemaining];
+        let tile = row.children[nextLetter];
         tile.textContent = letter;
         tile.classList.add("filled");
         currentGuess.push(letter);
@@ -78,7 +85,8 @@ function addLetter(letter) {
 function deleteLetter() {
     if (nextLetter > 0) {
         nextLetter--;
-        let tile = document.getElementById("game-board").children[6 - guessesRemaining].children[nextLetter];
+        let row = document.getElementById("game-board").children[6 - guessesRemaining];
+        let tile = row.children[nextLetter];
         tile.textContent = "";
         tile.classList.remove("filled");
         currentGuess.pop();
@@ -88,23 +96,23 @@ function deleteLetter() {
 function checkGuess() {
     if (nextLetter === targetAcronym.length) {
         let guess = currentGuess.join("");
-        if (!Object.keys(acronyms).includes(guess)) {
-            showMessage("Not in acronym list");
-            return;
-        }
         updateGameBoard(guess);
         guessesRemaining--;
+        
         if (guess === targetAcronym) {
-            showMessage(`You win! ${targetAcronym} stands for: ${acronyms[targetAcronym].definition}`);
+            showMessage(`You win! ${targetAcronym} stands for: ${targetDefinition}`);
             gameOver = true;
         } else if (guessesRemaining === 0) {
-            showMessage(`You lose! The acronym was ${targetAcronym}: ${acronyms[targetAcronym].definition}`);
+            showMessage(`You lose! The acronym was ${targetAcronym}: ${targetDefinition}`);
             gameOver = true;
+        } else {
+            showMessage(`Incorrect. ${guessesRemaining} guesses remaining.`);
         }
+        
         currentGuess = [];
         nextLetter = 0;
     } else {
-        showMessage("Not enough letters");
+        showMessage(`Not enough letters. The acronym has ${targetAcronym.length} letters.`);
     }
 }
 
@@ -127,7 +135,12 @@ function updateGameBoard(guess) {
 }
 
 function showMessage(msg) {
-    document.getElementById("message").textContent = msg;
+    const messageElement = document.getElementById("message");
+    messageElement.textContent = msg;
+    messageElement.style.display = "block";
+    setTimeout(() => {
+        messageElement.style.display = "none";
+    }, 3000);
 }
 
 document.addEventListener("DOMContentLoaded", initializeGame);
