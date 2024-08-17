@@ -1870,6 +1870,61 @@ const acronyms = {
     }
 };
 
+// Game variables
+const board = document.getElementById('board');
+const input = document.getElementById('input');
+const guessButton = document.getElementById('guess-button');
+const message = document.getElementById('message');
+
+let currentGuess = '';
+let row = 0;
+let targetAcronym = 'PT';  // Example target acronym
+
+// Initialize board
+for (let i = 0; i < 30; i++) {
+    const cell = document.createElement('div');
+    board.appendChild(cell);
+}
+
+// Function to handle guesses
+function handleGuess() {
+    const guess = input.value.toUpperCase();
+    if (guess.length !== targetAcronym.length) {
+        message.textContent = 'Please enter a valid acronym.';
+        return;
+    }
+
+    let rowIndex = row * targetAcronym.length;
+    for (let i = 0; i < targetAcronym.length; i++) {
+        const cell = board.children[rowIndex + i];
+        cell.textContent = guess[i];
+        if (guess[i] === targetAcronym[i]) {
+            cell.classList.add('green');
+        } else if (targetAcronym.includes(guess[i])) {
+            cell.classList.add('yellow');
+        } else {
+            cell.classList.add('gray');
+        }
+    }
+
+    row++;
+    if (guess === targetAcronym) {
+        message.textContent = `Correct! The acronym is ${targetAcronym}. ${acronyms[targetAcronym].definition}`;
+        guessButton.disabled = true;
+        input.disabled = true;
+    } else if (row === 6) {
+        message.textContent = `Game over! The correct acronym was ${targetAcronym}.`;
+        guessButton.disabled = true;
+        input.disabled = true;
+    } else {
+        input.value = '';
+        input.focus();
+    }
+}
+
+// Event listener for the guess button
+guessButton.addEventListener('click', handleGuess);
+
 document.addEventListener("DOMContentLoaded", () => {
     let currentWord = '';
     let currentGuess = '';
