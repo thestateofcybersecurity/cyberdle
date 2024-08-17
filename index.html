@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Wordle</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cybersecurity Acronym Wordle</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Cybersecurity Wordle</h1>
-        <div id="game-board">
-            <!-- Game board will be populated by JavaScript -->
-        </div>
-        <div id="keyboard">
-            <!-- Keyboard will be populated by JavaScript -->
-        </div>
-        <p id="message"></p>
+    <div class="game-container">
+        <h1>Cybersecurity Acronym Wordle</h1>
+        <div id="board" class="board"></div>
+        <input type="text" id="input" maxlength="5" autocomplete="off" autofocus />
+        <button id="guess-button">Guess</button>
+        <div id="message"></div>
     </div>
+    <script src="acronyms.json"></script>
     <script src="script.js"></script>
 </body>
 </html>
