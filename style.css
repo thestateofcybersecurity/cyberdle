@@ -3,43 +3,80 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #121213;
+    color: #ffffff;
 }
 
 h1 {
-    color: #333;
+    color: #ffffff;
 }
 
 #game-board {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 5px;
-    margin-bottom: 20px;
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 350px;
+    margin-bottom: 30px;
 }
 
 .tile {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #ccc;
+    width: 62px;
+    height: 62px;
+    border: 2px solid #3a3a3c;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
 }
 
+.tile.filled {
+    border: 2px solid #565758;
+}
+
+.tile.correct {
+    background-color: #538d4e;
+    border-color: #538d4e;
+}
+
+.tile.present {
+    background-color: #b59f3b;
+    border-color: #b59f3b;
+}
+
+.tile.absent {
+    background-color: #3a3a3c;
+    border-color: #3a3a3c;
+}
+
 #keyboard {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 5px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .key {
-    padding: 10px;
-    border: none;
-    background-color: #ddd;
+    width: 43px;
+    height: 58px;
+    margin: 3px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: #818384;
+    color: #ffffff;
+    font-weight: bold;
     cursor: pointer;
+    user-select: none;
+}
+
+.key.wide {
+    width: 65px;
 }
 
 #message {
