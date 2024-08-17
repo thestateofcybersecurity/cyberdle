@@ -20,8 +20,9 @@ function initializeGame() {
             startNewGame();
         })
         .catch(error => {
-            showMessage(`Error: ${error.message}`);
-            gameOver = true; // Prevent the game from running if initialization fails
+            showMessage(`Error: ${error.message}`, true);
+            console.error('Error:', error);
+            gameOver = true;
         });
 }
 
@@ -39,13 +40,15 @@ function startNewGame() {
     nextLetter = 0;
     gameOver = false;
     
+    console.log('New game started. Target acronym:', targetAcronym);
+    
     createGameBoard();
     createKeyboard();
 }
 
 function createGameBoard() {
     const gameBoard = document.getElementById("game-board");
-    gameBoard.innerHTML = ''; // Clear existing board
+    gameBoard.innerHTML = '';
     for (let i = 0; i < 6; i++) {
         let row = document.createElement("div");
         row.className = "row";
@@ -62,7 +65,7 @@ function createGameBoard() {
 
 function createKeyboard() {
     const keyboard = document.getElementById("keyboard");
-    keyboard.innerHTML = ''; // Clear existing keyboard
+    keyboard.innerHTML = '';
     const keys = [
         'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
         'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
@@ -122,6 +125,8 @@ function submitGuess() {
     }
 
     let guess = currentGuess.join("");
+    console.log('Submitting guess:', guess, 'Target:', targetAcronym);
+    
     updateGameBoard(guess);
     guessesRemaining--;
     
@@ -140,18 +145,19 @@ function submitGuess() {
 }
 
 function updateGameBoard(guess) {
-    if (guessesRemaining < 0 || guessesRemaining > 6) return; // Prevent out-of-bounds access
+    console.log('Updating game board for guess:', guess);
+    
+    if (guessesRemaining < 0 || guessesRemaining > 6) return;
 
     let row = document.getElementById("game-board").children[6 - guessesRemaining - 1];
-    if (!row) return; // Check if row exists
+    if (!row) return;
 
     for (let i = 0; i < targetAcronym.length; i++) {
         let tile = row.children[i];
-        if (!tile) continue; // Skip if tile doesn't exist
+        if (!tile) continue;
 
         let letter = guess[i];
         
-        // Remove setTimeout to update immediately
         if (letter === targetAcronym[i]) {
             tile.classList.add("correct");
         } else if (targetAcronym.includes(letter)) {
@@ -204,7 +210,6 @@ function showMessage(msg, persistent = false) {
 
 document.addEventListener("DOMContentLoaded", initializeGame);
 
-// Add keyboard support
 document.addEventListener("keydown", (e) => {
     if (gameOver) return;
     
