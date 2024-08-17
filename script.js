@@ -27,59 +27,84 @@ function createGameBoard() {
 
 function createKeyboard() {
     const keyboard = document.getElementById("keyboard");
-    const keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    for (let key of keys) {
-        let button = document.createElement("button");
-        button.textContent = key;
-        button.classList.add("key");
-        button.addEventListener("click", () => handleKeyPress(key));
-        keyboard.appendChild(button);
-    }
-    let enterButton = document.createElement("button");
-    enterButton.textContent = "Enter";
-    enterButton.addEventListener("click", () => handleEnter());
-    keyboard.appendChild(enterButton);
+    const keys = [
+        'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
+        'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
+        'ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '⌫'
+    ];
+    
+    keys.forEach(key => {
+        const buttonElement = document.createElement("button");
+        buttonElement.textContent = key;
+        buttonElement.classList.add("key");
+        if (key === 'ENTER' || key === '⌫') {
+            buttonElement.classList.add("wide");
+        }
+        buttonElement.addEventListener("click", () => handleKeyPress(key));
+        keyboard.appendChild(buttonElement);
+    });
 }
 
 function handleKeyPress(key) {
-    if (nextLetter === 5) return;
-    let tile = document.getElementById("game-board").children[guessesRemaining * 5 - 5 + nextLetter];
-    tile.textContent = key;
+    if (key === '⌫') {
+        deleteLetter();
+    } else if (key === 'ENTER') {
+        checkGuess();
+    } else if (nextLetter < 5 && guessesRemaining > 0) {
+        addLetter(key);
+    }
+}
+
+function addLetter(letter) {
+    let tile = document.getElementById("game-board").children[6 - guessesRemaining].children[nextLetter];
+    tile.textContent = letter;
     tile.classList.add("filled");
-    currentGuess.push(key);
+    currentGuess.push(letter);
     nextLetter++;
 }
 
-function handleEnter() {
-    if (nextLetter !== 5) return;
-    let guess = currentGuess.join("");
-    if (!acronyms.includes(guess)) {
-        showMessage("Not in word list");
-        return;
+function deleteLetter() {
+    if (nextLetter > 0) {
+        nextLetter--;
+        let tile = document.getElementById("game-board").children[6 - guessesRemaining].children[nextLetter];
+        tile.textContent = "";
+        tile.classList.remove("filled");
+        currentGuess.pop();
     }
-    updateGameBoard(guess);
-    currentGuess = [];
-    nextLetter = 0;
-    guessesRemaining--;
-    if (guess === targetAcronym) {
-        showMessage("You win!");
-        guessesRemaining = 0;
-    } else if (guessesRemaining === 0) {
-        showMessage(`You lose! The word was ${targetAcronym}`);
+}
+
+function checkGuess() {
+    if (nextLetter === 5) {
+        let guess = currentGuess.join("");
+        if (!acronyms.includes(guess)) {
+            showMessage("Not in word list");
+            return;
+        }
+        updateGameBoard(guess);
+        currentGuess = [];
+        nextLetter = 0;
+        guessesRemaining--;
+        if (guess === targetAcronym) {
+            showMessage("You win!");
+            guessesRemaining = 0;
+        } else if (guessesRemaining === 0) {
+            showMessage(`You lose! The word was ${targetAcronym}`);
+        }
     }
 }
 
 function updateGameBoard(guess) {
-    let row = document.getElementById("game-board").children;
+    let row = document.getElementById("game-board").children[6 - guessesRemaining - 1];
     for (let i = 0; i < 5; i++) {
-        let tile = row[guessesRemaining * 5 - 5 + i];
-        let color = "grey";
-        if (guess[i] === targetAcronym[i]) {
-            color = "green";
-        } else if (targetAcronym.includes(guess[i])) {
-            color = "yellow";
+        let tile = row.children[i];
+        let letter = guess[i];
+        if (letter === targetAcronym[i]) {
+            tile.classList.add("correct");
+        } else if (targetAcronym.includes(letter)) {
+            tile.classList.add("present");
+        } else {
+            tile.classList.add("absent");
         }
-        tile.style.backgroundColor = color;
     }
 }
 
@@ -88,3 +113,18 @@ function showMessage(msg) {
 }
 
 document.addEventListener("DOMContentLoaded", initializeGame);
+
+// Add keyboard support
+document.addEventListener("keydown", (e) => {
+    if (guessesRemaining === 0) {
+        return;
+    }
+    let pressedKey = String(e.key).toUpperCase();
+    if (pressedKey === "BACKSPACE") {
+        deleteLetter();
+    } else if (pressedKey === "ENTER") {
+        checkGuess();
+    } else if (pressedKey.match(/^[A-Z]$/)) {
+        handleKeyPress(pressedKey);
+    }
+});
