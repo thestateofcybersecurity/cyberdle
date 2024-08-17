@@ -4,52 +4,64 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f0f0f0;
     margin: 0;
-    background-color: #121212;
-    color: white;
 }
 
-.container {
+.game-container {
     text-align: center;
 }
 
-#game-board {
+.board {
     display: grid;
     grid-template-columns: repeat(5, 50px);
-    grid-gap: 10px;
+    grid-template-rows: repeat(6, 50px);
+    gap: 10px;
     margin-bottom: 20px;
 }
 
-#game-board div {
+.board div {
     width: 50px;
     height: 50px;
-    background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid #ccc;
     font-size: 24px;
     font-weight: bold;
+    text-transform: uppercase;
+    background-color: #fff;
 }
 
-#keyboard {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-gap: 5px;
-}
-
-#keyboard button {
-    padding: 10px;
-    font-size: 18px;
-    border: none;
-    background-color: #555;
+.green {
+    background-color: green;
     color: white;
-    cursor: pointer;
 }
 
-#keyboard button:hover {
-    background-color: #777;
+.yellow {
+    background-color: yellow;
+    color: black;
+}
+
+.gray {
+    background-color: gray;
+    color: white;
+}
+
+#input {
+    font-size: 24px;
+    width: 120px;
+    padding: 5px;
+    text-align: center;
+}
+
+#guess-button {
+    font-size: 18px;
+    padding: 5px 10px;
+    margin-top: 10px;
 }
 
 #message {
     margin-top: 20px;
+    font-size: 18px;
 }
