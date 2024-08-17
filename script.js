@@ -120,12 +120,17 @@ function deleteLetter() {
     }
 }
 
+let canGuess = true;
+
 function submitGuess() {
+    if (!canGuess) return;
+    
     if (nextLetter !== targetAcronym.length) {
         showMessage(`Not enough letters. The acronym has ${targetAcronym.length} letters.`);
         return;
     }
 
+    canGuess = false;
     let guess = currentGuess.join("");
     console.log('Submitting guess:', guess, 'Target:', targetAcronym);
     
@@ -140,10 +145,13 @@ function submitGuess() {
         gameOver = true;
     } else {
         showMessage(`Incorrect. ${guessesRemaining} guesses remaining.`);
+        // Add a slight delay before allowing the next guess
+        setTimeout(() => {
+            canGuess = true;
+            currentGuess = [];
+            nextLetter = 0;
+        }, 300);
     }
-    
-    currentGuess = [];
-    nextLetter = 0;
 }
 
 function updateGameBoard(guess) {
@@ -194,6 +202,36 @@ function updateGameBoard(guess) {
     // Update keyboard
     updateKeyboard(guess);
 }
+
+function handleKeyPress(key) {
+    if (gameOver || !canGuess) return;
+    
+    console.log('Key pressed:', key, 'Current target:', targetAcronym);
+    
+    if (key === '⌫') {
+        deleteLetter();
+    } else if (key === 'ENTER') {
+        submitGuess();
+    } else if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
+        addLetter(key);
+    }
+}
+
+// Update the event listener for keyboard input
+document.addEventListener("keydown", (e) => {
+    if (gameOver || !canGuess) return;
+    
+    let pressedKey = String(e.key).toUpperCase();
+    console.log('Key pressed:', pressedKey, 'Current target:', targetAcronym);
+    
+    if (pressedKey === "BACKSPACE") {
+        deleteLetter();
+    } else if (pressedKey === "ENTER") {
+        submitGuess();
+    } else if (pressedKey.match(/^[A-Z]$/)) {
+        handleKeyPress(pressedKey);
+    }
+});
 
 function updateKeyboard(guess) {
     const keyboard = document.getElementById("keyboard");
