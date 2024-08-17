@@ -57,7 +57,9 @@ function startNewGame() {
     guessesRemaining = 6;
     currentGuess = [];
     nextLetter = 0;
+    currentRow = 0;  // Reset currentRow to 0
     gameOver = false;
+    canGuess = true;
     
     console.log('New game started. Target acronym:', targetAcronym);
     
@@ -188,11 +190,11 @@ function handleKeyPress(key) {
     
     console.log('Key pressed:', key, 'Current target:', targetAcronym);
     
-    if (key === '⌫') {
+    if (key === '⌫' || key === 'BACKSPACE') {
         deleteLetter();
     } else if (key === 'ENTER') {
         submitGuess();
-    } else if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
+    } else if (key.length === 1 && key.match(/^[A-Z]$/) && nextLetter < targetAcronym.length && guessesRemaining > 0) {
         addLetter(key);
     }
 }
@@ -224,10 +226,14 @@ document.addEventListener("keydown", (e) => {
     if (gameOver || !canGuess) return;
     
     let pressedKey = String(e.key).toUpperCase();
-    handleKeyPress(pressedKey);
     
-    if (pressedKey.length === 1 && pressedKey.match(/^[A-Z]$/)) {
-    handleKeyPress(pressedKey);
+    if (pressedKey === "BACKSPACE") {
+        deleteLetter();
+    } else if (pressedKey === "ENTER") {
+        submitGuess();
+    } else if (pressedKey.length === 1 && pressedKey.match(/^[A-Z]$/)) {
+        handleKeyPress(pressedKey);
+    }
 });
 
 function updateKeyboard(guess) {
