@@ -87,7 +87,10 @@ h1 {
 
 #message {
     margin-top: 20px;
-    font-weight: bold;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 .sources {
@@ -98,6 +101,11 @@ h1 {
 .sources a {
     color: #0000EE;
     text-decoration: none;
+    margin-right: 10px;
+}
+
+.sources a:hover {
+    text-decoration: underline;
 }
 
 .sources a:hover {
