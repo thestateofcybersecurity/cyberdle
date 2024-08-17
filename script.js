@@ -3,13 +3,14 @@ let targetAcronym;
 let guessesRemaining = 6;
 let currentGuess = [];
 let nextLetter = 0;
+let gameOver = false;
 
 function initializeGame() {
     fetch('acronyms.json')
         .then(response => response.json())
         .then(data => {
-            acronyms = Object.keys(data);
-            targetAcronym = acronyms[Math.floor(Math.random() * acronyms.length)];
+            acronyms = data;
+            targetAcronym = Object.keys(acronyms)[Math.floor(Math.random() * Object.keys(acronyms).length)];
             console.log(targetAcronym); // For testing purposes
             createGameBoard();
             createKeyboard();
@@ -22,7 +23,7 @@ function createGameBoard() {
         let row = document.createElement("div");
         row.className = "row";
         
-        for (let j = 0; j < 5; j++) {
+        for (let j = 0; j < targetAcronym.length; j++) {
             let tile = document.createElement("div");
             tile.className = "tile";
             row.appendChild(tile);
@@ -53,17 +54,19 @@ function createKeyboard() {
 }
 
 function handleKeyPress(key) {
+    if (gameOver) return;
+    
     if (key === '⌫') {
         deleteLetter();
     } else if (key === 'ENTER') {
         checkGuess();
-    } else if (nextLetter < 5 && guessesRemaining > 0) {
+    } else if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
         addLetter(key);
     }
 }
 
 function addLetter(letter) {
-    if (nextLetter < 5 && guessesRemaining > 0) {
+    if (nextLetter < targetAcronym.length && guessesRemaining > 0) {
         let tile = document.getElementById("game-board").children[6 - guessesRemaining].children[nextLetter];
         tile.textContent = letter;
         tile.classList.add("filled");
@@ -83,28 +86,31 @@ function deleteLetter() {
 }
 
 function checkGuess() {
-    if (nextLetter === 5) {
+    if (nextLetter === targetAcronym.length) {
         let guess = currentGuess.join("");
-        if (!acronyms.includes(guess)) {
-            showMessage("Not in word list");
+        if (!Object.keys(acronyms).includes(guess)) {
+            showMessage("Not in acronym list");
             return;
         }
         updateGameBoard(guess);
         guessesRemaining--;
         if (guess === targetAcronym) {
-            showMessage("You win!");
-            guessesRemaining = 0;
+            showMessage(`You win! ${targetAcronym} stands for: ${acronyms[targetAcronym].definition}`);
+            gameOver = true;
         } else if (guessesRemaining === 0) {
-            showMessage(`You lose! The word was ${targetAcronym}`);
+            showMessage(`You lose! The acronym was ${targetAcronym}: ${acronyms[targetAcronym].definition}`);
+            gameOver = true;
         }
         currentGuess = [];
         nextLetter = 0;
+    } else {
+        showMessage("Not enough letters");
     }
 }
 
 function updateGameBoard(guess) {
     let row = document.getElementById("game-board").children[6 - guessesRemaining - 1];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < targetAcronym.length; i++) {
         let tile = row.children[i];
         let letter = guess[i];
         
@@ -128,9 +134,8 @@ document.addEventListener("DOMContentLoaded", initializeGame);
 
 // Add keyboard support
 document.addEventListener("keydown", (e) => {
-    if (guessesRemaining === 0) {
-        return;
-    }
+    if (gameOver) return;
+    
     let pressedKey = String(e.key).toUpperCase();
     if (pressedKey === "BACKSPACE") {
         deleteLetter();
