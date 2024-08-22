@@ -1,18 +1,31 @@
+:root {
+  --tile-size: min(62px, 20vw);
+  --key-width: min(43px, 9vw);
+  --key-height: min(58px, 10vw);
+  --font-size-large: min(2rem, 6vw);
+  --font-size-medium: min(1.2rem, 4vw);
+  --font-size-small: min(1rem, 3.5vw);
+}
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     min-height: 100vh;
     margin: 0;
+    padding: 10px;
     background-color: #121213;
     color: #ffffff;
+    box-sizing: border-box;
 }
 
 h1 {
     color: #ffffff;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-size: var(--font-size-large);
+    text-align: center;
 }
 
 #game-board {
@@ -20,9 +33,9 @@ h1 {
     grid-gap: 5px;
     padding: 10px;
     box-sizing: border-box;
-    max-width: 500px; /* Increased to accommodate longer acronyms */
+    max-width: 100%;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     justify-content: center;
 }
 
@@ -32,50 +45,52 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: var(--font-size-medium);
     font-weight: bold;
     text-transform: uppercase;
-    width: 100%;
-    max-width: 62px; /* Maintain maximum size for larger screens */
+    width: var(--tile-size);
+    height: var(--tile-size);
 }
 
 #keyboard {
-    max-width: 500px;
     width: 100%;
+    max-width: 500px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 4px;
 }
 
 .key {
-    width: 43px;
-    height: 58px;
-    margin: 3px;
+    width: var(--key-width);
+    height: var(--key-height);
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: var(--font-size-small);
     background-color: #818384;
     color: #ffffff;
     font-weight: bold;
     cursor: pointer;
     user-select: none;
+    touch-action: manipulation;
 }
 
 .key.wide {
-    width: 65px;
+    width: calc(var(--key-width) * 1.5);
 }
 
 #message {
-    margin-top: 20px;
+    margin-top: 10px;
     font-weight: bold;
     text-align: center;
+    font-size: var(--font-size-small);
 }
 
 .sources {
     margin-top: 10px;
-    font-size: 0.9em;
+    font-size: var(--font-size-small);
 }
 
 .sources a {
@@ -88,7 +103,6 @@ h1 {
     text-decoration: underline;
 }
 
-/* Styles for correct, present, and absent tiles/keys */
 .tile.correct, .key.correct {
     background-color: #538d4e;
     border-color: #538d4e;
@@ -104,41 +118,37 @@ h1 {
     border-color: #3a3a3c;
 }
 
-@media (max-width: 500px) {
+@media (max-height: 600px) {
+    body {
+        justify-content: flex-start;
+    }
+    
+    h1 {
+        font-size: var(--font-size-medium);
+        margin-bottom: 5px;
+    }
+
     #game-board {
-        max-width: 95vw;
+        margin-bottom: 10px;
     }
 
     .tile {
-        font-size: 1.5rem;
-        max-width: none; /* Allow tiles to shrink on smaller screens */
+        font-size: var(--font-size-small);
     }
-    
+
     .key {
-        width: 8vw;
-        height: 45px;
-        font-size: 1rem;
-    }
-    
-    .key.wide {
-        width: 12vw;
+        font-size: calc(var(--font-size-small) * 0.8);
     }
 }
 
-/* For very small screens or long acronyms */
 @media (max-width: 350px) {
-    .tile {
-        font-size: 1rem;
+    :root {
+        --tile-size: min(50px, 18vw);
+        --key-width: min(32px, 8vw);
+        --key-height: min(45px, 9vw);
     }
-    
+
     .key {
-        width: 7vw;
-        height: 40px;
-        font-size: 0.8rem;
-        margin: 2px;
-    }
-    
-    .key.wide {
-        width: 11vw;
+        font-size: calc(var(--font-size-small) * 0.7);
     }
 }
