@@ -3,12 +3,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
     background-color: #121213;
     color: #ffffff;
 }
 
 h1 {
     color: #ffffff;
+    margin-bottom: 20px;
 }
 
 #game-board {
@@ -17,7 +21,8 @@ h1 {
     grid-gap: 5px;
     padding: 10px;
     box-sizing: border-box;
-    width: 350px;
+    max-width: 350px;
+    width: 100%;
     margin-bottom: 30px;
 }
 
@@ -28,8 +33,7 @@ h1 {
 }
 
 .tile {
-    width: 62px;
-    height: 62px;
+    aspect-ratio: 1 / 1;
     border: 2px solid #3a3a3c;
     display: flex;
     justify-content: center;
@@ -37,30 +41,11 @@ h1 {
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.tile.filled {
-    border: 2px solid #565758;
-}
-
-.tile.correct {
-    background-color: #538d4e;
-    border-color: #538d4e;
-}
-
-.tile.present {
-    background-color: #b59f3b;
-    border-color: #b59f3b;
-}
-
-.tile.absent {
-    background-color: #3a3a3c;
-    border-color: #3a3a3c;
 }
 
 #keyboard {
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -80,32 +65,32 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     user-select: none;
-    transition: background-color 0.3s ease;
 }
 
 .key.wide {
     width: 65px;
 }
 
-.key.correct {
-    background-color: #538d4e;
-}
-
-.key.present {
-    background-color: #b59f3b;
-}
-
-.key.absent {
-    background-color: #3a3a3c;
-}
-
 #message {
     margin-top: 20px;
-    padding: 10px;
-    background-color: #3a3a3c;
-    border: 1px solid #565758;
-    border-radius: 5px;
-    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .tile {
+        font-size: 1.5rem;
+    }
+    
+    .key {
+        width: 8vw;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .key.wide {
+        width: 12vw;
+    }
 }
 
 .sources {
