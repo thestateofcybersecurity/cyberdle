@@ -67,14 +67,16 @@ function startNewGame() {
     createKeyboard();
 }
 
-function createGameBoard() {
+function createGameBoard(rows = 6, cols = 5) {
     const gameBoard = document.getElementById("game-board");
-    gameBoard.innerHTML = '';
-    for (let i = 0; i < 6; i++) {
+    gameBoard.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+    
+    for (let i = 0; i < rows; i++) {
         let row = document.createElement("div");
         row.className = "row";
+        row.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
         
-        for (let j = 0; j < targetAcronym.length; j++) {
+        for (let j = 0; j < cols; j++) {
             let tile = document.createElement("div");
             tile.className = "tile";
             row.appendChild(tile);
