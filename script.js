@@ -229,10 +229,15 @@ function updateKeyboard(guess) {
         
         if (keyElement) {
             if (targetAcronym[i] === letter) {
+                // If the letter is correct, always update to green
+                keyElement.classList.remove("present", "absent");
                 keyElement.classList.add("correct");
-            } else if (!keyElement.classList.contains("correct") && targetAcronym.includes(letter)) {
+            } else if (targetAcronym.includes(letter) && !keyElement.classList.contains("correct")) {
+                // If the letter is present but not correct, and the key isn't already marked as correct
+                keyElement.classList.remove("absent");
                 keyElement.classList.add("present");
-            } else if (!keyElement.classList.contains("correct") && !keyElement.classList.contains("present")) {
+            } else if (!targetAcronym.includes(letter) && !keyElement.classList.contains("correct") && !keyElement.classList.contains("present")) {
+                // If the letter is absent and the key isn't already marked as correct or present
                 keyElement.classList.add("absent");
             }
         }
