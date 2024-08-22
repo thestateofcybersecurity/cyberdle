@@ -83,21 +83,28 @@ function createGameBoard(rows = 6, cols) {
 function createKeyboard() {
     const keyboard = document.getElementById("keyboard");
     keyboard.innerHTML = '';
-    const keys = [
-        'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
-        'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
-        'ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '⌫'
+    const rows = [
+        ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+        ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+        ['ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '⌫']
     ];
     
-    keys.forEach(key => {
-        const buttonElement = document.createElement("button");
-        buttonElement.textContent = key;
-        buttonElement.classList.add("key");
-        if (key === 'ENTER' || key === '⌫') {
-            buttonElement.classList.add("wide");
-        }
-        buttonElement.addEventListener("click", () => handleKeyPress(key));
-        keyboard.appendChild(buttonElement);
+    rows.forEach(row => {
+        const rowElement = document.createElement("div");
+        rowElement.className = "keyboard-row";
+        
+        row.forEach(key => {
+            const buttonElement = document.createElement("button");
+            buttonElement.textContent = key;
+            buttonElement.classList.add("key");
+            if (key === 'ENTER' || key === '⌫') {
+                buttonElement.classList.add("wide");
+            }
+            buttonElement.addEventListener("click", () => handleKeyPress(key));
+            rowElement.appendChild(buttonElement);
+        });
+        
+        keyboard.appendChild(rowElement);
     });
 }
 
