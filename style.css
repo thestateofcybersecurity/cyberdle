@@ -57,8 +57,15 @@ h1 {
     width: 100%;
     max-width: 500px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.keyboard-row {
+    display: flex;
     justify-content: center;
+    width: 100%;
     gap: 4px;
 }
 
@@ -142,14 +149,24 @@ h1 {
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 500px) {
     :root {
-        --tile-size: clamp(40px, 7vw, 50px);
-        --key-width: clamp(25px, 6vw, 32px);
-        --key-height: clamp(35px, 8vw, 45px);
+        --key-width: clamp(18px, 5.5vw, 40px);
+        --key-height: clamp(30px, 7vw, 55px);
     }
 
     .key {
-        font-size: calc(var(--font-size-small) * 0.7);
+        font-size: calc(var(--font-size-small) * 0.9);
+    }
+}
+
+@media (max-width: 350px) {
+    :root {
+        --key-width: clamp(16px, 5vw, 35px);
+        --key-height: clamp(25px, 6vw, 50px);
+    }
+
+    .key {
+        font-size: calc(var(--font-size-small) * 0.8);
     }
 }
