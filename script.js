@@ -116,7 +116,6 @@ function submitGuess() {
 
     canGuess = false;
     let guess = currentGuess.join("");
-    console.log('Submitting guess:', guess, 'Target:', targetAcronym);
     
     updateGameBoard(guess);
     guessesRemaining--;
@@ -139,7 +138,6 @@ function submitGuess() {
 }
 
 function updateGameBoard(guess) {
-    console.log('Updating game board for guess:', guess, 'Target:', targetAcronym, 'Current Row:', currentRow);
     
     let remainingLetters = targetAcronym.split('');
 
@@ -178,8 +176,6 @@ function updateGameBoard(guess) {
 
 function handleKeyPress(key) {
     if (gameOver || !canGuess) return;
-    
-    console.log('Key pressed:', key, 'Current target:', targetAcronym);
     
     if (key === '⌫' || key === 'BACKSPACE') {
         deleteLetter();
