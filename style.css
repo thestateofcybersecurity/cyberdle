@@ -1,10 +1,11 @@
 :root {
-  --tile-size: min(62px, 20vw);
-  --key-width: min(43px, 9vw);
-  --key-height: min(58px, 10vw);
-  --font-size-large: min(2rem, 6vw);
-  --font-size-medium: min(1.2rem, 4vw);
-  --font-size-small: min(1rem, 3.5vw);
+  --tile-size: clamp(45px, 8vw, 62px);
+  --tile-gap: 5px;
+  --key-width: clamp(30px, 7vw, 43px);
+  --key-height: clamp(45px, 10vw, 58px);
+  --font-size-large: clamp(1.5rem, 5vw, 2rem);
+  --font-size-medium: clamp(1rem, 3.5vw, 1.2rem);
+  --font-size-small: clamp(0.8rem, 3vw, 1rem);
 }
 
 body {
@@ -30,11 +31,11 @@ h1 {
 
 #game-board {
     display: grid;
-    grid-gap: 5px;
+    grid-gap: var(--tile-gap);
     padding: 10px;
     box-sizing: border-box;
     max-width: 100%;
-    width: 100%;
+    width: fit-content;
     margin-bottom: 20px;
     justify-content: center;
 }
@@ -143,9 +144,9 @@ h1 {
 
 @media (max-width: 350px) {
     :root {
-        --tile-size: min(50px, 18vw);
-        --key-width: min(32px, 8vw);
-        --key-height: min(45px, 9vw);
+        --tile-size: clamp(40px, 7vw, 50px);
+        --key-width: clamp(25px, 6vw, 32px);
+        --key-height: clamp(35px, 8vw, 45px);
     }
 
     .key {
