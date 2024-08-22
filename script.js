@@ -61,8 +61,6 @@ function startNewGame() {
     gameOver = false;
     canGuess = true;
     
-    console.log('New game started. Target acronym:', targetAcronym);
-    
     createGameBoard(6, targetAcronym.length);
     createKeyboard();
 }
