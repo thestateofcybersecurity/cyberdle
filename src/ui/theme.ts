@@ -5,3 +5,11 @@ export function applyTheme(theme: 'dark' | 'light'): void {
     document.documentElement.removeAttribute('data-theme');
   }
 }
+
+export function applyColorblind(on: boolean): void {
+  if (on) {
+    document.documentElement.setAttribute('data-colorblind', '');
+  } else {
+    document.documentElement.removeAttribute('data-colorblind');
+  }
+}

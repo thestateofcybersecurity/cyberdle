@@ -3327,7 +3327,7 @@
     "sources": [
       {
         "name": "Cornell Law School LII",
-        "url": "https://www.law.cornell.edu/wex/non-disclosure_agreement"
+        "url": "https://www.law.cornell.edu/wex/nondisclosure_agreement"
       }
     ]
   },
@@ -3981,7 +3981,7 @@
     "sources": [
       {
         "name": "PTES",
-        "url": "https://www.pentest-standard.org/"
+        "url": "https://pentest-standard.readthedocs.io/"
       }
     ]
   },

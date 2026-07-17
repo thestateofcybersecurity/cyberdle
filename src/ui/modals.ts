@@ -44,6 +44,8 @@ export interface EndModalOptions {
   state: GameState;
   entry: AcronymEntry;
   daily: boolean;
+  related?: Array<{ key: string; display: string }>;
+  onRelated?: (key: string) => void;
   onShare?: () => void;
   onNewGame?: () => void;
 }
@@ -77,6 +79,17 @@ export function buildEndModal(body: HTMLElement, opts: EndModalOptions): void {
     list.appendChild(item);
   }
   body.appendChild(list);
+
+  if (opts.related?.length && opts.onRelated) {
+    body.appendChild(el('h3', undefined, `More in ${entry.category}`));
+    const relatedRow = el('div', 'related-row');
+    for (const rel of opts.related) {
+      const chip = el('button', 'related-chip', rel.display);
+      chip.addEventListener('click', () => opts.onRelated!(rel.key));
+      relatedRow.appendChild(chip);
+    }
+    body.appendChild(relatedRow);
+  }
 
   const actions = el('div', 'modal-actions');
   if (daily && opts.onShare) {
@@ -178,14 +191,17 @@ export function buildHelpModal(body: HTMLElement): void {
 export interface SettingsOptions {
   hardMode: boolean;
   lightTheme: boolean;
+  colorblind: boolean;
   onHardMode: (on: boolean) => void;
   onLightTheme: (on: boolean) => void;
+  onColorblind: (on: boolean) => void;
 }
 
 export function buildSettingsModal(body: HTMLElement, opts: SettingsOptions): void {
   const rows: Array<[string, string, boolean, (on: boolean) => void]> = [
     ['Hard mode', 'Revealed hints must be used in later guesses. Applies from your next guess.', opts.hardMode, opts.onHardMode],
     ['Light theme', 'Swap the terminal glow for daylight.', opts.lightTheme, opts.onLightTheme],
+    ['High contrast tiles', 'Orange and blue tile colors for colorblind accessibility. Also changes the share grid.', opts.colorblind, opts.onColorblind],
   ];
   for (const [label, desc, checked, onChange] of rows) {
     const row = el('div', 'setting-row');

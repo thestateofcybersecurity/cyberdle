@@ -52,6 +52,17 @@
   box-sizing: border-box;
 }
 
+/* High-contrast palette for colorblind players (matches Wordle's). */
+:root[data-colorblind] {
+  --correct: #e8722c;
+  --present: #4a8fd6;
+}
+
+:root[data-colorblind][data-theme='light'] {
+  --correct: #d1662a;
+  --present: #3a7bc0;
+}
+
 /* Author display rules below would otherwise override the hidden attribute. */
 [hidden] {
   display: none !important;
@@ -441,6 +452,255 @@ body {
 .key.absent {
   background: var(--absent-key);
   color: var(--ink-dim);
+}
+
+/* --------------------------- panels (glossary/study) ------------ */
+
+.stage {
+  flex-direction: column;
+  min-height: 0;
+}
+
+.panel {
+  width: min(680px, 100%);
+  flex: 1;
+  min-height: 0;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 2px;
+}
+
+.panel-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.text-input {
+  flex: 1 1 220px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  background: var(--bg-raised);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 9px 12px;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.panel-select {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  background: var(--bg-raised);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.panel-count {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.glossary-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 12px;
+}
+
+.glossary-entry {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg-raised);
+}
+
+.glossary-entry > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 14px;
+  flex-wrap: wrap;
+}
+
+.glossary-entry > summary::-webkit-details-marker {
+  display: none;
+}
+
+.glossary-entry[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.glossary-key {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  min-width: 5.5em;
+}
+
+.glossary-expansion {
+  flex: 1;
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+
+.glossary-detail {
+  padding: 10px 14px 14px;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.glossary-missed {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--present);
+}
+
+/* study cards */
+
+.study-card {
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--accent);
+  border-radius: 10px;
+  background: var(--bg-raised);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 280px;
+}
+
+.study-prompt-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.study-expansion {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.study-answer {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  text-shadow: var(--glow);
+}
+
+.study-grade {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.study-grade .ghost-btn.missed {
+  color: var(--present);
+  border-color: var(--present);
+  background: transparent;
+}
+
+.study-progress {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-top: auto;
+}
+
+/* archive list */
+
+.archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 46dvh;
+  overflow-y: auto;
+}
+
+.archive-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.archive-row .spacer {
+  flex: 1;
+}
+
+.archive-result {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-dim);
+  font-size: 0.78rem;
+}
+
+.archive-result.won {
+  color: var(--correct);
+}
+
+.archive-play {
+  appearance: none;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.related-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.related-chip {
+  appearance: none;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--bg-key);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.related-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ------------------------------- toast -------------------------- */

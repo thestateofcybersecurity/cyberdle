@@ -3,6 +3,8 @@ name: Test, build, and deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -11,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -27,12 +29,17 @@ jobs:
       - run: npm run validate:data
       - run: npm test
       - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test
       - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
       - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
         with:
           path: dist
 
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:
