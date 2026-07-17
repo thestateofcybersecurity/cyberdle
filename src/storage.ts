@@ -5,6 +5,7 @@ import { emptyStats } from './game/stats';
 export interface Settings {
   hardMode: boolean;
   theme: 'dark' | 'light';
+  colorblind: boolean;
 }
 
 export interface DailyProgress {
@@ -13,10 +14,23 @@ export interface DailyProgress {
   status: GameStatus;
 }
 
+/** Per-acronym learning record: how often the player got it right or wrong. */
+export interface LearningRecord {
+  right: number;
+  wrong: number;
+}
+
+export type LearningStore = Record<string, LearningRecord>;
+
+/** Finished daily/archive puzzles: puzzle number -> tries (null = lost). */
+export type ResultsLog = Record<string, number | null>;
+
 const KEYS = {
   settings: 'cyberdle:settings',
   stats: 'cyberdle:stats',
   daily: 'cyberdle:daily',
+  learning: 'cyberdle:learning',
+  results: 'cyberdle:results',
 } as const;
 
 function read<T>(key: string): T | null {
@@ -37,7 +51,12 @@ function write(key: string, value: unknown): void {
 }
 
 export function loadSettings(): Settings {
-  return { hardMode: false, theme: 'dark', ...read<Partial<Settings>>(KEYS.settings) };
+  return {
+    hardMode: false,
+    theme: 'dark',
+    colorblind: false,
+    ...read<Partial<Settings>>(KEYS.settings),
+  };
 }
 
 export function saveSettings(settings: Settings): void {
@@ -60,4 +79,20 @@ export function loadDailyProgress(puzzleNum: number): DailyProgress | null {
 
 export function saveDailyProgress(progress: DailyProgress): void {
   write(KEYS.daily, progress);
+}
+
+export function loadLearning(): LearningStore {
+  return read<LearningStore>(KEYS.learning) ?? {};
+}
+
+export function saveLearning(store: LearningStore): void {
+  write(KEYS.learning, store);
+}
+
+export function loadResults(): ResultsLog {
+  return read<ResultsLog>(KEYS.results) ?? {};
+}
+
+export function saveResults(log: ResultsLog): void {
+  write(KEYS.results, log);
 }

@@ -5,9 +5,14 @@ A Wordle-style daily game for cybersecurity acronyms. Guess the acronym in six t
 ## Features
 
 - **Daily mode**: one shared puzzle per day with streaks, statistics, and a shareable emoji grid
-- **Practice mode**: unlimited puzzles with difficulty and category filters
+- **Practice mode**: unlimited puzzles with difficulty and category filters, including a "my misses" review filter
+- **Archive**: replay past daily puzzles (they count toward learning, not streaks)
+- **Study mode**: flashcard drills (expansion shown, recall the acronym, self-grade); missed acronyms come up more often
+- **Glossary**: searchable, filterable reference of every acronym with explanations and sources
 - **429 curated acronyms** across ten categories (certifications, protocols, attacks, crypto, governance, cloud, operations, identity, appsec, network), each with a written explanation and sources
 - **Digits in play**: a number row on the keyboard makes classics like MD5, WPA3, 3DES, and SHA256 guessable
+- **Accessibility**: high-contrast colorblind palette (tiles, keys, and share grid), reduced-motion support
+- **PWA**: installable, works offline after the first visit
 - **Hard mode**, dark/light themes, mobile-friendly layout, local persistence
 
 ## Development
@@ -15,8 +20,10 @@ A Wordle-style daily game for cybersecurity acronyms. Guess the acronym in six t
 ```bash
 npm install
 npm run dev        # local dev server
-npm test           # unit tests (engine, stats, daily selection, dataset)
+npm test           # unit tests (engine, stats, daily selection, learning, dataset)
+npm run test:e2e   # Playwright end-to-end tests (run npm run build first)
 npm run validate:data  # dataset schema/content validation
+npm run check:links    # verify all source URLs still resolve
 npm run build      # production build to dist/
 ```
 

@@ -16,4 +16,11 @@ describe('shareText', () => {
     expect(state.status).toBe('lost');
     expect(shareText(state, 7, true)).toBe('Cyberdle #7 X/1*\n\n⬛⬛⬛');
   });
+
+  it('uses the orange/blue palette in colorblind mode', () => {
+    let state = createGame('VEX');
+    ({ state } = applyGuess(state, 'EXV'));
+    ({ state } = applyGuess(state, 'VEX'));
+    expect(shareText(state, 42, false, true)).toBe('Cyberdle #42 2/6\n\n🟦🟦🟦\n🟧🟧🟧');
+  });
 });
