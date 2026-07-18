@@ -38,6 +38,10 @@ test('daily puzzle can be won and shows the explanation', async ({ page }) => {
   await expect(page.locator('.result-expansion')).toHaveText(data[todaysAnswer].expansion);
   await expect(page.locator('.explanation')).not.toBeEmpty();
   await expect(page.locator('.sources-list a').first()).toBeVisible();
+  await expect(page.locator('.soup-link')).toHaveAttribute(
+    'href',
+    `https://www.cybersecurityalphabetsoup.com/definitions/${todaysAnswer.toLowerCase()}.html`,
+  );
 });
 
 test('glossary searches and expands entries', async ({ page }) => {
