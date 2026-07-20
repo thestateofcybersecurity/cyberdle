@@ -38,6 +38,19 @@
       }
     ]
   },
+  "AAA": {
+    "expansion": "Authentication, Authorization, and Accounting",
+    "display": "AAA",
+    "category": "operations",
+    "difficulty": "easy",
+    "explanation": "AAA is the framework for controlling access to systems and networks in three steps. Authentication verifies who you are, authorization determines what you are allowed to do, and accounting records what you actually did. Protocols like RADIUS and TACACS+ implement AAA for network devices, VPNs, and enterprise access control.",
+    "sources": [
+      {
+        "name": "NIST CSRC Glossary",
+        "url": "https://csrc.nist.gov/glossary/term/authentication_authorization_and_accounting"
+      }
+    ]
+  },
   "ABAC": {
     "expansion": "Attribute-Based Access Control",
     "display": "ABAC",
@@ -47,7 +60,7 @@
     "sources": [
       {
         "name": "NIST SP 800-162 Guide to ABAC",
-        "url": "https://csrc.nist.gov/glossary/term/attribute_based_access_control"
+        "url": "https://csrc.nist.gov/pubs/sp/800/162/upd2/final"
       }
     ]
   },
@@ -121,7 +134,7 @@
     "display": "AiTM",
     "category": "attacks",
     "difficulty": "medium",
-    "explanation": "Adversary-in-the-Middle is the modern, vendor-neutral term for interception attacks where an attacker sits between a victim and a legitimate service. A common form uses a reverse-proxy phishing site that relays a real login page, capturing passwords and session cookies to bypass multi-factor authentication. It matters because it defeats many traditional MFA methods, driving adoption of phishing-resistant authentication.",
+    "explanation": "Adversary-in-the-Middle is the modern, vendor-neutral term for interception attacks where an attacker sits between a victim and a legitimate service. A common form uses a reverse-proxy phishing site that relays a real login page, capturing passwords and session cookies to bypass multi-factor authentication.",
     "sources": [
       {
         "name": "MITRE ATT&CK T1557",
@@ -138,7 +151,20 @@
     "sources": [
       {
         "name": "NIST CSRC Glossary",
-        "url": "https://csrc.nist.gov/glossary"
+        "url": "https://csrc.nist.gov/glossary/term/annualized_loss_expectancy"
+      }
+    ]
+  },
+  "AMSI": {
+    "expansion": "Antimalware Scan Interface",
+    "display": "AMSI",
+    "category": "network",
+    "difficulty": "hard",
+    "explanation": "AMSI is a Windows interface that lets applications hand content to the installed antivirus for scanning at runtime, most importantly PowerShell and other script engines. It catches obfuscated or fileless scripts at the moment they are deobfuscated in memory, closing a gap that file-based scanning misses. Attackers respond with AMSI bypass techniques that patch the interface in memory, so detecting those bypass attempts has become part of endpoint defense.",
+    "sources": [
+      {
+        "name": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal"
       }
     ]
   },
@@ -198,6 +224,36 @@
       }
     ]
   },
+  "ASLR": {
+    "expansion": "Address Space Layout Randomization",
+    "display": "ASLR",
+    "category": "appsec",
+    "difficulty": "medium",
+    "explanation": "ASLR randomizes where a program's code, stack, and libraries sit in memory each time it runs. Memory corruption exploits usually need to know exact addresses to redirect execution, so randomization turns a reliable exploit into a guessing game. It is a standard mitigation in every major operating system, though information leaks that reveal addresses can defeat it, so it works best layered with defenses like DEP and stack canaries.",
+    "sources": [
+      {
+        "name": "NIST Glossary: Address Space Layout Randomization",
+        "url": "https://csrc.nist.gov/glossary/term/address_space_layout_randomization"
+      }
+    ]
+  },
+  "ASM": {
+    "expansion": "Attack Surface Management",
+    "display": "ASM",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "ASM is the continuous process of discovering, inventorying, and reducing all the points where an attacker could try to get into an organization, including servers, cloud assets, applications, and exposed services. The core idea is that you cannot defend what you do not know you have, and forgotten or unmanaged assets are a favorite entry point for attackers. Mature programs continuously monitor the attack surface as it changes rather than relying on occasional audits.",
+    "sources": [
+      {
+        "name": "NIST CSRC Glossary",
+        "url": "https://csrc.nist.gov/glossary/term/attack_surface"
+      },
+      {
+        "name": "CISA BOD 23-01",
+        "url": "https://www.cisa.gov/news-events/directives/bod-23-01-improving-asset-visibility-and-vulnerability-detection-federal-networks"
+      }
+    ]
+  },
   "ASVS": {
     "expansion": "Application Security Verification Standard",
     "display": "ASVS",
@@ -220,7 +276,20 @@
     "sources": [
       {
         "name": "NIST CSRC Glossary",
-        "url": "https://csrc.nist.gov/glossary"
+        "url": "https://csrc.nist.gov/glossary/term/authorization_to_operate"
+      }
+    ]
+  },
+  "ATTCK": {
+    "expansion": "Adversarial Tactics, Techniques, and Common Knowledge",
+    "display": "ATT&CK",
+    "category": "operations",
+    "difficulty": "easy",
+    "explanation": "MITRE ATT&CK is a free, globally used knowledge base of real-world adversary behavior, organized into tactics (the attacker's goals) and techniques (how they achieve them). It turned scattered threat reporting into a common framework the whole industry references. Defenders use it to map detection coverage, emulate threat actors, and describe incidents in a shared language.",
+    "sources": [
+      {
+        "name": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/"
       }
     ]
   },
@@ -232,8 +301,42 @@
     "explanation": "BaaS gives app developers ready-made backend building blocks like authentication, databases, file storage, and push notifications through APIs. It lets small teams ship mobile and web apps without writing server code. The tradeoff is that access rules live in platform configuration, and weak rules on BaaS platforms have exposed many production databases to the internet.",
     "sources": [
       {
-        "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "name": "Cloudflare Learning Center",
+        "url": "https://www.cloudflare.com/learning/serverless/glossary/backend-as-a-service-baas/"
+      }
+    ]
+  },
+  "BAS": {
+    "expansion": "Breach and Attack Simulation",
+    "display": "BAS",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "BAS tools continuously and safely run simulated attack techniques against an organization's own environment to test whether security controls actually detect and block them. Instead of waiting for an annual penetration test, teams get ongoing evidence of which defenses work and which fail. Simulations are often mapped to MITRE ATT&CK techniques so results tie back to real adversary behavior.",
+    "sources": [
+      {
+        "name": "Gartner Glossary",
+        "url": "https://www.gartner.com/en/information-technology/glossary/breach-and-attack-simulation-bas-tools"
+      },
+      {
+        "name": "MITRE ATT&CK",
+        "url": "https://attack.mitre.org/"
+      }
+    ]
+  },
+  "BCDR": {
+    "expansion": "Business Continuity and Disaster Recovery",
+    "display": "BCDR",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "BCDR combines two related disciplines: business continuity keeps critical operations running during a disruption, while disaster recovery restores IT systems and data afterward. Together they cover everything from ransomware and data center failures to natural disasters, guided by targets like RTO and RPO. The emphasis is on resilience, not just prevention, since recovery capability often determines whether an organization survives a major incident.",
+    "sources": [
+      {
+        "name": "NIST SP 800-34",
+        "url": "https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final"
+      },
+      {
+        "name": "NIST CSRC Glossary",
+        "url": "https://csrc.nist.gov/glossary/term/contingency_plan"
       }
     ]
   },
@@ -258,8 +361,8 @@
     "explanation": "Business Email Compromise is a scam in which attackers impersonate or hijack trusted email accounts, often executives or vendors, to trick employees into wiring money or sharing sensitive data. It relies on social engineering rather than malware, which helps it slip past technical defenses. BEC consistently ranks among the costliest cybercrimes reported each year.",
     "sources": [
       {
-        "name": "CISA",
-        "url": "https://www.cisa.gov"
+        "name": "FBI",
+        "url": "https://www.fbi.gov/how-we-can-help-you/scams-and-safety/common-frauds-and-scams/business-email-compromise"
       }
     ]
   },
@@ -298,7 +401,20 @@
     "sources": [
       {
         "name": "NIST CSRC Glossary",
-        "url": "https://csrc.nist.gov/glossary"
+        "url": "https://csrc.nist.gov/glossary/term/basic_input_output_system"
+      }
+    ]
+  },
+  "BLE": {
+    "expansion": "Bluetooth Low Energy",
+    "display": "BLE",
+    "category": "network",
+    "difficulty": "medium",
+    "explanation": "BLE is the power-efficient version of Bluetooth used by fitness trackers, medical devices, smart locks, and countless IoT gadgets. Its pairing modes vary widely in strength, and weak options like Just Works pairing provide no protection against man-in-the-middle attacks. BLE devices can also be tracked through their advertising beacons, so both eavesdropping and privacy leakage are real concerns for connected products.",
+    "sources": [
+      {
+        "name": "NIST SP 800-121 Rev. 2",
+        "url": "https://csrc.nist.gov/pubs/sp/800/121/r2/upd1/final"
       }
     ]
   },
@@ -337,7 +453,7 @@
     "sources": [
       {
         "name": "NIST CSRC Glossary",
-        "url": "https://csrc.nist.gov/glossary"
+        "url": "https://csrc.nist.gov/glossary/term/bring_your_own_device"
       }
     ]
   },
@@ -349,8 +465,8 @@
     "explanation": "BYOK lets customers generate their own encryption keys and import them into a cloud provider's key management service. It gives organizations more control and auditability over the keys protecting their cloud data. The provider still uses the key on your behalf, so it is a middle ground between fully provider-managed keys and keeping keys entirely outside the cloud.",
     "sources": [
       {
-        "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "name": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/azure/key-vault/keys/byok-specification"
       }
     ]
   },
@@ -362,8 +478,8 @@
     "explanation": "Bring Your Own Vulnerable Driver is a technique where attackers install a legitimately signed but vulnerable device driver, then exploit it to gain kernel-level access. Because the driver is validly signed, the operating system loads it without complaint. Attackers use this to disable security software from below, which is why vendors now maintain blocklists of known-bad drivers.",
     "sources": [
       {
-        "name": "MITRE ATT&CK",
-        "url": "https://attack.mitre.org"
+        "name": "MITRE ATT&CK T1068",
+        "url": "https://attack.mitre.org/techniques/T1068/"
       }
     ]
   },
@@ -388,8 +504,25 @@
     "explanation": "CaaS is a cloud service model where the provider manages the infrastructure needed to run and orchestrate containers, typically built around Kubernetes. Teams ship container images and the platform handles scheduling, scaling, and networking. It sits between IaaS and PaaS, giving more control than a full platform but less operational burden than raw virtual machines.",
     "sources": [
       {
-        "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "name": "Red Hat",
+        "url": "https://www.redhat.com/en/topics/cloud-computing/what-is-caas"
+      }
+    ]
+  },
+  "CAC": {
+    "expansion": "Common Access Card",
+    "display": "CAC",
+    "category": "identity",
+    "difficulty": "medium",
+    "explanation": "The CAC is the US Department of Defense's smart card identity credential, the military's implementation of the PIV standard. It holds certificates and private keys used for physical access, network login, document signing, and email encryption. Because authentication relies on a hardware-protected key plus a PIN, it resists password theft and phishing far better than username and password logins.",
+    "sources": [
+      {
+        "name": "NIST Glossary: Common Access Card",
+        "url": "https://csrc.nist.gov/glossary/term/common_access_card"
+      },
+      {
+        "name": "DoD Cyber Exchange PKI/PKE",
+        "url": "https://public.cyber.mil/pki-pke/"
       }
     ]
   },
@@ -402,7 +535,20 @@
     "sources": [
       {
         "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "url": "https://cloudsecurityalliance.org/blog/2021/09/01/what-is-caiq"
+      }
+    ]
+  },
+  "CAN": {
+    "expansion": "Controller Area Network",
+    "display": "CAN",
+    "category": "network",
+    "difficulty": "hard",
+    "explanation": "CAN is the bus protocol that lets electronic control units in vehicles and industrial machines talk to each other. It was designed for reliability, not security: there is no authentication, so any node on the bus can send messages that other components will trust, including commands affecting brakes or steering. Famous car-hacking research demonstrated remote injection of CAN messages, driving the push for gateway filtering and intrusion detection in modern vehicles.",
+    "sources": [
+      {
+        "name": "ISO 11898-1",
+        "url": "https://www.iso.org/standard/63648.html"
       }
     ]
   },
@@ -419,6 +565,32 @@
       }
     ]
   },
+  "CAPTCHA": {
+    "expansion": "Completely Automated Public Turing test to tell Computers and Humans Apart",
+    "display": "CAPTCHA",
+    "category": "appsec",
+    "difficulty": "easy",
+    "explanation": "A CAPTCHA is a challenge designed to be easy for humans but hard for bots, used to protect signups, logins, and forms from automated abuse. It helps blunt credential stuffing, spam, and scraping, though modern AI and cheap human solving farms have eroded its effectiveness. Many sites now use invisible behavioral analysis instead of puzzles, keeping visible challenges as a fallback.",
+    "sources": [
+      {
+        "name": "IBM: What Is a CAPTCHA",
+        "url": "https://www.ibm.com/think/topics/captcha"
+      }
+    ]
+  },
+  "CARTP": {
+    "expansion": "Certified Azure Red Team Professional",
+    "display": "CARTP",
+    "category": "certifications",
+    "difficulty": "hard",
+    "explanation": "CARTP is Altered Security's practical certification for attacking Microsoft Azure and Entra ID environments. The hands-on exam has candidates chain identity attacks, privilege escalation, and lateral movement across a live Azure tenant lab. It addresses the growing demand for cloud-focused red team skills as enterprises move identity infrastructure to Azure.",
+    "sources": [
+      {
+        "name": "Altered Security Attacking and Defending Azure AD (CARTP)",
+        "url": "https://www.alteredsecurity.com/azureadlab"
+      }
+    ]
+  },
   "CASB": {
     "expansion": "Cloud Access Security Broker",
     "display": "CASB",
@@ -427,8 +599,8 @@
     "explanation": "A CASB sits between users and cloud services to enforce security policies on cloud usage. It gives visibility into which SaaS apps employees use, blocks risky behavior, and applies controls like data loss prevention and encryption. It became essential as companies discovered shadow IT, the cloud apps employees adopt without approval.",
     "sources": [
       {
-        "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "name": "Microsoft Security",
+        "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-a-cloud-access-security-broker-casb"
       }
     ]
   },
@@ -441,7 +613,7 @@
     "sources": [
       {
         "name": "CompTIA",
-        "url": "https://www.comptia.org/"
+        "url": "https://www.comptia.org/certifications/comptia-advanced-security-practitioner"
       }
     ]
   },
@@ -476,11 +648,11 @@
     "display": "CCISO",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "An EC-Council certification aimed at executive-level security leadership. It covers governance, security program management, vendor management, and strategic planning. It targets current and aspiring CISOs who need to demonstrate executive management capability rather than hands-on technical skill.",
+    "explanation": "EC-Council's executive credential for security leadership, and one of the few that gates on seniority: candidates must show five years of experience in each of its five domains, or apply for a waiver. Rather than testing hands-on technical skill, it validates governance, program management, and strategic decision-making. It is built for sitting and aspiring CISOs.",
     "sources": [
       {
         "name": "EC-Council",
-        "url": "https://www.eccouncil.org/"
+        "url": "https://www.eccouncil.org/train-certify/certified-chief-information-security-officer-cciso/"
       }
     ]
   },
@@ -502,11 +674,11 @@
     "display": "CCNP",
     "category": "certifications",
     "difficulty": "easy",
-    "explanation": "Cisco's professional-level certification track for network security. It validates skills in securing networks with Cisco technologies, covering firewalls, VPNs, identity services, and secure network design. The CCNP name is familiar to nearly anyone in IT networking, and the Security track is the standard path for engineers who secure Cisco-based infrastructure.",
+    "explanation": "CCNP is Cisco's professional-level certification, one tier below the expert CCIE. It is not a single exam but a family of tracks (Enterprise, Security, Data Center, Service Provider, Collaboration); the Security track validates configuring and troubleshooting Cisco firewalls, VPNs, and secure network access. It is a widely recognized mid-career credential for network and network-security engineers.",
     "sources": [
       {
         "name": "Cisco",
-        "url": "https://www.cisco.com/"
+        "url": "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/security/ccnp-security/index.html"
       }
     ]
   },
@@ -532,7 +704,7 @@
     "sources": [
       {
         "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "url": "https://cloudsecurityalliance.org/education/ccsk"
       }
     ]
   },
@@ -558,7 +730,20 @@
     "sources": [
       {
         "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "url": "https://cloudsecurityalliance.org/education/cczt"
+      }
+    ]
+  },
+  "CDM": {
+    "expansion": "Continuous Diagnostics and Mitigation",
+    "display": "CDM",
+    "category": "operations",
+    "difficulty": "hard",
+    "explanation": "CDM is a CISA program that gives US federal civilian agencies tools and dashboards to continuously monitor what is on their networks, who is on them, and what is happening on them. It shifted federal cybersecurity from snapshot compliance audits toward continuous, data-driven risk management. Agencies use it to maintain real-time visibility into assets, users, and vulnerabilities instead of relying on periodic manual reports.",
+    "sources": [
+      {
+        "name": "CISA CDM Program",
+        "url": "https://www.cisa.gov/resources-tools/programs/continuous-diagnostics-and-mitigation-cdm-program"
       }
     ]
   },
@@ -570,8 +755,8 @@
     "explanation": "A CDN is a globally distributed network of servers that caches website content close to users, making sites faster and more resilient. Beyond performance, CDNs absorb distributed denial of service attacks and often bundle web application firewalls and bot protection. Most major websites sit behind a CDN, making it a critical layer of internet infrastructure.",
     "sources": [
       {
-        "name": "CISA",
-        "url": "https://www.cisa.gov/"
+        "name": "AWS",
+        "url": "https://aws.amazon.com/what-is/cdn/"
       }
     ]
   },
@@ -580,7 +765,7 @@
     "display": "CDPSE",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "An ISACA certification focused on implementing privacy by design in technology platforms. It covers privacy governance, privacy architecture, and the data lifecycle. It is aimed at engineers and technologists who build systems that must comply with privacy regulations like GDPR.",
+    "explanation": "CDPSE is ISACA's certification for the engineers who actually build privacy into systems, not the lawyers who interpret the rules. It covers privacy-by-design, privacy architecture, and managing data through its lifecycle so platforms can satisfy laws like GDPR by construction. It fills the gap between legal privacy roles and hands-on engineering, and overlaps heavily with IAPP's more product-focused CIPT.",
     "sources": [
       {
         "name": "ISACA",
@@ -597,7 +782,7 @@
     "sources": [
       {
         "name": "EC-Council",
-        "url": "https://www.eccouncil.org/"
+        "url": "https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh/"
       }
     ]
   },
@@ -614,7 +799,7 @@
       },
       {
         "name": "NIST CSRC Glossary",
-        "url": "https://csrc.nist.gov/glossary"
+        "url": "https://csrc.nist.gov/glossary/term/computer_emergency_response_team"
       }
     ]
   },
@@ -623,7 +808,7 @@
     "display": "CGEIT",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "An ISACA certification for professionals who manage and advise on enterprise IT governance. It covers governance frameworks, strategic alignment, benefits realization, and risk optimization. It targets senior leaders such as CIOs, directors, and consultants who ensure IT supports business strategy.",
+    "explanation": "ISACA's senior credential for the people who run or advise on enterprise IT governance, not the engineers who implement it. It sits above most technical certs in seniority, validating that IT strategy stays aligned with business goals and delivers measurable value. Typical holders are CIOs, directors, and governance consultants.",
     "sources": [
       {
         "name": "ISACA",
@@ -662,11 +847,28 @@
     "display": "CHFI",
     "category": "certifications",
     "difficulty": "medium",
-    "explanation": "An EC-Council certification in digital forensics. It covers evidence acquisition, forensic analysis of systems and networks, and preparing findings for legal proceedings. It is aimed at forensic investigators, law enforcement personnel, and incident responders who need to investigate cybercrime.",
+    "explanation": "CHFI is EC-Council's digital forensics certification, covering evidence acquisition, disk and network analysis, and documenting findings so they hold up in court. It targets forensic investigators, law enforcement, and incident responders who must reconstruct cybercrime. Its emphasis on legally defensible process, chain of custody, and courtroom-ready reporting is what separates forensic work from routine incident handling.",
     "sources": [
       {
         "name": "EC-Council",
-        "url": "https://www.eccouncil.org/"
+        "url": "https://www.eccouncil.org/train-certify/computer-hacking-forensic-investigator-chfi/"
+      }
+    ]
+  },
+  "CIA": {
+    "expansion": "Confidentiality, Integrity, and Availability",
+    "display": "CIA",
+    "category": "operations",
+    "difficulty": "easy",
+    "explanation": "In security, CIA refers to the triad of confidentiality, integrity, and availability, not the intelligence agency. Confidentiality means keeping data secret from unauthorized parties, integrity means keeping data accurate and untampered, and availability means keeping systems and data accessible when needed. Nearly every security control, from encryption to backups, exists to protect one or more legs of this triad.",
+    "sources": [
+      {
+        "name": "NIST CSRC Glossary",
+        "url": "https://csrc.nist.gov/glossary/term/confidentiality"
+      },
+      {
+        "name": "NIST FIPS 199",
+        "url": "https://csrc.nist.gov/pubs/fips/199/final"
       }
     ]
   },
@@ -679,7 +881,7 @@
     "sources": [
       {
         "name": "OpenID Foundation",
-        "url": "https://openid.net/"
+        "url": "https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html"
       }
     ]
   },
@@ -696,16 +898,46 @@
       }
     ]
   },
+  "CIEM": {
+    "expansion": "Cloud Infrastructure Entitlement Management",
+    "display": "CIEM",
+    "category": "cloud",
+    "difficulty": "hard",
+    "explanation": "CIEM tools discover and analyze the permissions granted to every human and machine identity across cloud accounts. Cloud environments accumulate thousands of unused or excessive entitlements, and a single over-permissioned identity can let an attacker escalate to full account takeover. CIEM highlights that gap between granted and actually used permissions so teams can enforce least privilege at scale.",
+    "sources": [
+      {
+        "name": "Palo Alto Networks: What Is CIEM",
+        "url": "https://www.paloaltonetworks.com/cyberpedia/what-is-ciem"
+      },
+      {
+        "name": "Microsoft Entra Permissions Management",
+        "url": "https://learn.microsoft.com/en-us/entra/permissions-management/overview"
+      }
+    ]
+  },
   "CIPM": {
     "expansion": "Certified Information Privacy Manager",
     "display": "CIPM",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "An IAPP certification focused on operating a privacy program day to day. It covers building privacy team structures, developing frameworks, and measuring program performance. It targets privacy program managers and data protection officers who run privacy operations rather than interpret law.",
+    "explanation": "The operations half of IAPP's privacy pairing: where the law-focused CIPP covers what the rules require, CIPM covers how to run a privacy program that meets them day to day. It validates building privacy team structures, standing up frameworks, and measuring program performance. Data protection officers and privacy program managers commonly hold it alongside a CIPP.",
     "sources": [
       {
         "name": "IAPP",
-        "url": "https://iapp.org/certify/"
+        "url": "https://iapp.org/certify/cipm/"
+      }
+    ]
+  },
+  "CIPPE": {
+    "expansion": "Certified Information Privacy Professional/Europe",
+    "display": "CIPP/E",
+    "category": "certifications",
+    "difficulty": "medium",
+    "explanation": "CIPP/E is the IAPP's flagship credential for European data protection law, covering the GDPR, the ePrivacy framework, and cross-border data transfer rules. It is widely required for privacy counsel, data protection officers, and compliance roles that touch EU personal data. The IAPP also offers regional variants such as CIPP/US for United States privacy law.",
+    "sources": [
+      {
+        "name": "IAPP CIPP/E Certification",
+        "url": "https://iapp.org/certify/cippe/"
       }
     ]
   },
@@ -718,7 +950,7 @@
     "sources": [
       {
         "name": "IAPP",
-        "url": "https://iapp.org/certify/"
+        "url": "https://iapp.org/certify/cippus/"
       }
     ]
   },
@@ -727,11 +959,11 @@
     "display": "CIPT",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "An IAPP certification for technologists who implement privacy in systems and products. It covers privacy by design, data minimization techniques, and privacy-enhancing technologies. It is aimed at engineers, architects, and developers who must translate privacy requirements into working systems.",
+    "explanation": "IAPP's privacy cert for the engineers who build data protection into systems, distinct from the manager-oriented CIPM and the law-oriented CIPP. It validates privacy by design, data minimization, and privacy-enhancing technologies applied in real products. It is aimed at architects, developers, and other technologists, and often pairs with a CIPP for the legal context.",
     "sources": [
       {
         "name": "IAPP",
-        "url": "https://iapp.org/certify/"
+        "url": "https://iapp.org/certify/cipt/"
       }
     ]
   },
@@ -740,11 +972,11 @@
     "display": "CIRT",
     "category": "operations",
     "difficulty": "hard",
-    "explanation": "CIRT is another common name for the internal team that investigates and responds to security incidents, essentially synonymous with CSIRT. Organizations pick one label, but the mission is the same: contain the damage, restore operations, and learn from what happened. Knowing the term matters because job postings, policies, and frameworks use these names interchangeably.",
+    "explanation": "A CIRT is an organization's designated team for investigating and containing security incidents, from malware outbreaks to data breaches. The name is used interchangeably with CSIRT; some groups just swap 'incident' for 'security' with no real difference in mission: detect, contain, eradicate, recover, and learn. Knowing the term matters because policies, job postings, and frameworks pick one label or the other for the same function.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
-        "url": "https://csrc.nist.gov/glossary"
+        "url": "https://csrc.nist.gov/glossary/term/computer_incident_response_team"
       }
     ]
   },
@@ -787,6 +1019,19 @@
       }
     ]
   },
+  "CISO": {
+    "expansion": "Chief Information Security Officer",
+    "display": "CISO",
+    "category": "governance",
+    "difficulty": "easy",
+    "explanation": "The senior executive responsible for an organization's information security strategy, program, and risk posture. The CISO sets policy, manages the security team and budget, reports risk to the board, and answers for the response when incidents occur. Regulations like the SEC's disclosure rules and NYDFS requirements have made the role increasingly accountable to regulators as well.",
+    "sources": [
+      {
+        "name": "NIST Glossary",
+        "url": "https://csrc.nist.gov/glossary/term/chief_information_security_officer"
+      }
+    ]
+  },
   "CISSP": {
     "expansion": "Certified Information Systems Security Professional",
     "display": "CISSP",
@@ -797,6 +1042,19 @@
       {
         "name": "ISC2",
         "url": "https://www.isc2.org/certifications/cissp"
+      }
+    ]
+  },
+  "CJIS": {
+    "expansion": "Criminal Justice Information Services",
+    "display": "CJIS",
+    "category": "governance",
+    "difficulty": "medium",
+    "explanation": "An FBI division whose Security Policy sets the rules for protecting criminal justice information such as fingerprints, criminal histories, and case data. Any agency or vendor that stores or processes this data, including cloud providers serving law enforcement, must comply with its requirements for encryption, access control, and personnel screening. It is one of the key compliance regimes for the public safety sector.",
+    "sources": [
+      {
+        "name": "FBI CJIS Division",
+        "url": "https://le.fbi.gov/cjis-division"
       }
     ]
   },
@@ -834,8 +1092,8 @@
     "explanation": "A CMK is an encryption key that the customer creates and controls within a cloud key management service, as opposed to default keys the provider manages invisibly. The customer sets the key policy, controls rotation, and can revoke access, which effectively renders the encrypted data unreadable. Compliance frameworks often require customer-managed keys for sensitive data.",
     "sources": [
       {
-        "name": "NIST SP 800-57 Part 1",
-        "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+        "name": "AWS KMS Developer Guide",
+        "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html"
       }
     ]
   },
@@ -844,7 +1102,7 @@
     "display": "CMMC",
     "category": "governance",
     "difficulty": "medium",
-    "explanation": "The US Department of Defense program that requires defense contractors to prove they meet cybersecurity requirements before winning contracts. It builds on NIST SP 800-171 controls for protecting controlled unclassified information, with tiered levels and third-party assessments. It matters because it turns cybersecurity from a self-attested checkbox into a verified condition of doing business with the DoD.",
+    "explanation": "The US Department of Defense program that requires defense contractors to prove they meet cybersecurity requirements before winning contracts. It builds on NIST SP 800-171 controls for protecting controlled unclassified information, with tiered levels and third-party assessments.",
     "sources": [
       {
         "name": "DoD CIO",
@@ -873,8 +1131,8 @@
     "explanation": "CNAPP is the industry term for platforms that combine CSPM, CWPP, and related capabilities into one integrated product. The idea is to secure cloud-native applications across their whole lifecycle, from code and infrastructure templates through to running workloads. Consolidating these views helps teams prioritize the risks that actually matter instead of drowning in separate alerts.",
     "sources": [
       {
-        "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "name": "Microsoft Security",
+        "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-cnapp"
       }
     ]
   },
@@ -896,11 +1154,28 @@
     "display": "CND",
     "category": "certifications",
     "difficulty": "medium",
-    "explanation": "An EC-Council certification focused on protecting, detecting, and responding to network threats. It covers network defense fundamentals, perimeter security, monitoring, and incident response. It targets network administrators transitioning into defensive security roles.",
+    "explanation": "CND is EC-Council's certification for defenders who protect and monitor networks rather than attack them, covering perimeter defense, traffic monitoring, and incident response. It targets network administrators moving into blue-team roles. It is a foundational-level credential, useful as a stepping stone before deeper defensive certs like GIAC's GCIA or CompTIA's CySA+.",
     "sources": [
       {
         "name": "EC-Council",
-        "url": "https://www.eccouncil.org/"
+        "url": "https://www.eccouncil.org/train-certify/certified-network-defender-cnd/"
+      }
+    ]
+  },
+  "CNSA": {
+    "expansion": "Commercial National Security Algorithm Suite",
+    "display": "CNSA",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "CNSA is the NSA's approved set of cryptographic algorithms for protecting U.S. National Security Systems, replacing the older Suite B. CNSA 2.0, announced in 2022, mandates a transition to quantum-resistant algorithms, including ML-KEM for key establishment, ML-DSA for signatures, and LMS or XMSS for firmware signing. Vendors selling into national security environments must follow its phased timeline, which targets full post-quantum adoption by the early 2030s.",
+    "sources": [
+      {
+        "name": "NSA Post-Quantum Cybersecurity Resources",
+        "url": "https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/"
+      },
+      {
+        "name": "NIST Post-Quantum Cryptography Project",
+        "url": "https://csrc.nist.gov/projects/post-quantum-cryptography"
       }
     ]
   },
@@ -917,16 +1192,29 @@
       }
     ]
   },
+  "COOP": {
+    "expansion": "Continuity of Operations",
+    "display": "COOP",
+    "category": "governance",
+    "difficulty": "medium",
+    "explanation": "Planning that ensures an organization, especially a government agency, can keep performing its essential functions during and after a disruption such as a disaster or cyberattack. COOP plans cover alternate facilities, succession of leadership, backup communications, and recovery of vital records. In the US federal space it is governed by FEMA continuity directives.",
+    "sources": [
+      {
+        "name": "FEMA Continuity Programs",
+        "url": "https://www.fema.gov/emergency-managers/national-preparedness/continuity"
+      }
+    ]
+  },
   "COPE": {
     "expansion": "Corporate-Owned, Personally Enabled",
     "display": "COPE",
     "category": "network",
     "difficulty": "hard",
-    "explanation": "COPE is a device ownership model where the company buys and controls the device but allows employees to use it for personal purposes. It gives the organization stronger security control than BYOD, since it owns the hardware, while still offering users flexibility. It is a common middle ground in mobile fleet strategy discussions.",
+    "explanation": "COPE is a device model where the company owns and fully manages the hardware but lets employees use it for personal tasks too. Because the organization controls the device, it can enforce encryption, patching, and remote wipe more strictly than under BYOD, without the friction of banning personal use. The tradeoff is higher hardware cost and thornier privacy questions about monitoring personal activity on a corporate device.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
-        "url": "https://csrc.nist.gov/glossary"
+        "url": "https://csrc.nist.gov/glossary/term/corporate_owned_personally_enabled"
       }
     ]
   },
@@ -956,6 +1244,19 @@
       }
     ]
   },
+  "COSE": {
+    "expansion": "CBOR Object Signing and Encryption",
+    "display": "COSE",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "COSE defines how to sign, MAC, and encrypt data encoded in CBOR, a compact binary format suited to constrained devices. It is the binary counterpart to the JSON-based JOSE family and is specified in RFC 9052. COSE is widely deployed in WebAuthn and FIDO2 attestation, IoT security protocols, and digital credentials such as the EU Digital COVID Certificate and ISO mobile driving licenses.",
+    "sources": [
+      {
+        "name": "IETF RFC 9052",
+        "url": "https://www.rfc-editor.org/rfc/rfc9052"
+      }
+    ]
+  },
   "COSO": {
     "expansion": "Committee of Sponsoring Organizations of the Treadway Commission",
     "display": "COSO",
@@ -974,11 +1275,24 @@
     "display": "CPE",
     "category": "operations",
     "difficulty": "hard",
-    "explanation": "CPE is a standardized naming scheme for identifying software, operating systems, and hardware, such as a specific version of Apache on Linux. Vulnerability databases use CPE names to state exactly which products a CVE affects. It matters because matching your asset inventory against CPE names is how scanners figure out which vulnerabilities apply to you.",
+    "explanation": "CPE is a standardized naming scheme for identifying software, operating systems, and hardware, such as a specific version of Apache on Linux. Vulnerability databases use CPE names to state exactly which products a CVE affects, and scanners match your asset inventory against those names to figure out which vulnerabilities apply to you.",
     "sources": [
       {
         "name": "NIST NVD CPE",
         "url": "https://nvd.nist.gov/products/cpe"
+      }
+    ]
+  },
+  "CPENT": {
+    "expansion": "Certified Penetration Testing Professional",
+    "display": "CPENT",
+    "category": "certifications",
+    "difficulty": "hard",
+    "explanation": "CPENT is EC-Council's advanced hands-on penetration testing certification, positioned above the CEH in its certification track. The live-range exam covers pivoting through filtered networks, attacking IoT and OT systems, binary exploitation, and report writing. High scorers can also earn the Licensed Penetration Tester (LPT) Master designation from the same exam.",
+    "sources": [
+      {
+        "name": "EC-Council CPENT",
+        "url": "https://www.eccouncil.org/train-certify/certified-penetration-testing-professional-cpent/"
       }
     ]
   },
@@ -1003,8 +1317,21 @@
     "explanation": "A hands-on penetration testing certification from Hack The Box. The exam simulates a full black-box penetration test over several days and requires a commercial-grade report. It has become a respected practical credential among offensive security practitioners, often compared favorably to the OSCP for depth of coverage.",
     "sources": [
       {
-        "name": "Hack The Box",
-        "url": "https://www.hackthebox.com/"
+        "name": "Hack The Box Academy",
+        "url": "https://academy.hackthebox.com/preview/certifications/htb-certified-penetration-testing-specialist"
+      }
+    ]
+  },
+  "CRA": {
+    "expansion": "Cyber Resilience Act",
+    "display": "CRA",
+    "category": "governance",
+    "difficulty": "hard",
+    "explanation": "An EU regulation that sets mandatory cybersecurity requirements for products with digital elements, from smart devices to software, sold in the European market. Manufacturers must build in security by design, handle vulnerabilities throughout the product lifecycle, and report actively exploited flaws. It shifts responsibility for product security onto vendors rather than end users.",
+    "sources": [
+      {
+        "name": "European Commission",
+        "url": "https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act"
       }
     ]
   },
@@ -1026,7 +1353,7 @@
     "display": "CRISC",
     "category": "certifications",
     "difficulty": "medium",
-    "explanation": "An ISACA certification focused on IT risk management. It covers identifying, assessing, and responding to risk, plus designing and monitoring controls. It is popular with risk analysts, control professionals, and anyone bridging the gap between IT risk and business objectives.",
+    "explanation": "ISACA's IT risk credential, focused on identifying, assessing, and responding to risk and on designing the controls that keep it in check. It is frequently paired with ISACA's CISM, giving risk-and-security professionals both the risk and management sides. It suits risk analysts and control owners who connect IT risk to business objectives.",
     "sources": [
       {
         "name": "ISACA",
@@ -1057,6 +1384,32 @@
       {
         "name": "OWASP",
         "url": "https://owasp.org/www-community/vulnerabilities/CRLF_Injection"
+      }
+    ]
+  },
+  "CRTO": {
+    "expansion": "Certified Red Team Operator",
+    "display": "CRTO",
+    "category": "certifications",
+    "difficulty": "hard",
+    "explanation": "CRTO is Zero-Point Security's practical red teaming certification, earned by completing the Red Team Ops course and a hands-on exam in a simulated enterprise network. Candidates run a full adversary simulation using command and control tooling while evading defensive controls. It is a popular, affordable entry point into professional red team operations.",
+    "sources": [
+      {
+        "name": "Zero-Point Security Red Team Ops",
+        "url": "https://training.zeropointsecurity.co.uk/courses/red-team-ops"
+      }
+    ]
+  },
+  "CRTP": {
+    "expansion": "Certified Red Team Professional",
+    "display": "CRTP",
+    "category": "certifications",
+    "difficulty": "hard",
+    "explanation": "CRTP is Altered Security's hands-on certification focused on attacking and defending Active Directory environments. The 24-hour practical exam requires compromising a multi-domain lab using misconfiguration abuse and lateral movement techniques rather than software exploits. It is a common stepping stone for penetration testers moving into enterprise red teaming.",
+    "sources": [
+      {
+        "name": "Altered Security Attacking and Defending Active Directory (CRTP)",
+        "url": "https://www.alteredsecurity.com/adlab"
       }
     ]
   },
@@ -1104,11 +1457,11 @@
     "display": "CSIRT",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "A CSIRT is the formally designated team responsible for handling security incidents within an organization or community. When a breach happens, the CSIRT coordinates containment, eradication, recovery, and communication. It matters because incident response done ad hoc leads to chaos; a trained team with defined roles responds faster and makes fewer mistakes.",
+    "explanation": "A CSIRT is the formally designated team responsible for handling security incidents within an organization or community. When a breach happens, the CSIRT coordinates containment, eradication, recovery, and communication. A trained team with defined roles responds faster and makes fewer mistakes than incident response improvised ad hoc.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
-        "url": "https://csrc.nist.gov/glossary"
+        "url": "https://csrc.nist.gov/glossary/term/computer_security_incident_response_team"
       },
       {
         "name": "FIRST",
@@ -1137,8 +1490,8 @@
     "explanation": "CSPM tools continuously scan cloud accounts for misconfigurations like public storage buckets, overly permissive roles, and disabled logging. Misconfiguration is the leading cause of cloud breaches, so posture management acts as an automated safety net. These tools compare your environment against best practices and compliance frameworks and flag drift.",
     "sources": [
       {
-        "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "name": "Microsoft Security",
+        "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-cspm"
       }
     ]
   },
@@ -1186,11 +1539,54 @@
     "display": "CSSLP",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "An ISC2 certification for professionals who build security into every phase of the software development lifecycle. It covers secure design, coding, testing, and deployment practices. It is aimed at developers, architects, and application security engineers who want to prove they can ship secure software, not just find flaws afterward.",
+    "explanation": "ISC2's credential for building security into every phase of the software development lifecycle, from design through deployment. Where the SSCP targets operations staff and the CISSP targets managers, CSSLP is aimed squarely at developers, architects, and application security engineers. It proves you can ship secure software rather than just find flaws after the fact.",
     "sources": [
       {
         "name": "ISC2",
         "url": "https://www.isc2.org/certifications/csslp"
+      }
+    ]
+  },
+  "CTAP": {
+    "expansion": "Client to Authenticator Protocol",
+    "display": "CTAP",
+    "category": "identity",
+    "difficulty": "hard",
+    "explanation": "CTAP is the FIDO Alliance protocol that lets a browser or operating system talk to an external authenticator such as a security key or a phone over USB, NFC, or Bluetooth. Together with WebAuthn it forms the FIDO2 standard behind passkeys and hardware key login.",
+    "sources": [
+      {
+        "name": "FIDO Alliance CTAP 2.1 Specification",
+        "url": "https://fidoalliance.org/specs/fido-v2.1-ps-20210615/fido-client-to-authenticator-protocol-v2.1-ps-20210615.html"
+      }
+    ]
+  },
+  "CTEM": {
+    "expansion": "Continuous Threat Exposure Management",
+    "display": "CTEM",
+    "category": "operations",
+    "difficulty": "hard",
+    "explanation": "CTEM is a program approach, coined by Gartner, for continuously discovering, prioritizing, validating, and fixing an organization's security exposures rather than running periodic one-off assessments. It cycles through scoping, discovery, prioritization, validation, and mobilization to keep exposure work aligned with real business risk. The continuous model exists because attack surfaces change daily, and point-in-time vulnerability scans quickly go stale.",
+    "sources": [
+      {
+        "name": "Gartner",
+        "url": "https://www.gartner.com/en/articles/how-to-manage-cybersecurity-threats-not-episodes"
+      }
+    ]
+  },
+  "CTF": {
+    "expansion": "Capture the Flag",
+    "display": "CTF",
+    "category": "operations",
+    "difficulty": "easy",
+    "explanation": "A CTF is a cybersecurity competition where participants solve hands-on challenges in areas like web exploitation, cryptography, reverse engineering, and forensics to find hidden text strings called flags. Formats range from jeopardy-style puzzle boards to attack-defense matches where teams hack each other while defending their own services. CTFs matter because they are one of the most effective and popular ways to build practical security skills.",
+    "sources": [
+      {
+        "name": "picoCTF (Carnegie Mellon University)",
+        "url": "https://picoctf.org/"
+      },
+      {
+        "name": "CTF101",
+        "url": "https://ctf101.org/"
       }
     ]
   },
@@ -1199,11 +1595,11 @@
     "display": "CTI",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "CTI is analyzed information about threat actors, their capabilities, and their intentions. SOC and IR teams use CTI to prioritize defenses, enrich alerts with context, and hunt for adversaries known to target their industry. It matters because knowing who is likely to attack you and how lets you defend proactively instead of reactively.",
+    "explanation": "CTI is analyzed information about threat actors, their capabilities, and their intentions. Knowing who is likely to attack you and how lets you defend proactively instead of reactively. SOC and IR teams use CTI to prioritize defenses, enrich alerts with context, and hunt for adversaries known to target their industry.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
-        "url": "https://csrc.nist.gov/glossary"
+        "url": "https://csrc.nist.gov/glossary/term/cyber_threat_intelligence"
       },
       {
         "name": "CISA",
@@ -1216,11 +1612,11 @@
     "display": "CTIA",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "An EC-Council certification for threat intelligence professionals. It covers the intelligence lifecycle from planning and collection through analysis and dissemination. It targets analysts who turn raw threat data into actionable intelligence for their organizations.",
+    "explanation": "CTIA is EC-Council's entry-to-mid-level threat intelligence certification, walking through the intelligence lifecycle from planning and collection to analysis and dissemination. It suits analysts early in a CTI career, or SOC staff who want to formalize how they research adversaries. It sits below hands-on, analysis-heavy credentials like GIAC's GCTI in depth and reputation.",
     "sources": [
       {
         "name": "EC-Council",
-        "url": "https://www.eccouncil.org/"
+        "url": "https://www.eccouncil.org/train-certify/certified-threat-intelligence-analyst-ctia/"
       }
     ]
   },
@@ -1237,12 +1633,46 @@
       }
     ]
   },
+  "CUI": {
+    "expansion": "Controlled Unclassified Information",
+    "display": "CUI",
+    "category": "governance",
+    "difficulty": "medium",
+    "explanation": "US government information that is not classified but still requires safeguarding under laws, regulations, or government policies. Defense contractors handling CUI must meet the security requirements in NIST SP 800-171, which is the basis for CMMC assessments. The National Archives runs the CUI program and maintains the registry of categories.",
+    "sources": [
+      {
+        "name": "National Archives CUI Program",
+        "url": "https://www.archives.gov/cui"
+      },
+      {
+        "name": "NIST SP 800-171",
+        "url": "https://csrc.nist.gov/pubs/sp/800/171/r3/final"
+      }
+    ]
+  },
+  "CVD": {
+    "expansion": "Coordinated Vulnerability Disclosure",
+    "display": "CVD",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "CVD is the process by which security researchers report vulnerabilities privately to vendors, who then develop a fix before details are published to the world. It balances the public's need to know against the risk of handing attackers a working exploit before a patch exists. Most responsible vendors, bug bounty programs, and government agencies follow CVD norms, often with an agreed disclosure timeline.",
+    "sources": [
+      {
+        "name": "CERT Guide to Coordinated Vulnerability Disclosure",
+        "url": "https://certcc.github.io/CERT-Guide-to-CVD/"
+      },
+      {
+        "name": "CISA Coordinated Vulnerability Disclosure Process",
+        "url": "https://www.cisa.gov/coordinated-vulnerability-disclosure-process"
+      }
+    ]
+  },
   "CVE": {
     "expansion": "Common Vulnerabilities and Exposures",
     "display": "CVE",
     "category": "operations",
     "difficulty": "easy",
-    "explanation": "CVE is the global system for assigning a unique identifier, like CVE-2021-44228, to each publicly known vulnerability. Everyone from vendors to scanners to news articles uses CVE IDs so there is no confusion about which flaw is being discussed. It matters because a shared naming scheme is the foundation of all vulnerability management.",
+    "explanation": "CVE is the global system for assigning a unique identifier, like CVE-2021-44228 (Log4Shell), to each publicly known vulnerability. Everyone from vendors to scanners to news articles uses CVE IDs so there is no confusion about which flaw is being discussed. This shared naming scheme is the foundation of all vulnerability management.",
     "sources": [
       {
         "name": "MITRE CVE Program",
@@ -1259,7 +1689,7 @@
     "display": "CVSS",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "CVSS assigns vulnerabilities a severity score from 0 to 10 based on factors like exploitability and impact. Security teams use the score as a starting point for deciding which patches to prioritize. It matters because organizations face thousands of vulnerabilities and need a consistent way to compare their severity, though score alone should not be the only factor.",
+    "explanation": "CVSS assigns vulnerabilities a severity score from 0 to 10 based on factors like exploitability and impact. Organizations face thousands of vulnerabilities and need a consistent way to compare their severity, so teams use the score as a starting point for deciding which patches to prioritize. Score alone should not be the only factor.",
     "sources": [
       {
         "name": "FIRST CVSS",
@@ -1272,7 +1702,7 @@
     "display": "CWE",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "CWE is a catalog of software and hardware weakness types, like buffer overflows or SQL injection, maintained by MITRE. While a CVE names one specific bug, a CWE names the underlying class of mistake that caused it. It matters because tracking weaknesses by category helps teams fix root causes and prevent whole families of future vulnerabilities.",
+    "explanation": "CWE is a catalog of software and hardware weakness types, like buffer overflows or SQL injection, maintained by MITRE. While a CVE names one specific bug, a CWE names the underlying class of mistake that caused it. Tracking weaknesses by category helps teams fix root causes and prevent whole families of future vulnerabilities.",
     "sources": [
       {
         "name": "MITRE CWE",
@@ -1288,8 +1718,8 @@
     "explanation": "A CWPP protects the workloads themselves, meaning the virtual machines, containers, and serverless functions running in the cloud. It handles things like vulnerability scanning, runtime threat detection, and system integrity monitoring. While CSPM watches the cloud configuration, CWPP watches what is actually executing inside it.",
     "sources": [
       {
-        "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "name": "Microsoft Security",
+        "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-cwpp"
       }
     ]
   },
@@ -1298,11 +1728,11 @@
     "display": "CWSP",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "A vendor-neutral certification from CWNP focused on securing wireless networks. It covers WLAN security protocols, authentication systems, monitoring, and attack techniques against Wi-Fi. It is aimed at network engineers and security professionals responsible for enterprise wireless deployments.",
+    "explanation": "CWSP is CWNP's vendor-neutral certification for securing enterprise Wi-Fi, covering WLAN authentication, encryption, monitoring, and the attacks that target wireless. What sets it apart is its focus purely on the radio layer, where threats like rogue access points and evil-twin attacks bypass wired defenses entirely. It is the standard credential for engineers who design or audit corporate wireless security.",
     "sources": [
       {
         "name": "CWNP",
-        "url": "https://www.cwnp.com/"
+        "url": "https://www.cwnp.com/certifications/cwsp"
       }
     ]
   },
@@ -1311,11 +1741,11 @@
     "display": "CySA+",
     "category": "certifications",
     "difficulty": "medium",
-    "explanation": "A CompTIA certification focused on defensive security analysis. It covers threat detection, vulnerability management, log analysis, and incident response. It targets SOC analysts and blue-team practitioners, sitting between Security+ and CompTIA's advanced certifications in the vendor's pathway.",
+    "explanation": "CompTIA's CySA+ is a blue-team analyst cert covering threat detection, vulnerability management, and incident response. In CompTIA's pathway it sits above Security+ and below the advanced CASP+/SecurityX, and it appears on the US DoD 8570 approved list for certain roles. Typical holders work in security operations centers.",
     "sources": [
       {
         "name": "CompTIA",
-        "url": "https://www.comptia.org/"
+        "url": "https://www.comptia.org/certifications/cybersecurity-analyst"
       }
     ]
   },
@@ -1324,7 +1754,7 @@
     "display": "D3FEND",
     "category": "operations",
     "difficulty": "hard",
-    "explanation": "D3FEND is a MITRE knowledge base that catalogs defensive techniques and maps them to the offensive techniques in ATT&CK. Security architects and detection engineers use it to answer which countermeasures actually address a given attacker behavior. It matters because it gives defenders a shared, structured vocabulary for defense, just as ATT&CK did for offense.",
+    "explanation": "D3FEND is a MITRE knowledge base that catalogs defensive techniques and maps them to the offensive techniques in ATT&CK. It gives defenders a shared, structured vocabulary for defense, just as ATT&CK did for offense. Security architects and detection engineers use it to answer which countermeasures actually address a given attacker behavior.",
     "sources": [
       {
         "name": "MITRE D3FEND",
@@ -1423,12 +1853,25 @@
       }
     ]
   },
+  "DFARS": {
+    "expansion": "Defense Federal Acquisition Regulation Supplement",
+    "display": "DFARS",
+    "category": "governance",
+    "difficulty": "hard",
+    "explanation": "The Department of Defense's supplement to US federal acquisition rules, which includes the cybersecurity clauses that bind defense contractors. Clause 252.204-7012 requires contractors handling covered defense information to implement NIST SP 800-171 and report cyber incidents to the DoD. DFARS requirements are the contractual foundation that CMMC certification is designed to verify.",
+    "sources": [
+      {
+        "name": "Acquisition.gov DFARS",
+        "url": "https://www.acquisition.gov/dfars"
+      }
+    ]
+  },
   "DFIR": {
     "expansion": "Digital Forensics and Incident Response",
     "display": "DFIR",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "DFIR combines two disciplines: forensics, which reconstructs what happened from digital evidence, and incident response, which contains and remediates active attacks. DFIR practitioners image disks, analyze memory, and trace attacker actions to answer how a breach happened and what was taken. It matters because you cannot fully recover from or learn from an incident you do not understand.",
+    "explanation": "DFIR combines two disciplines: forensics, which reconstructs what happened from digital evidence, and incident response, which contains and remediates active attacks. DFIR practitioners image disks, analyze memory, and trace attacker actions to answer how a breach happened and what was taken, since you cannot fully recover from or learn from an incident you do not understand.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -1492,6 +1935,23 @@
       }
     ]
   },
+  "DLL": {
+    "expansion": "Dynamic-Link Library",
+    "display": "DLL",
+    "category": "appsec",
+    "difficulty": "medium",
+    "explanation": "A DLL is a Windows shared code library that programs load at runtime. Attackers abuse the loading mechanism through DLL injection, search-order hijacking, and sideloading to run malicious code inside a trusted process, often evading detection because the host application is legitimate. These techniques are staples of malware persistence and privilege escalation, which is why defenders monitor unusual module loads.",
+    "sources": [
+      {
+        "name": "Microsoft Learn: Dynamic-Link Libraries",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/dlls/dynamic-link-libraries"
+      },
+      {
+        "name": "MITRE ATT&CK: DLL Search Order Hijacking",
+        "url": "https://attack.mitre.org/techniques/T1574/001/"
+      }
+    ]
+  },
   "DLP": {
     "expansion": "Data Loss Prevention",
     "display": "DLP",
@@ -1528,6 +1988,23 @@
       {
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
+      }
+    ]
+  },
+  "DNP3": {
+    "expansion": "Distributed Network Protocol 3",
+    "display": "DNP3",
+    "category": "network",
+    "difficulty": "hard",
+    "explanation": "DNP3 is a communications protocol widely used in electric and water utilities to connect SCADA master stations with remote substations and outstations. The original protocol has no authentication or encryption, so anyone with network access can read measurements or send control commands. Secure Authentication extensions and network segmentation are the main defenses, and DNP3 traffic is a key focus of ICS network monitoring.",
+    "sources": [
+      {
+        "name": "DNP Users Group",
+        "url": "https://www.dnp.org"
+      },
+      {
+        "name": "CISA Industrial Control Systems",
+        "url": "https://www.cisa.gov/topics/industrial-control-systems"
       }
     ]
   },
@@ -1609,6 +2086,19 @@
       }
     ]
   },
+  "DPAPI": {
+    "expansion": "Data Protection Application Programming Interface",
+    "display": "DPAPI",
+    "category": "network",
+    "difficulty": "hard",
+    "explanation": "DPAPI is the built-in Windows service that applications use to encrypt secrets like saved browser passwords, Wi-Fi keys, and certificates, with keys derived from the user's logon credentials. It spares developers from managing encryption keys themselves. Attackers who compromise a user or domain can abuse DPAPI to decrypt those stored secrets, and the domain backup key is a crown-jewel target because it can unlock DPAPI data for every user in the domain.",
+    "sources": [
+      {
+        "name": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/seccng/cng-dpapi"
+      }
+    ]
+  },
   "DPIA": {
     "expansion": "Data Protection Impact Assessment",
     "display": "DPIA",
@@ -1623,6 +2113,19 @@
       {
         "name": "GDPR.eu",
         "url": "https://gdpr.eu/"
+      }
+    ]
+  },
+  "DPO": {
+    "expansion": "Data Protection Officer",
+    "display": "DPO",
+    "category": "governance",
+    "difficulty": "medium",
+    "explanation": "A role mandated by the GDPR for organizations that process large amounts of personal data or monitor people systematically. The DPO independently monitors privacy compliance, advises on data protection impact assessments, and serves as the contact point for regulators and data subjects. The role must be free from conflicts of interest and cannot be punished for doing its job.",
+    "sources": [
+      {
+        "name": "European Commission",
+        "url": "https://commission.europa.eu/law/law-topic/data-protection/reform/rules-business-and-organisations/obligations/data-protection-officers_en"
       }
     ]
   },
@@ -1673,8 +2176,8 @@
     "explanation": "DREAD is a risk rating scheme that scores threats on five factors to help rank which ones to fix first. It was popularized alongside STRIDE at Microsoft, used after threats are identified to prioritize them during design and triage. Its subjectivity has drawn criticism and many teams have moved to other scoring methods, but the acronym remains a common interview and exam topic.",
     "sources": [
       {
-        "name": "OWASP Threat Modeling",
-        "url": "https://owasp.org/www-community/Threat_Modeling"
+        "name": "OWASP Threat Modeling Process",
+        "url": "https://owasp.org/www-community/Threat_Modeling_Process"
       }
     ]
   },
@@ -1704,12 +2207,25 @@
       }
     ]
   },
+  "DSPM": {
+    "expansion": "Data Security Posture Management",
+    "display": "DSPM",
+    "category": "cloud",
+    "difficulty": "hard",
+    "explanation": "DSPM discovers where sensitive data lives across cloud storage, databases, and SaaS, classifies it, and flags exposure such as public buckets, unencrypted stores, or overly broad access. It answers the question security teams struggle with most in the cloud: where is our sensitive data and who can reach it. That visibility drives both breach prevention and compliance with privacy regulations.",
+    "sources": [
+      {
+        "name": "IBM: What Is DSPM",
+        "url": "https://www.ibm.com/think/topics/dspm"
+      }
+    ]
+  },
   "DSS": {
     "expansion": "Digital Signature Standard",
     "display": "DSS",
     "category": "crypto",
     "difficulty": "hard",
-    "explanation": "DSS is the NIST federal standard (FIPS 186) that specifies which digital signature algorithms US government systems may use. The current revision approves RSA, ECDSA, and EdDSA. It matters because it drives which signature algorithms are considered acceptable across government and much of industry.",
+    "explanation": "DSS is the NIST federal standard (FIPS 186) that specifies which digital signature algorithms US government systems may use. The current revision approves RSA, ECDSA, and EdDSA.",
     "sources": [
       {
         "name": "NIST FIPS 186-5",
@@ -1753,6 +2269,32 @@
       {
         "name": "IETF RFC 5216",
         "url": "https://datatracker.ietf.org/doc/html/rfc5216"
+      }
+    ]
+  },
+  "EAR": {
+    "expansion": "Export Administration Regulations",
+    "display": "EAR",
+    "category": "governance",
+    "difficulty": "hard",
+    "explanation": "US regulations administered by the Commerce Department that control the export of dual-use items, including encryption software and certain technical data. Companies must classify their products against the Commerce Control List and may need licenses to ship them to particular countries or parties. EAR is the reason cryptographic software historically faced export restrictions and still requires classification review.",
+    "sources": [
+      {
+        "name": "Bureau of Industry and Security",
+        "url": "https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear"
+      }
+    ]
+  },
+  "EASM": {
+    "expansion": "External Attack Surface Management",
+    "display": "EASM",
+    "category": "operations",
+    "difficulty": "hard",
+    "explanation": "EASM focuses on discovering and monitoring an organization's internet-facing assets from an attacker's outside-in perspective, including forgotten subdomains, exposed cloud storage, and shadow IT. Because these assets are visible to anyone scanning the internet, they are often the first thing adversaries probe. EASM tools continuously map this external footprint so defenders can find and fix exposures before attackers do.",
+    "sources": [
+      {
+        "name": "NIST CSRC Glossary",
+        "url": "https://csrc.nist.gov/glossary/term/attack_surface"
       }
     ]
   },
@@ -1813,7 +2355,7 @@
     "display": "ECIH",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "An EC-Council certification covering the incident handling and response process. It addresses preparing for, detecting, containing, and recovering from security incidents across various threat types. It is aimed at incident responders, SOC analysts, and administrators involved in incident management.",
+    "explanation": "ECIH is EC-Council's certification covering the incident-handling process from preparation through containment and recovery. It is a vendor-neutral, mid-level credential for responders and SOC analysts who want a structured methodology across malware, insider, and network incidents. Compared with GIAC's more hands-on GCIH, it leans toward process and framework knowledge over deep technical exercises.",
     "sources": [
       {
         "name": "EC-Council",
@@ -1843,11 +2385,24 @@
     "display": "EDR",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "EDR software runs on laptops, servers, and workstations to record activity and detect malicious behavior that traditional antivirus misses. SOC teams use it to investigate what happened on a machine and to isolate or remediate compromised endpoints remotely. It matters because most attacks eventually touch an endpoint, making it a critical place to watch.",
+    "explanation": "EDR software runs on laptops, servers, and workstations to record activity and detect malicious behavior that traditional antivirus misses. Because most attacks eventually touch an endpoint, it is a critical place to watch. SOC teams use it to investigate what happened on a machine and to isolate or remediate compromised endpoints remotely.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
+      }
+    ]
+  },
+  "EIDAS": {
+    "expansion": "Electronic Identification, Authentication and Trust Services",
+    "display": "eIDAS",
+    "category": "governance",
+    "difficulty": "hard",
+    "explanation": "An EU regulation that creates a common legal framework for electronic identities, signatures, seals, and other trust services across member states. It makes qualified electronic signatures legally equivalent to handwritten ones throughout the EU. The eIDAS 2.0 update introduces the European Digital Identity Wallet, letting citizens prove their identity and share credentials across borders.",
+    "sources": [
+      {
+        "name": "European Commission",
+        "url": "https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation"
       }
     ]
   },
@@ -1877,6 +2432,19 @@
       }
     ]
   },
+  "ENISA": {
+    "expansion": "European Union Agency for Cybersecurity",
+    "display": "ENISA",
+    "category": "governance",
+    "difficulty": "medium",
+    "explanation": "The EU's cybersecurity agency, which supports member states with threat analysis, policy guidance, and preparedness exercises. It runs the EU cybersecurity certification framework created by the Cybersecurity Act and publishes the widely cited annual Threat Landscape report. The acronym comes from its original name, the European Network and Information Security Agency.",
+    "sources": [
+      {
+        "name": "ENISA",
+        "url": "https://www.enisa.europa.eu/"
+      }
+    ]
+  },
   "EPP": {
     "expansion": "Endpoint Protection Platform",
     "display": "EPP",
@@ -1895,7 +2463,7 @@
     "display": "EPSS",
     "category": "operations",
     "difficulty": "hard",
-    "explanation": "EPSS uses data-driven modeling to estimate the probability that a vulnerability will be exploited in the wild within the next 30 days. Teams combine EPSS with CVSS and the KEV list to focus patching effort where exploitation is most likely. It matters because it helps answer the practical question of what attackers will actually go after, not just what could theoretically be bad.",
+    "explanation": "EPSS uses data-driven modeling to estimate the probability that a vulnerability will be exploited in the wild within the next 30 days. It helps answer the practical question of what attackers will actually go after, not just what could theoretically be bad. Teams combine EPSS with CVSS and the KEV list to focus patching effort where exploitation is most likely.",
     "sources": [
       {
         "name": "FIRST EPSS",
@@ -1929,6 +2497,19 @@
       }
     ]
   },
+  "ETW": {
+    "expansion": "Event Tracing for Windows",
+    "display": "ETW",
+    "category": "network",
+    "difficulty": "hard",
+    "explanation": "ETW is the high-speed logging framework built into Windows that streams detailed telemetry about processes, network activity, and system internals. Endpoint detection and response products rely on ETW providers to see what is happening on a machine. That makes it a target: malware attempts to patch or unregister ETW to blind security tools, so tampering with ETW is itself a strong indicator of compromise.",
+    "sources": [
+      {
+        "name": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/etw/about-event-tracing"
+      }
+    ]
+  },
   "FAAS": {
     "expansion": "Function as a Service",
     "display": "FaaS",
@@ -1939,6 +2520,19 @@
       {
         "name": "Cloud Security Alliance",
         "url": "https://cloudsecurityalliance.org/"
+      }
+    ]
+  },
+  "FAIR": {
+    "expansion": "Factor Analysis of Information Risk",
+    "display": "FAIR",
+    "category": "governance",
+    "difficulty": "medium",
+    "explanation": "A model for quantifying cyber risk in financial terms rather than with qualitative labels like high, medium, and low. It breaks risk down into the frequency of loss events and the magnitude of loss, letting analysts express exposure in dollars. Boards and CISOs use FAIR to prioritize security investments and compare cyber risk against other business risks.",
+    "sources": [
+      {
+        "name": "FAIR Institute",
+        "url": "https://www.fairinstitute.org/"
       }
     ]
   },
@@ -1981,6 +2575,36 @@
       }
     ]
   },
+  "FFIEC": {
+    "expansion": "Federal Financial Institutions Examination Council",
+    "display": "FFIEC",
+    "category": "governance",
+    "difficulty": "hard",
+    "explanation": "A US interagency body that sets uniform examination standards for banks and credit unions on behalf of regulators like the Federal Reserve, FDIC, and OCC. Its IT Examination Handbook and Cybersecurity Assessment Tool shape how financial institutions manage information security, business continuity, and third-party risk. Examiners use FFIEC guidance when auditing a bank's cybersecurity posture.",
+    "sources": [
+      {
+        "name": "FFIEC",
+        "url": "https://www.ffiec.gov/"
+      }
+    ]
+  },
+  "FHE": {
+    "expansion": "Fully Homomorphic Encryption",
+    "display": "FHE",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "Fully homomorphic encryption allows arbitrary computation directly on encrypted data, so a cloud service can process your information without ever seeing it in plaintext. First realized by Craig Gentry in 2009, FHE was long considered impractical, but modern schemes and hardware acceleration have made real workloads feasible. It is a cornerstone of privacy-enhancing technology for outsourced analytics, private machine learning, and confidential queries.",
+    "sources": [
+      {
+        "name": "HomomorphicEncryption.org Standardization Consortium",
+        "url": "https://homomorphicencryption.org"
+      },
+      {
+        "name": "NIST Privacy-Enhancing Cryptography Project",
+        "url": "https://csrc.nist.gov/projects/pec"
+      }
+    ]
+  },
   "FIDO2": {
     "expansion": "Fast Identity Online 2",
     "display": "FIDO2",
@@ -1999,7 +2623,7 @@
     "display": "FIM",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "FIM tools watch critical files and configurations and alert when they change unexpectedly. SOC teams use it to detect tampering with system binaries, web content, or configuration files, which often signals an intrusion. It matters because attackers frequently modify files to hide, persist, or plant malicious code, and FIM is also required by standards like PCI DSS.",
+    "explanation": "FIM tools watch critical files and configurations and alert when they change unexpectedly. Attackers frequently modify files to hide, persist, or plant malicious code, so SOC teams use FIM to detect tampering with system binaries, web content, or configuration files, which often signals an intrusion. It is also required by standards like PCI DSS.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -2017,6 +2641,19 @@
       {
         "name": "NIST FIPS publications",
         "url": "https://csrc.nist.gov/publications/fips"
+      }
+    ]
+  },
+  "FIRST": {
+    "expansion": "Forum of Incident Response and Security Teams",
+    "display": "FIRST",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "FIRST is the global association that connects computer security incident response teams from government, industry, and academia so they can cooperate across borders during incidents. Because cyber incidents routinely span countries, this trusted network is what makes coordinated response possible. It also maintains widely used standards including CVSS for scoring vulnerabilities, EPSS for predicting exploitation, and TLP for labeling information sharing.",
+    "sources": [
+      {
+        "name": "FIRST",
+        "url": "https://www.first.org/about/"
       }
     ]
   },
@@ -2072,6 +2709,19 @@
       }
     ]
   },
+  "GCFR": {
+    "expansion": "GIAC Cloud Forensics Responder",
+    "display": "GCFR",
+    "category": "certifications",
+    "difficulty": "hard",
+    "explanation": "GCFR certifies the ability to investigate incidents and perform forensics across the three major cloud platforms: AWS, Azure, and Google Cloud. It covers cloud log collection and analysis, identity attack investigation, and tracing adversary activity through provider-specific telemetry. The certification responds to the shift of incident response work from on-premises systems to cloud environments.",
+    "sources": [
+      {
+        "name": "GIAC GCFR Certification",
+        "url": "https://www.giac.org/certifications/cloud-forensics-responder-gcfr/"
+      }
+    ]
+  },
   "GCIA": {
     "expansion": "GIAC Certified Intrusion Analyst",
     "display": "GCIA",
@@ -2090,7 +2740,7 @@
     "display": "GCIH",
     "category": "certifications",
     "difficulty": "medium",
-    "explanation": "A GIAC certification focused on detecting, responding to, and resolving security incidents. It covers common attack techniques, incident handling processes, and hands-on defensive skills. It is one of the most popular GIAC certifications and is widely held by security operations and incident response staff.",
+    "explanation": "GIAC's incident-handling cert, aligned with the SANS SEC504 course and built around hands-on detection and response to live attacks. It is one of GIAC's most widely held credentials; its more process-oriented rival is EC-Council's ECIH. SOC and incident-response staff make up most holders.",
     "sources": [
       {
         "name": "GIAC",
@@ -2111,12 +2761,25 @@
       }
     ]
   },
+  "GCSA": {
+    "expansion": "GIAC Cloud Security Automation",
+    "display": "GCSA",
+    "category": "certifications",
+    "difficulty": "hard",
+    "explanation": "GCSA validates skills in securing cloud environments through DevSecOps practices, covering secure CI/CD pipelines, infrastructure as code, and cloud-native security controls. It is aligned with the SANS SEC540 course on cloud security and DevSecOps automation. The credential targets engineers who embed security into automated build and deployment workflows rather than bolting it on afterward.",
+    "sources": [
+      {
+        "name": "GIAC GCSA Certification",
+        "url": "https://www.giac.org/certifications/cloud-security-automation-gcsa/"
+      }
+    ]
+  },
   "GCTI": {
     "expansion": "GIAC Cyber Threat Intelligence",
     "display": "GCTI",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "A GIAC certification validating skills in cyber threat intelligence analysis. It covers intelligence tradecraft, analyzing adversary campaigns, and producing intelligence that defenders can act on. It is aimed at CTI analysts and incident responders who study threat actors.",
+    "explanation": "GCTI is GIAC's certification for cyber threat intelligence analysts, aligned with the SANS FOR578 course. It goes beyond collecting indicators to teach structured analysis of adversary campaigns, attribution, and the tradecraft of turning raw data into intelligence leadership can act on. It is one of the more respected CTI credentials because its exam rewards applied analytic reasoning over tool memorization.",
     "sources": [
       {
         "name": "GIAC",
@@ -2146,7 +2809,7 @@
     "display": "GICSP",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "A GIAC certification bridging IT security and industrial control systems. It covers securing operational technology such as SCADA systems, PLCs, and industrial networks. It is designed for engineers and security professionals protecting critical infrastructure like power grids and manufacturing plants.",
+    "explanation": "GIAC's industrial control systems cert, bridging traditional IT security with operational technology such as SCADA systems and PLCs. Unusually, it is aimed jointly at IT security staff, OT engineers, and plant operators, reflecting how critical-infrastructure defense crosses those roles. Holders typically protect power grids, manufacturing, and similar environments.",
     "sources": [
       {
         "name": "GIAC",
@@ -2167,12 +2830,25 @@
       }
     ]
   },
+  "GMON": {
+    "expansion": "GIAC Continuous Monitoring Certification",
+    "display": "GMON",
+    "category": "certifications",
+    "difficulty": "hard",
+    "explanation": "GMON validates the ability to design and run continuous security monitoring and defensible architectures in an enterprise. Aligned with the SANS SEC511 course, it covers network and endpoint detection engineering, security operations center workflows, and attack detection across modern hybrid environments. It is a common credential for SOC analysts and detection engineers.",
+    "sources": [
+      {
+        "name": "GIAC GMON Certification",
+        "url": "https://www.giac.org/certifications/continuous-monitoring-certification-gmon/"
+      }
+    ]
+  },
   "GPEN": {
     "expansion": "GIAC Penetration Tester",
     "display": "GPEN",
     "category": "certifications",
     "difficulty": "medium",
-    "explanation": "A GIAC certification validating the ability to conduct penetration tests using a process-oriented methodology. It covers reconnaissance, exploitation, password attacks, and reporting. It is aimed at penetration testers, red teamers, and auditors who assess networks the way attackers would.",
+    "explanation": "GIAC's penetration-testing cert, aligned with the SANS SEC560 course and organized around a repeatable testing methodology. Among its peers, OSCP is more hands-on with a 24-hour practical exam and CEH leans more theoretical, while GPEN balances methodology with technique. It suits penetration testers, red teamers, and auditors.",
     "sources": [
       {
         "name": "GIAC",
@@ -2197,6 +2873,19 @@
       }
     ]
   },
+  "GPO": {
+    "expansion": "Group Policy Object",
+    "display": "GPO",
+    "category": "network",
+    "difficulty": "medium",
+    "explanation": "A GPO is a bundle of configuration settings in Active Directory that administrators apply to users and computers across a domain, controlling everything from password rules to firewall settings. GPOs are a primary tool for hardening Windows fleets at scale. They are also a prime target: an attacker who gains rights to edit a GPO can push malicious scripts or ransomware to every machine it covers, so GPO permissions deserve careful auditing.",
+    "sources": [
+      {
+        "name": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/group-policy/group-policy-overview"
+      }
+    ]
+  },
   "GRC": {
     "expansion": "Governance, Risk, and Compliance",
     "display": "GRC",
@@ -2210,12 +2899,25 @@
       }
     ]
   },
+  "GRE": {
+    "expansion": "Generic Routing Encapsulation",
+    "display": "GRE",
+    "category": "network",
+    "difficulty": "hard",
+    "explanation": "GRE is a tunneling protocol that wraps one network protocol inside another, letting traffic cross networks that could not otherwise carry it. GRE itself provides no encryption or authentication, which is why it is often paired with IPsec for site-to-site VPNs. Attackers abuse GRE tunnels to exfiltrate data past firewalls and to launder large DDoS floods, so unexpected GRE traffic is worth investigating.",
+    "sources": [
+      {
+        "name": "IETF RFC 2784",
+        "url": "https://www.rfc-editor.org/rfc/rfc2784"
+      }
+    ]
+  },
   "GREM": {
     "expansion": "GIAC Reverse Engineering Malware",
     "display": "GREM",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "A GIAC certification for analysts who dissect malicious software. It covers analyzing malicious executables, documents, and scripts using both behavioral and code-level techniques. It is a specialist credential for malware analysts and threat researchers.",
+    "explanation": "GIAC's reverse-engineering cert, aligned with the SANS FOR610 course and focused on dissecting malicious executables, documents, and scripts. It is a niche, deeply technical credential rather than a broad one, combining behavioral and code-level analysis. Malware analysts and threat researchers are its core audience.",
     "sources": [
       {
         "name": "GIAC",
@@ -2241,7 +2943,7 @@
     "display": "GSLC",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "A GIAC certification for security leaders and managers. It covers governance, risk, security program management, and enough technical depth to lead technical teams credibly. It targets managers, directors, and executives with security oversight responsibilities.",
+    "explanation": "GSLC is GIAC's certification for security managers who need real technical grounding, not just governance vocabulary. It blends leadership topics like program management and risk with enough hands-on depth to make credible decisions and challenge their engineers. That technical-plus-managerial mix is what distinguishes it from purely strategic credentials like CISM.",
     "sources": [
       {
         "name": "GIAC",
@@ -2254,11 +2956,24 @@
     "display": "GWAPT",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "A GIAC certification focused on finding and exploiting vulnerabilities in web applications. It covers injection attacks, authentication flaws, session issues, and client-side attacks. It is aimed at penetration testers who specialize in web application security assessments.",
+    "explanation": "GWAPT is GIAC's certification for penetration testers who specialize in web applications, covering injection, authentication and session flaws, and client-side attacks. Unlike broad pentest credentials, it drills into the web stack specifically, mapping closely to the bug classes in the OWASP Top 10. It suits testers whose engagements center on web apps rather than networks.",
     "sources": [
       {
         "name": "GIAC",
         "url": "https://www.giac.org/certifications/"
+      }
+    ]
+  },
+  "GXPN": {
+    "expansion": "GIAC Exploit Researcher and Advanced Penetration Tester",
+    "display": "GXPN",
+    "category": "certifications",
+    "difficulty": "hard",
+    "explanation": "GXPN is one of GIAC's most advanced offensive certifications, validating skills in exploit development, fuzzing, and bypassing modern exploit mitigations. It is aligned with the SANS SEC660 course and covers network attacks, crypto weaknesses, and both Windows and Linux exploitation. It sits well beyond the GPEN in depth and is aimed at senior penetration testers and exploit researchers.",
+    "sources": [
+      {
+        "name": "GIAC GXPN Certification",
+        "url": "https://www.giac.org/certifications/exploit-researcher-advanced-penetration-tester-gxpn/"
       }
     ]
   },
@@ -2267,7 +2982,7 @@
     "display": "HBSS",
     "category": "network",
     "difficulty": "hard",
-    "explanation": "HBSS was the US Department of Defense's standardized suite of endpoint security software deployed across military networks, bundling firewall, intrusion prevention, and policy auditing on each host. It gave the DoD centralized visibility and control over millions of endpoints. The program has since evolved into newer endpoint initiatives, but the acronym remains well known in defense circles.",
+    "explanation": "HBSS was the US Department of Defense's mandated endpoint security suite, bundling host firewall, intrusion prevention, and policy auditing to give central visibility across millions of military machines. It became the DoD standard for host defense through the 2000s and 2010s. The department has since moved toward its Endpoint Security Solutions program, but the HBSS name still appears constantly in defense job postings and clearance-required roles.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -2306,7 +3021,7 @@
     "display": "HIPS",
     "category": "network",
     "difficulty": "medium",
-    "explanation": "A HIPS is agent software on an endpoint that can block malicious behavior on that machine, such as suspicious process injection or unauthorized file changes. It acts as a last line of defense when network controls miss an attack. Modern endpoint protection suites often include HIPS-style capabilities.",
+    "explanation": "A HIPS is endpoint agent software that actively blocks malicious behavior on the host, such as suspicious process injection, memory tampering, or unauthorized changes to system files. Unlike a HIDS, which only alerts, a HIPS can terminate the offending action in real time, making it a last line of defense when network controls miss an attack. Its logic now usually lives inside modern EDR and endpoint protection suites rather than as a standalone product.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -2379,6 +3094,19 @@
       }
     ]
   },
+  "HPKE": {
+    "expansion": "Hybrid Public Key Encryption",
+    "display": "HPKE",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "HPKE, defined in RFC 9180, is a modern standard for encrypting data to a recipient's public key by combining a key encapsulation mechanism with an authenticated symmetric cipher. It replaces older ad hoc hybrid encryption constructions with a single well-analyzed design. HPKE is the encryption engine inside TLS Encrypted Client Hello, the Messaging Layer Security (MLS) protocol, and Oblivious HTTP, and it adapts naturally to post-quantum KEMs.",
+    "sources": [
+      {
+        "name": "IETF RFC 9180",
+        "url": "https://www.rfc-editor.org/rfc/rfc9180"
+      }
+    ]
+  },
   "HPP": {
     "expansion": "HTTP Parameter Pollution",
     "display": "HPP",
@@ -2387,8 +3115,8 @@
     "explanation": "HTTP Parameter Pollution supplies multiple parameters with the same name in a web request, exploiting the fact that different servers and frameworks handle duplicates differently. Attackers use these inconsistencies to bypass input validation, alter application logic, or smuggle values past security filters. It highlights why every layer of a web stack must agree on how requests are parsed.",
     "sources": [
       {
-        "name": "OWASP",
-        "url": "https://owasp.org/www-community/attacks/"
+        "name": "OWASP WSTG: Testing for HTTP Parameter Pollution",
+        "url": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/04-Testing_for_HTTP_Parameter_Pollution"
       }
     ]
   },
@@ -2591,6 +3319,19 @@
       }
     ]
   },
+  "IEC62443": {
+    "expansion": "International Electrotechnical Commission 62443",
+    "display": "IEC 62443",
+    "category": "network",
+    "difficulty": "hard",
+    "explanation": "IEC 62443 is the leading international series of standards for securing industrial automation and control systems, developed jointly with ISA. It defines security levels, zone and conduit segmentation models, and requirements for asset owners, integrators, and product vendors. Operators of factories, utilities, and other OT environments use it to structure defenses where a cyber incident can cause physical damage or safety risks.",
+    "sources": [
+      {
+        "name": "ISA/IEC 62443 Series",
+        "url": "https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards"
+      }
+    ]
+  },
   "IGA": {
     "expansion": "Identity Governance and Administration",
     "display": "IGA",
@@ -2627,6 +3368,32 @@
       {
         "name": "IETF RFC 7296",
         "url": "https://datatracker.ietf.org/doc/html/rfc7296"
+      }
+    ]
+  },
+  "IMAP": {
+    "expansion": "Internet Message Access Protocol",
+    "display": "IMAP",
+    "category": "network",
+    "difficulty": "easy",
+    "explanation": "IMAP lets email clients read and manage messages that stay stored on the mail server, keeping multiple devices in sync. Like POP3, legacy IMAP supports basic password authentication that does not understand MFA, so attackers target it for password spraying against cloud mailboxes. Security guidance is to require TLS on port 993 and disable legacy authentication in favor of modern token-based sign-in.",
+    "sources": [
+      {
+        "name": "IETF RFC 9051",
+        "url": "https://www.rfc-editor.org/rfc/rfc9051"
+      }
+    ]
+  },
+  "IMDS": {
+    "expansion": "Instance Metadata Service",
+    "display": "IMDS",
+    "category": "cloud",
+    "difficulty": "hard",
+    "explanation": "IMDS is the endpoint a cloud virtual machine queries for information about itself, including the temporary credentials of its attached role. Attackers abuse it through SSRF vulnerabilities to steal those credentials, which was the core of the 2019 Capital One breach. AWS responded with IMDSv2, which requires a session token, and enforcing it is now a standard cloud hardening step.",
+    "sources": [
+      {
+        "name": "AWS EC2 Instance Metadata Service",
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html"
       }
     ]
   },
@@ -2678,7 +3445,7 @@
     "display": "IPS",
     "category": "operations",
     "difficulty": "easy",
-    "explanation": "An IPS sits inline on the network and actively blocks traffic that matches attack signatures or malicious behavior, rather than just alerting like an IDS. SOC teams tune IPS rules to stop known exploits automatically while avoiding false positives that break legitimate traffic. It matters because it stops routine attacks at machine speed before a human ever sees them.",
+    "explanation": "An IPS sits inline on the network and actively blocks traffic that matches attack signatures or malicious behavior, rather than just alerting like an IDS. This stops routine attacks at machine speed before a human ever sees them. SOC teams tune IPS rules to stop known exploits automatically while avoiding false positives that break legitimate traffic.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -2704,7 +3471,7 @@
     "display": "IRP",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "An IRP is the documented playbook that defines roles, communication channels, and step-by-step procedures for handling security incidents. Teams rehearse it in tabletop exercises so that when a real breach hits, no one is improvising under pressure. It matters because the first hours of an incident are chaotic, and a practiced plan is the difference between a controlled response and a scramble.",
+    "explanation": "An IRP is the documented playbook that defines roles, communication channels, and step-by-step procedures for handling security incidents. Teams rehearse it in tabletop exercises so that when a real breach hits, no one is improvising under pressure. The first hours of an incident are chaotic, and a practiced plan is the difference between a controlled response and a scramble.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -2717,11 +3484,37 @@
     "display": "ISAC",
     "category": "operations",
     "difficulty": "hard",
-    "explanation": "An ISAC is a sector-specific organization, such as FS-ISAC for financial services, where member companies share threat intelligence and best practices. Threat intel teams use ISAC feeds and alerts to learn about attacks hitting their industry before those attacks reach them. It matters because attackers reuse campaigns across an industry, and shared warning gives everyone else time to prepare.",
+    "explanation": "An ISAC is a sector-specific organization, such as FS-ISAC for financial services, where member companies share threat intelligence and best practices. Because attackers reuse campaigns across an industry, shared warning gives everyone else time to prepare. Threat intel teams use ISAC feeds and alerts to learn about attacks hitting their industry before those attacks reach them.",
     "sources": [
       {
         "name": "CISA",
         "url": "https://www.cisa.gov"
+      }
+    ]
+  },
+  "ISAO": {
+    "expansion": "Information Sharing and Analysis Organization",
+    "display": "ISAO",
+    "category": "operations",
+    "difficulty": "hard",
+    "explanation": "An ISAO is a group formed to share cyber threat information among its members, similar to an ISAC but not limited to a specific critical infrastructure sector. ISAOs can organize around a region, an interest area, or any community that benefits from pooled threat intelligence. They matter because attackers reuse the same techniques across victims, and shared indicators let one organization's detection become everyone's defense.",
+    "sources": [
+      {
+        "name": "NIST CSRC Glossary",
+        "url": "https://csrc.nist.gov/glossary/term/information_sharing_and_analysis_organization"
+      }
+    ]
+  },
+  "ISMS": {
+    "expansion": "Information Security Management System",
+    "display": "ISMS",
+    "category": "governance",
+    "difficulty": "medium",
+    "explanation": "The overall framework of policies, processes, and controls an organization uses to manage information security in a systematic way. It is the core concept behind ISO/IEC 27001, which certifies that an organization runs an ISMS with risk assessment, management commitment, and continual improvement. Having a certified ISMS is a common requirement in vendor security reviews.",
+    "sources": [
+      {
+        "name": "ISO/IEC 27001",
+        "url": "https://www.iso.org/standard/27001"
       }
     ]
   },
@@ -2743,7 +3536,7 @@
     "display": "ISSAP",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "An ISC2 concentration that CISSP holders can earn to demonstrate deep expertise in security architecture. It covers designing security into infrastructure, applications, and identity systems at an enterprise scale. It is aimed at chief security architects and analysts who translate business requirements into security designs.",
+    "explanation": "One of the three concentrations ISC2 offers on top of the CISSP, so candidates must hold an active CISSP before pursuing it. ISSAP is the architecture track, validating deep expertise in designing security across infrastructure, applications, and identity at enterprise scale. It suits chief security architects who turn business requirements into security designs.",
     "sources": [
       {
         "name": "ISC2",
@@ -2769,11 +3562,28 @@
     "display": "ISSMP",
     "category": "certifications",
     "difficulty": "hard",
-    "explanation": "An ISC2 concentration for CISSP holders who lead security programs. It covers leadership, program management, incident handling, and business continuity from a management perspective. It targets CISOs and senior managers who run security organizations rather than hands-on technical work.",
+    "explanation": "The management concentration ISC2 layers on top of the CISSP, requiring an active CISSP first (its siblings are the architecture-focused ISSAP and engineering-focused ISSEP). It validates leadership, program management, incident handling, and business continuity from a management vantage point. It targets CISOs and senior managers who run security organizations.",
     "sources": [
       {
         "name": "ISC2",
         "url": "https://www.isc2.org/certifications"
+      }
+    ]
+  },
+  "ITAR": {
+    "expansion": "International Traffic in Arms Regulations",
+    "display": "ITAR",
+    "category": "governance",
+    "difficulty": "medium",
+    "explanation": "US regulations that control the export of defense articles, services, and related technical data on the United States Munitions List. Companies in aerospace and defense must register with the State Department and ensure that controlled data is only accessible to US persons unless licensed. Violations can bring criminal charges and debarment from government contracting, so ITAR drives strict access controls and data segregation.",
+    "sources": [
+      {
+        "name": "US State Department DDTC",
+        "url": "https://www.pmddtc.state.gov/"
+      },
+      {
+        "name": "eCFR Title 22 Subchapter M",
+        "url": "https://www.ecfr.gov/current/title-22/chapter-I/subchapter-M"
       }
     ]
   },
@@ -2842,6 +3652,19 @@
       }
     ]
   },
+  "JWK": {
+    "expansion": "JSON Web Key",
+    "display": "JWK",
+    "category": "crypto",
+    "difficulty": "medium",
+    "explanation": "A JWK is a JSON data structure that represents a cryptographic key, defined in RFC 7517 as part of the JOSE family alongside JWS, JWE, and JWT. It standardizes how key type, algorithm, usage, and key material are expressed so systems can exchange keys over the web. OpenID Connect and OAuth providers publish their public signing keys as a JWK Set at a well-known URL, which is how clients verify token signatures.",
+    "sources": [
+      {
+        "name": "IETF RFC 7517",
+        "url": "https://www.rfc-editor.org/rfc/rfc7517"
+      }
+    ]
+  },
   "JWS": {
     "expansion": "JSON Web Signature",
     "display": "JWS",
@@ -2865,6 +3688,19 @@
       {
         "name": "RFC 7519 (JSON Web Token)",
         "url": "https://datatracker.ietf.org/doc/html/rfc7519"
+      }
+    ]
+  },
+  "KBA": {
+    "expansion": "Knowledge-Based Authentication",
+    "display": "KBA",
+    "category": "identity",
+    "difficulty": "medium",
+    "explanation": "KBA verifies identity by asking questions only the real person should be able to answer, such as a previous address or a mother's maiden name. It was once common for account recovery and identity proofing, but data breaches and social media have made the answers easy for attackers to find or buy. NIST now discourages it for identity verification, pushing organizations toward stronger evidence-based methods.",
+    "sources": [
+      {
+        "name": "NIST Glossary: Knowledge-Based Authentication",
+        "url": "https://csrc.nist.gov/glossary/term/knowledge_based_authentication"
       }
     ]
   },
@@ -2912,7 +3748,7 @@
     "display": "KEV",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "The KEV catalog, maintained by CISA, lists vulnerabilities that attackers are actively exploiting in the real world. Vulnerability management teams use it to prioritize patching, since a flaw on the KEV list is a proven risk, not a theoretical one. It matters because most CVEs are never exploited, and KEV tells you which ones actually are.",
+    "explanation": "Fewer than 5 percent of CVEs are ever exploited in the wild; the KEV catalog, maintained by CISA, is the list of the ones that have been. Vulnerability management teams use it to prioritize patching, since a flaw on the KEV list is a proven risk, not a theoretical one. US federal civilian agencies must patch KEV entries on a deadline under Binding Operational Directive 22-01.",
     "sources": [
       {
         "name": "CISA KEV Catalog",
@@ -3006,8 +3842,8 @@
     "explanation": "Local File Inclusion occurs when a web application can be tricked into loading files from the server's own filesystem that were never meant to be exposed. Attackers use it to read configuration files, credentials, or source code, and in some cases escalate it to code execution. It stems from building file paths out of untrusted user input.",
     "sources": [
       {
-        "name": "OWASP",
-        "url": "https://owasp.org/www-community/attacks/"
+        "name": "OWASP WSTG: Testing for Local File Inclusion",
+        "url": "https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.1-Testing_for_Local_File_Inclusion"
       }
     ]
   },
@@ -3021,6 +3857,23 @@
       {
         "name": "ANPD (Brazil)",
         "url": "https://www.gov.br/anpd/pt-br"
+      }
+    ]
+  },
+  "LLMNR": {
+    "expansion": "Link-Local Multicast Name Resolution",
+    "display": "LLMNR",
+    "category": "network",
+    "difficulty": "hard",
+    "explanation": "LLMNR is a Windows fallback protocol that asks the local network to resolve a hostname when DNS fails. Any machine on the subnet can answer, so an attacker running a tool like Responder can reply to these broadcasts, impersonate the requested host, and capture NTLM password hashes for cracking or relay. Because modern networks rarely need it, disabling LLMNR via Group Policy is a standard hardening step.",
+    "sources": [
+      {
+        "name": "IETF RFC 4795",
+        "url": "https://www.rfc-editor.org/rfc/rfc4795"
+      },
+      {
+        "name": "MITRE ATT&CK T1557.001",
+        "url": "https://attack.mitre.org/techniques/T1557/001/"
       }
     ]
   },
@@ -3060,6 +3913,23 @@
       {
         "name": "MITRE ATT&CK",
         "url": "https://attack.mitre.org/tactics/TA0004/"
+      }
+    ]
+  },
+  "LSASS": {
+    "expansion": "Local Security Authority Subsystem Service",
+    "display": "LSASS",
+    "category": "network",
+    "difficulty": "hard",
+    "explanation": "LSASS is the Windows process that enforces security policy and handles logons, which means it holds credential material such as NTLM hashes and Kerberos tickets in memory. Dumping LSASS memory with tools like Mimikatz is one of the most common credential theft techniques in real intrusions. Defenses include running LSASS as a protected process, enabling Credential Guard, and alerting on any process that opens a handle to LSASS.",
+    "sources": [
+      {
+        "name": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/configuring-additional-lsa-protection"
+      },
+      {
+        "name": "MITRE ATT&CK T1003.001",
+        "url": "https://attack.mitre.org/techniques/T1003/001/"
       }
     ]
   },
@@ -3132,12 +4002,25 @@
       }
     ]
   },
+  "MDNS": {
+    "expansion": "Multicast DNS",
+    "display": "mDNS",
+    "category": "network",
+    "difficulty": "medium",
+    "explanation": "mDNS lets devices on a local network discover each other by name without a central DNS server, powering features like AirPrint and Chromecast discovery. Like LLMNR, it trusts whoever answers first, so attackers on the same network can spoof responses to poison name resolution and capture credentials. It can also leak device names and services, and misconfigured mDNS responders exposed to the internet have been abused for DDoS amplification.",
+    "sources": [
+      {
+        "name": "IETF RFC 6762",
+        "url": "https://www.rfc-editor.org/rfc/rfc6762"
+      }
+    ]
+  },
   "MDR": {
     "expansion": "Managed Detection and Response",
     "display": "MDR",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "MDR is an outsourced service where a vendor's analysts monitor your environment, hunt threats, and respond to incidents on your behalf. Organizations without the budget or staff for a 24x7 SOC use MDR to get around-the-clock coverage. It matters because attackers do not keep business hours, and many companies cannot staff a full security team alone.",
+    "explanation": "MDR is an outsourced service where a vendor's analysts monitor your environment, hunt threats, and respond to incidents on your behalf. Since attackers do not keep business hours, organizations without the budget or staff for a 24x7 SOC use MDR to get around-the-clock coverage.",
     "sources": [
       {
         "name": "CISA",
@@ -3188,6 +4071,19 @@
       }
     ]
   },
+  "MLDSA": {
+    "expansion": "Module-Lattice-Based Digital Signature Algorithm",
+    "display": "ML-DSA",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "ML-DSA, standardized by NIST as FIPS 204 in 2024, is the primary post-quantum digital signature algorithm, derived from the CRYSTALS-Dilithium submission. Its security is based on lattice problems believed to resist attacks by both classical and quantum computers. It is the general-purpose signature counterpart to ML-KEM and is being adopted in certificates, code signing, and protocol suites as organizations migrate away from RSA and ECDSA.",
+    "sources": [
+      {
+        "name": "NIST FIPS 204",
+        "url": "https://csrc.nist.gov/pubs/fips/204/final"
+      }
+    ]
+  },
   "MLKEM": {
     "expansion": "Module-Lattice-Based Key-Encapsulation Mechanism",
     "display": "ML-KEM",
@@ -3198,6 +4094,23 @@
       {
         "name": "NIST FIPS 203",
         "url": "https://csrc.nist.gov/pubs/fips/203/final"
+      }
+    ]
+  },
+  "MPC": {
+    "expansion": "Multi-Party Computation",
+    "display": "MPC",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "MPC lets several parties jointly compute a function over their private inputs without revealing those inputs to each other. Classic examples include comparing salaries without disclosing them or computing statistics across hospitals without sharing patient records. Today MPC underpins threshold signing for cryptocurrency custody, where a private key is split so no single machine ever holds it, and NIST is standardizing related threshold cryptography techniques.",
+    "sources": [
+      {
+        "name": "NIST Multi-Party Threshold Cryptography Project",
+        "url": "https://csrc.nist.gov/projects/threshold-cryptography"
+      },
+      {
+        "name": "NIST Privacy-Enhancing Cryptography Project",
+        "url": "https://csrc.nist.gov/projects/pec"
       }
     ]
   },
@@ -3232,7 +4145,7 @@
     "display": "MSSP",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "An MSSP is a vendor that operates security services for clients, such as monitoring firewalls, managing SIEM platforms, and watching alerts around the clock. Smaller organizations use MSSPs to get enterprise-grade security operations without building their own SOC. It matters because the security talent shortage means many companies simply cannot hire enough skilled defenders in-house.",
+    "explanation": "An MSSP is a vendor that operates security services for clients, such as monitoring firewalls, managing SIEM platforms, and watching alerts around the clock. Smaller organizations use MSSPs to get enterprise-grade security operations without building their own SOC. The persistent security talent shortage means many companies simply cannot hire enough skilled defenders in-house.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -3266,6 +4179,19 @@
       }
     ]
   },
+  "MTTA": {
+    "expansion": "Mean Time to Acknowledge",
+    "display": "MTTA",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "MTTA measures the average time between an alert firing and a responder acknowledging it and starting to work. It sits alongside metrics like MTTD (detect) and MTTR (respond or recover) to show how quickly a team reacts once something is flagged. A rising MTTA is often an early warning sign of alert fatigue, where analysts are so flooded with noise that real threats sit unattended.",
+    "sources": [
+      {
+        "name": "Atlassian Incident Management Metrics",
+        "url": "https://www.atlassian.com/incident-management/kpis/common-metrics"
+      }
+    ]
+  },
   "MTTD": {
     "expansion": "Mean Time to Detect",
     "display": "MTTD",
@@ -3284,7 +4210,7 @@
     "display": "MTTR",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "MTTR measures the average time it takes a team to respond to and resolve a security incident after it is detected. SOC leaders track it to judge how efficient their processes and tooling are, and to justify investments in automation. It matters because the longer an attacker stays active, the more damage they can do.",
+    "explanation": "MTTR measures the average time it takes a team to respond to and resolve a security incident after it is detected. The longer an attacker stays active, the more damage they can do, so SOC leaders track MTTR to judge how efficient their processes and tooling are and to justify investments in automation.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -3435,12 +4361,29 @@
       }
     ]
   },
+  "NOC": {
+    "expansion": "Network Operations Center",
+    "display": "NOC",
+    "category": "operations",
+    "difficulty": "easy",
+    "explanation": "A NOC is the team and facility responsible for monitoring the health, performance, and availability of an organization's networks and IT infrastructure. While a SOC focuses on security threats, the NOC focuses on keeping systems up and running, handling outages, capacity issues, and connectivity problems. The two teams often work side by side, since an outage can be either a hardware failure or an attack.",
+    "sources": [
+      {
+        "name": "NIST CSRC Glossary",
+        "url": "https://csrc.nist.gov/glossary"
+      },
+      {
+        "name": "NICCS Vocabulary (CISA)",
+        "url": "https://niccs.cisa.gov/cybersecurity-career-resources/vocabulary"
+      }
+    ]
+  },
   "NSM": {
     "expansion": "Network Security Monitoring",
     "display": "NSM",
     "category": "operations",
     "difficulty": "hard",
-    "explanation": "NSM is the practice of collecting and analyzing network data, including flows, sessions, and full packets, to detect and investigate intrusions. Unlike simple alerting, NSM emphasizes keeping rich network evidence so analysts can reconstruct attacker activity after the fact. It matters because detection will never be perfect, and NSM ensures you have the data to investigate what your alerts missed.",
+    "explanation": "NSM is the practice of collecting and analyzing network data, including flows, sessions, and full packets, to detect and investigate intrusions. Unlike simple alerting, NSM emphasizes keeping rich network evidence so analysts can reconstruct attacker activity after the fact. Because detection will never be perfect, this ensures you have the data to investigate what your alerts missed.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -3492,7 +4435,7 @@
     "display": "NVD",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "The NVD is the U.S. government repository, run by NIST, that enriches CVE records with severity scores, affected product data, and references. Vulnerability scanners and management tools pull from the NVD constantly to keep their databases current. It matters because it is the authoritative free source that most of the vulnerability management ecosystem is built on.",
+    "explanation": "The NVD is the U.S. government repository, run by NIST, that enriches CVE records with severity scores, affected product data, and references. It is the authoritative free source that most of the vulnerability management ecosystem is built on. Vulnerability scanners and management tools pull from the NVD constantly to keep their databases current.",
     "sources": [
       {
         "name": "NIST NVD",
@@ -3526,6 +4469,23 @@
       }
     ]
   },
+  "OCTAVE": {
+    "expansion": "Operationally Critical Threat, Asset, and Vulnerability Evaluation",
+    "display": "OCTAVE",
+    "category": "governance",
+    "difficulty": "hard",
+    "explanation": "A risk assessment methodology developed at Carnegie Mellon's Software Engineering Institute. It guides organizations through identifying critical assets, the threats to them, and the vulnerabilities that expose them, driven by the organization's own staff rather than outside auditors. Variants like OCTAVE Allegro streamline the process for smaller teams.",
+    "sources": [
+      {
+        "name": "SEI: Introduction to the OCTAVE Approach",
+        "url": "https://insights.sei.cmu.edu/library/introduction-to-the-octave-approach/"
+      },
+      {
+        "name": "Carnegie Mellon SEI",
+        "url": "https://www.sei.cmu.edu/"
+      }
+    ]
+  },
   "OIDC": {
     "expansion": "OpenID Connect",
     "display": "OIDC",
@@ -3539,6 +4499,32 @@
       }
     ]
   },
+  "OODA": {
+    "expansion": "Observe, Orient, Decide, Act",
+    "display": "OODA",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "The OODA loop is a decision-making cycle developed by Air Force Colonel John Boyd: observe the situation, orient by interpreting what it means, decide on a course of action, and act. Security teams apply it to incident response and threat hunting, where the side that cycles through the loop faster gains the advantage. Getting inside the attacker's loop lets defenders disrupt an intrusion before it succeeds.",
+    "sources": [
+      {
+        "name": "Air University Press - A Discourse on Winning and Losing (John Boyd)",
+        "url": "https://media.defense.gov/2018/May/22/2001920668/-1/-1/0/B_0151_Boyd_Discourse_Winning_Losing.pdf"
+      }
+    ]
+  },
+  "OPRF": {
+    "expansion": "Oblivious Pseudorandom Function",
+    "display": "OPRF",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "An OPRF is a two-party protocol where a server holding a secret key helps a client evaluate a pseudorandom function on the client's input, without the server learning the input or the client learning the key. This building block enables privacy-preserving systems like compromised-credential checking, where a browser can ask whether a password appears in a breach database without revealing the password. The CFRG standardized OPRF constructions over elliptic curves in RFC 9497, and they are core components of the OPAQUE PAKE and Privacy Pass.",
+    "sources": [
+      {
+        "name": "IETF RFC 9497",
+        "url": "https://www.rfc-editor.org/rfc/rfc9497"
+      }
+    ]
+  },
   "OSCP": {
     "expansion": "OffSec Certified Professional",
     "display": "OSCP",
@@ -3549,6 +4535,32 @@
       {
         "name": "OffSec",
         "url": "https://www.offsec.com/"
+      }
+    ]
+  },
+  "OSDA": {
+    "expansion": "OffSec Defense Analyst",
+    "display": "OSDA",
+    "category": "certifications",
+    "difficulty": "hard",
+    "explanation": "OSDA is OffSec's blue team certification, earned through the SOC-200 course and a hands-on exam where candidates detect and analyze staged attacks in a live SIEM environment. It validates practical security operations skills, including identifying attacker techniques across the phases of an intrusion. It gives defenders an OffSec-style practical exam experience analogous to the OSCP for attackers.",
+    "sources": [
+      {
+        "name": "OffSec SOC-200 and the OSDA Certification",
+        "url": "https://www.offsec.com/courses/soc-200/"
+      }
+    ]
+  },
+  "OSED": {
+    "expansion": "OffSec Exploit Developer",
+    "display": "OSED",
+    "category": "certifications",
+    "difficulty": "hard",
+    "explanation": "OSED is OffSec's certification for Windows user mode exploit development, earned through the EXP-301 course and a 48-hour practical exam. It covers writing custom exploits from scratch, bypassing protections like DEP and ASLR, and crafting shellcode against real binaries. Together with OSWE and OSEP, it forms part of the requirements for OffSec's OSCE3 expert designation.",
+    "sources": [
+      {
+        "name": "OffSec EXP-301 and the OSED Certification",
+        "url": "https://www.offsec.com/courses/exp-301/"
       }
     ]
   },
@@ -3570,7 +4582,7 @@
     "display": "OSINT",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "OSINT is intelligence gathered from publicly available sources such as websites, social media, public records, and code repositories. Threat intel analysts use it to research adversaries, while defenders use it to see what information about their own organization is exposed. It matters because attackers use the same public data to plan phishing and social engineering campaigns.",
+    "explanation": "OSINT is intelligence gathered from publicly available sources such as websites, social media, public records, and code repositories. Threat intel analysts use it to research adversaries, while defenders use it to see what information about their own organization is exposed. That defensive use matters because attackers use the same public data to plan phishing and social engineering campaigns.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -3588,6 +4600,19 @@
       {
         "name": "ISECOM",
         "url": "https://www.isecom.org/"
+      }
+    ]
+  },
+  "OSTH": {
+    "expansion": "OffSec Threat Hunter",
+    "display": "OSTH",
+    "category": "certifications",
+    "difficulty": "hard",
+    "explanation": "OSTH is OffSec's certification for proactive threat hunting, earned through the TH-200 course and a practical exam. Candidates hunt for realistic adversary activity, including ransomware operators and advanced persistent threats, using endpoint and network telemetry. It extends OffSec's defensive track alongside the OSDA and OSIR credentials.",
+    "sources": [
+      {
+        "name": "OffSec TH-200 and the OSTH Certification",
+        "url": "https://www.offsec.com/courses/th-200/"
       }
     ]
   },
@@ -3630,6 +4655,23 @@
       }
     ]
   },
+  "OVAL": {
+    "expansion": "Open Vulnerability and Assessment Language",
+    "display": "OVAL",
+    "category": "operations",
+    "difficulty": "hard",
+    "explanation": "OVAL is a standardized language for describing how to check a system's state, such as whether a specific patch is installed or a vulnerable configuration exists. Security scanners use OVAL definitions to test machines the same way regardless of vendor, making assessment results consistent and comparable. Originally created by MITRE, it is now maintained by the Center for Internet Security and is a core component of SCAP.",
+    "sources": [
+      {
+        "name": "OVAL (Center for Internet Security)",
+        "url": "https://oval.cisecurity.org/"
+      },
+      {
+        "name": "NIST SCAP Project",
+        "url": "https://csrc.nist.gov/projects/security-content-automation-protocol"
+      }
+    ]
+  },
   "OWASP": {
     "expansion": "Open Worldwide Application Security Project",
     "display": "OWASP",
@@ -3656,6 +4698,19 @@
       }
     ]
   },
+  "PAKE": {
+    "expansion": "Password-Authenticated Key Exchange",
+    "display": "PAKE",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "PAKE protocols let two parties who share only a low-entropy password establish a strong cryptographic session key, while ensuring that an attacker who intercepts the exchange cannot mount an offline guessing attack. Each active guess costs the attacker a full protocol run, so weak passwords gain far more protection than with naive password transmission. The IETF documents requirements for PAKE schemes in RFC 8125, and the CFRG has since recommended CPace and OPAQUE as modern choices.",
+    "sources": [
+      {
+        "name": "IETF RFC 8125",
+        "url": "https://www.rfc-editor.org/rfc/rfc8125"
+      }
+    ]
+  },
   "PAM": {
     "expansion": "Privileged Access Management",
     "display": "PAM",
@@ -3674,11 +4729,11 @@
     "display": "PAP",
     "category": "operations",
     "difficulty": "hard",
-    "explanation": "PAP is a companion scheme to TLP that tells recipients what they may do with threat intelligence, such as whether they can actively probe attacker infrastructure or only use it passively. It uses similar color codes to keep handling rules simple and consistent. It matters because acting carelessly on shared intel, like scanning an attacker's server, can tip off the adversary and burn an investigation.",
+    "explanation": "PAP is a companion scheme to TLP that tells recipients what they may do with threat intelligence, such as whether they can actively probe attacker infrastructure or only use it passively. It uses similar color codes to keep handling rules simple and consistent. Acting carelessly on shared intel, like scanning an attacker's server, can tip off the adversary and burn an investigation.",
     "sources": [
       {
-        "name": "FIRST",
-        "url": "https://www.first.org"
+        "name": "MISP Project Taxonomies (PAP)",
+        "url": "https://www.misp-project.org/taxonomies.html"
       }
     ]
   },
@@ -3690,8 +4745,8 @@
     "explanation": "PASTA is a seven-stage threat modeling methodology that starts from business objectives and works down to simulating realistic attacks against the application. It is more risk-centric than STRIDE, tying technical threats to business impact so leadership can weigh them. Teams apply it during design and architecture reviews for high-value systems where a lightweight checklist is not enough.",
     "sources": [
       {
-        "name": "OWASP Threat Modeling Process",
-        "url": "https://owasp.org/www-community/Threat_Modeling_Process"
+        "name": "OWASP Threat Modeling Cheat Sheet",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html"
       }
     ]
   },
@@ -3713,7 +4768,7 @@
     "display": "PBAC",
     "category": "identity",
     "difficulty": "hard",
-    "explanation": "PBAC centralizes authorization logic into written policies that are evaluated at access time, often combining roles, attributes, and context. Policies are typically expressed in a policy language and enforced by a decision engine rather than hardcoded in each application. It supports dynamic, fine-grained authorization across large environments.",
+    "explanation": "PBAC pulls authorization decisions out of individual applications and into centrally written policies that a decision engine evaluates at request time, weighing roles, attributes, and context together. Instead of each app hardcoding its own access rules, one policy set governs many systems, keeping authorization consistent and auditable. It matters most in large environments where scattered, inconsistent access logic becomes a security and compliance liability.",
     "sources": [
       {
         "name": "NIST Computer Security Resource Center Glossary",
@@ -3739,7 +4794,7 @@
     "display": "PCAP",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "A PCAP is a recorded copy of raw network traffic, saved packet by packet for later analysis. Incident responders replay PCAPs in tools like Wireshark to see exactly what data crossed the network during an attack. It matters because full packet data is the ground truth of network activity; logs summarize, but PCAPs show everything.",
+    "explanation": "A PCAP is a recorded copy of raw network traffic, saved packet by packet for later analysis. Incident responders replay PCAPs in tools like Wireshark to see exactly what data crossed the network during an attack. Full packet data is the ground truth of network activity; logs summarize, but PCAPs show everything.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -3770,6 +4825,19 @@
       {
         "name": "PCI Security Standards Council",
         "url": "https://www.pcisecuritystandards.org/"
+      }
+    ]
+  },
+  "PDPA": {
+    "expansion": "Personal Data Protection Act",
+    "display": "PDPA",
+    "category": "governance",
+    "difficulty": "hard",
+    "explanation": "Singapore's data protection law governing the collection, use, and disclosure of personal data by private sector organizations. It requires consent, purpose limitation, and reasonable security arrangements, and includes a Do Not Call registry. The Personal Data Protection Commission enforces it, with financial penalties for organizations that mishandle data. Several other countries, including Thailand and Malaysia, have similarly named laws.",
+    "sources": [
+      {
+        "name": "PDPC Singapore",
+        "url": "https://www.pdpc.gov.sg/overview-of-pdpa/the-legislation/personal-data-protection-act"
       }
     ]
   },
@@ -3812,6 +4880,36 @@
       }
     ]
   },
+  "PHI": {
+    "expansion": "Protected Health Information",
+    "display": "PHI",
+    "category": "governance",
+    "difficulty": "easy",
+    "explanation": "Health information that can be linked to an individual, such as medical records, diagnoses, and billing data. Under HIPAA, healthcare providers, insurers, and their business associates must safeguard PHI and can face steep penalties for improper disclosure. It is one of the most heavily regulated and frequently breached categories of data.",
+    "sources": [
+      {
+        "name": "HHS HIPAA Privacy Rule",
+        "url": "https://www.hhs.gov/hipaa/for-professionals/privacy/index.html"
+      }
+    ]
+  },
+  "PII": {
+    "expansion": "Personally Identifiable Information",
+    "display": "PII",
+    "category": "governance",
+    "difficulty": "easy",
+    "explanation": "Any information that can be used to identify a specific person, such as names, Social Security numbers, email addresses, or biometric records. Nearly every privacy law and breach notification rule hinges on whether PII was exposed. Organizations classify and protect PII to limit legal liability and the harm that identity thieves can cause with it.",
+    "sources": [
+      {
+        "name": "NIST Glossary",
+        "url": "https://csrc.nist.gov/glossary/term/personally_identifiable_information"
+      },
+      {
+        "name": "NIST SP 800-122",
+        "url": "https://csrc.nist.gov/pubs/sp/800/122/final"
+      }
+    ]
+  },
   "PIM": {
     "expansion": "Privileged Identity Management",
     "display": "PIM",
@@ -3838,6 +4936,36 @@
       }
     ]
   },
+  "PIPL": {
+    "expansion": "Personal Information Protection Law",
+    "display": "PIPL",
+    "category": "governance",
+    "difficulty": "hard",
+    "explanation": "China's comprehensive privacy law, in effect since November 2021, often compared to the EU's GDPR. It requires consent for processing personal information, imposes strict rules on transferring data out of China, and applies to foreign companies that handle Chinese residents' data. Fines can reach 5 percent of annual revenue, making it a major compliance concern for multinationals.",
+    "sources": [
+      {
+        "name": "Stanford DigiChina (English translation)",
+        "url": "https://digichina.stanford.edu/work/translation-personal-information-protection-law-of-the-peoples-republic-of-china-effective-nov-1-2021/"
+      }
+    ]
+  },
+  "PIV": {
+    "expansion": "Personal Identity Verification",
+    "display": "PIV",
+    "category": "identity",
+    "difficulty": "medium",
+    "explanation": "PIV is the US federal standard, defined in FIPS 201, for smart card credentials issued to government employees and contractors. Each card binds a person's verified identity to cryptographic keys and certificates used for building access and system login. It provides strong, phishing-resistant authentication and is a model for high-assurance identity programs beyond government.",
+    "sources": [
+      {
+        "name": "NIST FIPS 201-3",
+        "url": "https://csrc.nist.gov/pubs/fips/201-3/final"
+      },
+      {
+        "name": "GSA IDManagement PIV Guide",
+        "url": "https://www.idmanagement.gov/university/piv/"
+      }
+    ]
+  },
   "PKCE": {
     "expansion": "Proof Key for Code Exchange",
     "display": "PKCE",
@@ -3848,6 +4976,23 @@
       {
         "name": "RFC 7636 (PKCE)",
         "url": "https://datatracker.ietf.org/doc/html/rfc7636"
+      }
+    ]
+  },
+  "PKCS": {
+    "expansion": "Public Key Cryptography Standards",
+    "display": "PKCS",
+    "category": "crypto",
+    "difficulty": "medium",
+    "explanation": "PKCS is a family of numbered standards, originally published by RSA Laboratories, that define how public-key cryptography is used in practice. Well-known members include PKCS #1 for RSA encryption and signatures, PKCS #7 for signed and encrypted messages, PKCS #11 for talking to hardware tokens, and PKCS #12 for bundling keys and certificates into a single file. Many of these have since been republished as IETF RFCs and remain foundational to certificates, smart cards, and TLS deployments.",
+    "sources": [
+      {
+        "name": "NIST Glossary: PKCS",
+        "url": "https://csrc.nist.gov/glossary/term/pkcs"
+      },
+      {
+        "name": "IETF RFC 8017 (PKCS #1)",
+        "url": "https://www.rfc-editor.org/rfc/rfc8017"
       }
     ]
   },
@@ -3920,6 +5065,36 @@
       }
     ]
   },
+  "POP3": {
+    "expansion": "Post Office Protocol version 3",
+    "display": "POP3",
+    "category": "network",
+    "difficulty": "easy",
+    "explanation": "POP3 is an older email retrieval protocol that downloads messages from a mail server to a single device, usually deleting them from the server afterward. In its original form it sends usernames and passwords in plaintext on port 110, making credentials easy to sniff. Modern deployments require the TLS-protected variant on port 995, and many organizations disable legacy POP3 entirely because attackers use it to bypass MFA.",
+    "sources": [
+      {
+        "name": "IETF RFC 1939",
+        "url": "https://www.rfc-editor.org/rfc/rfc1939"
+      }
+    ]
+  },
+  "POPIA": {
+    "expansion": "Protection of Personal Information Act",
+    "display": "POPIA",
+    "category": "governance",
+    "difficulty": "hard",
+    "explanation": "South Africa's data protection law, fully in force since July 2021. It sets conditions for the lawful processing of personal information, grants data subjects rights over their data, and requires breach notification to the Information Regulator. It applies to any organization processing personal information in South Africa, with penalties including fines and imprisonment.",
+    "sources": [
+      {
+        "name": "South African Government",
+        "url": "https://www.gov.za/documents/protection-personal-information-act"
+      },
+      {
+        "name": "Information Regulator (South Africa)",
+        "url": "https://inforegulator.org.za/"
+      }
+    ]
+  },
   "PPTP": {
     "expansion": "Point-to-Point Tunneling Protocol",
     "display": "PPTP",
@@ -3964,7 +5139,7 @@
     "display": "PSIRT",
     "category": "operations",
     "difficulty": "hard",
-    "explanation": "A PSIRT handles vulnerability reports and security incidents affecting a company's own products rather than its internal network. When a researcher reports a flaw in a vendor's software, the PSIRT triages it, coordinates a fix, and publishes an advisory. It matters because responsible vulnerability handling protects every customer who runs the affected product.",
+    "explanation": "A PSIRT handles vulnerability reports and security incidents affecting a company's own products rather than its internal network. When a researcher reports a flaw in a vendor's software, the PSIRT triages it, coordinates a fix, and publishes an advisory, protecting every customer who runs the affected product.",
     "sources": [
       {
         "name": "FIRST",
@@ -4003,11 +5178,24 @@
     "display": "PtT",
     "category": "attacks",
     "difficulty": "hard",
-    "explanation": "Pass the Ticket is a technique where attackers steal Kerberos tickets from a compromised machine and reuse them to authenticate as that user elsewhere in the domain. Variants like golden and silver tickets let attackers forge credentials with long-lasting, elevated access. It matters because it abuses the trust fabric of Active Directory itself, making cleanup after a breach difficult.",
+    "explanation": "Pass the Ticket is a technique where attackers steal Kerberos tickets from a compromised machine and reuse them to authenticate as that user elsewhere in the domain. Variants like golden and silver tickets let attackers forge credentials with long-lasting, elevated access.",
     "sources": [
       {
         "name": "MITRE ATT&CK T1550.003",
         "url": "https://attack.mitre.org/techniques/T1550/003/"
+      }
+    ]
+  },
+  "PUF": {
+    "expansion": "Physical Unclonable Function",
+    "display": "PUF",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "A PUF exploits tiny, uncontrollable manufacturing variations in a chip to produce a unique fingerprint that cannot be copied, even by the original manufacturer. When challenged with an input, the circuit produces a device-specific response that can serve as a hardware root of trust, a key generator, or an anti-counterfeiting mechanism. Because the secret is derived from physical structure rather than stored in memory, it is much harder to extract than a conventional key.",
+    "sources": [
+      {
+        "name": "NIST Glossary: PUF",
+        "url": "https://csrc.nist.gov/glossary/term/puf"
       }
     ]
   },
@@ -4034,6 +5222,19 @@
       {
         "name": "PCI Security Standards Council",
         "url": "https://www.pcisecuritystandards.org/"
+      }
+    ]
+  },
+  "QUIC": {
+    "expansion": "Quick UDP Internet Connections",
+    "display": "QUIC",
+    "category": "network",
+    "difficulty": "medium",
+    "explanation": "QUIC is a modern transport protocol that runs over UDP and carries HTTP/3, combining the connection setup and TLS 1.3 encryption into fewer round trips for faster, always-encrypted connections. Because nearly everything including much of the header is encrypted, traditional network inspection tools see far less of QUIC traffic than of TCP-based HTTPS. Some organizations block QUIC to force traffic back to inspectable HTTPS, trading performance for visibility.",
+    "sources": [
+      {
+        "name": "IETF RFC 9000",
+        "url": "https://www.rfc-editor.org/rfc/rfc9000"
       }
     ]
   },
@@ -4124,7 +5325,7 @@
     "display": "RCA",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "RCA is the structured investigation done after an incident to identify the underlying cause, not just the visible symptoms. IR teams conduct RCA during post-incident review to answer why the breach was possible and what systemic fix prevents a repeat. It matters because patching one compromised server without fixing the root cause invites the same attack next month.",
+    "explanation": "RCA is the structured investigation done after an incident to identify the underlying cause, not just the visible symptoms. IR teams conduct RCA during post-incident review to answer why the breach was possible and what systemic fix prevents a repeat. Patching one compromised server without fixing the root cause invites the same attack next month.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -4149,6 +5350,32 @@
       }
     ]
   },
+  "RDP": {
+    "expansion": "Remote Desktop Protocol",
+    "display": "RDP",
+    "category": "network",
+    "difficulty": "easy",
+    "explanation": "RDP is Microsoft's protocol for remotely controlling a Windows desktop or server over the network, typically on TCP port 3389. Because it grants full interactive access, RDP exposed to the internet is one of the most common entry points for ransomware operators, who brute-force weak passwords or buy stolen credentials. Best practice is to keep RDP behind a VPN or gateway, require MFA, and enable Network Level Authentication.",
+    "sources": [
+      {
+        "name": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/understanding-remote-desktop-protocol"
+      }
+    ]
+  },
+  "REDOS": {
+    "expansion": "Regular Expression Denial of Service",
+    "display": "ReDoS",
+    "category": "appsec",
+    "difficulty": "hard",
+    "explanation": "ReDoS exploits poorly written regular expressions whose matching time explodes on certain crafted inputs, a behavior called catastrophic backtracking. A single short malicious string can pin a server's CPU for minutes, taking an application offline without any traffic flood. Defenses include avoiding nested quantifiers, using regex engines with linear-time guarantees, and putting timeouts on matching.",
+    "sources": [
+      {
+        "name": "OWASP: Regular Expression Denial of Service",
+        "url": "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS"
+      }
+    ]
+  },
   "RFI": {
     "expansion": "Remote File Inclusion",
     "display": "RFI",
@@ -4157,8 +5384,8 @@
     "explanation": "Remote File Inclusion is a web flaw where an application can be made to fetch and execute a file hosted on an attacker-controlled server. Because the attacker supplies the file, this usually leads directly to full code execution on the web server. It is closely related to Local File Inclusion but is generally more severe when present.",
     "sources": [
       {
-        "name": "OWASP",
-        "url": "https://owasp.org/www-community/attacks/"
+        "name": "OWASP WSTG: Testing for Remote File Inclusion",
+        "url": "https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.2-Testing_for_Remote_File_Inclusion"
       }
     ]
   },
@@ -4266,6 +5493,40 @@
       }
     ]
   },
+  "SAE": {
+    "expansion": "Simultaneous Authentication of Equals",
+    "display": "SAE",
+    "category": "network",
+    "difficulty": "hard",
+    "explanation": "SAE is the password-authenticated key exchange used by WPA3 to replace WPA2's four-way handshake, based on the Dragonfly protocol. Its key advantage is resistance to offline dictionary attacks: capturing the handshake no longer lets an attacker guess the Wi-Fi password at leisure, and it provides forward secrecy for past sessions. Early implementations had side-channel flaws known as Dragonblood, showing that even strong designs need careful implementation.",
+    "sources": [
+      {
+        "name": "Wi-Fi Alliance WPA3 Specification",
+        "url": "https://www.wi-fi.org/file/wpa3-specification"
+      },
+      {
+        "name": "Wi-Fi Alliance Security",
+        "url": "https://www.wi-fi.org/discover-wi-fi/security"
+      }
+    ]
+  },
+  "SAM": {
+    "expansion": "Security Account Manager",
+    "display": "SAM",
+    "category": "network",
+    "difficulty": "medium",
+    "explanation": "The SAM is the Windows database that stores local account names and password hashes, kept in the registry and backed by a file under System32\\config. Attackers with admin or SYSTEM access dump the SAM to extract NTLM hashes for cracking or pass-the-hash attacks against other machines. Unique local admin passwords via LAPS and restricting admin access are the main defenses against SAM credential theft.",
+    "sources": [
+      {
+        "name": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/local-accounts"
+      },
+      {
+        "name": "MITRE ATT&CK T1003.002",
+        "url": "https://attack.mitre.org/techniques/T1003/002/"
+      }
+    ]
+  },
   "SAML": {
     "expansion": "Security Assertion Markup Language",
     "display": "SAML",
@@ -4313,8 +5574,8 @@
     "explanation": "SASE (pronounced sassy) converges networking and security into a single cloud-delivered service. It combines capabilities like SD-WAN, secure web gateways, CASB, and zero trust network access. Instead of routing all traffic through a corporate data center, users connect to a nearby cloud edge that applies security policy wherever they are.",
     "sources": [
       {
-        "name": "CISA",
-        "url": "https://www.cisa.gov/"
+        "name": "Microsoft Security 101: What Is SASE",
+        "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-sase"
       }
     ]
   },
@@ -4384,6 +5645,19 @@
       {
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
+      }
+    ]
+  },
+  "SCAP": {
+    "expansion": "Security Content Automation Protocol",
+    "display": "SCAP",
+    "category": "operations",
+    "difficulty": "hard",
+    "explanation": "SCAP is a NIST-maintained suite of specifications that lets tools automatically check systems for vulnerabilities and misconfigurations in a standardized, machine-readable way. It bundles component standards like CVE, CVSS, OVAL, and XCCDF so a scanner from one vendor can consume checklists written by another. Manually auditing thousands of machines against security baselines is impossible, so SCAP makes compliance checking automatable and repeatable.",
+    "sources": [
+      {
+        "name": "NIST SCAP Project",
+        "url": "https://csrc.nist.gov/projects/security-content-automation-protocol"
       }
     ]
   },
@@ -4483,11 +5757,11 @@
     "display": "SECaaS",
     "category": "cloud",
     "difficulty": "hard",
-    "explanation": "SECaaS delivers security capabilities like email filtering, identity management, web security, and SIEM from the cloud on a subscription basis. Instead of buying and maintaining security appliances, organizations consume protection as a service that scales with them. The Cloud Security Alliance has published guidance defining the major SECaaS categories.",
+    "explanation": "SECaaS is the model of consuming security functions like email filtering, web security, identity, and SIEM from the cloud on subscription rather than buying and running appliances. It lets organizations scale protection up or down without capital investment or in-house maintenance, which is why smaller teams lean on it heavily. The tradeoff is dependence on the provider's coverage and uptime, so vendor due diligence becomes its own control.",
     "sources": [
       {
-        "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "name": "Cloud Security Alliance: SecaaS Defined Categories of Service",
+        "url": "https://cloudsecurityalliance.org/articles/csa-issues-first-secaas-white-paper"
       }
     ]
   },
@@ -4574,7 +5848,7 @@
     "display": "SIEM",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "A SIEM collects and correlates logs and events from across an organization's systems into one searchable platform. SOC analysts use it to spot patterns that indicate attacks, investigate incidents, and meet compliance logging requirements. It matters because no human can watch thousands of log sources manually; the SIEM makes that data usable.",
+    "explanation": "A SIEM collects and correlates logs and events from across an organization's systems into one searchable platform. No human can watch thousands of log sources manually, so SOC analysts use the SIEM to spot patterns that indicate attacks, investigate incidents, and meet compliance logging requirements.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -4603,8 +5877,21 @@
     "explanation": "The expected monetary loss from a single occurrence of a specific risk event, calculated as asset value multiplied by the exposure factor. It answers the question of how much one bad day would cost. It feeds into annualized loss expectancy when combined with how often the event is expected to happen.",
     "sources": [
       {
-        "name": "NIST CSRC Glossary",
-        "url": "https://csrc.nist.gov/glossary"
+        "name": "ISACA Journal: Risk Assessment and Analysis Methods",
+        "url": "https://www.isaca.org/resources/isaca-journal/issues/2021/volume-2/risk-assessment-and-analysis-methods"
+      }
+    ]
+  },
+  "SLHDSA": {
+    "expansion": "Stateless Hash-Based Digital Signature Algorithm",
+    "display": "SLH-DSA",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "SLH-DSA, standardized by NIST as FIPS 205 in 2024, is a post-quantum signature scheme derived from the SPHINCS+ submission. Its security rests only on the strength of hash functions, a very conservative assumption, and unlike earlier hash-based schemes it requires no state tracking between signatures. The tradeoff is larger signatures and slower signing than ML-DSA, so it serves as a hedge in case lattice cryptography is ever broken.",
+    "sources": [
+      {
+        "name": "NIST FIPS 205",
+        "url": "https://csrc.nist.gov/pubs/fips/205/final"
       }
     ]
   },
@@ -4631,6 +5918,19 @@
       {
         "name": "SLSA",
         "url": "https://slsa.dev/"
+      }
+    ]
+  },
+  "SMB": {
+    "expansion": "Server Message Block",
+    "display": "SMB",
+    "category": "network",
+    "difficulty": "easy",
+    "explanation": "SMB is the protocol Windows uses for file and printer sharing across a network, running on TCP port 445. It has a long history of serious vulnerabilities, most famously the EternalBlue exploit in SMBv1 that powered the WannaCry and NotPetya outbreaks in 2017. Defenders disable SMBv1, block port 445 at the perimeter, and require SMB signing to prevent relay attacks.",
+    "sources": [
+      {
+        "name": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/windows-server/storage/file-server/file-server-smb-overview"
       }
     ]
   },
@@ -4686,6 +5986,23 @@
       }
     ]
   },
+  "SOAP": {
+    "expansion": "Simple Object Access Protocol",
+    "display": "SOAP",
+    "category": "appsec",
+    "difficulty": "medium",
+    "explanation": "SOAP is an XML-based messaging protocol for web services, common in enterprise and legacy systems where REST has not replaced it. Its XML foundation exposes it to attacks like XXE, XML bombs, and signature wrapping, and its WSDL files can leak API details to attackers. Securing SOAP services means hardening XML parsers and validating messages, not just protecting the transport.",
+    "sources": [
+      {
+        "name": "MDN Web Docs: SOAP",
+        "url": "https://developer.mozilla.org/en-US/docs/Glossary/SOAP"
+      },
+      {
+        "name": "W3C SOAP 1.2 Specification",
+        "url": "https://www.w3.org/TR/soap12/"
+      }
+    ]
+  },
   "SOAR": {
     "expansion": "Security Orchestration, Automation, and Response",
     "display": "SOAR",
@@ -4704,7 +6021,7 @@
     "display": "SOC",
     "category": "operations",
     "difficulty": "easy",
-    "explanation": "A SOC is the central team and facility where an organization monitors, detects, and responds to security threats around the clock. Analysts watch alerts from tools like SIEM and EDR, triage suspicious activity, and escalate confirmed incidents. It matters because it is the front line that turns raw security telemetry into actual defense.",
+    "explanation": "A SOC is the central team and facility where an organization monitors, detects, and responds to security threats around the clock. Analysts watch alerts from tools like SIEM and EDR, triage suspicious activity, and escalate confirmed incidents. It is the front line that turns raw security telemetry into actual defense.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -4724,8 +6041,8 @@
     "explanation": "An attestation report, defined by the AICPA, in which an independent auditor evaluates a service organization's controls against the Trust Services Criteria: security, availability, processing integrity, confidentiality, and privacy. Type I covers control design at a point in time, while Type II tests operating effectiveness over months. It has become the default security due-diligence artifact that SaaS vendors hand to enterprise customers.",
     "sources": [
       {
-        "name": "AICPA & CIMA",
-        "url": "https://www.aicpa-cima.com/"
+        "name": "AICPA & CIMA: SOC Suite of Services",
+        "url": "https://www.aicpa-cima.com/resources/landing/system-and-organization-controls-soc-suite-of-services"
       }
     ]
   },
@@ -4750,8 +6067,8 @@
     "explanation": "A US law passed in 2002 after the Enron and WorldCom accounting scandals to protect investors from fraudulent financial reporting. It requires public companies to maintain and audit internal controls over financial reporting, which in practice includes IT controls around financial systems. Executives must personally certify the accuracy of financial statements, with criminal penalties for false certification.",
     "sources": [
       {
-        "name": "U.S. Securities and Exchange Commission",
-        "url": "https://www.sec.gov/"
+        "name": "U.S. GPO: Sarbanes-Oxley Act of 2002 (Public Law 107-204)",
+        "url": "https://www.govinfo.gov/app/details/PLAW-107publ204"
       }
     ]
   },
@@ -4794,6 +6111,19 @@
       }
     ]
   },
+  "SPIRE": {
+    "expansion": "SPIFFE Runtime Environment",
+    "display": "SPIRE",
+    "category": "cloud",
+    "difficulty": "hard",
+    "explanation": "SPIRE is the open source production implementation of the SPIFFE standard for workload identity. It verifies what a workload is through attestation of its node and process, then issues it a short-lived cryptographic identity document automatically. This replaces hardcoded secrets and API keys for service-to-service authentication, a foundation for zero trust in cloud and Kubernetes environments.",
+    "sources": [
+      {
+        "name": "SPIFFE Project: About SPIRE",
+        "url": "https://spiffe.io/docs/latest/spire-about/"
+      }
+    ]
+  },
   "SQLI": {
     "expansion": "SQL Injection",
     "display": "SQLi",
@@ -4828,12 +6158,25 @@
     "explanation": "The Shared Responsibility Model defines which security duties belong to the cloud provider and which belong to the customer. Broadly, the provider secures the cloud itself while the customer secures what they put in it, such as data, identities, and configurations. The dividing line shifts with the service model, and misunderstanding it is a classic root cause of cloud breaches.",
     "sources": [
       {
-        "name": "CISA",
-        "url": "https://www.cisa.gov/"
+        "name": "Microsoft Learn: Shared Responsibility in the Cloud",
+        "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility"
       },
       {
-        "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "name": "AWS Shared Responsibility Model",
+        "url": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+      }
+    ]
+  },
+  "SRP": {
+    "expansion": "Secure Remote Password",
+    "display": "SRP",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "SRP is a password-authenticated key exchange protocol that lets a client prove knowledge of a password to a server and derive a strong session key, without ever sending the password or anything usable in an offline dictionary attack by an eavesdropper. The server stores a verifier rather than the password itself, limiting damage from database theft. Standardized in RFC 2945, SRP saw adoption in products like Apple iCloud and 1Password, though newer PAKE designs such as OPAQUE are now preferred for new systems.",
+    "sources": [
+      {
+        "name": "IETF RFC 2945",
+        "url": "https://www.rfc-editor.org/rfc/rfc2945"
       }
     ]
   },
@@ -4876,6 +6219,19 @@
       }
     ]
   },
+  "SSDP": {
+    "expansion": "Simple Service Discovery Protocol",
+    "display": "SSDP",
+    "category": "network",
+    "difficulty": "hard",
+    "explanation": "SSDP is the discovery protocol behind UPnP, letting devices announce themselves and find services on a local network over UDP port 1900. Millions of devices answer SSDP queries from the internet when they should not, and because responses are much larger than requests, attackers abuse them for reflected DDoS amplification. Blocking UDP 1900 at the network edge removes both the amplification risk and unwanted device exposure.",
+    "sources": [
+      {
+        "name": "CISA Alert TA14-017A",
+        "url": "https://www.cisa.gov/news-events/alerts/2014/01/17/udp-based-amplification-attacks"
+      }
+    ]
+  },
   "SSE": {
     "expansion": "Security Service Edge",
     "display": "SSE",
@@ -4884,8 +6240,8 @@
     "explanation": "SSE is the security half of SASE, bundling cloud-delivered protections like secure web gateway, CASB, and zero trust network access without the networking components. Organizations often adopt SSE first when they want to secure user access to the web and cloud apps but keep their existing network setup. It reflects the shift of the security perimeter from the office to the cloud.",
     "sources": [
       {
-        "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "name": "Microsoft Security 101: What Is Security Service Edge (SSE)",
+        "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-security-service-edge-sse"
       }
     ]
   },
@@ -4928,6 +6284,19 @@
       }
     ]
   },
+  "SSPM": {
+    "expansion": "SaaS Security Posture Management",
+    "display": "SSPM",
+    "category": "cloud",
+    "difficulty": "hard",
+    "explanation": "SSPM continuously checks the security settings of SaaS applications like Microsoft 365, Salesforce, and Slack for risky misconfigurations, excessive permissions, and dangerous third-party integrations. Companies now run hundreds of SaaS apps, each with its own admin console that is easy to misconfigure. SSPM gives security teams one place to spot exposed data, dormant admin accounts, and policy drift across all of them.",
+    "sources": [
+      {
+        "name": "Microsoft Learn: SaaS Security Posture Management (SSPM)",
+        "url": "https://learn.microsoft.com/en-us/defender-cloud-apps/posture-overview"
+      }
+    ]
+  },
   "SSRF": {
     "expansion": "Server-Side Request Forgery",
     "display": "SSRF",
@@ -4949,8 +6318,25 @@
     "explanation": "Server-Side Template Injection occurs when user input is embedded directly into a server-side template and then evaluated by the template engine. Because template engines can execute expressions, this often escalates to full remote code execution on the server. It matters as web frameworks increasingly rely on templating, and the fix is never mixing untrusted input into template logic.",
     "sources": [
       {
-        "name": "OWASP",
-        "url": "https://owasp.org/www-project-web-security-testing-guide/"
+        "name": "OWASP WSTG: Testing for Server-side Template Injection",
+        "url": "https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/18-Testing_for_Server-side_Template_Injection"
+      }
+    ]
+  },
+  "SSVC": {
+    "expansion": "Stakeholder-Specific Vulnerability Categorization",
+    "display": "SSVC",
+    "category": "operations",
+    "difficulty": "hard",
+    "explanation": "SSVC is a decision-tree framework, developed by Carnegie Mellon's SEI with CISA, that helps organizations decide what to do about a vulnerability rather than just scoring its severity. It walks through questions like whether exploitation is active, how automatable an attack is, and what the impact would be, ending in a concrete action such as track, attend, or act now. A raw CVSS number does not tell a specific organization whether to patch tonight or next quarter.",
+    "sources": [
+      {
+        "name": "CERT/CC SSVC",
+        "url": "https://certcc.github.io/SSVC/"
+      },
+      {
+        "name": "CISA SSVC",
+        "url": "https://www.cisa.gov/stakeholder-specific-vulnerability-categorization-ssvc"
       }
     ]
   },
@@ -4998,7 +6384,7 @@
     "display": "STIX",
     "category": "operations",
     "difficulty": "hard",
-    "explanation": "STIX is a standardized language for describing threat intelligence, such as indicators, threat actors, and attack patterns, in machine-readable form. Teams use it so their tools can automatically ingest and share intel without manual reformatting. It matters because standardized formats let the whole defender community exchange threat data at machine speed.",
+    "explanation": "STIX is a standardized language for describing threat intelligence, such as indicators, threat actors, and attack patterns, in machine-readable form. Standardized formats let the whole defender community exchange threat data at machine speed. Teams use STIX so their tools can automatically ingest and share intel without manual reformatting.",
     "sources": [
       {
         "name": "OASIS CTI Documentation",
@@ -5019,12 +6405,25 @@
       }
     ]
   },
+  "STS": {
+    "expansion": "Security Token Service",
+    "display": "STS",
+    "category": "cloud",
+    "difficulty": "medium",
+    "explanation": "An STS issues short-lived, temporary security credentials, often in exchange for another proof of identity such as a federated login or an assumed role. AWS STS is the best-known example, powering role assumption and cross-account access. Short-lived tokens shrink the damage window when credentials leak, which is why security guidance favors them over long-lived access keys.",
+    "sources": [
+      {
+        "name": "AWS Security Token Service API Reference",
+        "url": "https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html"
+      }
+    ]
+  },
   "SYSLOG": {
     "expansion": "System Logging Protocol",
     "display": "syslog",
     "category": "operations",
     "difficulty": "easy",
-    "explanation": "Syslog is the long-standing standard for sending log messages from servers, network gear, and applications to a central collector. SOC teams rely on syslog forwarding to feed events from across the environment into their SIEM. It matters because centralized logging is the raw material of detection; without it, evidence stays scattered on individual devices where attackers can erase it.",
+    "explanation": "Syslog is the long-standing standard for sending log messages from servers, network gear, and applications to a central collector. SOC teams rely on syslog forwarding to feed events from across the environment into their SIEM. Centralized logging is the raw material of detection; without it, evidence stays scattered on individual devices where attackers can erase it.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -5050,7 +6449,7 @@
     "display": "TAXII",
     "category": "operations",
     "difficulty": "hard",
-    "explanation": "TAXII is the transport protocol that delivers threat intelligence, usually formatted as STIX, between servers and clients. Organizations subscribe to TAXII feeds to automatically pull fresh indicators into their security tools. It matters because automated sharing means defenses update in near real time instead of waiting for someone to email a spreadsheet.",
+    "explanation": "TAXII is the transport protocol that delivers threat intelligence, usually formatted as STIX, between servers and clients. Organizations subscribe to TAXII feeds to automatically pull fresh indicators into their security tools, so defenses update in near real time instead of waiting for someone to email a spreadsheet.",
     "sources": [
       {
         "name": "OASIS CTI Documentation",
@@ -5068,6 +6467,36 @@
       {
         "name": "IETF RFC 9293",
         "url": "https://www.rfc-editor.org/rfc/rfc9293"
+      }
+    ]
+  },
+  "TEE": {
+    "expansion": "Trusted Execution Environment",
+    "display": "TEE",
+    "category": "crypto",
+    "difficulty": "medium",
+    "explanation": "A TEE is an isolated area of a processor that runs code and handles data separately from the main operating system, protecting them even if the OS is compromised. Applications include mobile payment credentials, biometric processing, DRM, and confidential computing in the cloud. GlobalPlatform publishes the vendor-neutral specifications and certification program that define TEE security requirements and APIs.",
+    "sources": [
+      {
+        "name": "GlobalPlatform TEE Committee",
+        "url": "https://globalplatform.org/technical-committees/trusted-execution-environment-tee-committee/"
+      },
+      {
+        "name": "NIST Glossary: Trusted Execution Environment",
+        "url": "https://csrc.nist.gov/glossary/term/trusted_execution_environment"
+      }
+    ]
+  },
+  "TFTP": {
+    "expansion": "Trivial File Transfer Protocol",
+    "display": "TFTP",
+    "category": "network",
+    "difficulty": "medium",
+    "explanation": "TFTP is a bare-bones file transfer protocol over UDP port 69 with no authentication and no encryption, used mainly for network booting and pushing firmware or configs to network devices. Because anyone who can reach a TFTP server can often read or write files, exposed servers leak router configurations containing passwords. It should be restricted to isolated management networks and replaced with authenticated alternatives where possible.",
+    "sources": [
+      {
+        "name": "IETF RFC 1350",
+        "url": "https://www.rfc-editor.org/rfc/rfc1350"
       }
     ]
   },
@@ -5089,11 +6518,11 @@
     "display": "TIP",
     "category": "operations",
     "difficulty": "hard",
-    "explanation": "A TIP is software that aggregates, normalizes, and manages threat intelligence feeds from many sources in one place. Analysts use it to deduplicate indicators, add context, and push curated intelligence into the SIEM and other defenses. It matters because raw intel feeds are noisy, and a TIP turns that flood into something operational.",
+    "explanation": "A TIP is software that aggregates, normalizes, and manages threat intelligence feeds from many sources in one place. Raw intel feeds are noisy, and a TIP turns that flood into something operational. Analysts use it to deduplicate indicators, add context, and push curated intelligence into the SIEM and other defenses.",
     "sources": [
       {
-        "name": "NIST CSRC Glossary",
-        "url": "https://csrc.nist.gov/glossary"
+        "name": "ENISA: Threat Intelligence Platforms report",
+        "url": "https://www.enisa.europa.eu/publications/exploring-the-opportunities-and-limitations-of-current-threat-intelligence-platforms"
       }
     ]
   },
@@ -5102,7 +6531,7 @@
     "display": "TLP",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "TLP is a labeling scheme that marks how widely shared information may be spread, using colors like RED, AMBER, GREEN, and CLEAR. Threat intel analysts attach TLP labels to reports so recipients know whether they can forward them, share within their organization, or publish freely. It matters because trusted sharing collapses if sensitive intelligence leaks beyond its intended audience.",
+    "explanation": "TLP is a labeling scheme that marks how widely shared information may be spread, using colors like RED, AMBER, GREEN, and CLEAR. Threat intel analysts attach TLP labels to reports so recipients know whether they can forward them, share within their organization, or publish freely. Trusted sharing collapses if sensitive intelligence leaks beyond its intended audience.",
     "sources": [
       {
         "name": "FIRST TLP",
@@ -5135,8 +6564,8 @@
     "explanation": "A Time-of-Check to Time-of-Use flaw is a race condition where a program checks a condition, like file permissions, and then acts on it, but the state changes in the gap between the check and the use. Attackers exploit that window, for example by swapping a file for a link to a sensitive one. TOCTOU bugs are a classic source of privilege escalation in operating systems.",
     "sources": [
       {
-        "name": "NIST CSRC",
-        "url": "https://csrc.nist.gov/glossary"
+        "name": "MITRE CWE-367: TOCTOU Race Condition",
+        "url": "https://cwe.mitre.org/data/definitions/367.html"
       }
     ]
   },
@@ -5200,6 +6629,23 @@
       }
     ]
   },
+  "TTX": {
+    "expansion": "Tabletop Exercise",
+    "display": "TTX",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "A TTX is a discussion-based exercise where a team walks through a simulated incident scenario, such as a ransomware outbreak, without touching real systems. Participants talk through their roles, decisions, and escalation paths to find gaps in the incident response plan before a real crisis. Plans that look fine on paper often fall apart the first time people actually rehearse them.",
+    "sources": [
+      {
+        "name": "NIST CSRC Glossary",
+        "url": "https://csrc.nist.gov/glossary/term/tabletop_exercise"
+      },
+      {
+        "name": "CISA Tabletop Exercise Packages",
+        "url": "https://www.cisa.gov/resources-tools/services/cisa-tabletop-exercise-packages"
+      }
+    ]
+  },
   "U2F": {
     "expansion": "Universal 2nd Factor",
     "display": "U2F",
@@ -5213,6 +6659,23 @@
       }
     ]
   },
+  "UAC": {
+    "expansion": "User Account Control",
+    "display": "UAC",
+    "category": "network",
+    "difficulty": "medium",
+    "explanation": "UAC is the Windows feature that prompts for consent before a program runs with administrator privileges, keeping everyday sessions at standard user rights. It raises the bar for malware, but it is a convenience boundary rather than a hard security boundary, and attackers use well-known UAC bypass techniques to elevate silently. Setting UAC to always notify and denying local admin rights altogether are stronger protections.",
+    "sources": [
+      {
+        "name": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/"
+      },
+      {
+        "name": "MITRE ATT&CK T1548.002",
+        "url": "https://attack.mitre.org/techniques/T1548/002/"
+      }
+    ]
+  },
   "UAF": {
     "expansion": "Use After Free",
     "display": "UAF",
@@ -5221,8 +6684,8 @@
     "explanation": "Use After Free is a memory corruption bug where a program continues using memory after it has been released back to the system. Attackers can place their own data in the freed space, hijacking the program's behavior and often achieving code execution. UAF bugs are a leading cause of browser and operating system exploits, motivating the shift toward memory-safe languages.",
     "sources": [
       {
-        "name": "NIST CSRC",
-        "url": "https://csrc.nist.gov/glossary"
+        "name": "MITRE CWE-416: Use After Free",
+        "url": "https://cwe.mitre.org/data/definitions/416.html"
       }
     ]
   },
@@ -5231,11 +6694,11 @@
     "display": "UBA",
     "category": "operations",
     "difficulty": "hard",
-    "explanation": "UBA is the earlier form of behavior analytics focused only on human user accounts, before the field expanded to cover devices and services as UEBA. It profiles how each user normally works and alerts when activity breaks that pattern. It matters historically and in vendor terminology, since many tools and papers still use the older name.",
+    "explanation": "UBA is a detection approach that builds a baseline of how each user account normally behaves, then flags deviations such as odd login times or unusual data access. It watches only human accounts, which is what distinguishes it from the broader UEBA that later added devices and service accounts. The term still appears in older tools and documentation, so recognizing it helps when comparing vendor detection capabilities.",
     "sources": [
       {
-        "name": "NIST CSRC Glossary",
-        "url": "https://csrc.nist.gov/glossary"
+        "name": "IBM: What Is User Behavior Analytics (UBA)",
+        "url": "https://www.ibm.com/think/topics/user-behavior-analytics"
       }
     ]
   },
@@ -5247,8 +6710,8 @@
     "explanation": "UCaaS bundles voice calling, video meetings, messaging, and collaboration tools into a single cloud-delivered platform. It replaced on-premises phone systems for many organizations, especially after the shift to remote work. Because these platforms carry sensitive conversations and integrate with directories and calendars, they need the same identity and data protections as any other core SaaS.",
     "sources": [
       {
-        "name": "CISA",
-        "url": "https://www.cisa.gov/"
+        "name": "Microsoft: Unified Communications as a Service (UCaaS)",
+        "url": "https://www.microsoft.com/en-us/microsoft-teams/unified-communications-as-a-service"
       }
     ]
   },
@@ -5270,7 +6733,7 @@
     "display": "UEBA",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "UEBA tools build baselines of normal behavior for users, hosts, and service accounts, then flag deviations like a login from a strange country or a sudden mass download. SOC teams use it to catch insider threats and compromised accounts that rule-based detection misses. It matters because stolen credentials look legitimate, and behavior is often the only tell.",
+    "explanation": "UEBA tools build baselines of normal behavior for users, hosts, and service accounts, then flag deviations like a login from a strange country or a sudden mass download. Stolen credentials look legitimate, and behavior is often the only tell, so SOC teams use UEBA to catch insider threats and compromised accounts that rule-based detection misses.",
     "sources": [
       {
         "name": "NIST CSRC Glossary",
@@ -5321,6 +6784,19 @@
       }
     ]
   },
+  "UPNP": {
+    "expansion": "Universal Plug and Play",
+    "display": "UPnP",
+    "category": "network",
+    "difficulty": "medium",
+    "explanation": "UPnP lets devices on a home or office network automatically discover each other and configure services, including asking the router to open firewall ports. That convenience is dangerous: malware can silently punch holes in the firewall, and flaws like CallStranger (CVE-2020-12695) allowed data exfiltration and DDoS amplification through UPnP endpoints. Security guidance is to disable UPnP on routers, or at minimum block it from the internet-facing side.",
+    "sources": [
+      {
+        "name": "CERT/CC VU#339275 (CallStranger UPnP vulnerability)",
+        "url": "https://www.kb.cert.org/vuls/id/339275/"
+      }
+    ]
+  },
   "USB": {
     "expansion": "Universal Serial Bus",
     "display": "USB",
@@ -5348,6 +6824,19 @@
       {
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
+      }
+    ]
+  },
+  "VCISO": {
+    "expansion": "Virtual Chief Information Security Officer",
+    "display": "vCISO",
+    "category": "governance",
+    "difficulty": "medium",
+    "explanation": "An outsourced or fractional security executive who provides CISO-level leadership on a part-time or contract basis. Small and midsize organizations use vCISOs to get strategy, risk management, and compliance guidance without the cost of a full-time hire. The vCISO typically builds the security program, briefs leadership, and oversees vendors and audits.",
+    "sources": [
+      {
+        "name": "ISACA Journal: Virtual CISOs - Security Leader or Security Risk?",
+        "url": "https://www.isaca.org/resources/isaca-journal/issues/2021/volume-5/virtual-cisos-security-leader-or-security-risk"
       }
     ]
   },
@@ -5403,6 +6892,32 @@
       }
     ]
   },
+  "VNC": {
+    "expansion": "Virtual Network Computing",
+    "display": "VNC",
+    "category": "network",
+    "difficulty": "medium",
+    "explanation": "VNC is a cross-platform remote desktop system that shares a computer's screen and input over the network using the RFB protocol, usually on port 5900. Many VNC deployments use weak or no passwords and lack encryption, so internet-exposed VNC servers are routinely scanned and hijacked by attackers. Like RDP, it should be tunneled through a VPN or SSH rather than exposed directly.",
+    "sources": [
+      {
+        "name": "IETF RFC 6143",
+        "url": "https://www.rfc-editor.org/rfc/rfc6143"
+      }
+    ]
+  },
+  "VOIP": {
+    "expansion": "Voice over Internet Protocol",
+    "display": "VoIP",
+    "category": "network",
+    "difficulty": "easy",
+    "explanation": "VoIP carries phone calls over IP networks instead of traditional phone lines, using protocols like SIP and RTP. Because calls are just network traffic, they inherit network threats: eavesdropping on unencrypted audio, caller ID spoofing used in vishing scams, and toll fraud against compromised phone systems. Securing VoIP means encrypting signaling and media and segmenting voice traffic from the rest of the network.",
+    "sources": [
+      {
+        "name": "NIST SP 800-58",
+        "url": "https://csrc.nist.gov/pubs/sp/800/58/final"
+      }
+    ]
+  },
   "VPC": {
     "expansion": "Virtual Private Cloud",
     "display": "VPC",
@@ -5429,6 +6944,19 @@
       }
     ]
   },
+  "VRF": {
+    "expansion": "Verifiable Random Function",
+    "display": "VRF",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "A VRF is like a keyed hash whose output comes with a proof: only the holder of the private key can compute the output, but anyone with the public key can verify it was computed correctly. This gives unpredictable yet publicly auditable randomness. VRFs, standardized in RFC 9381, are used in DNSSEC's NSEC5 research, leader election in proof-of-stake blockchains such as Algorand, and other systems that need bias-resistant random selection.",
+    "sources": [
+      {
+        "name": "IETF RFC 9381",
+        "url": "https://www.rfc-editor.org/rfc/rfc9381"
+      }
+    ]
+  },
   "VTPM": {
     "expansion": "Virtual Trusted Platform Module",
     "display": "vTPM",
@@ -5442,6 +6970,19 @@
       }
     ]
   },
+  "VXLAN": {
+    "expansion": "Virtual Extensible LAN",
+    "display": "VXLAN",
+    "category": "network",
+    "difficulty": "hard",
+    "explanation": "VXLAN extends layer 2 networks over layer 3 infrastructure by encapsulating Ethernet frames in UDP, and it is the backbone of network virtualization in modern data centers and clouds. It supports about 16 million virtual segments versus the 4096 limit of traditional VLANs. The encapsulation has no built-in authentication or encryption, so a host that can inject VXLAN packets may spoof traffic into other tenants' segments, making underlay access control critical.",
+    "sources": [
+      {
+        "name": "IETF RFC 7348",
+        "url": "https://www.rfc-editor.org/rfc/rfc7348"
+      }
+    ]
+  },
   "WAAP": {
     "expansion": "Web Application and API Protection",
     "display": "WAAP",
@@ -5450,8 +6991,8 @@
     "explanation": "WAAP describes cloud-delivered platforms that protect web applications and their APIs in one package. It extends the traditional web application firewall with bot management, API discovery and security, and DDoS mitigation. The category emerged because modern applications expose far more API traffic than the old WAF model was designed to handle.",
     "sources": [
       {
-        "name": "OWASP",
-        "url": "https://owasp.org/"
+        "name": "Akamai: What Is WAAP?",
+        "url": "https://www.akamai.com/glossary/what-is-waap"
       }
     ]
   },
@@ -5533,6 +7074,23 @@
       }
     ]
   },
+  "WMI": {
+    "expansion": "Windows Management Instrumentation",
+    "display": "WMI",
+    "category": "network",
+    "difficulty": "medium",
+    "explanation": "WMI is the Windows framework for querying system information and managing computers locally or remotely, used heavily by administrators and monitoring tools. Attackers love it for the same reasons: it can execute commands on remote hosts for lateral movement and create event subscriptions for stealthy persistence, all using a trusted built-in component. Because it is a classic living-off-the-land technique, defenders monitor WMI activity closely.",
+    "sources": [
+      {
+        "name": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/wmisdk/wmi-start-page"
+      },
+      {
+        "name": "MITRE ATT&CK T1047",
+        "url": "https://attack.mitre.org/techniques/T1047/"
+      }
+    ]
+  },
   "WPA2": {
     "expansion": "Wi-Fi Protected Access 2",
     "display": "WPA2",
@@ -5541,8 +7099,8 @@
     "explanation": "WPA2 has been the dominant Wi-Fi security standard since 2004, using AES-based CCMP encryption to protect wireless traffic. It replaced the broken WEP and interim WPA standards. The 2017 KRACK attack exposed weaknesses in its handshake, accelerating the move to WPA3.",
     "sources": [
       {
-        "name": "Wi-Fi Alliance Security",
-        "url": "https://www.wi-fi.org/discover-wi-fi/security"
+        "name": "NIST CSRC Glossary: Wi-Fi Protected Access 2 (WPA2)",
+        "url": "https://csrc.nist.gov/glossary/term/wi_fi_protected_access_2"
       }
     ]
   },
@@ -5556,6 +7114,19 @@
       {
         "name": "Wi-Fi Alliance Security",
         "url": "https://www.wi-fi.org/discover-wi-fi/security"
+      }
+    ]
+  },
+  "WPS": {
+    "expansion": "Wi-Fi Protected Setup",
+    "display": "WPS",
+    "category": "network",
+    "difficulty": "medium",
+    "explanation": "WPS was designed to make joining a Wi-Fi network easy through a push button or an 8-digit PIN instead of typing the passphrase. The PIN method has a design flaw: the router validates the PIN in two halves, shrinking the search space so much that tools like Reaver can brute-force it in hours and recover the network password. Disabling WPS, or at least its PIN mode, is standard advice for home and small business routers.",
+    "sources": [
+      {
+        "name": "Wi-Fi Alliance",
+        "url": "https://www.wi-fi.org/discover-wi-fi/wi-fi-protected-setup"
       }
     ]
   },
@@ -5594,11 +7165,41 @@
     "display": "XaaS",
     "category": "cloud",
     "difficulty": "medium",
-    "explanation": "XaaS is an umbrella term for the growing family of cloud delivery models, where the X stands for almost anything: software, platforms, desktops, disaster recovery, even security. It reflects the broader shift from owning technology to consuming it as a subscription. The term is useful shorthand when discussing cloud strategy across many service types.",
+    "explanation": "XaaS is a catch-all for the expanding menu of cloud delivery models, where the X stands for software, platform, infrastructure, desktops, security, or nearly anything consumed as a subscription. The security takeaway is that each 'aaS' shifts the provider-versus-customer responsibility line differently, so the label alone tells you little about who secures what. Pinning down the specific service model behind an XaaS pitch is the first step in any cloud risk assessment.",
     "sources": [
       {
-        "name": "Cloud Security Alliance",
-        "url": "https://cloudsecurityalliance.org/"
+        "name": "IBM: What Is XaaS (Anything as a Service)?",
+        "url": "https://www.ibm.com/think/topics/xaas"
+      }
+    ]
+  },
+  "XACML": {
+    "expansion": "eXtensible Access Control Markup Language",
+    "display": "XACML",
+    "category": "identity",
+    "difficulty": "hard",
+    "explanation": "XACML is an OASIS standard language for writing fine-grained, attribute-based access control policies and a model for evaluating them. It separates the point that decides access from the point that enforces it, so authorization logic can be centralized instead of scattered through application code. This makes complex rules auditable and consistent across many systems.",
+    "sources": [
+      {
+        "name": "OASIS XACML 3.0 Standard",
+        "url": "https://www.oasis-open.org/standard/xacmlv3-0/"
+      },
+      {
+        "name": "XACML 3.0 Core Specification",
+        "url": "https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html"
+      }
+    ]
+  },
+  "XCCDF": {
+    "expansion": "Extensible Configuration Checklist Description Format",
+    "display": "XCCDF",
+    "category": "operations",
+    "difficulty": "hard",
+    "explanation": "XCCDF is an XML-based language for writing security checklists and configuration benchmarks in a structured, machine-readable form. Hardening guides like DISA STIGs and CIS Benchmarks are published in XCCDF so compliance tools can automatically test systems against them and score the results. It turns dense hardening documents into content that scanners can execute directly.",
+    "sources": [
+      {
+        "name": "NIST XCCDF Specification",
+        "url": "https://csrc.nist.gov/projects/security-content-automation-protocol/specifications/xccdf"
       }
     ]
   },
@@ -5607,11 +7208,41 @@
     "display": "XDR",
     "category": "operations",
     "difficulty": "medium",
-    "explanation": "XDR extends the EDR idea beyond endpoints, correlating telemetry from email, cloud, identity, and network sources into unified detections. Instead of stitching alerts together by hand, analysts see one incident that spans multiple layers of the environment. It matters because modern attacks cross many systems, and siloed tools miss the full picture.",
+    "explanation": "XDR extends the EDR idea beyond endpoints, correlating telemetry from email, cloud, identity, and network sources into unified detections. Because modern attacks cross many systems, siloed tools miss the full picture. Instead of stitching alerts together by hand, analysts see one incident that spans multiple layers of the environment.",
     "sources": [
       {
-        "name": "CISA",
-        "url": "https://www.cisa.gov"
+        "name": "Microsoft Security 101: What Is XDR",
+        "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-xdr"
+      }
+    ]
+  },
+  "XMSS": {
+    "expansion": "eXtended Merkle Signature Scheme",
+    "display": "XMSS",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "XMSS is a stateful hash-based signature scheme whose security relies only on hash functions, making it resistant to quantum attacks. Each private key can sign a limited number of messages, and the signer must carefully track which one-time keys have been used, because reusing state destroys security. Defined in RFC 8391 and approved by NIST in SP 800-208, XMSS is recommended for firmware and software signing, including under the NSA's CNSA 2.0 suite.",
+    "sources": [
+      {
+        "name": "IETF RFC 8391",
+        "url": "https://www.rfc-editor.org/rfc/rfc8391"
+      },
+      {
+        "name": "NIST SP 800-208",
+        "url": "https://csrc.nist.gov/pubs/sp/800/208/final"
+      }
+    ]
+  },
+  "XPATH": {
+    "expansion": "XML Path Language",
+    "display": "XPath",
+    "category": "appsec",
+    "difficulty": "medium",
+    "explanation": "XPath is a query language for selecting nodes from XML documents, often used by applications that store data or credentials in XML. When user input is concatenated into an XPath query, attackers can inject their own syntax to bypass authentication or read the entire document, much like SQL injection. Since XPath has no access controls of its own, parameterization and input validation are the key defenses.",
+    "sources": [
+      {
+        "name": "OWASP: XPath Injection",
+        "url": "https://owasp.org/www-community/attacks/XPATH_Injection"
       }
     ]
   },
@@ -5646,11 +7277,28 @@
     "display": "XXE",
     "category": "attacks",
     "difficulty": "medium",
-    "explanation": "An XML External Entity attack abuses XML parsers that process external entity references embedded in submitted documents. Attackers can use it to read local files, probe internal networks, or cause denial of service. It matters because XML is still widely used in enterprise integrations, and the fix is simply disabling external entity processing in the parser.",
+    "explanation": "An XML External Entity attack abuses XML parsers that process external entity references embedded in submitted documents. Attackers can use it to read local files, probe internal networks, or cause denial of service.",
     "sources": [
       {
         "name": "OWASP",
         "url": "https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing"
+      }
+    ]
+  },
+  "ZKP": {
+    "expansion": "Zero-Knowledge Proof",
+    "display": "ZKP",
+    "category": "crypto",
+    "difficulty": "hard",
+    "explanation": "A zero-knowledge proof lets one party convince another that a statement is true without revealing anything beyond the fact that it is true. For example, you could prove you know a password or that a transaction is valid without disclosing the password or the transaction details. ZKPs power privacy-preserving cryptocurrencies, anonymous credentials, and verifiable computation, and NIST studies them under its privacy-enhancing cryptography program.",
+    "sources": [
+      {
+        "name": "NIST Glossary: Zero-Knowledge Proof",
+        "url": "https://csrc.nist.gov/glossary/term/zero_knowledge_proof"
+      },
+      {
+        "name": "NIST Privacy-Enhancing Cryptography Project",
+        "url": "https://csrc.nist.gov/projects/pec"
       }
     ]
   },
