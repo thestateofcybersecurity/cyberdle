@@ -78,6 +78,16 @@ export function buildEndModal(body: HTMLElement, opts: EndModalOptions): void {
     item.appendChild(link);
     list.appendChild(item);
   }
+  const soupItem = el('li');
+  const soupLink = el('a', 'soup-link', 'Full entry in the Alphabet Soup glossary');
+  soupLink.setAttribute(
+    'href',
+    `https://www.cybersecurityalphabetsoup.com/definitions/${state.answer.toLowerCase()}.html`,
+  );
+  soupLink.setAttribute('target', '_blank');
+  soupLink.setAttribute('rel', 'noopener noreferrer');
+  soupItem.appendChild(soupLink);
+  list.appendChild(soupItem);
   body.appendChild(list);
 
   if (opts.related?.length && opts.onRelated) {
@@ -186,6 +196,16 @@ export function buildHelpModal(body: HTMLElement): void {
   body.appendChild(
     el('p', undefined, 'Win or lose, every round ends with the full expansion, a plain-English explanation, and sources to learn more.'),
   );
+
+  const family = el('p', 'setting-desc');
+  family.append('Cyberdle is part of ');
+  const soup = el('a', undefined, 'Cybersecurity Alphabet Soup');
+  soup.setAttribute('href', 'https://www.cybersecurityalphabetsoup.com/');
+  soup.setAttribute('target', '_blank');
+  soup.setAttribute('rel', 'noopener noreferrer');
+  family.appendChild(soup);
+  family.append(': a glossary, framework translations, quizzes, a readiness check, and a roadmap planner, all in plain English.');
+  body.appendChild(family);
 }
 
 export interface SettingsOptions {
