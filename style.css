@@ -1037,3 +1037,22 @@ body {
     animation: none;
   }
 }
+
+/* Cross-link back to the wider Cybersecurity Alphabet Soup ecosystem. */
+.soup-colophon {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--ink-dim);
+  padding: 8px 12px 14px;
+  margin: 0;
+}
+.soup-colophon a {
+  color: var(--ink-dim);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--line);
+}
+.soup-colophon a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
