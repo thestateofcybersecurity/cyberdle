@@ -10,6 +10,10 @@
         "name": "NIST SP 800-63B Authentication Guidelines",
         "url": "https://pages.nist.gov/800-63-3/sp800-63b.html"
       }
+    ],
+    "related": [
+      "MFA",
+      "OTP"
     ]
   },
   "3DES": {
@@ -23,6 +27,11 @@
         "name": "NIST SP 800-131A Rev. 2",
         "url": "https://csrc.nist.gov/pubs/sp/800/131/a/r2/final"
       }
+    ],
+    "related": [
+      "DES",
+      "AES",
+      "RC4"
     ]
   },
   "8021X": {
@@ -36,6 +45,12 @@
         "name": "IEEE 802.1 Working Group",
         "url": "https://1.ieee802.org/security/802-1x/"
       }
+    ],
+    "related": [
+      "RADIUS",
+      "EAP",
+      "NAC",
+      "AAA"
     ]
   },
   "AAA": {
@@ -49,6 +64,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/authentication_authorization_and_accounting"
       }
+    ],
+    "related": [
+      "RADIUS",
+      "TACACS",
+      "8021X"
     ]
   },
   "ABAC": {
@@ -62,6 +82,13 @@
         "name": "NIST SP 800-162 Guide to ABAC",
         "url": "https://csrc.nist.gov/pubs/sp/800/162/upd2/final"
       }
+    ],
+    "related": [
+      "RBAC",
+      "PBAC",
+      "XACML",
+      "DAC",
+      "MAC"
     ]
   },
   "ACE": {
@@ -75,6 +102,10 @@
         "name": "Microsoft Access Control Entries",
         "url": "https://learn.microsoft.com/en-us/windows/win32/secauthz/access-control-entries"
       }
+    ],
+    "related": [
+      "ACL",
+      "DAC"
     ]
   },
   "ACL": {
@@ -88,6 +119,10 @@
         "name": "Microsoft Access Control Lists",
         "url": "https://learn.microsoft.com/en-us/windows/win32/secauthz/access-control-lists"
       }
+    ],
+    "related": [
+      "ACE",
+      "DAC"
     ]
   },
   "ACME": {
@@ -101,6 +136,11 @@
         "name": "IETF RFC 8555",
         "url": "https://datatracker.ietf.org/doc/html/rfc8555"
       }
+    ],
+    "related": [
+      "SCEP",
+      "CAA",
+      "CSR"
     ]
   },
   "AEAD": {
@@ -114,6 +154,11 @@
         "name": "IETF RFC 5116",
         "url": "https://datatracker.ietf.org/doc/html/rfc5116"
       }
+    ],
+    "related": [
+      "GCM",
+      "CBC",
+      "CTR"
     ]
   },
   "AES": {
@@ -127,6 +172,50 @@
         "name": "NIST FIPS 197",
         "url": "https://csrc.nist.gov/pubs/fips/197/final"
       }
+    ],
+    "related": [
+      "3DES",
+      "RSA",
+      "DES",
+      "RC4",
+      "CBC"
+    ]
+  },
+  "AGI": {
+    "expansion": "Artificial General Intelligence",
+    "display": "AGI",
+    "category": "ai",
+    "difficulty": "easy",
+    "explanation": "AGI is the hypothetical point where an AI system can match or beat humans across most cognitive work, not just narrow tasks. It does not exist today; every deployed system, however impressive, is narrow. The term matters because it anchors both the hype and the safety debate, and because vendors sometimes borrow its gravity to sell ordinary automation. A grounded security program plans for the AI that exists, not the one in the headlines.",
+    "sources": [
+      {
+        "name": "IBM: What is artificial general intelligence?",
+        "url": "https://www.ibm.com/think/topics/artificial-general-intelligence"
+      }
+    ],
+    "related": [
+      "LLM"
+    ]
+  },
+  "AIRMF": {
+    "expansion": "Artificial Intelligence Risk Management Framework",
+    "display": "AI RMF",
+    "category": "ai",
+    "difficulty": "medium",
+    "explanation": "The AI RMF is NIST's voluntary framework for managing AI risk through four functions: Govern, Map, Measure, and Manage. It is the closest thing AI governance has to a common language, the way the CSF is for security programs, and it is the AI framework most often named in job descriptions and policies. Pair it with a use case intake process so its functions turn into concrete, assignable controls.",
+    "sources": [
+      {
+        "name": "NIST AI Risk Management Framework",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      }
+    ],
+    "related": [
+      "XAI",
+      "ATLAS",
+      "NIST"
+    ],
+    "confusedWith": [
+      "RMF"
     ]
   },
   "AITM": {
@@ -140,6 +229,11 @@
         "name": "MITRE ATT&CK T1557",
         "url": "https://attack.mitre.org/techniques/T1557/"
       }
+    ],
+    "related": [
+      "MITM",
+      "MITB",
+      "BEC"
     ]
   },
   "ALE": {
@@ -153,6 +247,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/annualized_loss_expectancy"
       }
+    ],
+    "related": [
+      "ARO",
+      "SLE",
+      "FAIR"
     ]
   },
   "AMSI": {
@@ -166,6 +265,10 @@
         "name": "Microsoft Learn",
         "url": "https://learn.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal"
       }
+    ],
+    "related": [
+      "ETW",
+      "EDR"
     ]
   },
   "API": {
@@ -179,6 +282,11 @@
         "name": "OWASP API Security Project",
         "url": "https://owasp.org/www-project-api-security/"
       }
+    ],
+    "related": [
+      "BOLA",
+      "IDOR",
+      "WAAP"
     ]
   },
   "APT": {
@@ -196,6 +304,13 @@
         "name": "MITRE ATT&CK",
         "url": "https://attack.mitre.org"
       }
+    ],
+    "related": [
+      "CNC",
+      "RAT",
+      "TTP",
+      "DGA",
+      "IAB"
     ]
   },
   "ARO": {
@@ -209,6 +324,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "ALE",
+      "SLE"
     ]
   },
   "ARP": {
@@ -222,6 +341,12 @@
         "name": "IETF RFC 826",
         "url": "https://www.rfc-editor.org/rfc/rfc826"
       }
+    ],
+    "related": [
+      "LLMNR",
+      "MDNS",
+      "DHCP",
+      "MITM"
     ]
   },
   "ASLR": {
@@ -235,6 +360,10 @@
         "name": "NIST Glossary: Address Space Layout Randomization",
         "url": "https://csrc.nist.gov/glossary/term/address_space_layout_randomization"
       }
+    ],
+    "related": [
+      "ROP",
+      "UAF"
     ]
   },
   "ASM": {
@@ -252,6 +381,12 @@
         "name": "CISA BOD 23-01",
         "url": "https://www.cisa.gov/news-events/directives/bod-23-01-improving-asset-visibility-and-vulnerability-detection-federal-networks"
       }
+    ],
+    "related": [
+      "EASM",
+      "CTEM",
+      "CDM",
+      "DSPM"
     ]
   },
   "ASVS": {
@@ -265,6 +400,29 @@
         "name": "OWASP ASVS",
         "url": "https://owasp.org/www-project-application-security-verification-standard/"
       }
+    ],
+    "related": [
+      "MASVS",
+      "OWASP",
+      "MASTG",
+      "WSTG"
+    ]
+  },
+  "ATLAS": {
+    "expansion": "Adversarial Threat Landscape for Artificial-Intelligence Systems",
+    "display": "ATLAS",
+    "category": "ai",
+    "difficulty": "medium",
+    "explanation": "ATLAS is MITRE's knowledge base of attacks against AI systems, modeled on ATT&CK: real tactics and techniques like prompt injection, model theft, data poisoning, and evasion, drawn from observed incidents and research. It gives red teams and defenders a shared vocabulary for AI threats, and it is the fastest way to show a skeptic that attacks on models are documented reality rather than theory.",
+    "sources": [
+      {
+        "name": "MITRE ATLAS",
+        "url": "https://atlas.mitre.org/"
+      }
+    ],
+    "related": [
+      "AIRMF",
+      "TTP"
     ]
   },
   "ATO": {
@@ -278,6 +436,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/authorization_to_operate"
       }
+    ],
+    "related": [
+      "POAM",
+      "FEDRAMP",
+      "FISMA",
+      "RMF"
     ]
   },
   "ATTCK": {
@@ -291,6 +455,13 @@
         "name": "MITRE ATT&CK",
         "url": "https://attack.mitre.org/"
       }
+    ],
+    "related": [
+      "D3FEND",
+      "TTP",
+      "CAPEC",
+      "IOA",
+      "OODA"
     ]
   },
   "BAAS": {
@@ -304,6 +475,10 @@
         "name": "Cloudflare Learning Center",
         "url": "https://www.cloudflare.com/learning/serverless/glossary/backend-as-a-service-baas/"
       }
+    ],
+    "related": [
+      "XAAS",
+      "FAAS"
     ]
   },
   "BAS": {
@@ -321,6 +496,10 @@
         "name": "MITRE ATT&CK",
         "url": "https://attack.mitre.org/"
       }
+    ],
+    "related": [
+      "CTEM",
+      "CTF"
     ]
   },
   "BCDR": {
@@ -338,6 +517,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/contingency_plan"
       }
+    ],
+    "related": [
+      "BCP",
+      "DRP",
+      "COOP",
+      "DRAAS"
     ]
   },
   "BCP": {
@@ -351,6 +536,12 @@
         "name": "Ready.gov",
         "url": "https://www.ready.gov/business-continuity-plan"
       }
+    ],
+    "related": [
+      "DRP",
+      "BCDR",
+      "BIA",
+      "COOP"
     ]
   },
   "BEC": {
@@ -364,6 +555,10 @@
         "name": "FBI",
         "url": "https://www.fbi.gov/how-we-can-help-you/scams-and-safety/common-frauds-and-scams/business-email-compromise"
       }
+    ],
+    "related": [
+      "DMARC",
+      "AITM"
     ]
   },
   "BGP": {
@@ -377,6 +572,10 @@
         "name": "IETF RFC 4271",
         "url": "https://www.rfc-editor.org/rfc/rfc4271"
       }
+    ],
+    "related": [
+      "MPLS",
+      "SDWAN"
     ]
   },
   "BIA": {
@@ -390,6 +589,12 @@
         "name": "Ready.gov",
         "url": "https://www.ready.gov/business-impact-analysis"
       }
+    ],
+    "related": [
+      "BCP",
+      "RPO",
+      "RTO",
+      "DRP"
     ]
   },
   "BIOS": {
@@ -403,6 +608,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/basic_input_output_system"
       }
+    ],
+    "related": [
+      "UEFI",
+      "TPM",
+      "SED"
     ]
   },
   "BLE": {
@@ -416,6 +626,11 @@
         "name": "NIST SP 800-121 Rev. 2",
         "url": "https://csrc.nist.gov/pubs/sp/800/121/r2/upd1/final"
       }
+    ],
+    "related": [
+      "NFC",
+      "RFID",
+      "IOT"
     ]
   },
   "BOLA": {
@@ -429,6 +644,10 @@
         "name": "OWASP API Security Project",
         "url": "https://owasp.org/www-project-api-security/"
       }
+    ],
+    "related": [
+      "IDOR",
+      "API"
     ]
   },
   "BSIMM": {
@@ -442,6 +661,10 @@
         "name": "BSIMM",
         "url": "https://www.bsimm.com/"
       }
+    ],
+    "related": [
+      "SAMM",
+      "SDL"
     ]
   },
   "BYOD": {
@@ -455,6 +678,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/bring_your_own_device"
       }
+    ],
+    "related": [
+      "COPE",
+      "MDM"
     ]
   },
   "BYOK": {
@@ -468,6 +695,11 @@
         "name": "Microsoft Learn",
         "url": "https://learn.microsoft.com/en-us/azure/key-vault/keys/byok-specification"
       }
+    ],
+    "related": [
+      "HYOK",
+      "CMK",
+      "KMS"
     ]
   },
   "BYOVD": {
@@ -481,6 +713,10 @@
         "name": "MITRE ATT&CK T1068",
         "url": "https://attack.mitre.org/techniques/T1068/"
       }
+    ],
+    "related": [
+      "LOLBIN",
+      "LOTL"
     ]
   },
   "CAA": {
@@ -494,6 +730,11 @@
         "name": "IETF RFC 8659",
         "url": "https://datatracker.ietf.org/doc/html/rfc8659"
       }
+    ],
+    "related": [
+      "ACME",
+      "SCEP",
+      "PKI"
     ]
   },
   "CAAS": {
@@ -507,6 +748,13 @@
         "name": "Red Hat",
         "url": "https://www.redhat.com/en/topics/cloud-computing/what-is-caas"
       }
+    ],
+    "related": [
+      "FAAS",
+      "IAAS",
+      "PAAS",
+      "SAAS",
+      "CKS"
     ]
   },
   "CAC": {
@@ -524,6 +772,10 @@
         "name": "DoD Cyber Exchange PKI/PKE",
         "url": "https://public.cyber.mil/pki-pke/"
       }
+    ],
+    "related": [
+      "PIV",
+      "FIDO2"
     ]
   },
   "CAIQ": {
@@ -537,6 +789,11 @@
         "name": "Cloud Security Alliance",
         "url": "https://cloudsecurityalliance.org/blog/2021/09/01/what-is-caiq"
       }
+    ],
+    "related": [
+      "CCM",
+      "CSA",
+      "STAR"
     ]
   },
   "CAN": {
@@ -550,6 +807,10 @@
         "name": "ISO 11898-1",
         "url": "https://www.iso.org/standard/63648.html"
       }
+    ],
+    "related": [
+      "ICS",
+      "SCADA"
     ]
   },
   "CAPEC": {
@@ -563,6 +824,10 @@
         "name": "MITRE CAPEC",
         "url": "https://capec.mitre.org/"
       }
+    ],
+    "related": [
+      "CWE",
+      "ATTCK"
     ]
   },
   "CAPTCHA": {
@@ -576,6 +841,10 @@
         "name": "IBM: What Is a CAPTCHA",
         "url": "https://www.ibm.com/think/topics/captcha"
       }
+    ],
+    "related": [
+      "WAF",
+      "CSRF"
     ]
   },
   "CARTP": {
@@ -589,6 +858,10 @@
         "name": "Altered Security Attacking and Defending Azure AD (CARTP)",
         "url": "https://www.alteredsecurity.com/azureadlab"
       }
+    ],
+    "related": [
+      "CRTO",
+      "CRTP"
     ]
   },
   "CASB": {
@@ -602,6 +875,11 @@
         "name": "Microsoft Security",
         "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-a-cloud-access-security-broker-casb"
       }
+    ],
+    "related": [
+      "DLP",
+      "SASE",
+      "SSE"
     ]
   },
   "CASP": {
@@ -615,6 +893,10 @@
         "name": "CompTIA",
         "url": "https://www.comptia.org/certifications/comptia-advanced-security-practitioner"
       }
+    ],
+    "related": [
+      "CYSA",
+      "CISSP"
     ]
   },
   "CBC": {
@@ -628,6 +910,13 @@
         "name": "NIST SP 800-38A",
         "url": "https://csrc.nist.gov/pubs/sp/800/38/a/final"
       }
+    ],
+    "related": [
+      "CTR",
+      "ECB",
+      "GCM",
+      "XTS",
+      "AEAD"
     ]
   },
   "CCAK": {
@@ -641,6 +930,10 @@
         "name": "ISACA",
         "url": "https://www.isaca.org/credentialing/ccak"
       }
+    ],
+    "related": [
+      "CCSK",
+      "CISA"
     ]
   },
   "CCISO": {
@@ -654,6 +947,10 @@
         "name": "EC-Council",
         "url": "https://www.eccouncil.org/train-certify/certified-chief-information-security-officer-cciso/"
       }
+    ],
+    "related": [
+      "CISM",
+      "CISO"
     ]
   },
   "CCM": {
@@ -667,6 +964,11 @@
         "name": "CSA Cloud Controls Matrix",
         "url": "https://cloudsecurityalliance.org/research/cloud-controls-matrix"
       }
+    ],
+    "related": [
+      "CAIQ",
+      "CSA",
+      "STAR"
     ]
   },
   "CCNP": {
@@ -693,6 +995,11 @@
         "name": "California Attorney General",
         "url": "https://oag.ca.gov/privacy/ccpa"
       }
+    ],
+    "related": [
+      "CPRA",
+      "GDPR",
+      "CIPPUS"
     ]
   },
   "CCSK": {
@@ -706,6 +1013,12 @@
         "name": "Cloud Security Alliance",
         "url": "https://cloudsecurityalliance.org/education/ccsk"
       }
+    ],
+    "related": [
+      "CCZT",
+      "CCAK",
+      "CCSP",
+      "CSA"
     ]
   },
   "CCSP": {
@@ -719,6 +1032,13 @@
         "name": "ISC2",
         "url": "https://www.isc2.org/certifications/ccsp"
       }
+    ],
+    "related": [
+      "CISSP",
+      "CCSK",
+      "CCZT",
+      "CSSLP",
+      "SSCP"
     ]
   },
   "CCZT": {
@@ -732,6 +1052,11 @@
         "name": "Cloud Security Alliance",
         "url": "https://cloudsecurityalliance.org/education/cczt"
       }
+    ],
+    "related": [
+      "CCSK",
+      "CCSP",
+      "ZTA"
     ]
   },
   "CDM": {
@@ -745,6 +1070,11 @@
         "name": "CISA CDM Program",
         "url": "https://www.cisa.gov/resources-tools/programs/continuous-diagnostics-and-mitigation-cdm-program"
       }
+    ],
+    "related": [
+      "ASM",
+      "CTEM",
+      "EASM"
     ]
   },
   "CDN": {
@@ -758,6 +1088,11 @@
         "name": "AWS",
         "url": "https://aws.amazon.com/what-is/cdn/"
       }
+    ],
+    "related": [
+      "DDOS",
+      "VPC",
+      "WAF"
     ]
   },
   "CDPSE": {
@@ -771,6 +1106,10 @@
         "name": "ISACA",
         "url": "https://www.isaca.org/credentialing/cdpse"
       }
+    ],
+    "related": [
+      "CIPT",
+      "CIPM"
     ]
   },
   "CEH": {
@@ -784,6 +1123,13 @@
         "name": "EC-Council",
         "url": "https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh/"
       }
+    ],
+    "related": [
+      "CHFI",
+      "CND",
+      "CPENT",
+      "CPTS",
+      "CTIA"
     ]
   },
   "CERT": {
@@ -801,6 +1147,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/computer_emergency_response_team"
       }
+    ],
+    "related": [
+      "CSIRT",
+      "CIRT",
+      "PSIRT",
+      "FIRST"
     ]
   },
   "CGEIT": {
@@ -814,6 +1166,11 @@
         "name": "ISACA",
         "url": "https://www.isaca.org/credentialing/cgeit"
       }
+    ],
+    "related": [
+      "CISA",
+      "CISM",
+      "CRISC"
     ]
   },
   "CGRC": {
@@ -827,6 +1184,10 @@
         "name": "ISC2",
         "url": "https://www.isc2.org/certifications/cgrc"
       }
+    ],
+    "related": [
+      "GRC",
+      "CISSP"
     ]
   },
   "CHAP": {
@@ -840,6 +1201,10 @@
         "name": "IETF RFC 1994",
         "url": "https://datatracker.ietf.org/doc/html/rfc1994"
       }
+    ],
+    "related": [
+      "EAP",
+      "EAPTLS"
     ]
   },
   "CHFI": {
@@ -853,6 +1218,13 @@
         "name": "EC-Council",
         "url": "https://www.eccouncil.org/train-certify/computer-hacking-forensic-investigator-chfi/"
       }
+    ],
+    "related": [
+      "CEH",
+      "GCFA",
+      "CND",
+      "CPENT",
+      "CTIA"
     ]
   },
   "CIA": {
@@ -883,6 +1255,10 @@
         "name": "OpenID Foundation",
         "url": "https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html"
       }
+    ],
+    "related": [
+      "OAUTH",
+      "OIDC"
     ]
   },
   "CICD": {
@@ -896,6 +1272,11 @@
         "name": "OWASP Top 10 CI/CD Security Risks",
         "url": "https://owasp.org/www-project-top-10-ci-cd-security-risks/"
       }
+    ],
+    "related": [
+      "SDLC",
+      "SLSA",
+      "SBOM"
     ]
   },
   "CIEM": {
@@ -913,6 +1294,12 @@
         "name": "Microsoft Entra Permissions Management",
         "url": "https://learn.microsoft.com/en-us/entra/permissions-management/overview"
       }
+    ],
+    "related": [
+      "CNAPP",
+      "CSPM",
+      "CWPP",
+      "IAM"
     ]
   },
   "CIPM": {
@@ -926,6 +1313,12 @@
         "name": "IAPP",
         "url": "https://iapp.org/certify/cipm/"
       }
+    ],
+    "related": [
+      "CIPPE",
+      "CIPPUS",
+      "CIPT",
+      "CDPSE"
     ]
   },
   "CIPPE": {
@@ -939,6 +1332,12 @@
         "name": "IAPP CIPP/E Certification",
         "url": "https://iapp.org/certify/cippe/"
       }
+    ],
+    "related": [
+      "CIPPUS",
+      "CIPM",
+      "CIPT",
+      "GDPR"
     ]
   },
   "CIPPUS": {
@@ -952,6 +1351,12 @@
         "name": "IAPP",
         "url": "https://iapp.org/certify/cippus/"
       }
+    ],
+    "related": [
+      "CIPPE",
+      "CIPM",
+      "CIPT",
+      "CCPA"
     ]
   },
   "CIPT": {
@@ -965,6 +1370,12 @@
         "name": "IAPP",
         "url": "https://iapp.org/certify/cipt/"
       }
+    ],
+    "related": [
+      "CIPM",
+      "CIPPE",
+      "CIPPUS",
+      "CDPSE"
     ]
   },
   "CIRT": {
@@ -978,6 +1389,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/computer_incident_response_team"
       }
+    ],
+    "related": [
+      "CSIRT",
+      "CERT",
+      "PSIRT"
     ]
   },
   "CIS": {
@@ -991,6 +1407,10 @@
         "name": "Center for Internet Security",
         "url": "https://www.cisecurity.org/"
       }
+    ],
+    "related": [
+      "NIST",
+      "STIG"
     ]
   },
   "CISA": {
@@ -1004,6 +1424,12 @@
         "name": "ISACA",
         "url": "https://www.isaca.org/credentialing/cisa"
       }
+    ],
+    "related": [
+      "CGEIT",
+      "CISM",
+      "CRISC",
+      "CCAK"
     ]
   },
   "CISM": {
@@ -1017,6 +1443,13 @@
         "name": "ISACA",
         "url": "https://www.isaca.org/credentialing/cism"
       }
+    ],
+    "related": [
+      "CGEIT",
+      "CISA",
+      "CRISC",
+      "CCISO",
+      "CISSP"
     ]
   },
   "CISO": {
@@ -1030,6 +1463,11 @@
         "name": "NIST Glossary",
         "url": "https://csrc.nist.gov/glossary/term/chief_information_security_officer"
       }
+    ],
+    "related": [
+      "VCISO",
+      "CCISO",
+      "GRC"
     ]
   },
   "CISSP": {
@@ -1043,6 +1481,13 @@
         "name": "ISC2",
         "url": "https://www.isc2.org/certifications/cissp"
       }
+    ],
+    "related": [
+      "CCSP",
+      "SSCP",
+      "CSSLP",
+      "ISSAP",
+      "ISSEP"
     ]
   },
   "CJIS": {
@@ -1069,6 +1514,10 @@
         "name": "Linux Foundation",
         "url": "https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/"
       }
+    ],
+    "related": [
+      "CCSP",
+      "CAAS"
     ]
   },
   "CMAC": {
@@ -1082,6 +1531,10 @@
         "name": "NIST SP 800-38B",
         "url": "https://csrc.nist.gov/pubs/sp/800/38/b/final"
       }
+    ],
+    "related": [
+      "HMAC",
+      "GCM"
     ]
   },
   "CMK": {
@@ -1095,6 +1548,11 @@
         "name": "AWS KMS Developer Guide",
         "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html"
       }
+    ],
+    "related": [
+      "BYOK",
+      "KMS",
+      "HYOK"
     ]
   },
   "CMMC": {
@@ -1108,6 +1566,11 @@
         "name": "DoD CIO",
         "url": "https://dodcio.defense.gov/CMMC/"
       }
+    ],
+    "related": [
+      "DFARS",
+      "CUI",
+      "NIST"
     ]
   },
   "CNA": {
@@ -1121,6 +1584,10 @@
         "name": "CVE Program",
         "url": "https://www.cve.org/"
       }
+    ],
+    "related": [
+      "CVE",
+      "NVD"
     ]
   },
   "CNAPP": {
@@ -1134,6 +1601,12 @@
         "name": "Microsoft Security",
         "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-cnapp"
       }
+    ],
+    "related": [
+      "CSPM",
+      "CWPP",
+      "CIEM",
+      "IAC"
     ]
   },
   "CNC": {
@@ -1147,6 +1620,11 @@
         "name": "MITRE ATT&CK TA0011",
         "url": "https://attack.mitre.org/tactics/TA0011/"
       }
+    ],
+    "related": [
+      "DGA",
+      "RAT",
+      "APT"
     ]
   },
   "CND": {
@@ -1160,6 +1638,13 @@
         "name": "EC-Council",
         "url": "https://www.eccouncil.org/train-certify/certified-network-defender-cnd/"
       }
+    ],
+    "related": [
+      "CEH",
+      "CHFI",
+      "CPENT",
+      "CTIA",
+      "ECIH"
     ]
   },
   "CNSA": {
@@ -1177,6 +1662,11 @@
         "name": "NIST Post-Quantum Cryptography Project",
         "url": "https://csrc.nist.gov/projects/post-quantum-cryptography"
       }
+    ],
+    "related": [
+      "PQC",
+      "DSS",
+      "FIPS"
     ]
   },
   "COBIT": {
@@ -1190,6 +1680,11 @@
         "name": "ISACA",
         "url": "https://www.isaca.org/resources/cobit"
       }
+    ],
+    "related": [
+      "COSO",
+      "ITIL",
+      "ITGC"
     ]
   },
   "COOP": {
@@ -1203,6 +1698,11 @@
         "name": "FEMA Continuity Programs",
         "url": "https://www.fema.gov/emergency-managers/national-preparedness/continuity"
       }
+    ],
+    "related": [
+      "BCP",
+      "BCDR",
+      "DRP"
     ]
   },
   "COPE": {
@@ -1216,6 +1716,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/corporate_owned_personally_enabled"
       }
+    ],
+    "related": [
+      "BYOD",
+      "MDM"
     ]
   },
   "COPPA": {
@@ -1229,6 +1733,10 @@
         "name": "FTC",
         "url": "https://www.ftc.gov/business-guidance/privacy-security/childrens-privacy"
       }
+    ],
+    "related": [
+      "FERPA",
+      "GDPR"
     ]
   },
   "CORS": {
@@ -1242,6 +1750,13 @@
         "name": "MDN Web Docs",
         "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"
       }
+    ],
+    "related": [
+      "SOP",
+      "CSP",
+      "HSTS",
+      "SRI",
+      "CSRF"
     ]
   },
   "COSE": {
@@ -1255,6 +1770,10 @@
         "name": "IETF RFC 9052",
         "url": "https://www.rfc-editor.org/rfc/rfc9052"
       }
+    ],
+    "related": [
+      "JWE",
+      "JWS"
     ]
   },
   "COSO": {
@@ -1268,6 +1787,10 @@
         "name": "COSO",
         "url": "https://www.coso.org/"
       }
+    ],
+    "related": [
+      "COBIT",
+      "ITIL"
     ]
   },
   "CPE": {
@@ -1281,6 +1804,12 @@
         "name": "NIST NVD CPE",
         "url": "https://nvd.nist.gov/products/cpe"
       }
+    ],
+    "related": [
+      "OVAL",
+      "SCAP",
+      "XCCDF",
+      "CVE"
     ]
   },
   "CPENT": {
@@ -1294,6 +1823,13 @@
         "name": "EC-Council CPENT",
         "url": "https://www.eccouncil.org/train-certify/certified-penetration-testing-professional-cpent/"
       }
+    ],
+    "related": [
+      "CEH",
+      "CHFI",
+      "CND",
+      "CPTS",
+      "CTIA"
     ]
   },
   "CPRA": {
@@ -1307,6 +1843,10 @@
         "name": "California Privacy Protection Agency",
         "url": "https://cppa.ca.gov/"
       }
+    ],
+    "related": [
+      "CCPA",
+      "GDPR"
     ]
   },
   "CPTS": {
@@ -1320,6 +1860,13 @@
         "name": "Hack The Box Academy",
         "url": "https://academy.hackthebox.com/preview/certifications/htb-certified-penetration-testing-specialist"
       }
+    ],
+    "related": [
+      "PNPT",
+      "CEH",
+      "CPENT",
+      "EJPT",
+      "GPEN"
     ]
   },
   "CRA": {
@@ -1333,6 +1880,11 @@
         "name": "European Commission",
         "url": "https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act"
       }
+    ],
+    "related": [
+      "DORA",
+      "ENISA",
+      "NIS2"
     ]
   },
   "CREST": {
@@ -1359,6 +1911,11 @@
         "name": "ISACA",
         "url": "https://www.isaca.org/credentialing/crisc"
       }
+    ],
+    "related": [
+      "CGEIT",
+      "CISA",
+      "CISM"
     ]
   },
   "CRL": {
@@ -1372,6 +1929,12 @@
         "name": "IETF RFC 5280",
         "url": "https://datatracker.ietf.org/doc/html/rfc5280"
       }
+    ],
+    "related": [
+      "OCSP",
+      "CSR",
+      "PKI",
+      "X509"
     ]
   },
   "CRLF": {
@@ -1385,6 +1948,10 @@
         "name": "OWASP",
         "url": "https://owasp.org/www-community/vulnerabilities/CRLF_Injection"
       }
+    ],
+    "related": [
+      "HPP",
+      "XSS"
     ]
   },
   "CRTO": {
@@ -1398,6 +1965,11 @@
         "name": "Zero-Point Security Red Team Ops",
         "url": "https://training.zeropointsecurity.co.uk/courses/red-team-ops"
       }
+    ],
+    "related": [
+      "CRTP",
+      "CARTP",
+      "OSEP"
     ]
   },
   "CRTP": {
@@ -1411,6 +1983,10 @@
         "name": "Altered Security Attacking and Defending Active Directory (CRTP)",
         "url": "https://www.alteredsecurity.com/adlab"
       }
+    ],
+    "related": [
+      "CRTO",
+      "CARTP"
     ]
   },
   "CSA": {
@@ -1424,6 +2000,13 @@
         "name": "Cloud Security Alliance",
         "url": "https://cloudsecurityalliance.org/"
       }
+    ],
+    "related": [
+      "CAIQ",
+      "CCM",
+      "CCSK",
+      "STAR",
+      "SRM"
     ]
   },
   "CSAF": {
@@ -1437,6 +2020,10 @@
         "name": "OASIS CSAF",
         "url": "https://oasis-open.github.io/csaf-documentation/"
       }
+    ],
+    "related": [
+      "VEX",
+      "SBOM"
     ]
   },
   "CSF": {
@@ -1450,6 +2037,12 @@
         "name": "NIST Cybersecurity Framework",
         "url": "https://www.nist.gov/cyberframework"
       }
+    ],
+    "related": [
+      "NIST",
+      "RMF",
+      "ISO27001",
+      "SOC2"
     ]
   },
   "CSIRT": {
@@ -1467,6 +2060,13 @@
         "name": "FIRST",
         "url": "https://www.first.org"
       }
+    ],
+    "related": [
+      "CERT",
+      "CIRT",
+      "PSIRT",
+      "DFIR",
+      "IRP"
     ]
   },
   "CSP": {
@@ -1480,6 +2080,13 @@
         "name": "MDN Web Docs",
         "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"
       }
+    ],
+    "related": [
+      "HSTS",
+      "CORS",
+      "SOP",
+      "SRI",
+      "OWASP"
     ]
   },
   "CSPM": {
@@ -1493,6 +2100,13 @@
         "name": "Microsoft Security",
         "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-cspm"
       }
+    ],
+    "related": [
+      "CNAPP",
+      "CIEM",
+      "CWPP",
+      "DSPM",
+      "SSPM"
     ]
   },
   "CSPRNG": {
@@ -1506,6 +2120,11 @@
         "name": "NIST SP 800-90A Rev. 1",
         "url": "https://csrc.nist.gov/pubs/sp/800/90/a/r1/final"
       }
+    ],
+    "related": [
+      "DRBG",
+      "PRNG",
+      "RNG"
     ]
   },
   "CSR": {
@@ -1519,6 +2138,13 @@
         "name": "IETF RFC 2986 (PKCS #10)",
         "url": "https://datatracker.ietf.org/doc/html/rfc2986"
       }
+    ],
+    "related": [
+      "CRL",
+      "OCSP",
+      "PKI",
+      "X509",
+      "ACME"
     ]
   },
   "CSRF": {
@@ -1532,6 +2158,13 @@
         "name": "OWASP",
         "url": "https://owasp.org/www-community/attacks/csrf"
       }
+    ],
+    "related": [
+      "SSRF",
+      "XSS",
+      "SQLI",
+      "XXE",
+      "CORS"
     ]
   },
   "CSSLP": {
@@ -1545,6 +2178,11 @@
         "name": "ISC2",
         "url": "https://www.isc2.org/certifications/csslp"
       }
+    ],
+    "related": [
+      "CCSP",
+      "CISSP",
+      "SSCP"
     ]
   },
   "CTAP": {
@@ -1558,6 +2196,10 @@
         "name": "FIDO Alliance CTAP 2.1 Specification",
         "url": "https://fidoalliance.org/specs/fido-v2.1-ps-20210615/fido-client-to-authenticator-protocol-v2.1-ps-20210615.html"
       }
+    ],
+    "related": [
+      "FIDO2",
+      "WEBAUTHN"
     ]
   },
   "CTEM": {
@@ -1571,6 +2213,13 @@
         "name": "Gartner",
         "url": "https://www.gartner.com/en/articles/how-to-manage-cybersecurity-threats-not-episodes"
       }
+    ],
+    "related": [
+      "ASM",
+      "EASM",
+      "BAS",
+      "CDM",
+      "KEV"
     ]
   },
   "CTF": {
@@ -1605,6 +2254,13 @@
         "name": "CISA",
         "url": "https://www.cisa.gov"
       }
+    ],
+    "related": [
+      "TIP",
+      "STIX",
+      "TAXII",
+      "IOC",
+      "TTP"
     ]
   },
   "CTIA": {
@@ -1618,6 +2274,13 @@
         "name": "EC-Council",
         "url": "https://www.eccouncil.org/train-certify/certified-threat-intelligence-analyst-ctia/"
       }
+    ],
+    "related": [
+      "GCTI",
+      "CEH",
+      "CHFI",
+      "CND",
+      "CPENT"
     ]
   },
   "CTR": {
@@ -1631,6 +2294,13 @@
         "name": "NIST SP 800-38A",
         "url": "https://csrc.nist.gov/pubs/sp/800/38/a/final"
       }
+    ],
+    "related": [
+      "CBC",
+      "ECB",
+      "GCM",
+      "XTS",
+      "AEAD"
     ]
   },
   "CUI": {
@@ -1648,6 +2318,11 @@
         "name": "NIST SP 800-171",
         "url": "https://csrc.nist.gov/pubs/sp/800/171/r3/final"
       }
+    ],
+    "related": [
+      "CMMC",
+      "DFARS",
+      "FISMA"
     ]
   },
   "CVD": {
@@ -1665,6 +2340,10 @@
         "name": "CISA Coordinated Vulnerability Disclosure Process",
         "url": "https://www.cisa.gov/coordinated-vulnerability-disclosure-process"
       }
+    ],
+    "related": [
+      "VDP",
+      "PSIRT"
     ]
   },
   "CVE": {
@@ -1682,6 +2361,13 @@
         "name": "NIST NVD",
         "url": "https://nvd.nist.gov"
       }
+    ],
+    "related": [
+      "CWE",
+      "NVD",
+      "CNA",
+      "CVSS",
+      "KEV"
     ]
   },
   "CVSS": {
@@ -1695,6 +2381,13 @@
         "name": "FIRST CVSS",
         "url": "https://www.first.org/cvss/"
       }
+    ],
+    "related": [
+      "EPSS",
+      "CVE",
+      "CWE",
+      "NVD",
+      "SSVC"
     ]
   },
   "CWE": {
@@ -1708,6 +2401,13 @@
         "name": "MITRE CWE",
         "url": "https://cwe.mitre.org"
       }
+    ],
+    "related": [
+      "CVE",
+      "CAPEC",
+      "CVSS",
+      "NVD",
+      "OWASP"
     ]
   },
   "CWPP": {
@@ -1721,6 +2421,11 @@
         "name": "Microsoft Security",
         "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-cwpp"
       }
+    ],
+    "related": [
+      "CNAPP",
+      "CIEM",
+      "CSPM"
     ]
   },
   "CWSP": {
@@ -1734,6 +2439,10 @@
         "name": "CWNP",
         "url": "https://www.cwnp.com/certifications/cwsp"
       }
+    ],
+    "related": [
+      "OSWP",
+      "WPA2"
     ]
   },
   "CYSA": {
@@ -1747,6 +2456,10 @@
         "name": "CompTIA",
         "url": "https://www.comptia.org/certifications/cybersecurity-analyst"
       }
+    ],
+    "related": [
+      "CASP",
+      "GCIA"
     ]
   },
   "D3FEND": {
@@ -1760,6 +2473,10 @@
         "name": "MITRE D3FEND",
         "url": "https://d3fend.mitre.org"
       }
+    ],
+    "related": [
+      "ATTCK",
+      "TTP"
     ]
   },
   "DAAS": {
@@ -1773,6 +2490,10 @@
         "name": "Cloud Security Alliance",
         "url": "https://cloudsecurityalliance.org/"
       }
+    ],
+    "related": [
+      "VDI",
+      "XAAS"
     ]
   },
   "DAC": {
@@ -1786,6 +2507,13 @@
         "name": "NIST Computer Security Resource Center Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "ABAC",
+      "ACE",
+      "ACL",
+      "MAC",
+      "PBAC"
     ]
   },
   "DANE": {
@@ -1799,6 +2527,11 @@
         "name": "IETF RFC 6698",
         "url": "https://datatracker.ietf.org/doc/html/rfc6698"
       }
+    ],
+    "related": [
+      "DNSSEC",
+      "MTASTS",
+      "X509"
     ]
   },
   "DAST": {
@@ -1812,6 +2545,11 @@
         "name": "OWASP Vulnerability Scanning Tools",
         "url": "https://owasp.org/www-community/Vulnerability_Scanning_Tools"
       }
+    ],
+    "related": [
+      "SAST",
+      "IAST",
+      "WAF"
     ]
   },
   "DBAAS": {
@@ -1825,6 +2563,10 @@
         "name": "Cloud Security Alliance",
         "url": "https://cloudsecurityalliance.org/"
       }
+    ],
+    "related": [
+      "XAAS",
+      "SAAS"
     ]
   },
   "DDOS": {
@@ -1838,6 +2580,12 @@
         "name": "CISA",
         "url": "https://www.cisa.gov"
       }
+    ],
+    "related": [
+      "DOS",
+      "DRDOS",
+      "REDOS",
+      "CDN"
     ]
   },
   "DES": {
@@ -1851,6 +2599,29 @@
         "name": "NIST FIPS 46-3 (withdrawn)",
         "url": "https://csrc.nist.gov/pubs/fips/46-3/final"
       }
+    ],
+    "related": [
+      "3DES",
+      "AES",
+      "RC4"
+    ]
+  },
+  "DEVOPS": {
+    "expansion": "Development and Operations",
+    "display": "DevOps",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "DevOps merges software development and IT operations into one culture and toolchain: version control everything, automate builds and deployment, ship small changes often, and watch production closely. It replaced the wall between build it and run it. Security's version of joining that culture is DevSecOps: putting controls inside the pipeline instead of at the end, where they would simply be routed around.",
+    "sources": [
+      {
+        "name": "AWS: What is DevOps?",
+        "url": "https://aws.amazon.com/devops/what-is-devops/"
+      }
+    ],
+    "related": [
+      "CICD",
+      "SRE",
+      "IAC"
     ]
   },
   "DFARS": {
@@ -1864,6 +2635,10 @@
         "name": "Acquisition.gov DFARS",
         "url": "https://www.acquisition.gov/dfars"
       }
+    ],
+    "related": [
+      "CMMC",
+      "CUI"
     ]
   },
   "DFIR": {
@@ -1881,6 +2656,12 @@
         "name": "CISA",
         "url": "https://www.cisa.gov"
       }
+    ],
+    "related": [
+      "CSIRT",
+      "IRP",
+      "RCA",
+      "FIM"
     ]
   },
   "DGA": {
@@ -1894,6 +2675,10 @@
         "name": "MITRE ATT&CK T1568.002",
         "url": "https://attack.mitre.org/techniques/T1568/002/"
       }
+    ],
+    "related": [
+      "CNC",
+      "APT"
     ]
   },
   "DHCP": {
@@ -1907,6 +2692,10 @@
         "name": "IETF RFC 2131",
         "url": "https://www.rfc-editor.org/rfc/rfc2131"
       }
+    ],
+    "related": [
+      "ARP",
+      "DNS"
     ]
   },
   "DHE": {
@@ -1920,6 +2709,11 @@
         "name": "IETF RFC 8446 (TLS 1.3)",
         "url": "https://datatracker.ietf.org/doc/html/rfc8446"
       }
+    ],
+    "related": [
+      "ECDH",
+      "PFS",
+      "IKE"
     ]
   },
   "DKIM": {
@@ -1933,6 +2727,11 @@
         "name": "IETF RFC 6376",
         "url": "https://datatracker.ietf.org/doc/html/rfc6376"
       }
+    ],
+    "related": [
+      "DMARC",
+      "SPF",
+      "SMIME"
     ]
   },
   "DLL": {
@@ -1963,6 +2762,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "CASB",
+      "DSPM"
     ]
   },
   "DMARC": {
@@ -1976,6 +2779,12 @@
         "name": "IETF RFC 7489",
         "url": "https://datatracker.ietf.org/doc/html/rfc7489"
       }
+    ],
+    "related": [
+      "DKIM",
+      "SPF",
+      "MTASTS",
+      "BEC"
     ]
   },
   "DMZ": {
@@ -1989,6 +2798,13 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "NGFW",
+      "UTM",
+      "WAF",
+      "NAT",
+      "PAT"
     ]
   },
   "DNP3": {
@@ -2006,6 +2822,10 @@
         "name": "CISA Industrial Control Systems",
         "url": "https://www.cisa.gov/topics/industrial-control-systems"
       }
+    ],
+    "related": [
+      "SCADA",
+      "ICS"
     ]
   },
   "DNS": {
@@ -2019,6 +2839,12 @@
         "name": "IETF RFC 1035",
         "url": "https://datatracker.ietf.org/doc/html/rfc1035"
       }
+    ],
+    "related": [
+      "DNSSEC",
+      "DOH",
+      "DOT",
+      "DHCP"
     ]
   },
   "DNSSEC": {
@@ -2032,6 +2858,12 @@
         "name": "IETF RFC 4033",
         "url": "https://datatracker.ietf.org/doc/html/rfc4033"
       }
+    ],
+    "related": [
+      "DANE",
+      "DNS",
+      "DOH",
+      "DOT"
     ]
   },
   "DOH": {
@@ -2045,6 +2877,11 @@
         "name": "IETF RFC 8484",
         "url": "https://datatracker.ietf.org/doc/html/rfc8484"
       }
+    ],
+    "related": [
+      "DOT",
+      "DNS",
+      "DNSSEC"
     ]
   },
   "DORA": {
@@ -2058,6 +2895,11 @@
         "name": "EUR-Lex (official text)",
         "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj"
       }
+    ],
+    "related": [
+      "NIS2",
+      "CRA",
+      "ENISA"
     ]
   },
   "DOS": {
@@ -2071,6 +2913,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/denial_of_service"
       }
+    ],
+    "related": [
+      "DDOS",
+      "DRDOS",
+      "REDOS"
     ]
   },
   "DOT": {
@@ -2084,6 +2931,11 @@
         "name": "IETF RFC 7858",
         "url": "https://datatracker.ietf.org/doc/html/rfc7858"
       }
+    ],
+    "related": [
+      "DOH",
+      "DNS",
+      "DNSSEC"
     ]
   },
   "DPAPI": {
@@ -2097,6 +2949,12 @@
         "name": "Microsoft Learn",
         "url": "https://learn.microsoft.com/en-us/windows/win32/seccng/cng-dpapi"
       }
+    ],
+    "related": [
+      "LSASS",
+      "SAM",
+      "ETW",
+      "WMI"
     ]
   },
   "DPIA": {
@@ -2114,6 +2972,10 @@
         "name": "GDPR.eu",
         "url": "https://gdpr.eu/"
       }
+    ],
+    "related": [
+      "DPO",
+      "GDPR"
     ]
   },
   "DPO": {
@@ -2127,6 +2989,10 @@
         "name": "European Commission",
         "url": "https://commission.europa.eu/law/law-topic/data-protection/reform/rules-business-and-organisations/obligations/data-protection-officers_en"
       }
+    ],
+    "related": [
+      "DPIA",
+      "GDPR"
     ]
   },
   "DRAAS": {
@@ -2140,6 +3006,11 @@
         "name": "CISA",
         "url": "https://www.cisa.gov/"
       }
+    ],
+    "related": [
+      "BCDR",
+      "XAAS",
+      "DRP"
     ]
   },
   "DRBG": {
@@ -2153,6 +3024,11 @@
         "name": "NIST SP 800-90A Rev. 1",
         "url": "https://csrc.nist.gov/pubs/sp/800/90/a/r1/final"
       }
+    ],
+    "related": [
+      "CSPRNG",
+      "PRNG",
+      "RNG"
     ]
   },
   "DRDOS": {
@@ -2166,6 +3042,10 @@
         "name": "CISA",
         "url": "https://www.cisa.gov"
       }
+    ],
+    "related": [
+      "DDOS",
+      "DOS"
     ]
   },
   "DREAD": {
@@ -2179,6 +3059,10 @@
         "name": "OWASP Threat Modeling Process",
         "url": "https://owasp.org/www-community/Threat_Modeling_Process"
       }
+    ],
+    "related": [
+      "STRIDE",
+      "PASTA"
     ]
   },
   "DRP": {
@@ -2192,6 +3076,13 @@
         "name": "Ready.gov",
         "url": "https://www.ready.gov/it-disaster-recovery-plan"
       }
+    ],
+    "related": [
+      "BCP",
+      "BCDR",
+      "COOP",
+      "BIA",
+      "DRAAS"
     ]
   },
   "DSA": {
@@ -2205,6 +3096,12 @@
         "name": "NIST FIPS 186-5",
         "url": "https://csrc.nist.gov/pubs/fips/186-5/final"
       }
+    ],
+    "related": [
+      "DSS",
+      "ECDSA",
+      "EDDSA",
+      "RSA"
     ]
   },
   "DSPM": {
@@ -2218,6 +3115,11 @@
         "name": "IBM: What Is DSPM",
         "url": "https://www.ibm.com/think/topics/dspm"
       }
+    ],
+    "related": [
+      "CSPM",
+      "DLP",
+      "ASM"
     ]
   },
   "DSS": {
@@ -2231,6 +3133,13 @@
         "name": "NIST FIPS 186-5",
         "url": "https://csrc.nist.gov/pubs/fips/186-5/final"
       }
+    ],
+    "related": [
+      "DSA",
+      "ECDSA",
+      "EDDSA",
+      "RSA",
+      "CNSA"
     ]
   },
   "DTLS": {
@@ -2244,6 +3153,11 @@
         "name": "IETF RFC 9147",
         "url": "https://datatracker.ietf.org/doc/html/rfc9147"
       }
+    ],
+    "related": [
+      "TLS",
+      "STARTTLS",
+      "UDP"
     ]
   },
   "EAP": {
@@ -2257,6 +3171,11 @@
         "name": "IETF RFC 3748",
         "url": "https://datatracker.ietf.org/doc/html/rfc3748"
       }
+    ],
+    "related": [
+      "EAPTLS",
+      "8021X",
+      "CHAP"
     ]
   },
   "EAPTLS": {
@@ -2270,6 +3189,11 @@
         "name": "IETF RFC 5216",
         "url": "https://datatracker.ietf.org/doc/html/rfc5216"
       }
+    ],
+    "related": [
+      "EAP",
+      "CHAP",
+      "TLS"
     ]
   },
   "EAR": {
@@ -2296,6 +3220,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/attack_surface"
       }
+    ],
+    "related": [
+      "ASM",
+      "CTEM",
+      "CDM"
     ]
   },
   "ECB": {
@@ -2309,6 +3238,12 @@
         "name": "NIST SP 800-38A",
         "url": "https://csrc.nist.gov/pubs/sp/800/38/a/final"
       }
+    ],
+    "related": [
+      "CBC",
+      "CTR",
+      "GCM",
+      "XTS"
     ]
   },
   "ECC": {
@@ -2322,6 +3257,12 @@
         "name": "NIST SP 800-186",
         "url": "https://csrc.nist.gov/pubs/sp/800/186/final"
       }
+    ],
+    "related": [
+      "RSA",
+      "ECDH",
+      "ECDSA",
+      "PQC"
     ]
   },
   "ECDH": {
@@ -2335,6 +3276,12 @@
         "name": "NIST SP 800-56A Rev. 3",
         "url": "https://csrc.nist.gov/pubs/sp/800/56/a/r3/final"
       }
+    ],
+    "related": [
+      "DHE",
+      "ECC",
+      "PFS",
+      "IKE"
     ]
   },
   "ECDSA": {
@@ -2348,6 +3295,13 @@
         "name": "NIST FIPS 186-5",
         "url": "https://csrc.nist.gov/pubs/fips/186-5/final"
       }
+    ],
+    "related": [
+      "EDDSA",
+      "DSA",
+      "DSS",
+      "ECC",
+      "RSA"
     ]
   },
   "ECIH": {
@@ -2361,6 +3315,13 @@
         "name": "EC-Council",
         "url": "https://www.eccouncil.org/"
       }
+    ],
+    "related": [
+      "GCIH",
+      "CEH",
+      "CHFI",
+      "CND",
+      "CPENT"
     ]
   },
   "EDDSA": {
@@ -2378,6 +3339,12 @@
         "name": "NIST FIPS 186-5",
         "url": "https://csrc.nist.gov/pubs/fips/186-5/final"
       }
+    ],
+    "related": [
+      "ECDSA",
+      "DSA",
+      "DSS",
+      "RSA"
     ]
   },
   "EDR": {
@@ -2391,6 +3358,13 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "EPP",
+      "SIEM",
+      "SOAR",
+      "XDR",
+      "MDR"
     ]
   },
   "EIDAS": {
@@ -2404,6 +3378,10 @@
         "name": "European Commission",
         "url": "https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation"
       }
+    ],
+    "related": [
+      "GDPR",
+      "NIS2"
     ]
   },
   "EJPT": {
@@ -2417,6 +3395,13 @@
         "name": "INE Security",
         "url": "https://security.ine.com/"
       }
+    ],
+    "related": [
+      "OSCP",
+      "CEH",
+      "CPENT",
+      "CPTS",
+      "GPEN"
     ]
   },
   "EMM": {
@@ -2430,6 +3415,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "MDM",
+      "UEM"
     ]
   },
   "ENISA": {
@@ -2443,6 +3432,11 @@
         "name": "ENISA",
         "url": "https://www.enisa.europa.eu/"
       }
+    ],
+    "related": [
+      "CRA",
+      "DORA",
+      "NIS2"
     ]
   },
   "EPP": {
@@ -2456,6 +3450,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "EDR",
+      "HBSS"
     ]
   },
   "EPSS": {
@@ -2469,6 +3467,11 @@
         "name": "FIRST EPSS",
         "url": "https://www.first.org/epss/"
       }
+    ],
+    "related": [
+      "CVSS",
+      "KEV",
+      "SSVC"
     ]
   },
   "ERM": {
@@ -2482,6 +3485,13 @@
         "name": "COSO",
         "url": "https://www.coso.org/"
       }
+    ],
+    "related": [
+      "GRC",
+      "FAIR",
+      "KRI",
+      "OCTAVE",
+      "RMF"
     ]
   },
   "ESP": {
@@ -2495,6 +3505,26 @@
         "name": "IETF RFC 4303",
         "url": "https://datatracker.ietf.org/doc/html/rfc4303"
       }
+    ],
+    "related": [
+      "IPSEC",
+      "IKE"
+    ]
+  },
+  "ETL": {
+    "expansion": "Extract, Transform, Load",
+    "display": "ETL",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "ETL is the standard pattern for moving data between systems: pull it from sources, reshape it, and load it into a warehouse or lake. Every analytics stack and most SIEM pipelines are ETL at heart. Security cares because ETL jobs hold credentials to everything they touch and quietly copy sensitive data to new places, so a forgotten pipeline is both a breach vector and a compliance surprise waiting to be found.",
+    "sources": [
+      {
+        "name": "AWS: What is ETL?",
+        "url": "https://aws.amazon.com/what-is/etl/"
+      }
+    ],
+    "related": [
+      "SIEM"
     ]
   },
   "ETW": {
@@ -2508,6 +3538,13 @@
         "name": "Microsoft Learn",
         "url": "https://learn.microsoft.com/en-us/windows/win32/etw/about-event-tracing"
       }
+    ],
+    "related": [
+      "WMI",
+      "AMSI",
+      "DPAPI",
+      "LSASS",
+      "SAM"
     ]
   },
   "FAAS": {
@@ -2521,6 +3558,13 @@
         "name": "Cloud Security Alliance",
         "url": "https://cloudsecurityalliance.org/"
       }
+    ],
+    "related": [
+      "CAAS",
+      "IAAS",
+      "PAAS",
+      "SAAS",
+      "XAAS"
     ]
   },
   "FAIR": {
@@ -2534,6 +3578,12 @@
         "name": "FAIR Institute",
         "url": "https://www.fairinstitute.org/"
       }
+    ],
+    "related": [
+      "ALE",
+      "OCTAVE",
+      "ERM",
+      "RMF"
     ]
   },
   "FDE": {
@@ -2547,6 +3597,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "SED",
+      "TPM"
     ]
   },
   "FEDRAMP": {
@@ -2560,6 +3614,11 @@
         "name": "FedRAMP",
         "url": "https://www.fedramp.gov/"
       }
+    ],
+    "related": [
+      "ATO",
+      "FISMA",
+      "POAM"
     ]
   },
   "FERPA": {
@@ -2573,6 +3632,10 @@
         "name": "U.S. Department of Education",
         "url": "https://studentprivacy.ed.gov/"
       }
+    ],
+    "related": [
+      "COPPA",
+      "PII"
     ]
   },
   "FFIEC": {
@@ -2586,6 +3649,10 @@
         "name": "FFIEC",
         "url": "https://www.ffiec.gov/"
       }
+    ],
+    "related": [
+      "GLBA",
+      "SOX"
     ]
   },
   "FHE": {
@@ -2603,6 +3670,10 @@
         "name": "NIST Privacy-Enhancing Cryptography Project",
         "url": "https://csrc.nist.gov/projects/pec"
       }
+    ],
+    "related": [
+      "MPC",
+      "ZKP"
     ]
   },
   "FIDO2": {
@@ -2616,6 +3687,13 @@
         "name": "FIDO Alliance FIDO2 Overview",
         "url": "https://fidoalliance.org/fido2/"
       }
+    ],
+    "related": [
+      "U2F",
+      "WEBAUTHN",
+      "CTAP",
+      "MFA",
+      "PIV"
     ]
   },
   "FIM": {
@@ -2629,6 +3707,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "DFIR",
+      "HIDS"
     ]
   },
   "FIPS": {
@@ -2642,6 +3724,11 @@
         "name": "NIST FIPS publications",
         "url": "https://csrc.nist.gov/publications/fips"
       }
+    ],
+    "related": [
+      "AES",
+      "CNSA",
+      "DSS"
     ]
   },
   "FIRST": {
@@ -2655,6 +3742,11 @@
         "name": "FIRST",
         "url": "https://www.first.org/about/"
       }
+    ],
+    "related": [
+      "CERT",
+      "CVSS",
+      "CSIRT"
     ]
   },
   "FISMA": {
@@ -2668,6 +3760,12 @@
         "name": "CISA",
         "url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/federal-information-security-modernization-act"
       }
+    ],
+    "related": [
+      "FEDRAMP",
+      "ATO",
+      "POAM",
+      "CUI"
     ]
   },
   "FTP": {
@@ -2681,6 +3779,11 @@
         "name": "IETF RFC 959",
         "url": "https://datatracker.ietf.org/doc/html/rfc959"
       }
+    ],
+    "related": [
+      "FTPS",
+      "SFTP",
+      "TFTP"
     ]
   },
   "FTPS": {
@@ -2694,6 +3797,27 @@
         "name": "IETF RFC 4217",
         "url": "https://datatracker.ietf.org/doc/html/rfc4217"
       }
+    ],
+    "related": [
+      "FTP",
+      "SFTP",
+      "TFTP"
+    ]
+  },
+  "GAN": {
+    "expansion": "Generative Adversarial Network",
+    "display": "GAN",
+    "category": "ai",
+    "difficulty": "medium",
+    "explanation": "A GAN trains two neural networks against each other: a generator that forges content and a discriminator that tries to spot the forgery, each making the other better. GANs made the first convincing deepfakes and synthetic faces. Diffusion models have taken over much of image generation, but the adversarial idea, and the deepfake problem it unleashed for fraud and identity verification, are here to stay.",
+    "sources": [
+      {
+        "name": "Generative Adversarial Networks paper",
+        "url": "https://arxiv.org/abs/1406.2661"
+      }
+    ],
+    "related": [
+      "GENAI"
     ]
   },
   "GCFA": {
@@ -2707,6 +3831,12 @@
         "name": "GIAC",
         "url": "https://www.giac.org/certifications/"
       }
+    ],
+    "related": [
+      "GCIH",
+      "GREM",
+      "CHFI",
+      "GCFR"
     ]
   },
   "GCFR": {
@@ -2720,6 +3850,10 @@
         "name": "GIAC GCFR Certification",
         "url": "https://www.giac.org/certifications/cloud-forensics-responder-gcfr/"
       }
+    ],
+    "related": [
+      "GCFA",
+      "GCSA"
     ]
   },
   "GCIA": {
@@ -2733,6 +3867,12 @@
         "name": "GIAC",
         "url": "https://www.giac.org/certifications/"
       }
+    ],
+    "related": [
+      "GMON",
+      "CYSA",
+      "GCIH",
+      "GCTI"
     ]
   },
   "GCIH": {
@@ -2746,6 +3886,12 @@
         "name": "GIAC",
         "url": "https://www.giac.org/certifications/"
       }
+    ],
+    "related": [
+      "GCFA",
+      "ECIH",
+      "GCIA",
+      "GSEC"
     ]
   },
   "GCM": {
@@ -2759,6 +3905,13 @@
         "name": "NIST SP 800-38D",
         "url": "https://csrc.nist.gov/pubs/sp/800/38/d/final"
       }
+    ],
+    "related": [
+      "AEAD",
+      "CBC",
+      "CTR",
+      "ECB",
+      "XTS"
     ]
   },
   "GCSA": {
@@ -2772,6 +3925,10 @@
         "name": "GIAC GCSA Certification",
         "url": "https://www.giac.org/certifications/cloud-security-automation-gcsa/"
       }
+    ],
+    "related": [
+      "GCFR",
+      "CCSP"
     ]
   },
   "GCTI": {
@@ -2785,6 +3942,10 @@
         "name": "GIAC",
         "url": "https://www.giac.org/certifications/"
       }
+    ],
+    "related": [
+      "CTIA",
+      "GCIA"
     ]
   },
   "GDPR": {
@@ -2802,6 +3963,30 @@
         "name": "GDPR.eu",
         "url": "https://gdpr.eu/"
       }
+    ],
+    "related": [
+      "CCPA",
+      "DPIA",
+      "DPO",
+      "LGPD",
+      "PDPA"
+    ]
+  },
+  "GENAI": {
+    "expansion": "Generative Artificial Intelligence",
+    "display": "GenAI",
+    "category": "ai",
+    "difficulty": "easy",
+    "explanation": "GenAI is the umbrella term for AI systems that create new content (text, images, code, audio, video) rather than just classifying or ranking what already exists. It covers large language models, image generators, and coding assistants. Most corporate AI policies, and most of the new risks like deepfakes, data leakage through prompts, and hallucinated facts stated confidently, live under this umbrella.",
+    "sources": [
+      {
+        "name": "NIST AI RMF Generative AI Profile",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      }
+    ],
+    "related": [
+      "LLM",
+      "GAN"
     ]
   },
   "GICSP": {
@@ -2815,6 +4000,10 @@
         "name": "GIAC",
         "url": "https://www.giac.org/certifications/"
       }
+    ],
+    "related": [
+      "ICS",
+      "IEC62443"
     ]
   },
   "GLBA": {
@@ -2828,6 +4017,11 @@
         "name": "FTC",
         "url": "https://www.ftc.gov/business-guidance/privacy-security/gramm-leach-bliley-act"
       }
+    ],
+    "related": [
+      "FFIEC",
+      "SOX",
+      "PII"
     ]
   },
   "GMON": {
@@ -2841,6 +4035,10 @@
         "name": "GIAC GMON Certification",
         "url": "https://www.giac.org/certifications/continuous-monitoring-certification-gmon/"
       }
+    ],
+    "related": [
+      "GCIA",
+      "GSEC"
     ]
   },
   "GPEN": {
@@ -2854,6 +4052,13 @@
         "name": "GIAC",
         "url": "https://www.giac.org/certifications/"
       }
+    ],
+    "related": [
+      "GWAPT",
+      "GXPN",
+      "CEH",
+      "CPENT",
+      "CPTS"
     ]
   },
   "GPG": {
@@ -2871,6 +4076,10 @@
         "name": "IETF RFC 4880 (OpenPGP)",
         "url": "https://datatracker.ietf.org/doc/html/rfc4880"
       }
+    ],
+    "related": [
+      "PGP",
+      "SMIME"
     ]
   },
   "GPO": {
@@ -2884,6 +4093,43 @@
         "name": "Microsoft Learn",
         "url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/group-policy/group-policy-overview"
       }
+    ],
+    "related": [
+      "UAC",
+      "LDAP"
+    ]
+  },
+  "GPT": {
+    "expansion": "Generative Pre-trained Transformer",
+    "display": "GPT",
+    "category": "ai",
+    "difficulty": "easy",
+    "explanation": "GPT is the family of large language models from OpenAI whose name describes the recipe: generative (it produces text), pre-trained (it learns from a huge corpus before any task-specific tuning), and transformer (the neural network architecture underneath). GPT models popularized modern AI chat, and the term is often used loosely for any chatbot. The distinction matters when policies and contracts name specific models and versions.",
+    "sources": [
+      {
+        "name": "OpenAI model documentation",
+        "url": "https://platform.openai.com/docs/models"
+      }
+    ],
+    "related": [
+      "LLM",
+      "GENAI"
+    ]
+  },
+  "GPU": {
+    "expansion": "Graphics Processing Unit",
+    "display": "GPU",
+    "category": "operations",
+    "difficulty": "easy",
+    "explanation": "A GPU is a chip designed to do thousands of simple calculations in parallel. Built for rendering game graphics, that same shape of math turned out to be exactly what neural networks and password crackers need, which is why GPUs now power both the AI boom and offline hash cracking. In cloud bills and threat models alike they are worth tracking: expensive, in demand, and a favorite target of cryptomining intruders.",
+    "sources": [
+      {
+        "name": "Intel: What is a GPU?",
+        "url": "https://www.intel.com/content/www/us/en/products/docs/processors/what-is-a-gpu.html"
+      }
+    ],
+    "related": [
+      "TPU"
     ]
   },
   "GRC": {
@@ -2897,6 +4143,12 @@
         "name": "OCEG",
         "url": "https://www.oceg.org/"
       }
+    ],
+    "related": [
+      "CGRC",
+      "ERM",
+      "CISO",
+      "ISMS"
     ]
   },
   "GRE": {
@@ -2910,6 +4162,10 @@
         "name": "IETF RFC 2784",
         "url": "https://www.rfc-editor.org/rfc/rfc2784"
       }
+    ],
+    "related": [
+      "IPSEC",
+      "MPLS"
     ]
   },
   "GREM": {
@@ -2923,6 +4179,27 @@
         "name": "GIAC",
         "url": "https://www.giac.org/certifications/"
       }
+    ],
+    "related": [
+      "GCFA",
+      "CHFI"
+    ]
+  },
+  "GRPC": {
+    "expansion": "gRPC Remote Procedure Calls",
+    "display": "gRPC",
+    "category": "protocols",
+    "difficulty": "medium",
+    "explanation": "gRPC is a high-performance framework for service-to-service calls, using HTTP/2 and compact binary messages (Protocol Buffers) instead of JSON text. Microservice backends favor it for speed and typed contracts. It is less visible to traditional web tooling than REST, which cuts both ways: harder for casual attackers to poke at, and harder for security teams to inspect unless their proxies and scanners speak it.",
+    "sources": [
+      {
+        "name": "gRPC introduction",
+        "url": "https://grpc.io/docs/what-is-grpc/introduction/"
+      }
+    ],
+    "related": [
+      "REST",
+      "API"
     ]
   },
   "GSEC": {
@@ -2936,6 +4213,11 @@
         "name": "GIAC",
         "url": "https://www.giac.org/certifications/"
       }
+    ],
+    "related": [
+      "GCIH",
+      "GMON",
+      "GSLC"
     ]
   },
   "GSLC": {
@@ -2949,6 +4231,10 @@
         "name": "GIAC",
         "url": "https://www.giac.org/certifications/"
       }
+    ],
+    "related": [
+      "CISM",
+      "GSEC"
     ]
   },
   "GWAPT": {
@@ -2962,6 +4248,11 @@
         "name": "GIAC",
         "url": "https://www.giac.org/certifications/"
       }
+    ],
+    "related": [
+      "GPEN",
+      "GXPN",
+      "OSWE"
     ]
   },
   "GXPN": {
@@ -2975,6 +4266,10 @@
         "name": "GIAC GXPN Certification",
         "url": "https://www.giac.org/certifications/exploit-researcher-advanced-penetration-tester-gxpn/"
       }
+    ],
+    "related": [
+      "GPEN",
+      "GWAPT"
     ]
   },
   "HBSS": {
@@ -2988,6 +4283,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "EPP",
+      "HIDS"
     ]
   },
   "HIDS": {
@@ -3001,6 +4300,13 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "HIPS",
+      "NIDS",
+      "IDS",
+      "NIPS",
+      "FIM"
     ]
   },
   "HIPAA": {
@@ -3014,6 +4320,10 @@
         "name": "HHS",
         "url": "https://www.hhs.gov/hipaa/index.html"
       }
+    ],
+    "related": [
+      "HITECH",
+      "PHI"
     ]
   },
   "HIPS": {
@@ -3027,6 +4337,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "HIDS",
+      "NIPS",
+      "IPS",
+      "NIDS"
     ]
   },
   "HITECH": {
@@ -3040,6 +4356,26 @@
         "name": "HHS",
         "url": "https://www.hhs.gov/hipaa/for-professionals/special-topics/hitech-act-enforcement-interim-final-rule/index.html"
       }
+    ],
+    "related": [
+      "HIPAA",
+      "PHI"
+    ]
+  },
+  "HITL": {
+    "expansion": "Human-In-The-Loop",
+    "display": "HITL",
+    "category": "ai",
+    "difficulty": "medium",
+    "explanation": "HITL describes any AI workflow where a person reviews or approves the system's output before it takes effect: a human gate between the model and the consequence. It is the single most load-bearing control in most AI policies, and the first one to quietly erode when review becomes a rubber stamp. If a process claims HITL, the real question is whether the human can actually catch and stop a bad output in time.",
+    "sources": [
+      {
+        "name": "IBM: What is human-in-the-loop?",
+        "url": "https://www.ibm.com/think/topics/human-in-the-loop"
+      }
+    ],
+    "related": [
+      "LLM"
     ]
   },
   "HKDF": {
@@ -3053,6 +4389,11 @@
         "name": "IETF RFC 5869",
         "url": "https://datatracker.ietf.org/doc/html/rfc5869"
       }
+    ],
+    "related": [
+      "KDF",
+      "PBKDF2",
+      "HMAC"
     ]
   },
   "HMAC": {
@@ -3066,6 +4407,12 @@
         "name": "IETF RFC 2104",
         "url": "https://datatracker.ietf.org/doc/html/rfc2104"
       }
+    ],
+    "related": [
+      "CMAC",
+      "HKDF",
+      "SHA256",
+      "MD5"
     ]
   },
   "HMI": {
@@ -3079,6 +4426,11 @@
         "name": "CISA Industrial Control Systems",
         "url": "https://www.cisa.gov/topics/industrial-control-systems"
       }
+    ],
+    "related": [
+      "ICS",
+      "PLC",
+      "SCADA"
     ]
   },
   "HOTP": {
@@ -3092,6 +4444,10 @@
         "name": "RFC 4226 (HOTP)",
         "url": "https://datatracker.ietf.org/doc/html/rfc4226"
       }
+    ],
+    "related": [
+      "OTP",
+      "TOTP"
     ]
   },
   "HPKE": {
@@ -3105,6 +4461,10 @@
         "name": "IETF RFC 9180",
         "url": "https://www.rfc-editor.org/rfc/rfc9180"
       }
+    ],
+    "related": [
+      "KEM",
+      "JWE"
     ]
   },
   "HPP": {
@@ -3118,6 +4478,10 @@
         "name": "OWASP WSTG: Testing for HTTP Parameter Pollution",
         "url": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/04-Testing_for_HTTP_Parameter_Pollution"
       }
+    ],
+    "related": [
+      "CRLF",
+      "SQLI"
     ]
   },
   "HSM": {
@@ -3131,6 +4495,13 @@
         "name": "NIST FIPS 140-3",
         "url": "https://csrc.nist.gov/pubs/fips/140-3/final"
       }
+    ],
+    "related": [
+      "TEE",
+      "TPM",
+      "KMS",
+      "PKI",
+      "VTPM"
     ]
   },
   "HSTS": {
@@ -3144,6 +4515,13 @@
         "name": "MDN Web Docs",
         "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security"
       }
+    ],
+    "related": [
+      "CSP",
+      "CORS",
+      "SOP",
+      "SRI",
+      "TLS"
     ]
   },
   "HTTPS": {
@@ -3157,6 +4535,11 @@
         "name": "IETF RFC 2818",
         "url": "https://datatracker.ietf.org/doc/html/rfc2818"
       }
+    ],
+    "related": [
+      "TLS",
+      "SSL",
+      "SNI"
     ]
   },
   "HYOK": {
@@ -3170,6 +4553,11 @@
         "name": "Cloud Security Alliance",
         "url": "https://cloudsecurityalliance.org/"
       }
+    ],
+    "related": [
+      "BYOK",
+      "CMK",
+      "KMS"
     ]
   },
   "IAAS": {
@@ -3183,6 +4571,13 @@
         "name": "NIST SP 800-145",
         "url": "https://csrc.nist.gov/pubs/sp/800/145/final"
       }
+    ],
+    "related": [
+      "PAAS",
+      "CAAS",
+      "FAAS",
+      "SAAS",
+      "XAAS"
     ]
   },
   "IAB": {
@@ -3196,6 +4591,10 @@
         "name": "CISA",
         "url": "https://www.cisa.gov"
       }
+    ],
+    "related": [
+      "RAAS",
+      "APT"
     ]
   },
   "IAC": {
@@ -3209,6 +4608,10 @@
         "name": "CISA",
         "url": "https://www.cisa.gov/"
       }
+    ],
+    "related": [
+      "CSPM",
+      "CNAPP"
     ]
   },
   "IAM": {
@@ -3222,6 +4625,13 @@
         "name": "NIST SP 800-63 Digital Identity Guidelines",
         "url": "https://pages.nist.gov/800-63-3/"
       }
+    ],
+    "related": [
+      "IDP",
+      "IDAAS",
+      "IGA",
+      "ITDR",
+      "PAM"
     ]
   },
   "IAST": {
@@ -3235,6 +4645,11 @@
         "name": "OWASP",
         "url": "https://owasp.org/"
       }
+    ],
+    "related": [
+      "DAST",
+      "SAST",
+      "RASP"
     ]
   },
   "ICMP": {
@@ -3248,6 +4663,10 @@
         "name": "IETF RFC 792",
         "url": "https://www.rfc-editor.org/rfc/rfc792"
       }
+    ],
+    "related": [
+      "TCP",
+      "UDP"
     ]
   },
   "ICS": {
@@ -3265,6 +4684,13 @@
         "name": "NIST SP 800-82",
         "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final"
       }
+    ],
+    "related": [
+      "SCADA",
+      "HMI",
+      "IEC62443",
+      "PLC",
+      "IIOT"
     ]
   },
   "IDAAS": {
@@ -3278,6 +4704,13 @@
         "name": "NIST Computer Security Resource Center Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "IAM",
+      "IGA",
+      "PAM",
+      "PIM",
+      "OIDC"
     ]
   },
   "IDOR": {
@@ -3291,6 +4724,10 @@
         "name": "OWASP",
         "url": "https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html"
       }
+    ],
+    "related": [
+      "BOLA",
+      "API"
     ]
   },
   "IDP": {
@@ -3304,6 +4741,12 @@
         "name": "NIST SP 800-63C Federation and Assertions",
         "url": "https://pages.nist.gov/800-63-3/sp800-63c.html"
       }
+    ],
+    "related": [
+      "IAM",
+      "SAML",
+      "SSO",
+      "ITDR"
     ]
   },
   "IDS": {
@@ -3317,6 +4760,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "IPS",
+      "HIDS",
+      "NIDS"
     ]
   },
   "IEC62443": {
@@ -3330,6 +4778,11 @@
         "name": "ISA/IEC 62443 Series",
         "url": "https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards"
       }
+    ],
+    "related": [
+      "ICS",
+      "SCADA",
+      "GICSP"
     ]
   },
   "IGA": {
@@ -3343,6 +4796,13 @@
         "name": "NIST Computer Security Resource Center Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "SCIM",
+      "IAM",
+      "IDAAS",
+      "PAM",
+      "PIM"
     ]
   },
   "IIOT": {
@@ -3356,6 +4816,10 @@
         "name": "CISA Industrial Control Systems",
         "url": "https://www.cisa.gov/topics/industrial-control-systems"
       }
+    ],
+    "related": [
+      "IOT",
+      "ICS"
     ]
   },
   "IKE": {
@@ -3369,6 +4833,12 @@
         "name": "IETF RFC 7296",
         "url": "https://datatracker.ietf.org/doc/html/rfc7296"
       }
+    ],
+    "related": [
+      "IPSEC",
+      "ESP",
+      "DHE",
+      "ECDH"
     ]
   },
   "IMAP": {
@@ -3382,6 +4852,10 @@
         "name": "IETF RFC 9051",
         "url": "https://www.rfc-editor.org/rfc/rfc9051"
       }
+    ],
+    "related": [
+      "POP3",
+      "SMTP"
     ]
   },
   "IMDS": {
@@ -3395,6 +4869,10 @@
         "name": "AWS EC2 Instance Metadata Service",
         "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html"
       }
+    ],
+    "related": [
+      "SSRF",
+      "VPC"
     ]
   },
   "IOA": {
@@ -3408,6 +4886,11 @@
         "name": "MITRE ATT&CK",
         "url": "https://attack.mitre.org"
       }
+    ],
+    "related": [
+      "IOC",
+      "ATTCK",
+      "EDR"
     ]
   },
   "IOC": {
@@ -3421,6 +4904,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "IOA",
+      "CTI",
+      "STIX",
+      "TTP"
     ]
   },
   "IOT": {
@@ -3438,6 +4927,10 @@
         "name": "CISA",
         "url": "https://www.cisa.gov"
       }
+    ],
+    "related": [
+      "IIOT",
+      "BLE"
     ]
   },
   "IPS": {
@@ -3451,6 +4944,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "IDS",
+      "HIPS",
+      "NIPS"
     ]
   },
   "IPSEC": {
@@ -3464,6 +4962,13 @@
         "name": "IETF RFC 4301",
         "url": "https://datatracker.ietf.org/doc/html/rfc4301"
       }
+    ],
+    "related": [
+      "ESP",
+      "IKE",
+      "VPN",
+      "L2TP",
+      "PPTP"
     ]
   },
   "IRP": {
@@ -3477,6 +4982,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "CSIRT",
+      "DFIR",
+      "RCA",
+      "OODA"
     ]
   },
   "ISAC": {
@@ -3490,6 +5001,10 @@
         "name": "CISA",
         "url": "https://www.cisa.gov"
       }
+    ],
+    "related": [
+      "ISAO",
+      "TLP"
     ]
   },
   "ISAO": {
@@ -3503,6 +5018,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/information_sharing_and_analysis_organization"
       }
+    ],
+    "related": [
+      "ISAC",
+      "CTI"
     ]
   },
   "ISMS": {
@@ -3516,6 +5035,10 @@
         "name": "ISO/IEC 27001",
         "url": "https://www.iso.org/standard/27001"
       }
+    ],
+    "related": [
+      "ISO27001",
+      "GRC"
     ]
   },
   "ISO27001": {
@@ -3529,6 +5052,12 @@
         "name": "ISO",
         "url": "https://www.iso.org/standard/27001"
       }
+    ],
+    "related": [
+      "ISMS",
+      "SOC2",
+      "CSF",
+      "RMF"
     ]
   },
   "ISSAP": {
@@ -3542,6 +5071,11 @@
         "name": "ISC2",
         "url": "https://www.isc2.org/certifications"
       }
+    ],
+    "related": [
+      "ISSEP",
+      "ISSMP",
+      "CISSP"
     ]
   },
   "ISSEP": {
@@ -3555,6 +5089,11 @@
         "name": "ISC2",
         "url": "https://www.isc2.org/certifications"
       }
+    ],
+    "related": [
+      "ISSAP",
+      "ISSMP",
+      "CISSP"
     ]
   },
   "ISSMP": {
@@ -3568,6 +5107,11 @@
         "name": "ISC2",
         "url": "https://www.isc2.org/certifications"
       }
+    ],
+    "related": [
+      "ISSAP",
+      "ISSEP",
+      "CISSP"
     ]
   },
   "ITAR": {
@@ -3598,6 +5142,10 @@
         "name": "Gartner Information Technology Glossary",
         "url": "https://www.gartner.com/en/information-technology/glossary"
       }
+    ],
+    "related": [
+      "IAM",
+      "IDP"
     ]
   },
   "ITGC": {
@@ -3611,6 +5159,10 @@
         "name": "ISACA",
         "url": "https://www.isaca.org/"
       }
+    ],
+    "related": [
+      "SOX",
+      "COBIT"
     ]
   },
   "ITIL": {
@@ -3624,6 +5176,10 @@
         "name": "PeopleCert",
         "url": "https://www.peoplecert.org/"
       }
+    ],
+    "related": [
+      "COBIT",
+      "COSO"
     ]
   },
   "JIT": {
@@ -3637,6 +5193,28 @@
         "name": "NIST Computer Security Resource Center Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "PAM",
+      "PIM"
+    ]
+  },
+  "JSON": {
+    "expansion": "JavaScript Object Notation",
+    "display": "JSON",
+    "category": "protocols",
+    "difficulty": "easy",
+    "explanation": "JSON is the plain-text format most of the modern web uses to move structured data: curly braces, key-value pairs, and lists that both humans and machines can read. Nearly every API request, log event, and configuration exchange you will inspect during an investigation is JSON. Parsing it safely matters too: deserialization bugs and injection through unescaped values are classic application flaws.",
+    "sources": [
+      {
+        "name": "RFC 8259: The JSON Data Interchange Format",
+        "url": "https://datatracker.ietf.org/doc/html/rfc8259"
+      }
+    ],
+    "related": [
+      "API",
+      "YAML",
+      "REST"
     ]
   },
   "JWE": {
@@ -3650,6 +5228,13 @@
         "name": "IETF RFC 7516",
         "url": "https://datatracker.ietf.org/doc/html/rfc7516"
       }
+    ],
+    "related": [
+      "JWS",
+      "JWK",
+      "JWT",
+      "COSE",
+      "HPKE"
     ]
   },
   "JWK": {
@@ -3663,6 +5248,11 @@
         "name": "IETF RFC 7517",
         "url": "https://www.rfc-editor.org/rfc/rfc7517"
       }
+    ],
+    "related": [
+      "JWE",
+      "JWS",
+      "JWT"
     ]
   },
   "JWS": {
@@ -3676,6 +5266,12 @@
         "name": "IETF RFC 7515",
         "url": "https://datatracker.ietf.org/doc/html/rfc7515"
       }
+    ],
+    "related": [
+      "JWE",
+      "JWT",
+      "JWK",
+      "COSE"
     ]
   },
   "JWT": {
@@ -3689,6 +5285,30 @@
         "name": "RFC 7519 (JSON Web Token)",
         "url": "https://datatracker.ietf.org/doc/html/rfc7519"
       }
+    ],
+    "related": [
+      "JWS",
+      "JWE",
+      "JWK",
+      "OIDC"
+    ]
+  },
+  "K8S": {
+    "expansion": "Kubernetes",
+    "display": "K8s",
+    "category": "cloud",
+    "difficulty": "medium",
+    "explanation": "K8s is shorthand for Kubernetes (K, eight letters, s), the open-source system that schedules and runs containerized applications across fleets of machines. It is the de facto operating system of the cloud. Its power comes with a notorious configuration surface: overly permissive service accounts, exposed dashboards, and privileged containers are the standard findings, which is why CIS publishes a dedicated Kubernetes benchmark.",
+    "sources": [
+      {
+        "name": "Kubernetes overview",
+        "url": "https://kubernetes.io/docs/concepts/overview/"
+      }
+    ],
+    "related": [
+      "IAC",
+      "YAML",
+      "CICD"
     ]
   },
   "KBA": {
@@ -3702,6 +5322,10 @@
         "name": "NIST Glossary: Knowledge-Based Authentication",
         "url": "https://csrc.nist.gov/glossary/term/knowledge_based_authentication"
       }
+    ],
+    "related": [
+      "MFA",
+      "OTP"
     ]
   },
   "KDC": {
@@ -3715,6 +5339,10 @@
         "name": "RFC 4120 (Kerberos V5)",
         "url": "https://datatracker.ietf.org/doc/html/rfc4120"
       }
+    ],
+    "related": [
+      "TGT",
+      "NTLM"
     ]
   },
   "KDF": {
@@ -3728,6 +5356,10 @@
         "name": "NIST Glossary: Key Derivation Function",
         "url": "https://csrc.nist.gov/glossary/term/key_derivation_function"
       }
+    ],
+    "related": [
+      "HKDF",
+      "PBKDF2"
     ]
   },
   "KEM": {
@@ -3741,6 +5373,11 @@
         "name": "NIST FIPS 203",
         "url": "https://csrc.nist.gov/pubs/fips/203/final"
       }
+    ],
+    "related": [
+      "MLKEM",
+      "HPKE",
+      "PQC"
     ]
   },
   "KEV": {
@@ -3754,6 +5391,12 @@
         "name": "CISA KEV Catalog",
         "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
       }
+    ],
+    "related": [
+      "CVE",
+      "EPSS",
+      "NVD",
+      "CTEM"
     ]
   },
   "KMS": {
@@ -3767,6 +5410,12 @@
         "name": "NIST SP 800-57 Part 1",
         "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
       }
+    ],
+    "related": [
+      "CMK",
+      "BYOK",
+      "HSM",
+      "HYOK"
     ]
   },
   "KPI": {
@@ -3780,6 +5429,11 @@
         "name": "ISACA",
         "url": "https://www.isaca.org/"
       }
+    ],
+    "related": [
+      "KRI",
+      "SLA",
+      "SLO"
     ]
   },
   "KRI": {
@@ -3793,6 +5447,10 @@
         "name": "ISACA",
         "url": "https://www.isaca.org/"
       }
+    ],
+    "related": [
+      "KPI",
+      "ERM"
     ]
   },
   "L2TP": {
@@ -3806,6 +5464,28 @@
         "name": "IETF RFC 2661",
         "url": "https://datatracker.ietf.org/doc/html/rfc2661"
       }
+    ],
+    "related": [
+      "PPTP",
+      "IPSEC",
+      "VPN"
+    ]
+  },
+  "LAN": {
+    "expansion": "Local Area Network",
+    "display": "LAN",
+    "category": "network",
+    "difficulty": "easy",
+    "explanation": "A LAN is the network within one physical place (an office, a home, a data center floor) connecting nearby devices at high speed. It is the original trust boundary: being on the LAN once meant being trusted, which is exactly the assumption attackers exploit through lateral movement and which zero trust architecture exists to retire. Segmenting the LAN remains one of the highest-value defensive moves.",
+    "sources": [
+      {
+        "name": "Cloudflare Learning: What is a LAN?",
+        "url": "https://www.cloudflare.com/learning/network-layer/what-is-a-lan/"
+      }
+    ],
+    "related": [
+      "WAN",
+      "VLAN"
     ]
   },
   "LDAP": {
@@ -3819,6 +5499,12 @@
         "name": "RFC 4511 (LDAP: The Protocol)",
         "url": "https://datatracker.ietf.org/doc/html/rfc4511"
       }
+    ],
+    "related": [
+      "LDAPS",
+      "SASL",
+      "UPN",
+      "GPO"
     ]
   },
   "LDAPS": {
@@ -3832,6 +5518,10 @@
         "name": "IETF RFC 4513",
         "url": "https://datatracker.ietf.org/doc/html/rfc4513"
       }
+    ],
+    "related": [
+      "LDAP",
+      "TLS"
     ]
   },
   "LFI": {
@@ -3845,6 +5535,10 @@
         "name": "OWASP WSTG: Testing for Local File Inclusion",
         "url": "https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.1-Testing_for_Local_File_Inclusion"
       }
+    ],
+    "related": [
+      "RFI",
+      "RCE"
     ]
   },
   "LGPD": {
@@ -3858,6 +5552,31 @@
         "name": "ANPD (Brazil)",
         "url": "https://www.gov.br/anpd/pt-br"
       }
+    ],
+    "related": [
+      "GDPR",
+      "PDPA",
+      "PIPEDA",
+      "PIPL",
+      "POPIA"
+    ]
+  },
+  "LLM": {
+    "expansion": "Large Language Model",
+    "display": "LLM",
+    "category": "ai",
+    "difficulty": "easy",
+    "explanation": "An LLM is an AI model trained on enormous amounts of text to predict the next word, which turns out to be enough to write, summarize, translate, and answer questions convincingly. Tools like ChatGPT and Claude are built on LLMs. For security teams they cut both ways: they power useful assistants and triage bots, but they also introduce risks like prompt injection and data leakage that traditional application security never had to consider.",
+    "sources": [
+      {
+        "name": "OWASP Top 10 for LLM Applications",
+        "url": "https://genai.owasp.org/llm-top-10/"
+      }
+    ],
+    "related": [
+      "GPT",
+      "RAG",
+      "MCP"
     ]
   },
   "LLMNR": {
@@ -3875,6 +5594,11 @@
         "name": "MITRE ATT&CK T1557.001",
         "url": "https://attack.mitre.org/techniques/T1557/001/"
       }
+    ],
+    "related": [
+      "MDNS",
+      "ARP",
+      "NTLM"
     ]
   },
   "LOLBIN": {
@@ -3888,6 +5612,26 @@
         "name": "MITRE ATT&CK",
         "url": "https://attack.mitre.org"
       }
+    ],
+    "related": [
+      "LOTL",
+      "BYOVD"
+    ]
+  },
+  "LORA": {
+    "expansion": "Low-Rank Adaptation",
+    "display": "LoRA",
+    "category": "ai",
+    "difficulty": "hard",
+    "explanation": "LoRA is a technique for fine-tuning large models cheaply: instead of updating billions of weights, it trains small add-on matrices that steer the frozen base model. The result is adapter files small enough to email, which is both the appeal and the risk. Anyone can specialize an open model on a laptop, and a malicious adapter can quietly change a model's behavior, so adapters deserve the same supply-chain scrutiny as any other dependency.",
+    "sources": [
+      {
+        "name": "LoRA paper",
+        "url": "https://arxiv.org/abs/2106.09685"
+      }
+    ],
+    "related": [
+      "SFT"
     ]
   },
   "LOTL": {
@@ -3901,6 +5645,10 @@
         "name": "CISA",
         "url": "https://www.cisa.gov"
       }
+    ],
+    "related": [
+      "LOLBIN",
+      "BYOVD"
     ]
   },
   "LPE": {
@@ -3914,6 +5662,10 @@
         "name": "MITRE ATT&CK",
         "url": "https://attack.mitre.org/tactics/TA0004/"
       }
+    ],
+    "related": [
+      "RCE",
+      "UAC"
     ]
   },
   "LSASS": {
@@ -3931,6 +5683,13 @@
         "name": "MITRE ATT&CK T1003.001",
         "url": "https://attack.mitre.org/techniques/T1003/001/"
       }
+    ],
+    "related": [
+      "DPAPI",
+      "SAM",
+      "NTLM",
+      "ETW",
+      "WMI"
     ]
   },
   "MAC": {
@@ -3944,6 +5703,12 @@
         "name": "NIST Computer Security Resource Center Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "ABAC",
+      "DAC",
+      "PBAC",
+      "RBAC"
     ]
   },
   "MASTG": {
@@ -3957,6 +5722,11 @@
         "name": "OWASP Mobile Application Security",
         "url": "https://mas.owasp.org/"
       }
+    ],
+    "related": [
+      "WSTG",
+      "MASVS",
+      "ASVS"
     ]
   },
   "MASVS": {
@@ -3970,6 +5740,28 @@
         "name": "OWASP Mobile Application Security",
         "url": "https://mas.owasp.org/"
       }
+    ],
+    "related": [
+      "ASVS",
+      "MASTG",
+      "WSTG"
+    ]
+  },
+  "MCP": {
+    "expansion": "Model Context Protocol",
+    "display": "MCP",
+    "category": "ai",
+    "difficulty": "medium",
+    "explanation": "MCP is an open standard for connecting AI assistants to outside tools and data: file systems, databases, ticketing systems, anything wrapped in an MCP server. It is the plumbing that turns a chatbot into an agent that acts. That power is exactly its risk: every connected server extends what the model can read and do, so MCP deployments need the same least-privilege and audit discipline as any service account.",
+    "sources": [
+      {
+        "name": "Model Context Protocol documentation",
+        "url": "https://modelcontextprotocol.io/"
+      }
+    ],
+    "related": [
+      "LLM",
+      "API"
     ]
   },
   "MD5": {
@@ -3987,6 +5779,12 @@
         "name": "IETF RFC 6151 (MD5 security considerations)",
         "url": "https://datatracker.ietf.org/doc/html/rfc6151"
       }
+    ],
+    "related": [
+      "SHA1",
+      "SHA256",
+      "SHA3",
+      "HMAC"
     ]
   },
   "MDM": {
@@ -4000,6 +5798,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "EMM",
+      "UEM",
+      "BYOD",
+      "COPE"
     ]
   },
   "MDNS": {
@@ -4013,6 +5817,12 @@
         "name": "IETF RFC 6762",
         "url": "https://www.rfc-editor.org/rfc/rfc6762"
       }
+    ],
+    "related": [
+      "LLMNR",
+      "ARP",
+      "SSDP",
+      "UPNP"
     ]
   },
   "MDR": {
@@ -4026,6 +5836,13 @@
         "name": "CISA",
         "url": "https://www.cisa.gov"
       }
+    ],
+    "related": [
+      "EDR",
+      "MSSP",
+      "NDR",
+      "XDR",
+      "SIEM"
     ]
   },
   "MFA": {
@@ -4039,6 +5856,12 @@
         "name": "NIST SP 800-63B Authentication Guidelines",
         "url": "https://pages.nist.gov/800-63-3/sp800-63b.html"
       }
+    ],
+    "related": [
+      "2FA",
+      "OTP",
+      "FIDO2",
+      "KBA"
     ]
   },
   "MITB": {
@@ -4052,6 +5875,10 @@
         "name": "OWASP",
         "url": "https://owasp.org/www-community/attacks/"
       }
+    ],
+    "related": [
+      "MITM",
+      "AITM"
     ]
   },
   "MITM": {
@@ -4069,6 +5896,11 @@
         "name": "OWASP",
         "url": "https://owasp.org/www-community/attacks/"
       }
+    ],
+    "related": [
+      "AITM",
+      "MITB",
+      "ARP"
     ]
   },
   "MLDSA": {
@@ -4082,6 +5914,12 @@
         "name": "NIST FIPS 204",
         "url": "https://csrc.nist.gov/pubs/fips/204/final"
       }
+    ],
+    "related": [
+      "MLKEM",
+      "PQC",
+      "SLHDSA",
+      "XMSS"
     ]
   },
   "MLKEM": {
@@ -4095,6 +5933,45 @@
         "name": "NIST FIPS 203",
         "url": "https://csrc.nist.gov/pubs/fips/203/final"
       }
+    ],
+    "related": [
+      "KEM",
+      "MLDSA",
+      "PQC",
+      "SLHDSA"
+    ]
+  },
+  "MLOPS": {
+    "expansion": "Machine Learning Operations",
+    "display": "MLOps",
+    "category": "ai",
+    "difficulty": "medium",
+    "explanation": "MLOps applies DevOps discipline to machine learning: version the data and models, automate training and deployment pipelines, monitor for drift, and make rollbacks possible. Without it, models are artisanal artifacts nobody can reproduce. With it, security gets what it needs too: provenance for every model in production, and a pipeline where controls like scanning and approval gates can actually live.",
+    "sources": [
+      {
+        "name": "Google Cloud MLOps architecture guide",
+        "url": "https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning"
+      }
+    ],
+    "related": [
+      "DEVOPS",
+      "CICD"
+    ]
+  },
+  "MOE": {
+    "expansion": "Mixture of Experts",
+    "display": "MoE",
+    "category": "ai",
+    "difficulty": "hard",
+    "explanation": "MoE is a model architecture that splits a neural network into many specialist sub-networks and routes each input through only a few of them, so a model can have enormous total capacity while spending modest compute per query. Many frontier models use it. The term shows up in vendor claims and model cards, and knowing it helps you read AI marketing critically instead of treating parameter counts as a quality score.",
+    "sources": [
+      {
+        "name": "Sparsely-Gated Mixture-of-Experts paper",
+        "url": "https://arxiv.org/abs/1701.06538"
+      }
+    ],
+    "related": [
+      "LLM"
     ]
   },
   "MPC": {
@@ -4112,6 +5989,10 @@
         "name": "NIST Privacy-Enhancing Cryptography Project",
         "url": "https://csrc.nist.gov/projects/pec"
       }
+    ],
+    "related": [
+      "FHE",
+      "ZKP"
     ]
   },
   "MPLS": {
@@ -4125,6 +6006,11 @@
         "name": "IETF RFC 3031",
         "url": "https://www.rfc-editor.org/rfc/rfc3031"
       }
+    ],
+    "related": [
+      "BGP",
+      "SDWAN",
+      "GRE"
     ]
   },
   "MSP": {
@@ -4138,6 +6024,10 @@
         "name": "CISA",
         "url": "https://www.cisa.gov/"
       }
+    ],
+    "related": [
+      "MSSP",
+      "SECAAS"
     ]
   },
   "MSSP": {
@@ -4151,6 +6041,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "MSP",
+      "MDR",
+      "SECAAS",
+      "VCISO"
     ]
   },
   "MTASTS": {
@@ -4164,6 +6060,11 @@
         "name": "IETF RFC 8461",
         "url": "https://datatracker.ietf.org/doc/html/rfc8461"
       }
+    ],
+    "related": [
+      "DANE",
+      "DMARC",
+      "TLS"
     ]
   },
   "MTBF": {
@@ -4177,6 +6078,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "MTTA",
+      "MTTD",
+      "MTTR"
     ]
   },
   "MTTA": {
@@ -4190,6 +6096,11 @@
         "name": "Atlassian Incident Management Metrics",
         "url": "https://www.atlassian.com/incident-management/kpis/common-metrics"
       }
+    ],
+    "related": [
+      "MTTD",
+      "MTBF",
+      "MTTR"
     ]
   },
   "MTTD": {
@@ -4203,6 +6114,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "MTTA",
+      "MTTR",
+      "MTBF",
+      "EDR"
     ]
   },
   "MTTR": {
@@ -4216,6 +6133,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "MTTD",
+      "MTBF",
+      "MTTA",
+      "RCA"
     ]
   },
   "NAC": {
@@ -4229,6 +6152,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "8021X",
+      "RADIUS",
+      "VLAN"
     ]
   },
   "NAT": {
@@ -4242,6 +6170,10 @@
         "name": "IETF RFC 3022",
         "url": "https://www.rfc-editor.org/rfc/rfc3022"
       }
+    ],
+    "related": [
+      "PAT",
+      "DMZ"
     ]
   },
   "NDA": {
@@ -4255,6 +6187,10 @@
         "name": "Cornell Law School LII",
         "url": "https://www.law.cornell.edu/wex/nondisclosure_agreement"
       }
+    ],
+    "related": [
+      "TPRM",
+      "SLA"
     ]
   },
   "NDR": {
@@ -4268,6 +6204,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "EDR",
+      "MDR",
+      "XDR",
+      "NSM"
     ]
   },
   "NERCCIP": {
@@ -4294,6 +6236,10 @@
         "name": "NFC Forum",
         "url": "https://nfc-forum.org"
       }
+    ],
+    "related": [
+      "RFID",
+      "BLE"
     ]
   },
   "NGFW": {
@@ -4307,6 +6253,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "UTM",
+      "WAF",
+      "DMZ",
+      "NIDS"
     ]
   },
   "NIDS": {
@@ -4320,6 +6272,13 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "HIDS",
+      "NIPS",
+      "HIPS",
+      "IDS",
+      "NGFW"
     ]
   },
   "NIPS": {
@@ -4333,6 +6292,13 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "HIPS",
+      "NIDS",
+      "HIDS",
+      "IPS",
+      "WIPS"
     ]
   },
   "NIS2": {
@@ -4346,6 +6312,13 @@
         "name": "European Commission",
         "url": "https://digital-strategy.ec.europa.eu/en/policies/nis2-directive"
       }
+    ],
+    "related": [
+      "DORA",
+      "CRA",
+      "ENISA",
+      "GDPR",
+      "EIDAS"
     ]
   },
   "NIST": {
@@ -4359,6 +6332,29 @@
         "name": "NIST Cybersecurity",
         "url": "https://www.nist.gov/cybersecurity"
       }
+    ],
+    "related": [
+      "CSF",
+      "RMF",
+      "CIS",
+      "CMMC"
+    ]
+  },
+  "NLP": {
+    "expansion": "Natural Language Processing",
+    "display": "NLP",
+    "category": "ai",
+    "difficulty": "easy",
+    "explanation": "NLP is the field of getting computers to understand and produce human language: parsing, translation, sentiment, summarization, and everything a chatbot does. Modern NLP is dominated by large language models, but the term still covers the wider toolbox. In security it powers phishing detection and log analysis, and on the attacker's side it makes scam messages fluent in any language.",
+    "sources": [
+      {
+        "name": "IBM: What is natural language processing?",
+        "url": "https://www.ibm.com/think/topics/natural-language-processing"
+      }
+    ],
+    "related": [
+      "LLM",
+      "OCR"
     ]
   },
   "NOC": {
@@ -4376,6 +6372,26 @@
         "name": "NICCS Vocabulary (CISA)",
         "url": "https://niccs.cisa.gov/cybersecurity-career-resources/vocabulary"
       }
+    ],
+    "related": [
+      "SOC",
+      "SIEM"
+    ]
+  },
+  "NOSQL": {
+    "expansion": "Not Only SQL",
+    "display": "NoSQL",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "NoSQL covers database families that drop the relational table model for something else: documents, key-value pairs, graphs, or wide columns, usually to scale horizontally or better match the data's shape. MongoDB, Redis, and DynamoDB are household names. They skip classic SQL injection but bring their own versions, and years of breach headlines trace back to NoSQL instances left exposed on the internet with no authentication at all.",
+    "sources": [
+      {
+        "name": "MongoDB: NoSQL explained",
+        "url": "https://www.mongodb.com/resources/basics/databases/nosql-explained"
+      }
+    ],
+    "related": [
+      "SQL"
     ]
   },
   "NSM": {
@@ -4389,6 +6405,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "NDR",
+      "NIDS"
     ]
   },
   "NTLM": {
@@ -4402,6 +6422,13 @@
         "name": "Microsoft NTLM Overview",
         "url": "https://learn.microsoft.com/en-us/windows-server/security/kerberos/ntlm-overview"
       }
+    ],
+    "related": [
+      "KDC",
+      "PTH",
+      "TGT",
+      "LSASS",
+      "SAM"
     ]
   },
   "NTP": {
@@ -4415,6 +6442,11 @@
         "name": "IETF RFC 5905",
         "url": "https://datatracker.ietf.org/doc/html/rfc5905"
       }
+    ],
+    "related": [
+      "NTS",
+      "SNMP",
+      "SYSLOG"
     ]
   },
   "NTS": {
@@ -4428,6 +6460,10 @@
         "name": "IETF RFC 8915",
         "url": "https://datatracker.ietf.org/doc/html/rfc8915"
       }
+    ],
+    "related": [
+      "NTP",
+      "TLS"
     ]
   },
   "NVD": {
@@ -4441,6 +6477,13 @@
         "name": "NIST NVD",
         "url": "https://nvd.nist.gov"
       }
+    ],
+    "related": [
+      "CVE",
+      "CVSS",
+      "CWE",
+      "KEV",
+      "CNA"
     ]
   },
   "OAUTH": {
@@ -4454,6 +6497,29 @@
         "name": "RFC 6749 (OAuth 2.0 Authorization Framework)",
         "url": "https://datatracker.ietf.org/doc/html/rfc6749"
       }
+    ],
+    "related": [
+      "OIDC",
+      "PKCE",
+      "SAML",
+      "SSO",
+      "CIBA"
+    ]
+  },
+  "OCR": {
+    "expansion": "Optical Character Recognition",
+    "display": "OCR",
+    "category": "ai",
+    "difficulty": "easy",
+    "explanation": "OCR turns images of text (scans, photos, PDFs) into machine-readable characters. It is decades old but newly relevant: document AI pipelines start with OCR, and so do some attacks, since malicious instructions can hide in images that an AI system will happily read even when a human would not bother. If a workflow lets models read images, treat those images as untrusted input.",
+    "sources": [
+      {
+        "name": "Microsoft Azure OCR overview",
+        "url": "https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-ocr"
+      }
+    ],
+    "related": [
+      "NLP"
     ]
   },
   "OCSP": {
@@ -4467,6 +6533,12 @@
         "name": "IETF RFC 6960",
         "url": "https://datatracker.ietf.org/doc/html/rfc6960"
       }
+    ],
+    "related": [
+      "CRL",
+      "CSR",
+      "PKI",
+      "X509"
     ]
   },
   "OCTAVE": {
@@ -4484,6 +6556,11 @@
         "name": "Carnegie Mellon SEI",
         "url": "https://www.sei.cmu.edu/"
       }
+    ],
+    "related": [
+      "FAIR",
+      "ERM",
+      "RMF"
     ]
   },
   "OIDC": {
@@ -4497,6 +6574,13 @@
         "name": "OpenID Foundation",
         "url": "https://openid.net/connect/"
       }
+    ],
+    "related": [
+      "OAUTH",
+      "SAML",
+      "SSO",
+      "JWT",
+      "CIBA"
     ]
   },
   "OODA": {
@@ -4510,6 +6594,10 @@
         "name": "Air University Press - A Discourse on Winning and Losing (John Boyd)",
         "url": "https://media.defense.gov/2018/May/22/2001920668/-1/-1/0/B_0151_Boyd_Discourse_Winning_Losing.pdf"
       }
+    ],
+    "related": [
+      "ATTCK",
+      "IRP"
     ]
   },
   "OPRF": {
@@ -4523,6 +6611,11 @@
         "name": "IETF RFC 9497",
         "url": "https://www.rfc-editor.org/rfc/rfc9497"
       }
+    ],
+    "related": [
+      "PAKE",
+      "SRP",
+      "VRF"
     ]
   },
   "OSCP": {
@@ -4536,6 +6629,13 @@
         "name": "OffSec",
         "url": "https://www.offsec.com/"
       }
+    ],
+    "related": [
+      "OSEP",
+      "PNPT",
+      "EJPT",
+      "CEH",
+      "CPENT"
     ]
   },
   "OSDA": {
@@ -4549,6 +6649,13 @@
         "name": "OffSec SOC-200 and the OSDA Certification",
         "url": "https://www.offsec.com/courses/soc-200/"
       }
+    ],
+    "related": [
+      "OSTH",
+      "OSCP",
+      "OSED",
+      "OSEP",
+      "OSWE"
     ]
   },
   "OSED": {
@@ -4562,6 +6669,13 @@
         "name": "OffSec EXP-301 and the OSED Certification",
         "url": "https://www.offsec.com/courses/exp-301/"
       }
+    ],
+    "related": [
+      "OSWE",
+      "OSCP",
+      "OSDA",
+      "OSEP",
+      "OSTH"
     ]
   },
   "OSEP": {
@@ -4575,6 +6689,13 @@
         "name": "OffSec",
         "url": "https://www.offsec.com/"
       }
+    ],
+    "related": [
+      "OSCP",
+      "CRTO",
+      "OSDA",
+      "OSED",
+      "OSTH"
     ]
   },
   "OSINT": {
@@ -4601,6 +6722,10 @@
         "name": "ISECOM",
         "url": "https://www.isecom.org/"
       }
+    ],
+    "related": [
+      "PTES",
+      "WSTG"
     ]
   },
   "OSTH": {
@@ -4614,6 +6739,13 @@
         "name": "OffSec TH-200 and the OSTH Certification",
         "url": "https://www.offsec.com/courses/th-200/"
       }
+    ],
+    "related": [
+      "OSDA",
+      "OSCP",
+      "OSED",
+      "OSEP",
+      "OSWE"
     ]
   },
   "OSWE": {
@@ -4627,6 +6759,13 @@
         "name": "OffSec",
         "url": "https://www.offsec.com/"
       }
+    ],
+    "related": [
+      "OSED",
+      "GWAPT",
+      "OSCP",
+      "OSDA",
+      "OSEP"
     ]
   },
   "OSWP": {
@@ -4640,6 +6779,13 @@
         "name": "OffSec",
         "url": "https://www.offsec.com/"
       }
+    ],
+    "related": [
+      "CWSP",
+      "OSCP",
+      "OSDA",
+      "OSED",
+      "OSEP"
     ]
   },
   "OTP": {
@@ -4653,6 +6799,13 @@
         "name": "RFC 4226 (HOTP)",
         "url": "https://datatracker.ietf.org/doc/html/rfc4226"
       }
+    ],
+    "related": [
+      "2FA",
+      "HOTP",
+      "MFA",
+      "TOTP",
+      "U2F"
     ]
   },
   "OVAL": {
@@ -4670,6 +6823,11 @@
         "name": "NIST SCAP Project",
         "url": "https://csrc.nist.gov/projects/security-content-automation-protocol"
       }
+    ],
+    "related": [
+      "CPE",
+      "SCAP",
+      "XCCDF"
     ]
   },
   "OWASP": {
@@ -4683,6 +6841,13 @@
         "name": "OWASP",
         "url": "https://owasp.org/"
       }
+    ],
+    "related": [
+      "ASVS",
+      "SAMM",
+      "WSTG",
+      "CWE",
+      "CSP"
     ]
   },
   "PAAS": {
@@ -4696,6 +6861,13 @@
         "name": "NIST SP 800-145",
         "url": "https://csrc.nist.gov/pubs/sp/800/145/final"
       }
+    ],
+    "related": [
+      "IAAS",
+      "SAAS",
+      "CAAS",
+      "FAAS",
+      "XAAS"
     ]
   },
   "PAKE": {
@@ -4709,6 +6881,13 @@
         "name": "IETF RFC 8125",
         "url": "https://www.rfc-editor.org/rfc/rfc8125"
       }
+    ],
+    "related": [
+      "OPRF",
+      "SRP",
+      "PBKDF2",
+      "SAE",
+      "SCRAM"
     ]
   },
   "PAM": {
@@ -4722,6 +6901,13 @@
         "name": "NIST Computer Security Resource Center Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "PIM",
+      "JIT",
+      "IAM",
+      "IDAAS",
+      "IGA"
     ]
   },
   "PAP": {
@@ -4735,6 +6921,10 @@
         "name": "MISP Project Taxonomies (PAP)",
         "url": "https://www.misp-project.org/taxonomies.html"
       }
+    ],
+    "related": [
+      "TLP",
+      "TAXII"
     ]
   },
   "PASTA": {
@@ -4748,6 +6938,10 @@
         "name": "OWASP Threat Modeling Cheat Sheet",
         "url": "https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html"
       }
+    ],
+    "related": [
+      "DREAD",
+      "STRIDE"
     ]
   },
   "PAT": {
@@ -4761,6 +6955,10 @@
         "name": "IETF RFC 3022",
         "url": "https://www.rfc-editor.org/rfc/rfc3022"
       }
+    ],
+    "related": [
+      "NAT",
+      "DMZ"
     ]
   },
   "PBAC": {
@@ -4774,6 +6972,13 @@
         "name": "NIST Computer Security Resource Center Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "ABAC",
+      "DAC",
+      "MAC",
+      "RBAC",
+      "XACML"
     ]
   },
   "PBKDF2": {
@@ -4787,6 +6992,11 @@
         "name": "IETF RFC 8018 (PKCS #5 v2.1)",
         "url": "https://datatracker.ietf.org/doc/html/rfc8018"
       }
+    ],
+    "related": [
+      "KDF",
+      "HKDF",
+      "PAKE"
     ]
   },
   "PCAP": {
@@ -4813,6 +7023,10 @@
         "name": "PCI Security Standards Council",
         "url": "https://www.pcisecuritystandards.org/"
       }
+    ],
+    "related": [
+      "PCIP",
+      "QSA"
     ]
   },
   "PCIP": {
@@ -4826,6 +7040,10 @@
         "name": "PCI Security Standards Council",
         "url": "https://www.pcisecuritystandards.org/"
       }
+    ],
+    "related": [
+      "QSA",
+      "PCIDSS"
     ]
   },
   "PDPA": {
@@ -4839,6 +7057,13 @@
         "name": "PDPC Singapore",
         "url": "https://www.pdpc.gov.sg/overview-of-pdpa/the-legislation/personal-data-protection-act"
       }
+    ],
+    "related": [
+      "GDPR",
+      "LGPD",
+      "PIPEDA",
+      "PIPL",
+      "POPIA"
     ]
   },
   "PEM": {
@@ -4852,6 +7077,12 @@
         "name": "IETF RFC 7468 (PEM textual encodings)",
         "url": "https://datatracker.ietf.org/doc/html/rfc7468"
       }
+    ],
+    "related": [
+      "PKCS",
+      "X509",
+      "PGP",
+      "SMIME"
     ]
   },
   "PFS": {
@@ -4865,6 +7096,10 @@
         "name": "IETF RFC 8446 (TLS 1.3)",
         "url": "https://datatracker.ietf.org/doc/html/rfc8446"
       }
+    ],
+    "related": [
+      "DHE",
+      "ECDH"
     ]
   },
   "PGP": {
@@ -4878,6 +7113,11 @@
         "name": "IETF RFC 4880 (OpenPGP)",
         "url": "https://datatracker.ietf.org/doc/html/rfc4880"
       }
+    ],
+    "related": [
+      "GPG",
+      "SMIME",
+      "PEM"
     ]
   },
   "PHI": {
@@ -4891,6 +7131,11 @@
         "name": "HHS HIPAA Privacy Rule",
         "url": "https://www.hhs.gov/hipaa/for-professionals/privacy/index.html"
       }
+    ],
+    "related": [
+      "HIPAA",
+      "HITECH",
+      "PII"
     ]
   },
   "PII": {
@@ -4908,6 +7153,12 @@
         "name": "NIST SP 800-122",
         "url": "https://csrc.nist.gov/pubs/sp/800/122/final"
       }
+    ],
+    "related": [
+      "PHI",
+      "GDPR",
+      "FERPA",
+      "GLBA"
     ]
   },
   "PIM": {
@@ -4921,6 +7172,13 @@
         "name": "NIST Computer Security Resource Center Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "PAM",
+      "IAM",
+      "IDAAS",
+      "IGA",
+      "JIT"
     ]
   },
   "PIPEDA": {
@@ -4934,6 +7192,13 @@
         "name": "Office of the Privacy Commissioner of Canada",
         "url": "https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/"
       }
+    ],
+    "related": [
+      "GDPR",
+      "LGPD",
+      "PDPA",
+      "PIPL",
+      "POPIA"
     ]
   },
   "PIPL": {
@@ -4947,6 +7212,13 @@
         "name": "Stanford DigiChina (English translation)",
         "url": "https://digichina.stanford.edu/work/translation-personal-information-protection-law-of-the-peoples-republic-of-china-effective-nov-1-2021/"
       }
+    ],
+    "related": [
+      "GDPR",
+      "LGPD",
+      "PDPA",
+      "PIPEDA",
+      "POPIA"
     ]
   },
   "PIV": {
@@ -4964,6 +7236,10 @@
         "name": "GSA IDManagement PIV Guide",
         "url": "https://www.idmanagement.gov/university/piv/"
       }
+    ],
+    "related": [
+      "CAC",
+      "FIDO2"
     ]
   },
   "PKCE": {
@@ -4977,6 +7253,10 @@
         "name": "RFC 7636 (PKCE)",
         "url": "https://datatracker.ietf.org/doc/html/rfc7636"
       }
+    ],
+    "related": [
+      "OAUTH",
+      "OIDC"
     ]
   },
   "PKCS": {
@@ -4994,6 +7274,10 @@
         "name": "IETF RFC 8017 (PKCS #1)",
         "url": "https://www.rfc-editor.org/rfc/rfc8017"
       }
+    ],
+    "related": [
+      "PEM",
+      "X509"
     ]
   },
   "PKI": {
@@ -5011,6 +7295,13 @@
         "name": "IETF RFC 5280",
         "url": "https://datatracker.ietf.org/doc/html/rfc5280"
       }
+    ],
+    "related": [
+      "X509",
+      "CRL",
+      "CSR",
+      "OCSP",
+      "HSM"
     ]
   },
   "PLC": {
@@ -5024,6 +7315,11 @@
         "name": "CISA Industrial Control Systems",
         "url": "https://www.cisa.gov/topics/industrial-control-systems"
       }
+    ],
+    "related": [
+      "HMI",
+      "ICS",
+      "SCADA"
     ]
   },
   "PNPT": {
@@ -5037,6 +7333,13 @@
         "name": "TCM Security",
         "url": "https://tcm-sec.com/"
       }
+    ],
+    "related": [
+      "CPTS",
+      "OSCP",
+      "CEH",
+      "CPENT",
+      "EJPT"
     ]
   },
   "POAM": {
@@ -5050,6 +7353,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "ATO",
+      "FEDRAMP",
+      "FISMA",
+      "RMF"
     ]
   },
   "POLP": {
@@ -5063,6 +7372,10 @@
         "name": "NIST Glossary: Least Privilege",
         "url": "https://csrc.nist.gov/glossary/term/least_privilege"
       }
+    ],
+    "related": [
+      "PAM",
+      "RBAC"
     ]
   },
   "POP3": {
@@ -5076,6 +7389,10 @@
         "name": "IETF RFC 1939",
         "url": "https://www.rfc-editor.org/rfc/rfc1939"
       }
+    ],
+    "related": [
+      "IMAP",
+      "SMTP"
     ]
   },
   "POPIA": {
@@ -5093,6 +7410,13 @@
         "name": "Information Regulator (South Africa)",
         "url": "https://inforegulator.org.za/"
       }
+    ],
+    "related": [
+      "GDPR",
+      "LGPD",
+      "PDPA",
+      "PIPEDA",
+      "PIPL"
     ]
   },
   "PPTP": {
@@ -5106,6 +7430,11 @@
         "name": "IETF RFC 2637",
         "url": "https://datatracker.ietf.org/doc/html/rfc2637"
       }
+    ],
+    "related": [
+      "L2TP",
+      "IPSEC",
+      "VPN"
     ]
   },
   "PQC": {
@@ -5119,6 +7448,13 @@
         "name": "NIST Post-Quantum Cryptography project",
         "url": "https://csrc.nist.gov/projects/post-quantum-cryptography"
       }
+    ],
+    "related": [
+      "MLDSA",
+      "MLKEM",
+      "SLHDSA",
+      "CNSA",
+      "KEM"
     ]
   },
   "PRNG": {
@@ -5132,6 +7468,11 @@
         "name": "IETF RFC 4086 (Randomness Requirements for Security)",
         "url": "https://datatracker.ietf.org/doc/html/rfc4086"
       }
+    ],
+    "related": [
+      "CSPRNG",
+      "DRBG",
+      "RNG"
     ]
   },
   "PSIRT": {
@@ -5145,6 +7486,13 @@
         "name": "FIRST",
         "url": "https://www.first.org"
       }
+    ],
+    "related": [
+      "CERT",
+      "CIRT",
+      "CSIRT",
+      "VDP",
+      "CVD"
     ]
   },
   "PTES": {
@@ -5158,6 +7506,11 @@
         "name": "PTES",
         "url": "https://pentest-standard.readthedocs.io/"
       }
+    ],
+    "related": [
+      "OSSTMM",
+      "WSTG",
+      "OSCP"
     ]
   },
   "PTH": {
@@ -5171,6 +7524,10 @@
         "name": "MITRE ATT&CK T1550.002",
         "url": "https://attack.mitre.org/techniques/T1550/002/"
       }
+    ],
+    "related": [
+      "PTT",
+      "NTLM"
     ]
   },
   "PTT": {
@@ -5184,6 +7541,10 @@
         "name": "MITRE ATT&CK T1550.003",
         "url": "https://attack.mitre.org/techniques/T1550/003/"
       }
+    ],
+    "related": [
+      "PTH",
+      "TGT"
     ]
   },
   "PUF": {
@@ -5197,6 +7558,10 @@
         "name": "NIST Glossary: PUF",
         "url": "https://csrc.nist.gov/glossary/term/puf"
       }
+    ],
+    "related": [
+      "TEE",
+      "TPM"
     ]
   },
   "PUP": {
@@ -5210,6 +7575,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "RAT",
+      "APT"
     ]
   },
   "QSA": {
@@ -5223,6 +7592,10 @@
         "name": "PCI Security Standards Council",
         "url": "https://www.pcisecuritystandards.org/"
       }
+    ],
+    "related": [
+      "PCIP",
+      "PCIDSS"
     ]
   },
   "QUIC": {
@@ -5236,6 +7609,10 @@
         "name": "IETF RFC 9000",
         "url": "https://www.rfc-editor.org/rfc/rfc9000"
       }
+    ],
+    "related": [
+      "UDP",
+      "TCP"
     ]
   },
   "RAAS": {
@@ -5249,6 +7626,10 @@
         "name": "CISA",
         "url": "https://www.cisa.gov/stopransomware"
       }
+    ],
+    "related": [
+      "IAB",
+      "APT"
     ]
   },
   "RADIUS": {
@@ -5262,6 +7643,28 @@
         "name": "IETF RFC 2865",
         "url": "https://datatracker.ietf.org/doc/html/rfc2865"
       }
+    ],
+    "related": [
+      "TACACS",
+      "8021X",
+      "AAA",
+      "NAC"
+    ]
+  },
+  "RAG": {
+    "expansion": "Retrieval-Augmented Generation",
+    "display": "RAG",
+    "category": "ai",
+    "difficulty": "medium",
+    "explanation": "RAG bolts a search step onto a language model: before answering, the system retrieves relevant documents from your own data and hands them to the model as context. It grounds answers in real sources, reduces hallucination, and keeps proprietary data out of model training. The security catch is that the retrieval store becomes a new attack surface: whoever can write to it can influence answers, and the access controls on the documents must survive the trip into the prompt.",
+    "sources": [
+      {
+        "name": "Retrieval-Augmented Generation paper",
+        "url": "https://arxiv.org/abs/2005.11401"
+      }
+    ],
+    "related": [
+      "LLM"
     ]
   },
   "RASP": {
@@ -5275,6 +7678,11 @@
         "name": "OWASP",
         "url": "https://owasp.org/"
       }
+    ],
+    "related": [
+      "IAST",
+      "WAAP",
+      "WAF"
     ]
   },
   "RAT": {
@@ -5292,6 +7700,11 @@
         "name": "MITRE ATT&CK",
         "url": "https://attack.mitre.org"
       }
+    ],
+    "related": [
+      "CNC",
+      "APT",
+      "PUP"
     ]
   },
   "RBAC": {
@@ -5305,6 +7718,13 @@
         "name": "NIST Role Based Access Control Project",
         "url": "https://csrc.nist.gov/projects/role-based-access-control"
       }
+    ],
+    "related": [
+      "ABAC",
+      "DAC",
+      "MAC",
+      "PBAC",
+      "POLP"
     ]
   },
   "RC4": {
@@ -5318,6 +7738,11 @@
         "name": "IETF RFC 7465 (Prohibiting RC4)",
         "url": "https://datatracker.ietf.org/doc/html/rfc7465"
       }
+    ],
+    "related": [
+      "3DES",
+      "AES",
+      "DES"
     ]
   },
   "RCA": {
@@ -5331,6 +7756,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "DFIR",
+      "IRP",
+      "MTTR"
     ]
   },
   "RCE": {
@@ -5348,6 +7778,13 @@
         "name": "OWASP",
         "url": "https://owasp.org"
       }
+    ],
+    "related": [
+      "LFI",
+      "LPE",
+      "RFI",
+      "SSTI",
+      "UAF"
     ]
   },
   "RDP": {
@@ -5361,6 +7798,11 @@
         "name": "Microsoft Learn",
         "url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/understanding-remote-desktop-protocol"
       }
+    ],
+    "related": [
+      "VNC",
+      "SSH",
+      "VDI"
     ]
   },
   "REDOS": {
@@ -5374,6 +7816,28 @@
         "name": "OWASP: Regular Expression Denial of Service",
         "url": "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS"
       }
+    ],
+    "related": [
+      "DDOS",
+      "DOS"
+    ]
+  },
+  "REST": {
+    "expansion": "Representational State Transfer",
+    "display": "REST",
+    "category": "protocols",
+    "difficulty": "medium",
+    "explanation": "REST is the architectural style behind most web APIs: resources addressed by URLs, standard HTTP verbs like GET and POST, and stateless requests. When someone says they have an API, they usually mean a REST API returning JSON. The API surface is the modern attack surface, and the OWASP API Security Top 10 exists precisely because broken authorization on REST endpoints became one of the most common ways data leaks.",
+    "sources": [
+      {
+        "name": "MDN Web Docs: REST",
+        "url": "https://developer.mozilla.org/en-US/docs/Glossary/REST"
+      }
+    ],
+    "related": [
+      "API",
+      "JSON",
+      "GRPC"
     ]
   },
   "RFI": {
@@ -5387,6 +7851,10 @@
         "name": "OWASP WSTG: Testing for Remote File Inclusion",
         "url": "https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.2-Testing_for_Remote_File_Inclusion"
       }
+    ],
+    "related": [
+      "LFI",
+      "RCE"
     ]
   },
   "RFID": {
@@ -5400,6 +7868,27 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "NFC",
+      "BLE"
+    ]
+  },
+  "RLHF": {
+    "expansion": "Reinforcement Learning from Human Feedback",
+    "display": "RLHF",
+    "category": "ai",
+    "difficulty": "medium",
+    "explanation": "RLHF is the training stage that turns a raw text predictor into a helpful assistant: humans rate candidate answers, a reward model learns those preferences, and the language model is tuned toward responses people prefer. It is the main reason chatbots follow instructions and refuse harmful requests, and its limits are why jailbreaks exist: the guardrails are learned preferences, not hard rules.",
+    "sources": [
+      {
+        "name": "InstructGPT paper",
+        "url": "https://arxiv.org/abs/2203.02155"
+      }
+    ],
+    "related": [
+      "LLM",
+      "SFT"
     ]
   },
   "RMF": {
@@ -5413,6 +7902,13 @@
         "name": "NIST",
         "url": "https://csrc.nist.gov/projects/risk-management"
       }
+    ],
+    "related": [
+      "CSF",
+      "NIST",
+      "ATO",
+      "ERM",
+      "FAIR"
     ]
   },
   "RNG": {
@@ -5426,6 +7922,11 @@
         "name": "IETF RFC 4086 (Randomness Requirements for Security)",
         "url": "https://datatracker.ietf.org/doc/html/rfc4086"
       }
+    ],
+    "related": [
+      "CSPRNG",
+      "DRBG",
+      "PRNG"
     ]
   },
   "ROP": {
@@ -5439,6 +7940,26 @@
         "name": "NIST CSRC",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "ASLR",
+      "UAF"
+    ]
+  },
+  "RPA": {
+    "expansion": "Robotic Process Automation",
+    "display": "RPA",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "RPA is software that mimics a human clicking through applications to automate repetitive back-office work: reading invoices, copying data between systems, filing forms. The robots are unattended accounts with real credentials and broad application access, which makes them ideal targets and terrible secret-keepers. Treat RPA bots as privileged identities: vault their credentials, scope their access, and log what they touch.",
+    "sources": [
+      {
+        "name": "IBM: What is robotic process automation?",
+        "url": "https://www.ibm.com/think/topics/rpa"
+      }
+    ],
+    "related": [
+      "IAM"
     ]
   },
   "RPO": {
@@ -5452,6 +7973,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "RTO",
+      "BIA"
     ]
   },
   "RSA": {
@@ -5465,6 +7990,13 @@
         "name": "IETF RFC 8017 (PKCS #1 v2.2)",
         "url": "https://datatracker.ietf.org/doc/html/rfc8017"
       }
+    ],
+    "related": [
+      "ECC",
+      "AES",
+      "DSA",
+      "DSS",
+      "ECDSA"
     ]
   },
   "RTO": {
@@ -5478,6 +8010,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "RPO",
+      "BIA"
     ]
   },
   "SAAS": {
@@ -5491,6 +8027,13 @@
         "name": "NIST SP 800-145",
         "url": "https://csrc.nist.gov/pubs/sp/800/145/final"
       }
+    ],
+    "related": [
+      "PAAS",
+      "CAAS",
+      "FAAS",
+      "IAAS",
+      "XAAS"
     ]
   },
   "SAE": {
@@ -5508,6 +8051,10 @@
         "name": "Wi-Fi Alliance Security",
         "url": "https://www.wi-fi.org/discover-wi-fi/security"
       }
+    ],
+    "related": [
+      "WPA3",
+      "PAKE"
     ]
   },
   "SAM": {
@@ -5525,6 +8072,13 @@
         "name": "MITRE ATT&CK T1003.002",
         "url": "https://attack.mitre.org/techniques/T1003/002/"
       }
+    ],
+    "related": [
+      "DPAPI",
+      "LSASS",
+      "NTLM",
+      "ETW",
+      "SID"
     ]
   },
   "SAML": {
@@ -5538,6 +8092,12 @@
         "name": "OASIS Security Services Technical Committee",
         "url": "https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=security"
       }
+    ],
+    "related": [
+      "OAUTH",
+      "OIDC",
+      "SSO",
+      "IDP"
     ]
   },
   "SAMM": {
@@ -5551,6 +8111,10 @@
         "name": "OWASP SAMM",
         "url": "https://owaspsamm.org/"
       }
+    ],
+    "related": [
+      "BSIMM",
+      "OWASP"
     ]
   },
   "SARIF": {
@@ -5577,6 +8141,13 @@
         "name": "Microsoft Security 101: What Is SASE",
         "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-sase"
       }
+    ],
+    "related": [
+      "SSE",
+      "CASB",
+      "SDWAN",
+      "ZTA",
+      "ZTNA"
     ]
   },
   "SASL": {
@@ -5590,6 +8161,11 @@
         "name": "RFC 4422 (SASL)",
         "url": "https://datatracker.ietf.org/doc/html/rfc4422"
       }
+    ],
+    "related": [
+      "SCRAM",
+      "SRP",
+      "LDAP"
     ]
   },
   "SAST": {
@@ -5603,6 +8179,11 @@
         "name": "OWASP Source Code Analysis Tools",
         "url": "https://owasp.org/www-community/Source_Code_Analysis_Tools"
       }
+    ],
+    "related": [
+      "DAST",
+      "IAST",
+      "SCA"
     ]
   },
   "SBOM": {
@@ -5616,6 +8197,13 @@
         "name": "CISA",
         "url": "https://www.cisa.gov/sbom"
       }
+    ],
+    "related": [
+      "SPDX",
+      "SCA",
+      "VEX",
+      "SLSA",
+      "CSAF"
     ]
   },
   "SCA": {
@@ -5629,6 +8217,10 @@
         "name": "OWASP Component Analysis",
         "url": "https://owasp.org/www-community/Component_Analysis"
       }
+    ],
+    "related": [
+      "SAST",
+      "SBOM"
     ]
   },
   "SCADA": {
@@ -5646,6 +8238,13 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "ICS",
+      "HMI",
+      "PLC",
+      "DNP3",
+      "IEC62443"
     ]
   },
   "SCAP": {
@@ -5659,6 +8258,12 @@
         "name": "NIST SCAP Project",
         "url": "https://csrc.nist.gov/projects/security-content-automation-protocol"
       }
+    ],
+    "related": [
+      "CPE",
+      "OVAL",
+      "XCCDF",
+      "STIG"
     ]
   },
   "SCEP": {
@@ -5672,6 +8277,11 @@
         "name": "IETF RFC 8894",
         "url": "https://datatracker.ietf.org/doc/html/rfc8894"
       }
+    ],
+    "related": [
+      "ACME",
+      "CAA",
+      "CSR"
     ]
   },
   "SCIM": {
@@ -5685,6 +8295,10 @@
         "name": "RFC 7644 (SCIM Protocol)",
         "url": "https://datatracker.ietf.org/doc/html/rfc7644"
       }
+    ],
+    "related": [
+      "IGA",
+      "IAM"
     ]
   },
   "SCRAM": {
@@ -5698,6 +8312,28 @@
         "name": "IETF RFC 5802",
         "url": "https://datatracker.ietf.org/doc/html/rfc5802"
       }
+    ],
+    "related": [
+      "SASL",
+      "SRP",
+      "PAKE"
+    ]
+  },
+  "SDK": {
+    "expansion": "Software Development Kit",
+    "display": "SDK",
+    "category": "appsec",
+    "difficulty": "easy",
+    "explanation": "An SDK is the bundle a platform hands developers to build against it: libraries, documentation, and sample code. Every SDK an app embeds becomes part of that app, inheriting its permissions and shipping in every install, which is why SDKs are a classic supply-chain risk: one compromised or over-curious SDK, embedded in thousands of apps, has repeatedly turned into an industry-wide incident.",
+    "sources": [
+      {
+        "name": "AWS: What is an SDK?",
+        "url": "https://aws.amazon.com/what-is/sdk/"
+      }
+    ],
+    "related": [
+      "API",
+      "SBOM"
     ]
   },
   "SDL": {
@@ -5711,6 +8347,11 @@
         "name": "Microsoft SDL",
         "url": "https://www.microsoft.com/en-us/securityengineering/sdl"
       }
+    ],
+    "related": [
+      "SSDF",
+      "SSDLC",
+      "BSIMM"
     ]
   },
   "SDLC": {
@@ -5724,6 +8365,10 @@
         "name": "NIST Secure Software Development Framework",
         "url": "https://csrc.nist.gov/projects/ssdf"
       }
+    ],
+    "related": [
+      "SSDLC",
+      "CICD"
     ]
   },
   "SDN": {
@@ -5737,6 +8382,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "SDWAN",
+      "VXLAN"
     ]
   },
   "SDWAN": {
@@ -5750,6 +8399,13 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "SASE",
+      "SDN",
+      "MPLS",
+      "VPN",
+      "BGP"
     ]
   },
   "SECAAS": {
@@ -5763,6 +8419,11 @@
         "name": "Cloud Security Alliance: SecaaS Defined Categories of Service",
         "url": "https://cloudsecurityalliance.org/articles/csa-issues-first-secaas-white-paper"
       }
+    ],
+    "related": [
+      "XAAS",
+      "MSP",
+      "MSSP"
     ]
   },
   "SED": {
@@ -5776,6 +8437,28 @@
         "name": "Trusted Computing Group",
         "url": "https://trustedcomputinggroup.org"
       }
+    ],
+    "related": [
+      "FDE",
+      "BIOS",
+      "UEFI"
+    ]
+  },
+  "SFT": {
+    "expansion": "Supervised Fine-Tuning",
+    "display": "SFT",
+    "category": "ai",
+    "difficulty": "hard",
+    "explanation": "SFT takes a pre-trained language model and continues training it on curated example conversations so it learns a specific style, format, or domain, usually as the step before preference tuning like RLHF. For organizations, fine-tuning on internal data creates a new asset to protect: the resulting model can memorize and regurgitate fragments of its training data, so the tuned weights deserve the same sensitivity classification as the data that shaped them.",
+    "sources": [
+      {
+        "name": "Hugging Face TRL fine-tuning documentation",
+        "url": "https://huggingface.co/docs/trl/sft_trainer"
+      }
+    ],
+    "related": [
+      "RLHF",
+      "LORA"
     ]
   },
   "SFTP": {
@@ -5789,6 +8472,12 @@
         "name": "IETF SFTP draft (secsh-filexfer)",
         "url": "https://datatracker.ietf.org/doc/html/draft-ietf-secsh-filexfer-13"
       }
+    ],
+    "related": [
+      "FTPS",
+      "FTP",
+      "SSH",
+      "TFTP"
     ]
   },
   "SHA1": {
@@ -5802,6 +8491,11 @@
         "name": "NIST FIPS 180-4",
         "url": "https://csrc.nist.gov/pubs/fips/180-4/final"
       }
+    ],
+    "related": [
+      "MD5",
+      "SHA256",
+      "SHA3"
     ]
   },
   "SHA256": {
@@ -5815,6 +8509,12 @@
         "name": "NIST FIPS 180-4",
         "url": "https://csrc.nist.gov/pubs/fips/180-4/final"
       }
+    ],
+    "related": [
+      "MD5",
+      "SHA1",
+      "SHA3",
+      "HMAC"
     ]
   },
   "SHA3": {
@@ -5828,6 +8528,11 @@
         "name": "NIST FIPS 202",
         "url": "https://csrc.nist.gov/pubs/fips/202/final"
       }
+    ],
+    "related": [
+      "MD5",
+      "SHA1",
+      "SHA256"
     ]
   },
   "SID": {
@@ -5841,6 +8546,10 @@
         "name": "Microsoft Security Identifiers",
         "url": "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers"
       }
+    ],
+    "related": [
+      "UPN",
+      "SAM"
     ]
   },
   "SIEM": {
@@ -5854,6 +8563,13 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "EDR",
+      "SOAR",
+      "XDR",
+      "SOC",
+      "MDR"
     ]
   },
   "SLA": {
@@ -5867,6 +8583,13 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "SLO",
+      "KPI",
+      "TPRM",
+      "NDA",
+      "SLE"
     ]
   },
   "SLE": {
@@ -5880,6 +8603,12 @@
         "name": "ISACA Journal: Risk Assessment and Analysis Methods",
         "url": "https://www.isaca.org/resources/isaca-journal/issues/2021/volume-2/risk-assessment-and-analysis-methods"
       }
+    ],
+    "related": [
+      "ALE",
+      "ARO",
+      "SLO",
+      "SLA"
     ]
   },
   "SLHDSA": {
@@ -5893,6 +8622,28 @@
         "name": "NIST FIPS 205",
         "url": "https://csrc.nist.gov/pubs/fips/205/final"
       }
+    ],
+    "related": [
+      "XMSS",
+      "MLDSA",
+      "MLKEM",
+      "PQC"
+    ]
+  },
+  "SLM": {
+    "expansion": "Small Language Model",
+    "display": "SLM",
+    "category": "ai",
+    "difficulty": "medium",
+    "explanation": "An SLM is a language model deliberately kept small enough to run cheaply, sometimes entirely on a laptop or phone. What it gives up in breadth it returns in cost, speed, and privacy, since prompts never need to leave the device. Expect to see them embedded in products and endpoints, which quietly moves AI risk from a few cloud contracts to every device in the fleet.",
+    "sources": [
+      {
+        "name": "IBM: What are small language models?",
+        "url": "https://www.ibm.com/think/topics/small-language-models"
+      }
+    ],
+    "related": [
+      "LLM"
     ]
   },
   "SLO": {
@@ -5906,6 +8657,11 @@
         "name": "Google SRE Book",
         "url": "https://sre.google/sre-book/service-level-objectives/"
       }
+    ],
+    "related": [
+      "SLA",
+      "KPI",
+      "SLE"
     ]
   },
   "SLSA": {
@@ -5919,6 +8675,13 @@
         "name": "SLSA",
         "url": "https://slsa.dev/"
       }
+    ],
+    "related": [
+      "SBOM",
+      "SPDX",
+      "SSDF",
+      "VEX",
+      "CICD"
     ]
   },
   "SMB": {
@@ -5945,6 +8708,12 @@
         "name": "IETF RFC 8551",
         "url": "https://datatracker.ietf.org/doc/html/rfc8551"
       }
+    ],
+    "related": [
+      "GPG",
+      "PGP",
+      "PEM",
+      "DKIM"
     ]
   },
   "SMTP": {
@@ -5958,6 +8727,12 @@
         "name": "IETF RFC 5321",
         "url": "https://datatracker.ietf.org/doc/html/rfc5321"
       }
+    ],
+    "related": [
+      "IMAP",
+      "POP3",
+      "STARTTLS",
+      "SPF"
     ]
   },
   "SNI": {
@@ -5971,6 +8746,10 @@
         "name": "IETF RFC 6066",
         "url": "https://datatracker.ietf.org/doc/html/rfc6066"
       }
+    ],
+    "related": [
+      "TLS",
+      "HTTPS"
     ]
   },
   "SNMP": {
@@ -5984,6 +8763,10 @@
         "name": "IETF RFC 3411",
         "url": "https://datatracker.ietf.org/doc/html/rfc3411"
       }
+    ],
+    "related": [
+      "SYSLOG",
+      "NTP"
     ]
   },
   "SOAP": {
@@ -6014,6 +8797,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "EDR",
+      "SIEM",
+      "XDR"
     ]
   },
   "SOC": {
@@ -6031,6 +8819,11 @@
         "name": "CISA",
         "url": "https://www.cisa.gov"
       }
+    ],
+    "related": [
+      "NOC",
+      "SIEM",
+      "MDR"
     ]
   },
   "SOC2": {
@@ -6044,6 +8837,12 @@
         "name": "AICPA & CIMA: SOC Suite of Services",
         "url": "https://www.aicpa-cima.com/resources/landing/system-and-organization-controls-soc-suite-of-services"
       }
+    ],
+    "related": [
+      "ISO27001",
+      "CSF",
+      "RMF",
+      "TPRM"
     ]
   },
   "SOP": {
@@ -6057,6 +8856,12 @@
         "name": "MDN Web Docs",
         "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy"
       }
+    ],
+    "related": [
+      "CORS",
+      "CSP",
+      "HSTS",
+      "SRI"
     ]
   },
   "SOX": {
@@ -6070,6 +8875,11 @@
         "name": "U.S. GPO: Sarbanes-Oxley Act of 2002 (Public Law 107-204)",
         "url": "https://www.govinfo.gov/app/details/PLAW-107publ204"
       }
+    ],
+    "related": [
+      "ITGC",
+      "FFIEC",
+      "GLBA"
     ]
   },
   "SPDX": {
@@ -6083,6 +8893,11 @@
         "name": "SPDX",
         "url": "https://spdx.dev/"
       }
+    ],
+    "related": [
+      "SBOM",
+      "SLSA",
+      "VEX"
     ]
   },
   "SPF": {
@@ -6096,6 +8911,11 @@
         "name": "IETF RFC 7208",
         "url": "https://datatracker.ietf.org/doc/html/rfc7208"
       }
+    ],
+    "related": [
+      "DKIM",
+      "DMARC",
+      "SMTP"
     ]
   },
   "SPIFFE": {
@@ -6109,6 +8929,11 @@
         "name": "SPIFFE Project (CNCF)",
         "url": "https://spiffe.io/"
       }
+    ],
+    "related": [
+      "SPIRE",
+      "IAM",
+      "X509"
     ]
   },
   "SPIRE": {
@@ -6122,6 +8947,27 @@
         "name": "SPIFFE Project: About SPIRE",
         "url": "https://spiffe.io/docs/latest/spire-about/"
       }
+    ],
+    "related": [
+      "SPIFFE",
+      "IAM"
+    ]
+  },
+  "SQL": {
+    "expansion": "Structured Query Language",
+    "display": "SQL",
+    "category": "appsec",
+    "difficulty": "easy",
+    "explanation": "SQL is the standard language for querying and updating relational databases, where most of the world's structured data lives. Security people meet it two ways: defensively, because SQL injection (tricking an application into running attacker-supplied SQL) has been a top vulnerability class for two decades, and practically, because investigating almost any incident eventually means querying a database or a SQL-like log store.",
+    "sources": [
+      {
+        "name": "PostgreSQL SQL language documentation",
+        "url": "https://www.postgresql.org/docs/current/sql.html"
+      }
+    ],
+    "related": [
+      "SQLI",
+      "NOSQL"
     ]
   },
   "SQLI": {
@@ -6135,6 +8981,30 @@
         "name": "OWASP",
         "url": "https://owasp.org/www-community/attacks/SQL_Injection"
       }
+    ],
+    "related": [
+      "CSRF",
+      "SSRF",
+      "XSS",
+      "XXE",
+      "HPP"
+    ]
+  },
+  "SRE": {
+    "expansion": "Site Reliability Engineering",
+    "display": "SRE",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "SRE is Google's discipline for running production systems with engineering rather than heroics: reliability targets (SLOs), error budgets that decide when to ship versus stabilize, and automation that removes toil. Security teams should know it because SRE owns the telemetry, deployment paths, and incident muscle that security response depends on, and because error-budget thinking translates naturally to risk conversations.",
+    "sources": [
+      {
+        "name": "Google SRE Book: Introduction",
+        "url": "https://sre.google/sre-book/introduction/"
+      }
+    ],
+    "related": [
+      "SLO",
+      "DEVOPS"
     ]
   },
   "SRI": {
@@ -6148,6 +9018,12 @@
         "name": "MDN Web Docs",
         "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity"
       }
+    ],
+    "related": [
+      "CORS",
+      "CSP",
+      "HSTS",
+      "SOP"
     ]
   },
   "SRM": {
@@ -6165,6 +9041,10 @@
         "name": "AWS Shared Responsibility Model",
         "url": "https://aws.amazon.com/compliance/shared-responsibility-model/"
       }
+    ],
+    "related": [
+      "CSA",
+      "IAAS"
     ]
   },
   "SRP": {
@@ -6178,6 +9058,12 @@
         "name": "IETF RFC 2945",
         "url": "https://www.rfc-editor.org/rfc/rfc2945"
       }
+    ],
+    "related": [
+      "OPRF",
+      "PAKE",
+      "SASL",
+      "SCRAM"
     ]
   },
   "SSCP": {
@@ -6191,6 +9077,11 @@
         "name": "ISC2",
         "url": "https://www.isc2.org/certifications/sscp"
       }
+    ],
+    "related": [
+      "CISSP",
+      "CCSP",
+      "CSSLP"
     ]
   },
   "SSDF": {
@@ -6204,6 +9095,11 @@
         "name": "NIST SSDF",
         "url": "https://csrc.nist.gov/projects/ssdf"
       }
+    ],
+    "related": [
+      "SDL",
+      "SLSA",
+      "SSDLC"
     ]
   },
   "SSDLC": {
@@ -6217,6 +9113,11 @@
         "name": "NIST Secure Software Development Framework",
         "url": "https://csrc.nist.gov/projects/ssdf"
       }
+    ],
+    "related": [
+      "SDLC",
+      "SDL",
+      "SSDF"
     ]
   },
   "SSDP": {
@@ -6230,6 +9131,10 @@
         "name": "CISA Alert TA14-017A",
         "url": "https://www.cisa.gov/news-events/alerts/2014/01/17/udp-based-amplification-attacks"
       }
+    ],
+    "related": [
+      "UPNP",
+      "MDNS"
     ]
   },
   "SSE": {
@@ -6243,6 +9148,12 @@
         "name": "Microsoft Security 101: What Is Security Service Edge (SSE)",
         "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-security-service-edge-sse"
       }
+    ],
+    "related": [
+      "SASE",
+      "CASB",
+      "ZTNA",
+      "ZTA"
     ]
   },
   "SSH": {
@@ -6256,6 +9167,11 @@
         "name": "IETF RFC 4251",
         "url": "https://datatracker.ietf.org/doc/html/rfc4251"
       }
+    ],
+    "related": [
+      "SFTP",
+      "RDP",
+      "VNC"
     ]
   },
   "SSL": {
@@ -6269,6 +9185,10 @@
         "name": "IETF RFC 6101",
         "url": "https://datatracker.ietf.org/doc/html/rfc6101"
       }
+    ],
+    "related": [
+      "TLS",
+      "HTTPS"
     ]
   },
   "SSO": {
@@ -6282,6 +9202,12 @@
         "name": "NIST SP 800-63C Federation and Assertions",
         "url": "https://pages.nist.gov/800-63-3/sp800-63c.html"
       }
+    ],
+    "related": [
+      "OAUTH",
+      "OIDC",
+      "SAML",
+      "IDP"
     ]
   },
   "SSPM": {
@@ -6295,6 +9221,10 @@
         "name": "Microsoft Learn: SaaS Security Posture Management (SSPM)",
         "url": "https://learn.microsoft.com/en-us/defender-cloud-apps/posture-overview"
       }
+    ],
+    "related": [
+      "CSPM",
+      "SAAS"
     ]
   },
   "SSRF": {
@@ -6308,6 +9238,13 @@
         "name": "OWASP",
         "url": "https://owasp.org/www-community/attacks/Server_Side_Request_Forgery"
       }
+    ],
+    "related": [
+      "CSRF",
+      "IMDS",
+      "SQLI",
+      "XSS",
+      "XXE"
     ]
   },
   "SSTI": {
@@ -6321,6 +9258,10 @@
         "name": "OWASP WSTG: Testing for Server-side Template Injection",
         "url": "https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/18-Testing_for_Server-side_Template_Injection"
       }
+    ],
+    "related": [
+      "RCE",
+      "XSS"
     ]
   },
   "SSVC": {
@@ -6338,6 +9279,10 @@
         "name": "CISA SSVC",
         "url": "https://www.cisa.gov/stakeholder-specific-vulnerability-categorization-ssvc"
       }
+    ],
+    "related": [
+      "CVSS",
+      "EPSS"
     ]
   },
   "STAR": {
@@ -6351,6 +9296,11 @@
         "name": "CSA STAR Program",
         "url": "https://cloudsecurityalliance.org/star"
       }
+    ],
+    "related": [
+      "CAIQ",
+      "CCM",
+      "CSA"
     ]
   },
   "STARTTLS": {
@@ -6364,6 +9314,11 @@
         "name": "IETF RFC 3207",
         "url": "https://datatracker.ietf.org/doc/html/rfc3207"
       }
+    ],
+    "related": [
+      "TLS",
+      "DTLS",
+      "SMTP"
     ]
   },
   "STIG": {
@@ -6377,6 +9332,10 @@
         "name": "DoD Cyber Exchange",
         "url": "https://public.cyber.mil/stigs/"
       }
+    ],
+    "related": [
+      "SCAP",
+      "CIS"
     ]
   },
   "STIX": {
@@ -6390,6 +9349,12 @@
         "name": "OASIS CTI Documentation",
         "url": "https://oasis-open.github.io/cti-documentation/"
       }
+    ],
+    "related": [
+      "TAXII",
+      "CTI",
+      "TIP",
+      "IOC"
     ]
   },
   "STRIDE": {
@@ -6403,6 +9368,11 @@
         "name": "OWASP Threat Modeling",
         "url": "https://owasp.org/www-community/Threat_Modeling"
       }
+    ],
+    "related": [
+      "DREAD",
+      "PASTA",
+      "OWASP"
     ]
   },
   "STS": {
@@ -6429,6 +9399,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "SIEM",
+      "SNMP",
+      "NTP"
     ]
   },
   "TACACS": {
@@ -6442,6 +9417,10 @@
         "name": "IETF RFC 8907",
         "url": "https://datatracker.ietf.org/doc/html/rfc8907"
       }
+    ],
+    "related": [
+      "RADIUS",
+      "AAA"
     ]
   },
   "TAXII": {
@@ -6455,6 +9434,13 @@
         "name": "OASIS CTI Documentation",
         "url": "https://oasis-open.github.io/cti-documentation/"
       }
+    ],
+    "related": [
+      "STIX",
+      "CTI",
+      "TIP",
+      "TLP",
+      "PAP"
     ]
   },
   "TCP": {
@@ -6468,6 +9454,11 @@
         "name": "IETF RFC 9293",
         "url": "https://www.rfc-editor.org/rfc/rfc9293"
       }
+    ],
+    "related": [
+      "UDP",
+      "QUIC",
+      "ICMP"
     ]
   },
   "TEE": {
@@ -6485,6 +9476,12 @@
         "name": "NIST Glossary: Trusted Execution Environment",
         "url": "https://csrc.nist.gov/glossary/term/trusted_execution_environment"
       }
+    ],
+    "related": [
+      "HSM",
+      "TPM",
+      "PUF",
+      "VTPM"
     ]
   },
   "TFTP": {
@@ -6498,6 +9495,11 @@
         "name": "IETF RFC 1350",
         "url": "https://www.rfc-editor.org/rfc/rfc1350"
       }
+    ],
+    "related": [
+      "FTP",
+      "FTPS",
+      "SFTP"
     ]
   },
   "TGT": {
@@ -6511,6 +9513,11 @@
         "name": "RFC 4120 (Kerberos V5)",
         "url": "https://datatracker.ietf.org/doc/html/rfc4120"
       }
+    ],
+    "related": [
+      "KDC",
+      "NTLM",
+      "PTT"
     ]
   },
   "TIP": {
@@ -6524,6 +9531,11 @@
         "name": "ENISA: Threat Intelligence Platforms report",
         "url": "https://www.enisa.europa.eu/publications/exploring-the-opportunities-and-limitations-of-current-threat-intelligence-platforms"
       }
+    ],
+    "related": [
+      "CTI",
+      "STIX",
+      "TAXII"
     ]
   },
   "TLP": {
@@ -6541,6 +9553,11 @@
         "name": "CISA",
         "url": "https://www.cisa.gov"
       }
+    ],
+    "related": [
+      "ISAC",
+      "PAP",
+      "TAXII"
     ]
   },
   "TLS": {
@@ -6554,6 +9571,13 @@
         "name": "IETF RFC 8446",
         "url": "https://datatracker.ietf.org/doc/html/rfc8446"
       }
+    ],
+    "related": [
+      "SSL",
+      "DTLS",
+      "HTTPS",
+      "STARTTLS",
+      "SNI"
     ]
   },
   "TOCTOU": {
@@ -6567,6 +9591,10 @@
         "name": "MITRE CWE-367: TOCTOU Race Condition",
         "url": "https://cwe.mitre.org/data/definitions/367.html"
       }
+    ],
+    "related": [
+      "UAF",
+      "RCE"
     ]
   },
   "TOTP": {
@@ -6580,6 +9608,10 @@
         "name": "RFC 6238 (TOTP)",
         "url": "https://datatracker.ietf.org/doc/html/rfc6238"
       }
+    ],
+    "related": [
+      "HOTP",
+      "OTP"
     ]
   },
   "TPM": {
@@ -6597,6 +9629,13 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "VTPM",
+      "HSM",
+      "TEE",
+      "UEFI",
+      "BIOS"
     ]
   },
   "TPRM": {
@@ -6610,6 +9649,27 @@
         "name": "NIST C-SCRM",
         "url": "https://csrc.nist.gov/projects/cyber-supply-chain-risk-management"
       }
+    ],
+    "related": [
+      "NDA",
+      "SLA",
+      "SOC2"
+    ]
+  },
+  "TPU": {
+    "expansion": "Tensor Processing Unit",
+    "display": "TPU",
+    "category": "ai",
+    "difficulty": "medium",
+    "explanation": "A TPU is Google's custom chip built specifically for the matrix math that neural networks run on, offered mainly through Google Cloud. TPUs and their GPU cousins are why modern AI exists at commercial scale: training frontier models takes warehouse-sized fleets of them. In budget conversations, accelerator is the word for this hardware class, and it is where AI projects' money actually goes.",
+    "sources": [
+      {
+        "name": "Google Cloud TPU documentation",
+        "url": "https://cloud.google.com/tpu/docs/intro-to-tpu"
+      }
+    ],
+    "related": [
+      "GPU"
     ]
   },
   "TTP": {
@@ -6627,6 +9687,13 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "ATTCK",
+      "D3FEND",
+      "CTI",
+      "APT",
+      "IOC"
     ]
   },
   "TTX": {
@@ -6657,6 +9724,11 @@
         "name": "FIDO Alliance Specifications",
         "url": "https://fidoalliance.org/specifications/"
       }
+    ],
+    "related": [
+      "FIDO2",
+      "WEBAUTHN",
+      "OTP"
     ]
   },
   "UAC": {
@@ -6674,6 +9746,10 @@
         "name": "MITRE ATT&CK T1548.002",
         "url": "https://attack.mitre.org/techniques/T1548/002/"
       }
+    ],
+    "related": [
+      "LPE",
+      "GPO"
     ]
   },
   "UAF": {
@@ -6687,6 +9763,12 @@
         "name": "MITRE CWE-416: Use After Free",
         "url": "https://cwe.mitre.org/data/definitions/416.html"
       }
+    ],
+    "related": [
+      "ASLR",
+      "RCE",
+      "ROP",
+      "TOCTOU"
     ]
   },
   "UBA": {
@@ -6700,6 +9782,10 @@
         "name": "IBM: What Is User Behavior Analytics (UBA)",
         "url": "https://www.ibm.com/think/topics/user-behavior-analytics"
       }
+    ],
+    "related": [
+      "UEBA",
+      "SIEM"
     ]
   },
   "UCAAS": {
@@ -6713,6 +9799,10 @@
         "name": "Microsoft: Unified Communications as a Service (UCaaS)",
         "url": "https://www.microsoft.com/en-us/microsoft-teams/unified-communications-as-a-service"
       }
+    ],
+    "related": [
+      "XAAS",
+      "VOIP"
     ]
   },
   "UDP": {
@@ -6726,6 +9816,12 @@
         "name": "IETF RFC 768",
         "url": "https://www.rfc-editor.org/rfc/rfc768"
       }
+    ],
+    "related": [
+      "TCP",
+      "QUIC",
+      "DTLS",
+      "ICMP"
     ]
   },
   "UEBA": {
@@ -6739,6 +9835,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "UBA",
+      "SIEM"
     ]
   },
   "UEFI": {
@@ -6756,6 +9856,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "BIOS",
+      "TPM",
+      "SED"
     ]
   },
   "UEM": {
@@ -6769,6 +9874,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "EMM",
+      "MDM"
     ]
   },
   "UPN": {
@@ -6782,6 +9891,10 @@
         "name": "Microsoft UserPrincipalName Planning",
         "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/plan-connect-userprincipalname"
       }
+    ],
+    "related": [
+      "SID",
+      "LDAP"
     ]
   },
   "UPNP": {
@@ -6795,6 +9908,10 @@
         "name": "CERT/CC VU#339275 (CallStranger UPnP vulnerability)",
         "url": "https://www.kb.cert.org/vuls/id/339275/"
       }
+    ],
+    "related": [
+      "SSDP",
+      "MDNS"
     ]
   },
   "USB": {
@@ -6825,6 +9942,11 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "NGFW",
+      "DMZ",
+      "WAF"
     ]
   },
   "VCISO": {
@@ -6838,6 +9960,10 @@
         "name": "ISACA Journal: Virtual CISOs - Security Leader or Security Risk?",
         "url": "https://www.isaca.org/resources/isaca-journal/issues/2021/volume-5/virtual-cisos-security-leader-or-security-risk"
       }
+    ],
+    "related": [
+      "CISO",
+      "MSSP"
     ]
   },
   "VDI": {
@@ -6851,6 +9977,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "DAAS",
+      "RDP"
     ]
   },
   "VDP": {
@@ -6864,6 +9994,10 @@
         "name": "OWASP Vulnerability Disclosure Cheat Sheet",
         "url": "https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html"
       }
+    ],
+    "related": [
+      "CVD",
+      "PSIRT"
     ]
   },
   "VEX": {
@@ -6877,6 +10011,12 @@
         "name": "CISA",
         "url": "https://www.cisa.gov/sbom"
       }
+    ],
+    "related": [
+      "CSAF",
+      "SBOM",
+      "SLSA",
+      "SPDX"
     ]
   },
   "VLAN": {
@@ -6890,6 +10030,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "VXLAN",
+      "NAC"
     ]
   },
   "VNC": {
@@ -6903,6 +10047,10 @@
         "name": "IETF RFC 6143",
         "url": "https://www.rfc-editor.org/rfc/rfc6143"
       }
+    ],
+    "related": [
+      "RDP",
+      "SSH"
     ]
   },
   "VOIP": {
@@ -6916,6 +10064,10 @@
         "name": "NIST SP 800-58",
         "url": "https://csrc.nist.gov/pubs/sp/800/58/final"
       }
+    ],
+    "related": [
+      "UCAAS",
+      "SDWAN"
     ]
   },
   "VPC": {
@@ -6929,6 +10081,11 @@
         "name": "NIST SP 800-145",
         "url": "https://csrc.nist.gov/pubs/sp/800/145/final"
       }
+    ],
+    "related": [
+      "VXLAN",
+      "CDN",
+      "IMDS"
     ]
   },
   "VPN": {
@@ -6942,6 +10099,13 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "ZTNA",
+      "IPSEC",
+      "L2TP",
+      "PPTP",
+      "SDWAN"
     ]
   },
   "VRF": {
@@ -6955,6 +10119,10 @@
         "name": "IETF RFC 9381",
         "url": "https://www.rfc-editor.org/rfc/rfc9381"
       }
+    ],
+    "related": [
+      "OPRF",
+      "ZKP"
     ]
   },
   "VTPM": {
@@ -6968,6 +10136,11 @@
         "name": "Trusted Computing Group",
         "url": "https://trustedcomputinggroup.org"
       }
+    ],
+    "related": [
+      "TPM",
+      "HSM",
+      "TEE"
     ]
   },
   "VXLAN": {
@@ -6981,6 +10154,11 @@
         "name": "IETF RFC 7348",
         "url": "https://www.rfc-editor.org/rfc/rfc7348"
       }
+    ],
+    "related": [
+      "VLAN",
+      "SDN",
+      "VPC"
     ]
   },
   "WAAP": {
@@ -6994,6 +10172,11 @@
         "name": "Akamai: What Is WAAP?",
         "url": "https://www.akamai.com/glossary/what-is-waap"
       }
+    ],
+    "related": [
+      "WAF",
+      "RASP",
+      "API"
     ]
   },
   "WAF": {
@@ -7007,6 +10190,30 @@
         "name": "OWASP Web Application Firewall",
         "url": "https://owasp.org/www-community/Web_Application_Firewall"
       }
+    ],
+    "related": [
+      "WAAP",
+      "RASP",
+      "NGFW",
+      "DAST",
+      "DMZ"
+    ]
+  },
+  "WAN": {
+    "expansion": "Wide Area Network",
+    "display": "WAN",
+    "category": "network",
+    "difficulty": "easy",
+    "explanation": "A WAN connects networks across distance: branch offices to headquarters, sites to data centers, everything to the internet. Corporate WANs used to mean private leased lines and MPLS; today they are increasingly software-defined and run over the public internet with encryption. The WAN is where traffic leaves the building, so it is where encryption, monitoring, and provider trust decisions bite.",
+    "sources": [
+      {
+        "name": "Cloudflare Learning: What is a WAN?",
+        "url": "https://www.cloudflare.com/learning/network-layer/what-is-a-wan/"
+      }
+    ],
+    "related": [
+      "LAN",
+      "SDWAN"
     ]
   },
   "WAP": {
@@ -7020,6 +10227,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "WPA2",
+      "WIDS"
     ]
   },
   "WEBAUTHN": {
@@ -7033,6 +10244,11 @@
         "name": "W3C Web Authentication Specification",
         "url": "https://www.w3.org/TR/webauthn-2/"
       }
+    ],
+    "related": [
+      "FIDO2",
+      "U2F",
+      "CTAP"
     ]
   },
   "WEP": {
@@ -7046,6 +10262,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary/term/wired_equivalent_privacy"
       }
+    ],
+    "related": [
+      "WPA2",
+      "WPA3"
     ]
   },
   "WIDS": {
@@ -7059,6 +10279,12 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "WIPS",
+      "NIDS",
+      "WAP",
+      "WPA2"
     ]
   },
   "WIPS": {
@@ -7072,6 +10298,10 @@
         "name": "NIST CSRC Glossary",
         "url": "https://csrc.nist.gov/glossary"
       }
+    ],
+    "related": [
+      "WIDS",
+      "NIPS"
     ]
   },
   "WMI": {
@@ -7089,6 +10319,12 @@
         "name": "MITRE ATT&CK T1047",
         "url": "https://attack.mitre.org/techniques/T1047/"
       }
+    ],
+    "related": [
+      "ETW",
+      "DPAPI",
+      "LSASS",
+      "SAM"
     ]
   },
   "WPA2": {
@@ -7102,6 +10338,13 @@
         "name": "NIST CSRC Glossary: Wi-Fi Protected Access 2 (WPA2)",
         "url": "https://csrc.nist.gov/glossary/term/wi_fi_protected_access_2"
       }
+    ],
+    "related": [
+      "WPA3",
+      "WEP",
+      "WPS",
+      "WAP",
+      "CWSP"
     ]
   },
   "WPA3": {
@@ -7115,6 +10358,12 @@
         "name": "Wi-Fi Alliance Security",
         "url": "https://www.wi-fi.org/discover-wi-fi/security"
       }
+    ],
+    "related": [
+      "WPA2",
+      "WEP",
+      "SAE",
+      "WPS"
     ]
   },
   "WPS": {
@@ -7128,6 +10377,10 @@
         "name": "Wi-Fi Alliance",
         "url": "https://www.wi-fi.org/discover-wi-fi/wi-fi-protected-setup"
       }
+    ],
+    "related": [
+      "WPA2",
+      "WPA3"
     ]
   },
   "WSTG": {
@@ -7141,6 +10394,13 @@
         "name": "OWASP Web Security Testing Guide",
         "url": "https://owasp.org/www-project-web-security-testing-guide/"
       }
+    ],
+    "related": [
+      "MASTG",
+      "ASVS",
+      "MASVS",
+      "OSSTMM",
+      "OWASP"
     ]
   },
   "X509": {
@@ -7158,6 +10418,13 @@
         "name": "IETF RFC 5280",
         "url": "https://datatracker.ietf.org/doc/html/rfc5280"
       }
+    ],
+    "related": [
+      "PKI",
+      "CRL",
+      "CSR",
+      "OCSP",
+      "PEM"
     ]
   },
   "XAAS": {
@@ -7171,6 +10438,13 @@
         "name": "IBM: What Is XaaS (Anything as a Service)?",
         "url": "https://www.ibm.com/think/topics/xaas"
       }
+    ],
+    "related": [
+      "BAAS",
+      "DAAS",
+      "DBAAS",
+      "DRAAS",
+      "FAAS"
     ]
   },
   "XACML": {
@@ -7188,6 +10462,26 @@
         "name": "XACML 3.0 Core Specification",
         "url": "https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html"
       }
+    ],
+    "related": [
+      "ABAC",
+      "PBAC"
+    ]
+  },
+  "XAI": {
+    "expansion": "Explainable Artificial Intelligence",
+    "display": "XAI",
+    "category": "ai",
+    "difficulty": "medium",
+    "explanation": "XAI covers techniques for making AI decisions understandable to humans: which inputs mattered, why this output, what would change the answer. It matters most where decisions carry consequences (credit, hiring, medical, security alerts) and where regulators expect reasons. In practice explainability is a spectrum, and knowing a model's limits honestly is often more valuable than a tidy story constructed after the fact.",
+    "sources": [
+      {
+        "name": "NIST: Four Principles of Explainable AI",
+        "url": "https://www.nist.gov/publications/four-principles-explainable-artificial-intelligence"
+      }
+    ],
+    "related": [
+      "AIRMF"
     ]
   },
   "XCCDF": {
@@ -7201,6 +10495,11 @@
         "name": "NIST XCCDF Specification",
         "url": "https://csrc.nist.gov/projects/security-content-automation-protocol/specifications/xccdf"
       }
+    ],
+    "related": [
+      "CPE",
+      "OVAL",
+      "SCAP"
     ]
   },
   "XDR": {
@@ -7214,6 +10513,13 @@
         "name": "Microsoft Security 101: What Is XDR",
         "url": "https://www.microsoft.com/en-us/security/business/security-101/what-is-xdr"
       }
+    ],
+    "related": [
+      "EDR",
+      "SIEM",
+      "SOAR",
+      "MDR",
+      "NDR"
     ]
   },
   "XMSS": {
@@ -7231,6 +10537,10 @@
         "name": "NIST SP 800-208",
         "url": "https://csrc.nist.gov/pubs/sp/800/208/final"
       }
+    ],
+    "related": [
+      "SLHDSA",
+      "MLDSA"
     ]
   },
   "XPATH": {
@@ -7257,6 +10567,13 @@
         "name": "OWASP",
         "url": "https://owasp.org/www-community/attacks/xss/"
       }
+    ],
+    "related": [
+      "CSRF",
+      "SQLI",
+      "SSRF",
+      "XXE",
+      "SSTI"
     ]
   },
   "XTS": {
@@ -7270,6 +10587,12 @@
         "name": "NIST SP 800-38E",
         "url": "https://csrc.nist.gov/pubs/sp/800/38/e/final"
       }
+    ],
+    "related": [
+      "CBC",
+      "CTR",
+      "ECB",
+      "GCM"
     ]
   },
   "XXE": {
@@ -7283,6 +10606,30 @@
         "name": "OWASP",
         "url": "https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing"
       }
+    ],
+    "related": [
+      "CSRF",
+      "SQLI",
+      "SSRF",
+      "XSS"
+    ]
+  },
+  "YAML": {
+    "expansion": "YAML Ain't Markup Language",
+    "display": "YAML",
+    "category": "operations",
+    "difficulty": "medium",
+    "explanation": "YAML is a human-friendly format for configuration files, using indentation instead of brackets. It is the native tongue of modern infrastructure: Kubernetes manifests, CI/CD pipelines, and infrastructure-as-code templates are mostly YAML. That makes YAML files security-critical artifacts: a single indented line can grant a container privileged access, and secrets have a way of ending up committed inside them.",
+    "sources": [
+      {
+        "name": "YAML 1.2.2 specification",
+        "url": "https://yaml.org/spec/1.2.2/"
+      }
+    ],
+    "related": [
+      "JSON",
+      "IAC",
+      "K8S"
     ]
   },
   "ZKP": {
@@ -7300,6 +10647,11 @@
         "name": "NIST Privacy-Enhancing Cryptography Project",
         "url": "https://csrc.nist.gov/projects/pec"
       }
+    ],
+    "related": [
+      "FHE",
+      "MPC",
+      "VRF"
     ]
   },
   "ZTA": {
@@ -7313,6 +10665,12 @@
         "name": "NIST SP 800-207",
         "url": "https://csrc.nist.gov/pubs/sp/800/207/final"
       }
+    ],
+    "related": [
+      "ZTNA",
+      "SASE",
+      "CCZT",
+      "SSE"
     ]
   },
   "ZTNA": {
@@ -7326,6 +10684,12 @@
         "name": "NIST SP 800-207",
         "url": "https://csrc.nist.gov/pubs/sp/800/207/final"
       }
+    ],
+    "related": [
+      "VPN",
+      "ZTA",
+      "SASE",
+      "SSE"
     ]
   }
 }

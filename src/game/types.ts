@@ -5,6 +5,7 @@ export type GameStatus = 'playing' | 'won' | 'lost';
 export type Difficulty = 'easy' | 'medium' | 'hard';
 
 export const CATEGORIES = [
+  'ai',
   'certifications',
   'protocols',
   'attacks',
