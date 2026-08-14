@@ -30,6 +30,39 @@ export function dailyIndex(puzzleNum: number, poolSize: number): number {
   return Number((BigInt(puzzleNum) * BigInt(PRIME)) % BigInt(poolSize));
 }
 
+/**
+ * Keys added to the dataset after the daily game launched, and the first
+ * puzzle number allowed to draw them.
+ *
+ * The daily answer is `keys[hash(puzzleNum) % keys.length]`, so any change to
+ * the pool's membership silently rewrites the answer for every puzzle number,
+ * past and future: archive replays would stop matching the puzzles people
+ * actually played, and an in-progress daily (saved as guesses, rescored on
+ * load) would break mid-day. Excluding later additions from earlier puzzle
+ * numbers keeps every already-published puzzle exactly as it ran; each new
+ * batch simply starts appearing at its own cutover. Lives here rather than in
+ * src/data so the logic stays pure and testable without importing the dataset.
+ */
+export const POOL_ADDITIONS: { fromPuzzle: number; keys: Set<string> }[] = [
+  {
+    // 2026-08-16: the AI and IT vocabulary sync from the AlphabetSoup dataset.
+    fromPuzzle: 31,
+    keys: new Set([
+      'AGI', 'AIRMF', 'ATLAS', 'DEVOPS', 'ETL', 'GAN', 'GENAI', 'GPT', 'GPU',
+      'GRPC', 'HITL', 'JSON', 'K8S', 'LAN', 'LLM', 'LORA', 'MCP', 'MLOPS',
+      'MOE', 'NLP', 'NOSQL', 'OCR', 'RAG', 'REST', 'RLHF', 'RPA', 'SDK',
+      'SFT', 'SLM', 'SQL', 'SRE', 'TPU', 'WAN', 'XAI', 'YAML',
+    ]),
+  },
+];
+
+/** The subset of `keys` that was in the answer pool when `puzzleNum` ran. */
+export function generationPool(puzzleNum: number, keys: string[]): string[] {
+  return keys.filter((key) =>
+    POOL_ADDITIONS.every((a) => puzzleNum >= a.fromPuzzle || !a.keys.has(key)),
+  );
+}
+
 /** Seeded PRNG (mulberry32) for reproducible practice shuffles. */
 export function mulberry32(seed: number): () => number {
   let a = seed >>> 0;

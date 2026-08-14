@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { EPOCH, dailyIndex, localDateString, mulberry32, puzzleNumber } from '../src/game/daily';
+import { answerPool, getEntry, pool } from '../src/data';
 
 describe('localDateString', () => {
   it('formats local dates with zero padding', () => {
@@ -65,5 +66,38 @@ describe('mulberry32', () => {
 
   it('differs for different seeds', () => {
     expect(mulberry32(1)()).not.toBe(mulberry32(2)());
+  });
+});
+
+describe('answer pool generations', () => {
+  // Pinned from the pre-sync 545-key dataset: growing the pool must never
+  // change an already-published puzzle's answer (the archive replays them).
+  const PINNED: Record<number, string> = {
+    1: 'ENISA',
+    10: 'ECIH',
+    20: 'PAAS',
+    29: 'OSTH',
+    30: 'WIDS',
+  };
+
+  it('keeps every pre-sync puzzle answer exactly as it ran', () => {
+    for (const [num, key] of Object.entries(PINNED)) {
+      const keys = answerPool(Number(num));
+      expect(keys, `pool size for puzzle ${num}`).toHaveLength(545);
+      expect(keys[dailyIndex(Number(num), keys.length)], `puzzle ${num}`).toBe(key);
+    }
+  });
+
+  it('opens the full pool at the cutover puzzle', () => {
+    expect(answerPool(31).length).toBe(pool().length);
+    expect(answerPool(30)).not.toContain('LLM');
+    expect(answerPool(31)).toContain('LLM');
+  });
+
+  it('every generation answer key resolves to a real entry', () => {
+    for (let n = 1; n <= 60; n++) {
+      const keys = answerPool(n);
+      expect(() => getEntry(keys[dailyIndex(n, keys.length)])).not.toThrow();
+    }
   });
 });

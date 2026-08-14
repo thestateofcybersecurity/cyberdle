@@ -1,4 +1,5 @@
 import rawData from './acronyms.json';
+import { generationPool } from '../game/daily';
 import type { AcronymData, AcronymEntry, Category, Difficulty } from '../game/types';
 
 const data = rawData as AcronymData;
@@ -24,6 +25,11 @@ export function pool(filter: PoolFilter = {}): string[] {
       return true;
     })
     .sort();
+}
+
+/** The answer pool as it existed for a given puzzle number. */
+export function answerPool(puzzleNum: number): string[] {
+  return generationPool(puzzleNum, pool());
 }
 
 export function allData(): AcronymData {

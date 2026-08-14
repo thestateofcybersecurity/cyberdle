@@ -6,7 +6,7 @@ import { recordResult } from './game/stats';
 import { recordOutcome, missedKeys } from './game/learning';
 import { CATEGORIES, MAX_GUESSES } from './game/types';
 import type { Category, Difficulty } from './game/types';
-import { allData, getEntry, pool } from './data';
+import { allData, answerPool, getEntry, pool } from './data';
 import {
   loadDailyProgress,
   loadLearning,
@@ -98,7 +98,9 @@ function renderGame(): void {
 }
 
 function answerForPuzzle(puzzleNum: number): string {
-  const keys = pool();
+  // Generation-aware: a puzzle draws from the pool as it existed when that
+  // puzzle ran, so dataset growth never rewrites published answers.
+  const keys = answerPool(puzzleNum);
   return keys[dailyIndex(puzzleNum, keys.length)];
 }
 

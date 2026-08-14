@@ -1,13 +1,15 @@
 import { expect, test } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dailyIndex, localDateString, puzzleNumber } from '../src/game/daily';
+import { dailyIndex, generationPool, localDateString, puzzleNumber } from '../src/game/daily';
 
-// Compute today's answer the same way the app does, from the real dataset.
+// Compute today's answer the same way the app does: from the real dataset,
+// through the generation-aware pool (later dataset additions only enter the
+// rotation at their own cutover puzzle).
 const dataPath = fileURLToPath(new URL('../src/data/acronyms.json', import.meta.url));
 const data = JSON.parse(readFileSync(dataPath, 'utf8')) as Record<string, { expansion: string }>;
-const keys = Object.keys(data).sort();
 const todaysPuzzle = puzzleNumber(localDateString(new Date()));
+const keys = generationPool(todaysPuzzle, Object.keys(data).sort());
 const todaysAnswer = keys[dailyIndex(todaysPuzzle, keys.length)];
 
 test('first visit shows help modal that actually closes', async ({ page }) => {
