@@ -1,10 +1,18 @@
 import { CATEGORIES, MAX_ANSWER_LENGTH, MIN_ANSWER_LENGTH } from '../game/types';
 import type { AcronymData } from '../game/types';
+import { httpsUrl } from './url';
 
 const KEY_PATTERN = new RegExp(`^[A-Z0-9]{${MIN_ANSWER_LENGTH},${MAX_ANSWER_LENGTH}}$`);
 const DIFFICULTIES = ['easy', 'medium', 'hard'];
 const EXPLANATION_MIN = 80;
 const EXPLANATION_MAX = 900;
+const TEXT_FIELDS = ['expansion', 'display', 'category', 'difficulty', 'explanation'] as const;
+/**
+ * Characters that have no business in glossary text: angle brackets (markup),
+ * control characters, and bidirectional overrides (text spoofing). The app
+ * renders every field as plain text, but the dataset is also consumed elsewhere.
+ */
+const UNSAFE_TEXT = /[<>\u0000-\u001f\u007f\u202a-\u202e\u2066-\u2069]/;
 
 /** Validate the dataset; returns a list of human-readable problems (empty = valid). */
 export function validateData(data: AcronymData): string[] {
@@ -20,6 +28,21 @@ export function validateData(data: AcronymData): string[] {
     const where = `[${key}]`;
     if (!KEY_PATTERN.test(key)) {
       errors.push(`${where} key must match ${KEY_PATTERN}`);
+    }
+    if (typeof entry !== 'object' || entry === null) {
+      errors.push(`${where} entry must be an object`);
+      continue;
+    }
+    const fields = entry as unknown as Record<string, unknown>;
+    const notText = TEXT_FIELDS.filter((field) => typeof fields[field] !== 'string');
+    if (notText.length > 0) {
+      errors.push(`${where} ${notText.join(', ')} must be text`);
+      continue;
+    }
+    for (const field of TEXT_FIELDS) {
+      if (UNSAFE_TEXT.test(entry[field])) {
+        errors.push(`${where} ${field} contains markup or control characters`);
+      }
     }
     if (!entry.expansion?.trim()) {
       errors.push(`${where} missing expansion`);
@@ -54,11 +77,17 @@ export function validateData(data: AcronymData): string[] {
       errors.push(`${where} needs at least one source`);
     } else {
       for (const source of entry.sources) {
-        if (!source.name?.trim()) {
-          errors.push(`${where} source missing name`);
+        if (typeof source !== 'object' || source === null) {
+          errors.push(`${where} source must be an object`);
+          continue;
         }
-        if (!source.url?.startsWith('https://')) {
-          errors.push(`${where} source url must be https: ${source.url}`);
+        if (typeof source.name !== 'string' || !source.name.trim()) {
+          errors.push(`${where} source missing name`);
+        } else if (UNSAFE_TEXT.test(source.name)) {
+          errors.push(`${where} source name contains markup or control characters`);
+        }
+        if (httpsUrl(source.url) === null) {
+          errors.push(`${where} source url must be https: ${String(source.url)}`);
         }
       }
     }
