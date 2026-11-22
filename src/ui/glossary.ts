@@ -1,4 +1,5 @@
 import { allData } from '../data';
+import { httpsUrl } from '../data/url';
 import { CATEGORIES } from '../game/types';
 import { missedKeys } from '../game/learning';
 import type { LearningStore } from '../storage';
@@ -103,12 +104,18 @@ export class Glossary {
       sources.className = 'sources-list';
       for (const source of entry.sources) {
         const item = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = source.url;
-        link.textContent = source.name;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        item.appendChild(link);
+        const href = httpsUrl(source.url);
+        if (href) {
+          const link = document.createElement('a');
+          link.href = href;
+          link.textContent = source.name;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          item.appendChild(link);
+        } else {
+          // Not an https link: show the name only rather than a clickable URL.
+          item.textContent = source.name;
+        }
         sources.appendChild(item);
       }
       detail.appendChild(sources);

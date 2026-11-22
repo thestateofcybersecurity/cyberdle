@@ -72,20 +72,31 @@ function practiceFilter(): { difficulty?: Difficulty; category?: Category } {
 }
 
 function setStatusLine(): void {
-  const el = byId('status-line');
-  if (view === 'glossary' || view === 'study') {
-    el.innerHTML = view === 'glossary' ? 'reference deck' : 'flashcard drill<span class="sep">//</span>misses come up more often';
-    return;
-  }
-  const entry = getEntry(answerKey);
-  const hard = settings.hardMode ? '<span class="sep">//</span>hard mode' : '';
-  if (mode === 'daily') {
-    el.innerHTML = `puzzle #${currentPuzzleNum}<span class="sep">//</span>${game.answer.length} chars${hard}`;
-  } else if (mode === 'archive') {
-    el.innerHTML = `archive #${currentPuzzleNum}<span class="sep">//</span>${game.answer.length} chars${hard}`;
+  // Built from text nodes, never innerHTML: one of the parts (the difficulty
+  // label) comes from the dataset.
+  const parts: string[] = [];
+  if (view === 'glossary') {
+    parts.push('reference deck');
+  } else if (view === 'study') {
+    parts.push('flashcard drill', 'misses come up more often');
   } else {
-    el.innerHTML = `practice<span class="sep">//</span>${entry.difficulty}<span class="sep">//</span>${game.answer.length} chars${hard}`;
+    if (mode === 'daily') parts.push(`puzzle #${currentPuzzleNum}`);
+    else if (mode === 'archive') parts.push(`archive #${currentPuzzleNum}`);
+    else parts.push('practice', getEntry(answerKey).difficulty);
+    parts.push(`${game.answer.length} chars`);
+    if (settings.hardMode) parts.push('hard mode');
   }
+  const el = byId('status-line');
+  el.replaceChildren();
+  parts.forEach((part, i) => {
+    if (i > 0) {
+      const sep = document.createElement('span');
+      sep.className = 'sep';
+      sep.textContent = '//';
+      el.appendChild(sep);
+    }
+    el.append(part);
+  });
 }
 
 function renderGame(): void {

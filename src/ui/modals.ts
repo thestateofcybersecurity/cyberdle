@@ -2,6 +2,7 @@ import type { AcronymEntry } from '../game/types';
 import type { GameState } from '../game/engine';
 import type { Stats } from '../game/stats';
 import { winRate } from '../game/stats';
+import { httpsUrl } from '../data/url';
 
 const backdrop = () => document.getElementById('modal-backdrop') as HTMLElement;
 const titleEl = () => document.getElementById('modal-title') as HTMLElement;
@@ -71,11 +72,17 @@ export function buildEndModal(body: HTMLElement, opts: EndModalOptions): void {
   const list = el('ul', 'sources-list');
   for (const source of entry.sources) {
     const item = el('li');
-    const link = el('a', undefined, source.name);
-    link.setAttribute('href', source.url);
-    link.setAttribute('target', '_blank');
-    link.setAttribute('rel', 'noopener noreferrer');
-    item.appendChild(link);
+    const href = httpsUrl(source.url);
+    if (href) {
+      const link = el('a', undefined, source.name);
+      link.setAttribute('href', href);
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+      item.appendChild(link);
+    } else {
+      // Not an https link: show the name only rather than a clickable URL.
+      item.textContent = source.name;
+    }
     list.appendChild(item);
   }
   const soupItem = el('li');
