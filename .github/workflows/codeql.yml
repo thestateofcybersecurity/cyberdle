@@ -8,6 +8,9 @@ on:
   schedule:
     - cron: '27 3 * * 1' # Mondays 03:27 UTC
 
+permissions:
+  contents: read
+
 jobs:
   analyze:
     name: Analyze JS/TS
@@ -19,6 +22,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3

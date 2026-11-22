@@ -7,10 +7,11 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Least privilege: nothing is granted workflow-wide beyond reading the repo.
+# The build job runs npm install scripts and the test suites, also for pull
+# requests, so it must not hold the token scopes that can publish the site.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages-${{ github.ref }}
@@ -19,8 +20,13 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read # configure-pages only reads the Pages site settings
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -44,6 +50,11 @@ jobs:
     if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    # Only this job can publish: Pages write access plus the OIDC token that
+    # deploy-pages uses to prove where the artifact came from.
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
