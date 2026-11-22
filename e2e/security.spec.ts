@@ -119,3 +119,62 @@ test.describe('CYB-02: service worker cache cannot be grown from a URL', () => {
     await context.setOffline(false);
   });
 });
+
+test.describe('Content Security Policy (hardening)', () => {
+  async function recordViolations(page: Page): Promise<void> {
+    await page.addInitScript(() => {
+      const w = window as unknown as { __csp: string[] };
+      w.__csp = [];
+      document.addEventListener('securitypolicyviolation', (event) => {
+        w.__csp.push(`${event.violatedDirective} ${event.blockedURI}`);
+      });
+      localStorage.setItem('cyberdle:seen', '1');
+    });
+  }
+  const violations = (page: Page) => page.evaluate(() => (window as unknown as { __csp: string[] }).__csp);
+
+  test('the built page carries the policy and normal use raises no violations', async ({ page }) => {
+    await recordViolations(page);
+    await page.goto('/');
+    const policy = await page.locator('meta[http-equiv="Content-Security-Policy"]').getAttribute('content');
+    expect(policy).toContain("script-src 'self'");
+    expect(policy).toContain("object-src 'none'");
+    expect(policy).not.toContain('unsafe-inline');
+    expect(policy).not.toContain('unsafe-eval');
+
+    // Walk every view and modal so any inline style or script would surface.
+    await page.keyboard.type('ZZZ');
+    await page.keyboard.press('Enter');
+    for (const button of ['#btn-help', '#btn-stats', '#btn-settings', '#btn-archive']) {
+      await page.locator(button).click();
+      await expect(page.locator('#modal-backdrop')).toBeVisible();
+      await page.locator('#btn-close-modal').click();
+    }
+    await page.locator('#tab-practice').click();
+    await expect(page.locator('#status-line')).toContainText('practice');
+    await page.locator('#tab-study').click();
+    await page.locator('.primary-btn', { hasText: 'Reveal' }).click();
+    await page.locator('#tab-glossary').click();
+    await page.locator('#glossary-search').fill('SIEM');
+    await page.locator('.glossary-entry summary').first().click();
+    await page.waitForLoadState('networkidle');
+    expect(await violations(page)).toEqual([]);
+  });
+
+  test('injected inline script and event-handler markup do not run', async ({ page }) => {
+    await recordViolations(page);
+    await page.goto('/');
+    // Stand-in for a future DOM XSS regression: attacker markup reaches innerHTML.
+    await page.evaluate(() => {
+      const host = document.createElement('div');
+      host.innerHTML = '<img src="x" onerror="window.__pwned = 1">';
+      document.body.appendChild(host);
+      const script = document.createElement('script');
+      script.textContent = 'window.__pwned = 2';
+      document.body.appendChild(script);
+    });
+    await page.waitForTimeout(300);
+    expect(await page.evaluate(() => (window as unknown as { __pwned?: number }).__pwned)).toBeUndefined();
+    expect((await violations(page)).length).toBeGreaterThan(0);
+  });
+});
