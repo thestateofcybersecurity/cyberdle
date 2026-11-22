@@ -117,3 +117,45 @@ describe('source guards', () => {
     expect(scripts).toEqual(['<script type="module" src="/src/main.ts">']);
   });
 });
+
+describe('GitHub Actions workflow guards', () => {
+  const workflowDir = join(repoRoot, '.github', 'workflows');
+  const workflows = readdirSync(workflowDir)
+    .filter((name) => /\.ya?ml$/.test(name))
+    .map((name) => ({ name, text: readFileSync(join(workflowDir, name), 'utf8') }));
+
+  it('finds the workflows', () => {
+    expect(workflows.length).toBeGreaterThan(0);
+  });
+
+  it('pins every action to a full commit SHA', () => {
+    const unpinned = workflows.flatMap(({ name, text }) =>
+      [...text.matchAll(/^\s*(?:-\s*)?uses:\s*(\S+)/gm)]
+        .map((m) => m[1])
+        .filter((ref) => !/@[0-9a-f]{40}$/.test(ref))
+        .map((ref) => `${name}: ${ref}`),
+    );
+    expect(unpinned).toEqual([]);
+  });
+
+  it('never runs on pull_request_target or interpolates event data into a shell', () => {
+    for (const { name, text } of workflows) {
+      expect(text, name).not.toMatch(/pull_request_target|workflow_run/);
+      // Untrusted event fields (titles, branch names, bodies) must not be expanded inside run: steps.
+      expect(text, name).not.toMatch(/\$\{\{\s*github\.(event\.|head_ref)/);
+    }
+  });
+
+  it('keeps the workflow-wide token read-only and publish scopes in the deploy job', () => {
+    for (const { name, text } of workflows) {
+      const top = text.match(/^permissions:\n((?: {2}\S.*\n)+)/m);
+      expect(top, `${name} must set workflow-level permissions`).not.toBeNull();
+      expect(top![1].trim(), name).toBe('contents: read');
+    }
+    const deploy = workflows.find((w) => w.name === 'deploy.yml')!.text;
+    const [buildJob, deployJob] = deploy.split(/^ {2}deploy:\n/m);
+    expect(buildJob).not.toMatch(/pages: write|id-token: write/);
+    expect(deployJob).toMatch(/pages: write/);
+    expect(deployJob).toMatch(/id-token: write/);
+  });
+});
